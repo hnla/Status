@@ -1,0 +1,16 @@
+/*
+Theme Name: Status
+Theme URI: http://buddypress.org
+Description: A specialist child theme for BuddyPress
+Version: 1.0
+License: GNU General Public License
+License URI: license.txt
+Author: Karmatosed, hnla (Hugo), Modemlooper
+Author URI: http://buddypress.org
+Template: bp-default
+Tags: buddypress, two-column, fixed-width
+
+*/
+
+
+
