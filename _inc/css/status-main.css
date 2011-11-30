@@ -12,9 +12,9 @@
 --------------------------------------------------------------------------------
  Stylesheet Sections
 --------------------------------------------------------------------------------
-1. defaults & typography (General site wide) 
+1. Defaults & typography (General site wide) 
 
-2. Layout structural elements & media queries
+2. Structural layout elements & media queries
 
 3. Navigational: main nav & object nav / list tabs
 
@@ -27,6 +27,8 @@
  5.1 - Home page / index
 	5.2 - Activity main view
 	5.3 -  
+
+6. Classes & clearfix
 */
 
 /* >defaults & typography
@@ -34,9 +36,46 @@
 
 body {/* temp font stack */
 	font: 100%/1.7 Geneva, 'Lucida Sans', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
-	max-width: 1250px;
 }
+
+/* >Structural
+------------------------------------------------------------------------------*/
+/** Generic structural - for all devices **/
+
 #wrapper {
 	margin: 0 auto;
+	max-width: 1250px;
 	width: 86%;
+}
+
+/** media queries **/
+
+@media screen and () {
+
+
+}
+
+@media screen and () {
+
+
+}
+
+@media screen and (min-width: 760px) {
+ body {background: beige;}
+}
+/* >Classes
+------------------------------------------------------------------------------*/
+
+/**** clearfix rules ****/
+.clearfix:before,
+.clearfix:after {
+  content:"";
+  display:table;
+}
+.clearfix:after {
+  clear:both;
+}
+/* For IE 6/7 (trigger hasLayout) */
+.clearfix {
+  zoom:1;
 }
