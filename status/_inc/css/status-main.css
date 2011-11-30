@@ -1,0 +1,42 @@
+/**
+* Status-main stylesheet
+*
+* Status is a collaberative BuddyPress child theme by:
+* Karmatosed, hnla (Hugo), Modemlooper
+*
+* With contributions from:
+* name, name, name
+*/
+
+/*
+--------------------------------------------------------------------------------
+ Stylesheet Sections
+--------------------------------------------------------------------------------
+1. defaults & typography (General site wide) 
+
+2. Layout structural elements & media queries
+
+3. Navigational: main nav & object nav / list tabs
+
+4. Primary site sections & descendent child elements
+	4.1 - Site header
+	4.2 - Site footer
+	4.3 - Sidebar
+
+5. Primary page styling
+ 5.1 - Home page / index
+	5.2 - Activity main view
+	5.3 -  
+*/
+
+/* >defaults & typography
+------------------------------------------------------------------------------*/
+
+body {/* temp font stack */
+	font: 100%/1.7 Geneva, 'Lucida Sans', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+	max-width: 1250px;
+}
+#wrapper {
+	margin: 0 auto;
+	width: 86%;
+}
