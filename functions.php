@@ -8,7 +8,9 @@
 
 if ( !function_exists( 'status_setup' ) ) :
 function status_setup() {
+	
 	add_action( 'wp_enqueue_scripts', 'status_load_scripts' );
+	add_action( 'wp_print_styles', 'bp_dtheme_enqueue_styles');
 	
 	register_nav_menus( array(
 		'footer' => __( 'Footer Navigation', 'status' ),

@@ -21,6 +21,9 @@
 				<p>This view would likely be simply a nice implementation of the bp sign up 
 				form, perhaps a text area intro block to describe the site along with maybe sidebar 
 				showing simple member avatars all things to be considered and decided upon.</p>
+				
+				<?php get_template_part('homepage', 'signup');?>
+			
 			<?php endif; ?>
 			
 			<?php if ( is_user_logged_in() ) : ?>
