@@ -6,7 +6,7 @@ global $members_template, $bp;
 					<ul id="friends-list" class="looplist">
 		<?php	while ( bp_members() ) : bp_the_member(); ?>
 						<li>
-							<div class="item-avatar"><a href="<?php bp_member_permalink() ?>"><?php  bp_member_avatar() ?></a></div>
+							<div class="item-avatar"><a href="<?php bp_member_permalink() ?>"><?php  bp_member_avatar('type=full&width=30&height=30') ?></a></div>
 						</li>				 
 		
 		<?php endwhile; ?>

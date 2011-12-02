@@ -1,15 +1,21 @@
 		</div> <!-- #container -->
-
+		</div><!-- / #wrapper -->
 		<?php do_action( 'bp_after_container' ) ?>
 		<?php do_action( 'bp_before_footer' ) ?>
 
-		<footer id="site-footer">
+		<footer id="site-footer"><?php #### sections use is probably not great here! ###?>
+			<section id="members-loop">
+				<?php get_template_part('status-loop', 'friends');?>
+			</section>
 			
+			<section id="footer-widg-block">
+			<?php ###  we'll likely lose this widget block as it will upset the layout if used ? ##### ?>
 			<?php if ( is_active_sidebar( 'first-footer-widget-area' ) || is_active_sidebar( 'second-footer-widget-area' ) || is_active_sidebar( 'third-footer-widget-area' ) || is_active_sidebar( 'fourth-footer-widget-area' ) ) : ?>
 				<div id="footer-widgets-block">
 					<?php get_sidebar( 'footer' ) ?>
 				</div>
 			<?php endif; ?>
+			</section>
 			
 			<?php if(has_nav_menu('footer')): ?>
 				<nav id="secondary-nav">
@@ -29,7 +35,7 @@
 		<?php do_action( 'bp_after_footer' ) ?>
 
 		<?php wp_footer(); ?>
-		</div><!-- / #wrapper -->
+
 	</body>
 
 </html>

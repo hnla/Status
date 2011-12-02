@@ -12,7 +12,7 @@
 <?php get_header( 'status' ); ?>
 
 	<?php do_action( 'bp_before_directory_activity_page' ); ?>
-
+<div id="content-wrap">
 	<div id="content" role="main">
 		<div class="padder">
 
@@ -148,9 +148,9 @@
 
 			<?php do_action( 'bp_after_directory_activity' ); ?>
 
-		</div><!-- .padder -->
-	</div><!-- #content -->
-
+		</div><!-- / .padder -->
+	</div><!-- / #content -->
+</div><!-- / #content-wrap -->
 	<?php do_action( 'bp_after_directory_activity_page' ); ?>
 
 <?php get_sidebar( 'buddypress' ); ?>

@@ -2,7 +2,7 @@
 * Status-main stylesheet
 *
 * Status is a collaberative BuddyPress child theme by:
-* Karmatosed, hnla (Hugo), Modemlooper
+* Karmatosed, hnla (Hugo)
 *
 * With contributions from:
 * name, name, name
@@ -34,10 +34,29 @@
 /* >defaults & typography
 ------------------------------------------------------------------------------*/
 
-body {/* temp font stack */
+body {
+	background: #f4f4f4;
+	/* temp font stack */
 	font: 100%/1.7 Geneva, 'Lucida Sans', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
 }
+h1 {font-size: 1.8em;}
+h2 {font-size: 1.6em;}
+h3 {font-size: 1.4em;}
+h4 {font-size: 1.2em ;}
+h5 {font-size: 1.1em;}
+h6 {font-size: 1em;}
+h1, h2, h3, h4 {margin: .6em 0}
 
+img {
+	width: auto !important;
+	width: 100%;
+	max-width: 100%;
+}
+
+nav ul, .looplist {
+	list-style: none;
+	padding-left: 0;
+}
 /* >Structural
 ------------------------------------------------------------------------------*/
 /** Generic structural - for all devices **/
@@ -47,8 +66,11 @@ body {/* temp font stack */
 	max-width: 1250px;
 	width: 86%;
 }
-
-/** media queries **/
+footer {clear: both;}
+nav, #content, .padder {
+	padding: 1%;
+}
+/** media queries device specific structural **/
 
 @media screen and () {
 
@@ -61,7 +83,48 @@ body {/* temp font stack */
 }
 
 @media screen and (min-width: 760px) {
- body {background: beige;}
+ body {}
+
+	#content-wrap {
+		float: left;
+		margin-right: -200px;
+		width: 100%;
+	}
+	#content {
+		margin-right: 200px;
+		padding-top: 1px;
+	}
+	#sidebar {
+		float: right;
+		margin-left: -180px;
+		width: 180px;
+	}	
+}
+
+/* >Navigational
+------------------------------------------------------------------------------*/
+
+/** rework BP buddybar **/
+#wp-admin-bar {background: #464646}
+body#bp-default #wp-admin-bar .padder {
+	max-width: 98%;
+}
+/* >Primary site sections
+------------------------------------------------------------------------------*/
+
+/** footer **/
+footer {
+ background: #242424;
+}
+
+footer #members-loop {
+	background: #464646;
+	padding: 1%;
+}
+footer #members-loop ul {margin: 0;}
+#site-generator p {
+	margin: 0;
+	padding: 1%;
 }
 /* >Classes
 ------------------------------------------------------------------------------*/
