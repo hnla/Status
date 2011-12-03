@@ -28,7 +28,9 @@
 	5.2 - Activity main view
 	5.3 -  
 
-6. Classes & clearfix
+6. Forms & Tables
+
+7. Classes & clearfix
 */
 
 /* >defaults & typography
@@ -38,6 +40,7 @@ body {
 	background: #f4f4f4;
 	/* temp font stack */
 	font: 100%/1.7 Geneva, 'Lucida Sans', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+	color: #555;
 }
 h1 {font-size: 1.8em;}
 h2 {font-size: 1.6em;}
@@ -53,9 +56,13 @@ img {
 	max-width: 100%;
 }
 
-nav ul, .looplist {
+nav ul, .looplist, .item-list-tabs ul {
 	list-style: none;
 	padding-left: 0;
+}
+a {
+	text-decoration: none;
+	color: #8B9681;
 }
 /* >Structural
 ------------------------------------------------------------------------------*/
@@ -109,8 +116,17 @@ nav, #content, .padder {
 body#bp-default #wp-admin-bar .padder {
 	max-width: 98%;
 }
+
+/** Generic nav elements **/
+nav ul li,
+.item-list-tabs li {
+	display: inline;
+	display: inline-block;
+	margin-right: .5em;
+}
 /* >Primary site sections
 ------------------------------------------------------------------------------*/
+/** header **/
 
 /** footer **/
 footer {
@@ -122,9 +138,41 @@ footer #members-loop {
 	padding: 1%;
 }
 footer #members-loop ul {margin: 0;}
+footer #members-loop ul li {
+	background: #646464;
+	border: 1px solid #6E6E6E;
+	display: inline;
+	display: inline-block;
+	padding: .1em;
+}
 #site-generator p {
 	margin: 0;
 	padding: 1%;
+}
+/** sidebar **/
+
+/* >Primary page styling
+------------------------------------------------------------------------------*/
+/** home page **/
+
+.home .status-signup {
+	background: #fafafa;
+	border: 1px solid #ddd;
+	padding: 1%;
+}
+
+/* >Forms & tables
+------------------------------------------------------------------------------*/
+/** generic form styles **/
+#status-default fieldset {
+	margin: 1.1em 0;
+}
+#status-default legend {
+	font-weight: bold;
+	font-size: 1.2em;
+}
+#status-default label {
+	display: block;
 }
 /* >Classes
 ------------------------------------------------------------------------------*/

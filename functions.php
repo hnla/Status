@@ -3,6 +3,10 @@
 * Status theme functions
 */
 
+/***** these misc items are more for testing and likely will be removed ******/
+$profile_sidebar = false; //disable the main sidebar in profile member accounts
+
+/****  end misc stuff *******/
 
 // Register functions & regions
 

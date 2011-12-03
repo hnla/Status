@@ -26,7 +26,7 @@
 		?>
 	</head>
 
-	<body <?php body_class() ?> id="bp-default">
+	<body <?php body_class() ?> id="status-default">
 		<div id="wrapper">
 		<?php do_action( 'bp_before_header' ) ?>
 

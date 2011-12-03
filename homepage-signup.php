@@ -1,3 +1,4 @@
+	<section class="status-signup">
 		<form action="" name="signup_form" id="signup_form" class="standard-form" method="post" enctype="multipart/form-data">
 
 			<?php if ( 'request-details' !== bp_get_current_signup_step() ) : ?>
@@ -10,15 +11,16 @@
 
 				<?php do_action( 'bp_before_account_details_fields' ) ?>
 
-				<div class="register-section" id="basic-details-section">
+				<fieldset class="register-section" id="basic-details-section">
 
 					<?php /***** Basic Account Details ******/ ?>
 
-					<h4><?php _e( 'Account Details', 'buddypress' ) ?></h4>
+					<legend><?php _e( 'Account Details', 'buddypress' ) ?></legend>
 
 					<label for="signup_username"><?php _e( 'Username', 'buddypress' ) ?> <?php _e( '(required)', 'buddypress' ) ?></label>
 					<?php do_action( 'bp_signup_username_errors' ) ?>
 					<input type="text" name="signup_username" id="signup_username" value="<?php bp_signup_username_value() ?>" />
+					
 					<label for="signup_email"><?php _e( 'Email Address', 'buddypress' ) ?> <?php _e( '(required)', 'buddypress' ) ?></label>
 					<?php do_action( 'bp_signup_email_errors' ) ?>
 					<input type="text" name="signup_email" id="signup_email" value="<?php bp_signup_email_value() ?>" />
@@ -31,7 +33,7 @@
 					<?php do_action( 'bp_signup_password_confirm_errors' ) ?>
 					<input type="password" name="signup_password_confirm" id="signup_password_confirm" value="" />
 
-				</div><!-- #basic-details-section -->
+				</fieldset><!-- #basic-details-section -->
 
 				<?php do_action( 'bp_after_account_details_fields' ) ?>
 
@@ -41,9 +43,9 @@
 
 					<?php do_action( 'bp_before_signup_profile_fields' ) ?>
 
-					<div class="register-section" id="profile-details-section">
+					<fieldset class="register-section" id="profile-details-section">
 
-						<h4><?php _e( 'Profile Details', 'buddypress' ) ?></h4>
+						<legend><?php _e( 'Profile Details', 'buddypress' ) ?></legend>
 
 						<?php /* Use the profile field loop to render input fields for the 'base' profile field group */ ?>
 						<?php if ( bp_is_active( 'xprofile' ) ) : if ( bp_has_profile( 'profile_group_id=1' ) ) : while ( bp_profile_groups() ) : bp_the_profile_group(); ?>
@@ -131,6 +133,7 @@
 										<select name="<?php bp_the_profile_field_input_name() ?>_year" id="<?php bp_the_profile_field_input_name() ?>_year">
 											<?php bp_the_profile_field_options( 'type=year' ) ?>
 										</select>
+									
 									</div>
 
 								<?php endif; ?>
@@ -139,16 +142,17 @@
 
 								<p class="description"><?php bp_the_profile_field_description() ?></p>
 
-							</div>
+							</div><!-- / .editfield -->
 
-						<?php endwhile; ?>
+						<?php endwhile; // bp_profile_fields() ?>
 
 						<input type="hidden" name="signup_profile_field_ids" id="signup_profile_field_ids" value="<?php bp_the_profile_group_field_ids() ?>" />
 
 						<?php endwhile; endif; endif; ?>
 
-					</div><!-- #profile-details-section -->
-
+					</fieldset><!-- #profile-details-section -->
+					<?php /***** End Extra Profile Details ******/ ?>
+					
 					<?php do_action( 'bp_after_signup_profile_fields' ) ?>
 
 				<?php endif; ?>
@@ -186,3 +190,4 @@
 			<?php do_action( 'bp_custom_signup_steps' ) ?>
 
 			</form>
+		</section>
