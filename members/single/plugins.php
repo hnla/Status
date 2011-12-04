@@ -16,8 +16,6 @@
 <?php get_header( 'buddypress' ); ?>
 
 	<div id="content">
-		<div class="padder">
-
 			<?php do_action( 'bp_before_member_plugin_template' ); ?>
 
 			<div id="item-header">
@@ -62,7 +60,6 @@
 
 			<?php do_action( 'bp_after_member_plugin_template' ); ?>
 
-		</div><!-- .padder -->
 	</div><!-- #content -->
 
 <?php get_sidebar( 'buddypress' ); ?>

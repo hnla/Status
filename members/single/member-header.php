@@ -58,7 +58,17 @@
 		 ?>
 
 	</div><!-- #item-meta -->
+	<div id="item-nav">
+				<nav class="item-list-tabs no-ajax" id="object-nav" role="navigation">
+					<ul>
 
+						<?php bp_get_displayed_user_nav(); ?>
+
+						<?php do_action( 'bp_member_options_nav' ); ?>
+
+					</ul>
+				</nav>
+			</div><!-- #item-nav -->
 </div><!-- #item-header-content -->
 
 <?php do_action( 'bp_after_member_header' ); ?>

@@ -1,8 +1,8 @@
 <?php do_action( 'bp_before_sidebar' ) ?>
 
-<aside id="sidebar" role="complementary">
-	<div class="padder">
-
+<div id="sidebar" role="complementary">
+Need to decide what goes here.....
+<!--
 	<?php do_action( 'bp_inside_before_sidebar' ) ?>
 
 	<?php if ( is_user_logged_in() ) : ?>
@@ -69,8 +69,7 @@
 	<?php dynamic_sidebar( 'sidebar-1' ) ?>
 
 	<?php do_action( 'bp_inside_after_sidebar' ) ?>
-
-	</div><!-- .padder -->
-</aside><!-- #sidebar -->
+-->
+	</div>
 
 <?php do_action( 'bp_after_sidebar' ) ?>

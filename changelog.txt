@@ -34,6 +34,11 @@ Tags: buddypress, two-column, fixed-width
 - Create a content-profile that uses a sidebar and also not full width content
 - Comment out the navigation on the activity stream for now until decide if using
 
-Key things that need doing:
-- Need to have the comments show / hide so you can view on clicking the comments - need scripting for this - any ideas?
-- We also need to merge the navigation into the buddybar - any ideas?
+03/12/2011 eve:
+- Changelog updated
+- Linked in modernizr as wasn't being called correctly
+- Found bug on textarea not resizing - needs fix
+- Changed buttons to all use same link colour for simplicity
+- Sidebar shouldn't be an aside those are in sidebars not entire sidebar
+- Basic profile page layout
+- Added basic comment styling in

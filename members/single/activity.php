@@ -8,8 +8,8 @@
  */
 
 ?>
-
-<div class="item-list-tabs no-ajax" id="subnav" role="navigation">
+<div id="activity-navigation">
+<nav class="item-list-tabs no-ajax" id="subnav" role="navigation">
 	<ul>
 
 		<?php bp_get_options_nav() ?>
@@ -57,8 +57,8 @@
 			</select>
 		</li>
 	</ul>
-</div><!-- .item-list-tabs -->
-
+</nav><!-- .item-list-tabs -->
+</div>
 <?php do_action( 'bp_before_member_activity_post_form' ); ?>
 
 <?php

@@ -77,7 +77,6 @@
 		<?php endif; ?>
 
 	</div>
-	</section>
 	<?php do_action( 'bp_before_activity_entry_comments' ); ?>
 
 	<?php if ( ( is_user_logged_in() && bp_activity_can_comment() ) || bp_activity_get_comment_count() ) : ?>
@@ -111,7 +110,8 @@
 	<?php endif; ?>
 
 	<?php do_action( 'bp_after_activity_entry_comments' ); ?>
-
+	
+	</section>
 </li>
 
 <?php do_action( 'bp_after_activity_entry' ); ?>
