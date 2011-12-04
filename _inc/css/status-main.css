@@ -77,37 +77,6 @@ footer {clear: both;}
 nav, #content, .padder {
 	padding: 1%;
 }
-/** media queries device specific structural **/
-
-@media screen and () {
-
-
-}
-
-@media screen and () {
-
-
-}
-
-@media screen and (min-width: 760px) {
- body {}
-
-	#content-wrap {
-		float: left;
-		margin-right: -200px;
-		width: 100%;
-	}
-	#content {
-		margin-right: 200px;
-		padding-top: 1px;
-	}
-	#sidebar {
-		float: right;
-		margin-left: -180px;
-		width: 180px;
-	}	
-}
-
 /* >Navigational
 ------------------------------------------------------------------------------*/
 
@@ -189,4 +158,35 @@ footer #members-loop ul li {
 /* For IE 6/7 (trigger hasLayout) */
 .clearfix {
   zoom:1;
+}
+
+/** media queries device specific structural **/
+
+@media screen and () {
+
+
+}
+
+@media screen and () {
+
+
+}
+
+@media screen and (min-width: 760px) {
+ body {}
+
+	#content-wrap {
+		float: left;
+		margin-right: -200px;
+		width: 100%;
+	}
+	#content {
+		margin-right: 200px;
+		padding-top: 1px;
+	}
+	#sidebar {
+		float: right;
+		margin-left: -180px;
+		width: 180px;
+	}	
 }
