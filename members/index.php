@@ -13,9 +13,7 @@
 
 	<?php do_action( 'bp_before_directory_members_page' ); ?>
 
-	<div id="content">
-		<div class="padder">
-
+	<div id="content-profile">
 		<?php do_action( 'bp_before_directory_members' ); ?>
 
 		<form action="" method="post" id="members-directory-form" class="dir-form">
@@ -86,7 +84,6 @@
 
 		<?php do_action( 'bp_after_directory_members' ); ?>
 
-		</div><!-- .padder -->
 	</div><!-- #content -->
 
 	<?php do_action( 'bp_after_directory_members_page' ); ?>

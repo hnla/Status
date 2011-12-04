@@ -39,7 +39,7 @@
 body {
 	background: #f4f4f4;
 	/* temp font stack */
-	font: 100%/1.7 Geneva, 'Lucida Sans', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+	font: 100%/1.7 Arial, sans-serif;
 	color: #555;
 }
 h1 {font-size: 1.8em;}
@@ -48,11 +48,9 @@ h3 {font-size: 1.4em;}
 h4 {font-size: 1.2em ;}
 h5 {font-size: 1.1em;}
 h6 {font-size: 1em;}
-h1, h2, h3, h4 {margin: .6em 0}
 
 img {
 	width: auto !important;
-	width: 100%;
 	max-width: 100%;
 }
 
@@ -60,10 +58,7 @@ nav ul, .looplist, .item-list-tabs ul {
 	list-style: none;
 	padding-left: 0;
 }
-a {
-	text-decoration: none;
-	color: #8B9681;
-}
+
 /* >Structural
 ------------------------------------------------------------------------------*/
 /** Generic structural - for all devices **/
@@ -74,9 +69,7 @@ a {
 	width: 86%;
 }
 footer {clear: both;}
-nav, #content, .padder {
-	padding: 1%;
-}
+
 /* >Navigational
 ------------------------------------------------------------------------------*/
 
@@ -91,32 +84,21 @@ nav ul li,
 .item-list-tabs li {
 	display: inline;
 	display: inline-block;
-	margin-right: .5em;
 }
 /* >Primary site sections
 ------------------------------------------------------------------------------*/
 /** header **/
 
 /** footer **/
-footer {
- background: #242424;
-}
-
-footer #members-loop {
-	background: #464646;
-	padding: 1%;
-}
-footer #members-loop ul {margin: 0;}
-footer #members-loop ul li {
+#friends-loop ul {margin: 0;}
+#friends-loop ul li {
 	background: #646464;
 	border: 1px solid #6E6E6E;
 	display: inline;
 	display: inline-block;
-	padding: .1em;
 }
 #site-generator p {
 	margin: 0;
-	padding: 1%;
 }
 /** sidebar **/
 
@@ -127,7 +109,6 @@ footer #members-loop ul li {
 .home .status-signup {
 	background: #fafafa;
 	border: 1px solid #ddd;
-	padding: 1%;
 }
 
 /* >Forms & tables
@@ -173,20 +154,5 @@ footer #members-loop ul li {
 }
 
 @media screen and (min-width: 760px) {
- body {}
-
-	#content-wrap {
-		float: left;
-		margin-right: -200px;
-		width: 100%;
-	}
-	#content {
-		margin-right: 200px;
-		padding-top: 1px;
-	}
-	#sidebar {
-		float: right;
-		margin-left: -180px;
-		width: 180px;
-	}	
+	
 }

@@ -30,13 +30,6 @@
 			
 			<?php if ( is_user_logged_in() ) : ?>
 			<article class="status-block-welcome">
-				<h1>Home page  - logged in view</h1>
-					<p>Idealy when we are logged in this page view is the main activity stream 
-						directory view or user profile, so a means needs to be found of doing a 
-						re-direct to these pages or simply doing away with bp activity directory and 
-						building a new activity loop in this home page under the logged in section. This of course has possible ramifications on how we handle bp pages for components.</p>
-					<p>Sidebar for the homepage view is probably redundent? it's set to show for 
-					logged in view for the moment. Structured to show in a standard-ish veiw for screen sizes above 760px? floated right. All subject to change.</p>
 			</article>
 			<?php endif; ?>
 

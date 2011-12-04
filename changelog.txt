@@ -14,3 +14,26 @@ Tags: buddypress, two-column, fixed-width
 
 
 
+03/12/2011 : 
+- Need to find some way to show on front not just use index.php for the activity - that is the only view
+- From now on set to activity front page until get solution to above
+- No sidebar so get rid
+- Change default font being used
+- Don't put max-width on body put on wrapper for responsive
+- Call it site-wrapper to be more semantic
+- Remove padder classes as we can do in divs better to control on responsive
+- Get rid of 1% padding on nav, content and padder won't be using - easier to control for multiple devices
+- Make header fit to design
+- Make full width front page
+- Remove site-wrapper create section wrappers
+- Better default link colour
+- Keep normlising in normalise.css not in status-main.css
+- Remove any 1% paddings put on each element as style for ease
+- Just set max-width on img for ease
+- Remove content-wrap and use container as the wrapper for content section
+- Create a content-profile that uses a sidebar and also not full width content
+- Comment out the navigation on the activity stream for now until decide if using
+
+Key things that need doing:
+- Need to have the comments show / hide so you can view on clicking the comments - need scripting for this - any ideas?
+- We also need to merge the navigation into the buddybar - any ideas?

@@ -10,9 +10,7 @@
 ?>
 
 <?php get_header( 'buddypress' ); ?>
-<div id="content-wrap">
-	<div id="content">
-
+	<div id="content-profile">
 
 			<?php do_action( 'bp_before_member_home_content' ); ?>
 
@@ -77,9 +75,5 @@
 
 	
 	</div><!-- #content -->
-</div><!-- content-wrap -->
-<?php if($profile_sidebar == true) {// do we want the sidebar in user profiles? ?>
 <?php get_sidebar( 'buddypress' ); ?>
-<?php } ?>
-
 <?php get_footer( 'buddypress' ); ?>

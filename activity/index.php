@@ -12,9 +12,7 @@
 <?php get_header( 'status' ); ?>
 
 	<?php do_action( 'bp_before_directory_activity_page' ); ?>
-<div id="content-wrap">
 	<div id="content" role="main">
-		<div class="padder">
 
 			<?php do_action( 'bp_before_directory_activity' ); ?>
 
@@ -34,7 +32,7 @@
 
 			<?php do_action( 'template_notices' ); ?>
 
-			<nav class="site-tabs dir-tabs activity-type-tabs" role="navigation menubar">
+			<!--<nav class="site-tabs dir-tabs activity-type-tabs" role="navigation menubar">
 				<ul>
 					<?php do_action( 'bp_before_activity_type_tab_all' ); ?>
 
@@ -82,9 +80,8 @@
 
 					<?php do_action( 'bp_activity_type_tabs' ); ?>
 				</ul>
-			</nav><!-- .dir-tabs -->
-
-			<nav class="item-list-tabs no-ajax" id="subnav" role="navigation">
+			</nav>--><!-- .dir-tabs -->
+			<!--<nav class="item-list-tabs no-ajax" id="subnav" role="navigation">
 				<ul>
 					<li class="feed"><a href="<?php bp_sitewide_activity_feed_link() ?>" title="<?php _e( 'RSS Feed', 'buddypress' ); ?>"><?php _e( 'RSS', 'buddypress' ); ?></a></li>
 
@@ -130,7 +127,7 @@
 						</select>
 					</li>
 				</ul>
-			</nav><!-- .item-list-tabs -->
+			</nav>--><!-- .item-list-tabs -->
 
 			<?php do_action( 'bp_before_directory_activity_list' ); ?>
 
@@ -148,10 +145,6 @@
 
 			<?php do_action( 'bp_after_directory_activity' ); ?>
 
-		</div><!-- / .padder -->
 	</div><!-- / #content -->
-</div><!-- / #content-wrap -->
 	<?php do_action( 'bp_after_directory_activity_page' ); ?>
-
-<?php get_sidebar( 'buddypress' ); ?>
 <?php get_footer( 'buddypress' ); ?>

@@ -27,29 +27,23 @@
 	</head>
 
 	<body <?php body_class() ?> id="status-default">
-		<div id="wrapper">
 		<?php do_action( 'bp_before_header' ) ?>
 
 		<div id="header-wrapper">
-			<header id="branding" role="banner">
-				<div class="padder">
+			<header>
+				<div id="branding" role="banner">
 					<h1 id="logo"><a href="<?php echo home_url(); ?>" title="<?php _ex( 'Home', 'Home page banner link title', 'buddypress' ); ?>"><?php bp_site_name(); ?></a></h1>
-
-
-				</div><!-- .padder -->
+				</div>
+				<nav id="primary-navigation" role="navigation">
+					<?php wp_nav_menu( array( 'container' => false, 'menu_id' => 'nav', 'theme_location' => 'primary', 'fallback_cb' => 'bp_dtheme_main_nav' ) ); ?>
+				</nav>
+				<?php do_action( 'bp_header' ) ?>
 			</header>
-
-			<nav id="primary-navigation" role="navigation">
-				<?php wp_nav_menu( array( 'container' => false, 'menu_id' => 'nav', 'theme_location' => 'primary', 'fallback_cb' => 'bp_dtheme_main_nav' ) ); ?>
-			</nav>
-
-			<?php do_action( 'bp_header' ) ?>
-
-		</div><!-- #header -->
+		</div>
 
 		<?php do_action( 'bp_after_header' ) ?>
 		<?php do_action( 'bp_before_container' ) ?>
-
+		
 		<div id="container">
 		
 	<?php

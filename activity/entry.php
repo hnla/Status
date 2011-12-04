@@ -15,6 +15,7 @@
 <?php do_action( 'bp_before_activity_entry' ); ?>
 
 <li class="<?php bp_activity_css_class(); ?>" id="activity-<?php bp_activity_id(); ?>">
+	<section class="activity-entry">
 	<div class="activity-avatar">
 		<a href="<?php bp_activity_user_link(); ?>">
 
@@ -24,23 +25,15 @@
 	</div>
 
 	<div class="activity-content">
-
 		<div class="activity-header">
-
 			<?php bp_activity_action(); ?>
-
 		</div>
-
 		<?php if ( 'activity_comment' == bp_get_activity_type() ) : ?>
-
 			<div class="activity-inreplyto">
 				<strong><?php _e( 'In reply to: ', 'buddypress' ); ?></strong><?php bp_activity_parent_content(); ?> <a href="<?php bp_activity_thread_permalink(); ?>" class="view" title="<?php _e( 'View Thread / Permalink', 'buddypress' ); ?>"><?php _e( 'View', 'buddypress' ); ?></a>
 			</div>
-
 		<?php endif; ?>
-
 		<?php if ( bp_activity_has_content() ) : ?>
-
 			<div class="activity-inner">
 
 				<?php bp_activity_content_body(); ?>
@@ -84,7 +77,7 @@
 		<?php endif; ?>
 
 	</div>
-
+	</section>
 	<?php do_action( 'bp_before_activity_entry_comments' ); ?>
 
 	<?php if ( ( is_user_logged_in() && bp_activity_can_comment() ) || bp_activity_get_comment_count() ) : ?>
