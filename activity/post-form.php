@@ -8,7 +8,7 @@
  */
 
 ?>
-<div id="whats-new-declare">
+<div id="whats-new-declare" class="clearfix">
 <form action="<?php bp_activity_post_form_action(); ?>" method="post" id="whats-new-form" name="whats-new-form" role="complementary">
 	<?php do_action( 'bp_before_activity_post_form' ); ?>
 	<section id="whats-new-about">

@@ -15,7 +15,7 @@
 <?php do_action( 'bp_before_activity_entry' ); ?>
 
 <li class="<?php bp_activity_css_class(); ?>" id="activity-<?php bp_activity_id(); ?>">
-	<section class="activity-entry">
+	<div class="activity-entry">
 	<div class="activity-avatar">
 		<a href="<?php bp_activity_user_link(); ?>">
 

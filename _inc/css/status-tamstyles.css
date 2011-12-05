@@ -89,7 +89,6 @@ ul#nav{
 }
 
 #whats-new-declare{
-	overflow: hidden;
 	margin-top: 20px;
 }
 
@@ -125,6 +124,7 @@ ul#nav{
 
 #whats-new-textarea textarea{
 	width: 99%;
+	height: 20px;
 	border: 1px solid #eeeeee;
 	-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;
 }
@@ -157,7 +157,7 @@ ul#nav{
 }
 
 .activity-entry, .activity-comment{
-	padding: 10px;
+	clear: both;
 	background: #ffffff;
 	border-top: 1px solid #ffffff;
 	border-right: 2px solid #dddddd;
@@ -166,6 +166,7 @@ ul#nav{
 	-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;
 	margin-bottom: 20px;
 	overflow: hidden;
+	padding: 10px;
 }
 
 .activity-avatar, .acomment-avatar{

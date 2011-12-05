@@ -42,3 +42,10 @@ Tags: buddypress, two-column, fixed-width
 - Sidebar shouldn't be an aside those are in sidebars not entire sidebar
 - Basic profile page layout
 - Added basic comment styling in
+
+05/12/11 hnla:
+- Added Status script file + enqueueing 
+- Modified dynamic cache bust to check file extension & add correct path css/scripts
+- Corrected? 'What's new textarea' BP keeps textarea short using 'height: 20px'
+- Removed overflow: hidden for 'what's-new-textarea' replaced with 'clearfix' n.b can be reverted
+- Added 'clear: both' to '.activity-entry', '.activity-comment' n.b can be reverted
