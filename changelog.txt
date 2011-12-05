@@ -14,7 +14,7 @@ Tags: buddypress, two-column, fixed-width
 
 
 
-03/12/2011 : 
+03/12/2011 tam: 
 - Need to find some way to show on front not just use index.php for the activity - that is the only view
 - From now on set to activity front page until get solution to above
 - No sidebar so get rid
@@ -34,7 +34,7 @@ Tags: buddypress, two-column, fixed-width
 - Create a content-profile that uses a sidebar and also not full width content
 - Comment out the navigation on the activity stream for now until decide if using
 
-03/12/2011 eve:
+03/12/2011 tam eve:
 - Changelog updated
 - Linked in modernizr as wasn't being called correctly
 - Found bug on textarea not resizing - needs fix
@@ -49,3 +49,7 @@ Tags: buddypress, two-column, fixed-width
 - Corrected? 'What's new textarea' BP keeps textarea short using 'height: 20px'
 - Removed overflow: hidden for 'what's-new-textarea' replaced with 'clearfix' n.b can be reverted
 - Added 'clear: both' to '.activity-entry', '.activity-comment' n.b can be reverted
+
+05/12/11 tam
+- Merged CSS as per discussion
+- Added in fix for favourites
