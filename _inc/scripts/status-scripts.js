@@ -8,6 +8,7 @@ jQuery(document).ready( function() {
 jQuery('.activity-comments').hide();
 jQuery('.activity-entry').addClass('hide-comments');
 jQuery('a.close-comments').hide();
+
 var is_hidden = true;
 	
 		jQuery('.button').click(function(){

@@ -189,9 +189,12 @@ footer {
 ------------------------------------------------------------------------------*/
 /** home page **/
 
+/* until we know what we are doing with logged out signup some padding/margins */
 .home .status-signup {
 	background: #fafafa;
 	border: 1px solid #ddd;
+	margin-bottom: 10px;
+	padding: 5px;
 }
 /* >Activity screens
 ------------------------------------------------------------------------------*/

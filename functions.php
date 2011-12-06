@@ -61,6 +61,13 @@ function status_get_file_last_mod($filename) {
 	return $version;
 }
 
+//function bp_dtheme_main_nav() {
+
+//}
+function m() {
+echo '<ul><li>say stuff here</li></ul>';
+}
+add_action('bp_nav_items', 'm');
 /*** activity comments staus show comments ***/
 function status_show_comments() {
 	echo '<a class="button bp-primary-action show-comments" >' . __('Show Comments', 'status') . '</a>' ;
