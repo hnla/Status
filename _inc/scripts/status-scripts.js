@@ -4,6 +4,36 @@
 
 // Show / Hide activity comments
 jQuery(document).ready( function() {
+
+jQuery('.activity-comments').hide();
+jQuery('.activity-entry').addClass('hide-comments');
+jQuery('a.close-comments').hide();
+var is_hidden = true;
+	
+		jQuery('.button').click(function(){
+		if(jQuery(this).parents('.activity-entry').children('.activity-comments').css('display') == 'none'){
+		jQuery(this).addClass('comments-visible');
+		jQuery(this).parents('.activity-entry').children('.activity-comments').slideDown('2000');
+		//jQuery(this).removeClass('show-comments');
+		jQuery(this).hide();
+		jQuery(this).siblings('a.close-comments').show();
+		
+		is_hidden = false;
+		}
+		});
+//if(jQuery(this).parents('.activity-entry').children('.activity-comments').css('display') == 'block'){
+		jQuery('a.close-comments').bind('click',function() {
+		//alert(is_hidden);
+		jQuery(this).parents('.activity-entry').children('.activity-comments').slideUp('2000');
+		jQuery(this).addClass('close-up');
+		jQuery(this).hide();
+		jQuery(this).siblings('a.show-comments').show();
+
+
+		});
+
+
+/*************************************/
 /*
 jQuery('.activity-entry .activity-comments').hide();
 jQuery('.activity-entry').addClass('hide-comments');
@@ -19,9 +49,7 @@ jQuery('.activity-entry').addClass('hide-comments');
 
 	}
 
-	
-
-	function hideSubNav(t) {
+		function hideSubNav(t) {
 
 		jQuery(this).removeClass("active");
 				jQuery(this).html(  'Show Comments');
@@ -31,41 +59,6 @@ jQuery('.activity-entry').addClass('hide-comments');
 	}
 	jQuery("#show-comments").toggle(showSubNav, hideSubNav);
 */
-jQuery('.activity-entry .activity-comments').hide();
-jQuery('.activity-entry').addClass('hide-comments');
-var is_hidden = true;
-jQuery('.show-comments').bind('click',function(){});
-
-//	jQuery(this).addClass('comments-visible');
-//		if(is_hidden == false){
-		jQuery(this).click(function(){
-//		alert(is_hidden);
-		if(is_hidden == true){
-		jQuery('.activity-comments').slideDown('2000');
-		is_hidden = false;
-		}
-		if(is_hidden == false) {
-		jQuery('.show-comments').click(function(){
-		jQuery('.activity-comments').slideUp('2000');
-		});
-		}
-		//is_hidden = true;
-		//});
-//	 },function() {
-		//if(is_hidden == true){
-		//jQuery(this).click(function(){
-		
-		jQuery('.activity-comments').slideUp('2000');
-		//is_hidden = true;
-		
-//		});
-//	}
-	return false;
-});
-
-
-
-
 
 
 });
