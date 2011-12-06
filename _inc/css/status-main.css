@@ -300,6 +300,9 @@ a.unfav, a.fav, a.show-comments, a.close-comments {
 	padding: 2px 0 0 15px;
 	margin-right: 5px;
 }
+a.show-comments, a.close-comments {
+ cursor: pointer;
+}
 a.delete-activity{	
 	padding: 2px 0 0 15px;
 	margin-right: 5px;

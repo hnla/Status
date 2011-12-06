@@ -71,8 +71,8 @@ echo '<ul><li>say stuff here</li></ul>';
 /*** activity comments staus show comments ***/
 function status_show_comments() {
 	if( bp_activity_get_comment_count() ){
-	echo '<a class="button bp-primary-action show-comments" >' . __('Show Comments', 'status') . '</a>' ;
-	echo ' <a class="button bp-primary-action close-comments" >' . __('Close Comments', 'status') . '</a>';
+	echo '<a class="button bp-primary-action show-comments" title="' . __('View comments to this entry', 'status') . '">' . __('Show Comments', 'status') . '</a>' ;
+	echo ' <a class="button bp-primary-action close-comments" title="' . __('Hide these comments', 'status') . '" >' . __('Close Comments', 'status') . '</a>';
 	}
 }
 add_action('bp_activity_entry_meta', 'status_show_comments');
