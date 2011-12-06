@@ -55,3 +55,16 @@ Tags: buddypress, two-column, fixed-width
 - Added in fix for favourites
 - First wave of icons which only show on hover for now until get feedback
 - Changed some bold fonts and font sizes to give the activity posts bit more impact
+
+06/12/11 tam
+- Removed 96% on viewport until we set one width later for all - better all have it than just one
+- Added hover over colour for activity li
+- Removed margin on bottom of avatars in li
+- Removed sections in sections on the front page - a section shouldn't be in another
+- Removed outside html on front page - each should be in each loop as discussed so can have better layout control
+- Removed 'status' on footer and sidebar calls as it won't have child themes we don't need to use footer-status and such - no plans for different footers or headers like that in design
+
+06/12/11 tam
+- Removed welcome message lets use just activity
+- Redirected to index.php for activity - willing to work out later just getting done
+- Added tails to speech
