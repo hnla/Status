@@ -88,8 +88,13 @@ nav ul, .looplist, .item-list-tabs ul {
 	overflow: hidden;
 }
 .home #content-wrapper{
-	margin: 0 auto;
+	margin: 50px auto;
 	max-width: 550px;
+	overflow: hidden;
+}
+.home.logged-in #content-wrapper{
+	margin: 0 auto;
+	max-width: 1250px;
 	overflow: hidden;
 }
 #content-wrapper, #header-wrapper, #friends-wrapper,
@@ -198,10 +203,13 @@ footer {
 
 /* until we know what we are doing with logged out signup some padding/margins */
 .home .status-signup {
-	background: #fafafa;
-	border: 1px solid #ddd;
-	margin-bottom: 10px;
-	padding: 5px;
+	background: #ffffff;
+	border-top: 1px solid #ffffff;
+	border-right: 2px solid #dddddd;
+	border-bottom: 2px solid #dddddd;
+	border-left: 1px solid #ffffff;
+	-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;
+	padding: 0px 20px 20px 20px;
 }
 /* >Activity screens
 ------------------------------------------------------------------------------*/
@@ -222,8 +230,19 @@ footer {
 	border-left: 1px solid #ffffff;
 	-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;
 }
-#whats-new-textarea {
+
+#whats-new-wrapper{
 	margin-left: 90px;
+}
+
+#whats-new-tail{
+	background: url('../images/speech-tail.png') 0 15px no-repeat;
+	height: 50px;
+	width: 40px;	
+	float: left;
+}
+#whats-new-textarea {
+	margin-left: 40px;
 	padding: 10px;
 	background: #ffffff;
 	border-top: 1px solid #ffffff;
@@ -237,7 +256,7 @@ footer {
 }
 #whats-new-textarea textarea {
 	width: 99%;
-	height: 20px;
+	height: 40px;
 	border: 1px solid #eeeeee;
 	-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;
 }

@@ -63,3 +63,8 @@ Tags: buddypress, two-column, fixed-width
 - Removed sections in sections on the front page - a section shouldn't be in another
 - Removed outside html on front page - each should be in each loop as discussed so can have better layout control
 - Removed 'status' on footer and sidebar calls as it won't have child themes we don't need to use footer-status and such - no plans for different footers or headers like that in design
+
+06/12/11 tam
+- Removed welcome message lets use just activity
+- Redirected to index.php for activity - willing to work out later just getting done
+- Added tails to speech

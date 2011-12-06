@@ -17,8 +17,11 @@
 				<?php bp_loggedin_user_avatar( 'width=' . bp_core_avatar_thumb_width() . '&height=' . bp_core_avatar_thumb_height() ); ?>
 			</a>
 		</div>
-		<div id="whats-new-textarea">
-			<textarea name="whats-new" id="whats-new" cols="50" rows="10"><?php if ( isset( $_GET['r'] ) ) : ?>@<?php echo esc_attr( $_GET['r'] ); ?> <?php endif; ?></textarea>
+		<div id="whats-new-wrapper">
+			<div id="whats-new-tail"></div>
+			<div id="whats-new-textarea">
+				<textarea name="whats-new" id="whats-new" cols="50" rows="10"><?php if ( isset( $_GET['r'] ) ) : ?>@<?php echo esc_attr( $_GET['r'] ); ?> <?php endif; ?></textarea>
+			</div>
 		</div>
 	</section>
 	<section id="whats-new-content">

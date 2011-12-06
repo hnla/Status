@@ -20,14 +20,6 @@
 			<?php endif; ?>
 			
 			<?php if ( is_user_logged_in() ) : ?>
-				<div id="content-home-loggedout" role="main">	
-					<article class="status-block-activity">		
-						<h2><?php _e('Welcome ', 'status') ?><?php echo   bp_core_get_userlink( bp_loggedin_user_id() ); ?></h2>
-						<?php locate_template( array( 'activity/post-form.php'), true ); ?>					
-						<div class="activity" role="main">
-						<?php locate_template( array( 'activity/activity-loop.php' ), true ); ?>
-						</div><!-- .activity -->
-					</article>
-				</div><!-- / #content -->
+						<?php locate_template( array( 'activity/index.php' ), true ); ?>			
 			<?php endif; ?>
 <?php get_footer( ); ?>

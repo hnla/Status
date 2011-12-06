@@ -10,7 +10,6 @@
 ?>
 
 <?php get_header(); ?>
-<div id="content-wrapper">
 	<?php do_action( 'bp_before_directory_activity_page' ); ?>
 	<div id="content" role="main">
 
