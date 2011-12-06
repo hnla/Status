@@ -12,10 +12,10 @@
 --------------------------------------------------------------------------------
  Stylesheet Sections
 --------------------------------------------------------------------------------
-1. Defaults & typography (General site wide) 
+1. Defaults & typography  
 
-2. Structural layout elements & media queries
-
+2. Structural - Generic site wide
+	
 3. Navigational: main nav & object nav / list tabs
 
 4. Primary site sections & descendent child elements
@@ -28,9 +28,13 @@
 	5.2 - Activity main view
 	5.3 -  
 
-6. Forms & Tables
+6. Lists & Loops
 
-7. Classes & clearfix
+7. Forms & Tables
+
+8. Classes & clearfix
+
+9.  Media queries  - site structure
 */
 
 /* >defaults & typography
@@ -48,12 +52,27 @@ h3 {font-size: 1.4em;}
 h4 {font-size: 1.2em ;}
 h5 {font-size: 1.1em;}
 h6 {font-size: 1em;}
-
+p {
+	margin: 0 0 10px 0;
+}
+a, a:link {
+ color: #55bbee;
+ text-decoration: none;
+}
+a:visited {
+	color: #99ddee;
+	text-decoration: none;
+}
+a:focus, a:hover {
+	color: #1188cc;
+}
+header a, header a:link, header a:visited {
+	color: #cccccc;
+}
 img {
 	width: auto !important;
 	max-width: 100%;
 }
-
 nav ul, .looplist, .item-list-tabs ul {
 	list-style: none;
 	padding-left: 0;
@@ -61,12 +80,25 @@ nav ul, .looplist, .item-list-tabs ul {
 
 /* >Structural
 ------------------------------------------------------------------------------*/
-/** Generic structural - for all devices **/
+/** Generic - site-wide **/
 
-#wrapper {
+#container {
 	margin: 0 auto;
 	max-width: 1250px;
-	width: 86%;
+	overflow: hidden;
+ width: 96%; 	/* personally I like to keep a distance from viewport? */ 
+}
+#container, #header-wrapper, #friends-wrapper,
+#widgets-wrapper, #footer-wrapper {
+	overflow: hidden;
+}
+#sidebar {
+	float: right;
+	width: 20%;
+}
+#content-profile {
+	float: left;
+	width: 78%;
 }
 footer {clear: both;}
 
@@ -80,22 +112,73 @@ body#bp-default #wp-admin-bar .padder {
 }
 
 /** Generic nav elements **/
+nav {
+	float: left;
+}
+#nav li {
+	font-size: 0.9em;
+	margin-left: 10px;
+	padding-top: 5px;
+}
+ul#nav {
+	margin-left: 20px;
+}
 nav ul li,
 .item-list-tabs li {
 	display: inline;
 	display: inline-block;
 }
+/** item-list-tabs, object nav, subnav **/
+#item-nav li, #subnav li {
+	margin-right: 10px;
+} 
 /* >Primary site sections
 ------------------------------------------------------------------------------*/
 /** header **/
-
-/** footer **/
+/*header{
+	margin: 0 auto;
+	max-width: 1250px;
+} header is now named 'header-wrapper' ?*/
+#branding {
+	float: left;
+}
+#header-wrapper {
+	background: #333333;	
+	padding: 5px 0px;
+}
+#branding h1 {
+	padding: 0;
+	margin: 0;
+	font-size: 1.1em;
+}
+/** footer region **/
+#footer-wrapper {
+	background: #242424;
+}
+#friends-wrapper, #widgets-wrapper {
+	background: #464646;
+}
+footer {
+	margin: 0 auto;
+	max-width: 1250px;
+	padding: 10px;
+	font-size: 0.9em;
+}
+#friends-loop {
+	margin: 0 auto;
+	max-width: 1250px;
+	font-size: 0.85em;
+}
 #friends-loop ul {margin: 0;}
 #friends-loop ul li {
 	background: #646464;
 	border: 1px solid #6E6E6E;
 	display: inline;
 	display: inline-block;
+}
+#footer-widg-block {
+	margin: 0 auto;
+	max-width: 1250px;
 }
 #site-generator p {
 	margin: 0;
@@ -110,8 +193,164 @@ nav ul li,
 	background: #fafafa;
 	border: 1px solid #ddd;
 }
+/* >Activity screens
+------------------------------------------------------------------------------*/
+/** Activity 'what's new' **/
+#whats-new-declare {
+	margin-top: 20px;
+}
+#whats-new-avatar {
+	float: left;
+	width: 80px;
+}
+#whats-new-avatar img {
+	padding: 10px;
+	background: #ffffff;
+	border-top: 1px solid #ffffff;
+	border-right: 2px solid #dddddd;
+	border-bottom: 2px solid #dddddd;
+	border-left: 1px solid #ffffff;
+	-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;
+}
+#whats-new-textarea {
+	margin-left: 90px;
+	padding: 10px;
+	background: #ffffff;
+	border-top: 1px solid #ffffff;
+	border-right: 2px solid #dddddd;
+	border-bottom: 2px solid #dddddd;
+	border-left: 1px solid #ffffff;
+	-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;
+}
+#what-new-content {
+	clear: both;
+}
+#whats-new-textarea textarea {
+	width: 99%;
+	height: 20px;
+	border: 1px solid #eeeeee;
+	-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;
+}
+#whats-new-options {
+	float: right;
+	padding-top: 10px;
+}
+#whats-new-submit {
+	float: right;
+}
+#whats-new-post-in-box {
+	float: right;
+	margin-right: 10px;
+	padding: 5px 10px;
+	background: white;
+	border-top: 1px solid #ffffff;
+	border-right: 2px solid #dddddd;
+	border-bottom: 2px solid #dddddd;
+	border-left: 1px solid #ffffff;
+	-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;
+	color: #aaaaaa;
+	font-style: italic;
+}
+/** Activity loop **/
 
-/* >Forms & tables
+.activity-list li{
+	list-style: none;
+}
+.activity-entry, .activity-comment{
+	clear: both;
+	background: #ffffff;
+	border-top: 1px solid #ffffff;
+	border-right: 2px solid #dddddd;
+	border-bottom: 2px solid #dddddd;
+	border-left: 1px solid #ffffff;
+	-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;
+	margin-bottom: 20px;
+	overflow: hidden;
+	padding: 10px;
+}
+.activity-avatar, .acomment-avatar{
+	float: left;
+	margin: 0 20px 20px 0;
+}
+.activity-avatar img{
+	border: 3px solid #eeeeee;
+}
+ul#activity-stream{
+	margin: 20px 0 0 0;
+	padding: 0;
+}
+.activity-content{
+	margin-left: 80px;
+}
+.activity-meta{
+	font-size: 0.9em;
+}
+.activity-header{
+	font-size: 0.9em;
+	font-weight: bold;
+}
+a.acomment-reply{	
+	padding: 2px 0 0 15px;
+	margin-right: 5px;
+}
+a.unfav, a.fav{	
+	padding: 2px 0 0 15px;
+	margin-right: 5px;
+}
+a.delete-activity{	
+	padding: 2px 0 0 15px;
+	margin-right: 5px;
+}
+a:hover.acomment-reply{	
+	background: url('../images/icon-speech.png') 0px 3px no-repeat;
+	padding: 2px 0 0 15px;
+	margin-right: 5px;
+}
+a:hover.unfav, a:hover.fav{	
+	background: url('../images/icon-fav.png') 0px 3px no-repeat;
+	padding: 2px 0 0 15px;
+	margin-right: 5px;
+}
+a:hover.delete-activity{	
+	background: url('../images/icon-delete.png') 0px 3px no-repeat;
+	padding: 2px 0 0 15px;
+	margin-right: 5px;
+}
+/** Activity comments **/
+.activity-comments>ul {
+	border-top: 1px solid #dddddd;
+	margin-top: 20px;
+	padding-top: 20px;
+}
+.activity-comments li {
+	border-bottom: 1px solid #dddddd;
+	padding: 0 0 10px 0;
+}
+/** Account / Profile screens **/
+#item-header, #activity-navigation{
+	border-top: 1px solid #ffffff;
+	border-right: 2px solid #dddddd;
+	border-bottom: 2px solid #dddddd;
+	border-left: 1px solid #ffffff;
+	padding: 10px;
+	margin-top: 20px;
+	overflow: hidden;
+	text-decoration: none;
+	background: #fbfbfb;
+	font-size: 0.9em;
+	-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;
+}
+#item-header-avatar{
+	float: left;
+	margin-right: 20px;
+}
+#item-header-avatar img{
+	border: 3px solid #eeeeee;
+}
+/* Lists & Loops
+------------------------------------------------------------------------------*/
+
+/* >Forms & Tables
 ------------------------------------------------------------------------------*/
 /** generic form styles **/
 #status-default fieldset {
@@ -123,6 +362,26 @@ nav ul li,
 }
 #status-default label {
 	display: block;
+}
+input[type=submit]{	
+	border-right: 1px solid #aaaaaa;
+	border-bottom: 1px solid #aaaaaa;
+	border-top: 1px solid #dddddd;
+	border-left: 1px solid #dddddd;
+	padding: 10px 15px;
+	text-decoration: none;
+	background: #fbfbfb;
+	-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;
+}
+
+input[type=submit]:hover {	
+	background: #f6f6f6;
+}
+#activity-filter-select.last label {
+	float: left;
+} 
+#activity-filter-select.last select {
+	float: right;
 }
 /* >Classes
 ------------------------------------------------------------------------------*/
@@ -141,310 +400,6 @@ nav ul li,
   zoom:1;
 }
 
-body {/* temp font stack */
-	font: 100%/1.7 Arial, sans-serif;
-}
-#container{
-	margin: 0 auto;
-	max-width: 1250px;
-	overflow: hidden;
-}
-#branding{
-	float: left;
-}
-#header-wrapper{
-	overflow: hidden;
-	background: #333333;
-	padding: 5px 0px;
-}
-header{
-	margin: 0 auto;
-	max-width: 1250px;
-}
-#branding h1{
-	padding: 0;
-	margin: 0;
-	font-size: 1.1em;
-}
-a, a:link{
- 	color: #55bbee;
- 	text-decoration: none;
-}
-
-a:visited{
-	color: #99ddee;
-	text-decoration: none;
-}
-
-a:hover{
-	color: #1188cc;
-}
-header a, header a:link, header a:visited{
-	color: #cccccc;
-}
-
-nav{
-	float: left;
-}
-
-#nav li{
-	font-size: 0.9em;
-	margin-left: 10px;
-	padding-top: 5px;
-}
-
-ul#nav{
-	margin-left: 20px;
-}
-
-#whats-new-declare{
-	margin-top: 20px;
-}
-
-#whats-new-avatar{
-	float: left;
-	width: 80px;
-}
-
-#whats-new-avatar img{
-	padding: 10px;
-	background: #ffffff;
-	border-top: 1px solid #ffffff;
-	border-right: 2px solid #dddddd;
-	border-bottom: 2px solid #dddddd;
-	border-left: 1px solid #ffffff;
-	-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;
-}
-
-#whats-new-textarea{
-	margin-left: 90px;
-	padding: 10px;
-	background: #ffffff;
-	border-top: 1px solid #ffffff;
-	border-right: 2px solid #dddddd;
-	border-bottom: 2px solid #dddddd;
-	border-left: 1px solid #ffffff;
-	-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;
-}
-
-#what-new-content{
-	clear: both;
-}
-
-#whats-new-textarea textarea{
-	width: 99%;
-	height: 20px;
-	border: 1px solid #eeeeee;
-	-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;
-}
-
-#whats-new-options{
-	float: right;
-	padding-top: 10px;
-}
-
-#whats-new-submit{
-	float: right;
-}
-
-#whats-new-post-in-box{
-	float: right;
-	margin-right: 10px;
-	padding: 5px 10px;
-	background: white;
-	border-top: 1px solid #ffffff;
-	border-right: 2px solid #dddddd;
-	border-bottom: 2px solid #dddddd;
-	border-left: 1px solid #ffffff;
-	-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;
-	color: #aaaaaa;
-	font-style: italic;
-}
-
-.activity-list li{
-	list-style: none;
-}
-
-.activity-entry, .activity-comment{
-	clear: both;
-	background: #ffffff;
-	border-top: 1px solid #ffffff;
-	border-right: 2px solid #dddddd;
-	border-bottom: 2px solid #dddddd;
-	border-left: 1px solid #ffffff;
-	-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;
-	margin-bottom: 20px;
-	overflow: hidden;
-	padding: 10px;
-}
-
-.activity-avatar, .acomment-avatar{
-	float: left;
-	margin: 0 20px 20px 0;
-}
-
-.activity-avatar img{
-	border: 3px solid #eeeeee;
-}
-
-ul#activity-stream{
-	margin: 20px 0 0 0;
-	padding: 0;
-}
-
-p{
-	margin: 0 0 10px 0;
-}
-
-.activity-content{
-	margin-left: 80px;
-}
-
-#footer-wrapper{
-	overflow: hidden;
-	background: #242424;
-}
-
-#friends-wrapper{
-	overflow: hidden;
-	background: #464646;
-}
-
-#widgets-wrapper{
-	overflow: hidden;
-	background: #464646;
-}
-
-footer{
-	margin: 0 auto;
-	max-width: 1250px;
-	padding: 10px;
-	font-size: 0.9em;
-}
-
-#friends-loop{
-	margin: 0 auto;
-	max-width: 1250px;
-	font-size: 0.85em;
-}
-
-#footer-widg-block{
-	margin: 0 auto;
-	max-width: 1250px;
-}
-
-input[type=submit]{	
-	border-right: 1px solid #aaaaaa;
-	border-bottom: 1px solid #aaaaaa;
-	border-top: 1px solid #dddddd;
-	border-left: 1px solid #dddddd;
-	padding: 10px 15px;
-	text-decoration: none;
-	background: #fbfbfb;
-	-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;
-}
-
-input[type=submit]:hover{	
-	background: #f6f6f6;
-}
-
-.activity-meta{
-	font-size: 0.9em;
-}
-
-.activity-header{
-	font-size: 0.9em;
-	font-weight: bold;
-}
-
-a.acomment-reply{	
-	padding: 2px 0 0 15px;
-	margin-right: 5px;
-}
-
-a.unfav, a.fav{	
-	padding: 2px 0 0 15px;
-	margin-right: 5px;
-}
-
-a.delete-activity{	
-	padding: 2px 0 0 15px;
-	margin-right: 5px;
-}
-
-a:hover.acomment-reply{	
-	background: url('../images/icon-speech.png') 0px 3px no-repeat;
-	padding: 2px 0 0 15px;
-	margin-right: 5px;
-}
-
-a:hover.unfav, a:hover.fav{	
-	background: url('../images/icon-fav.png') 0px 3px no-repeat;
-	padding: 2px 0 0 15px;
-	margin-right: 5px;
-}
-
-a:hover.delete-activity{	
-	background: url('../images/icon-delete.png') 0px 3px no-repeat;
-	padding: 2px 0 0 15px;
-	margin-right: 5px;
-}
-
-#sidebar{
-	float: right;
-	width: 20%;
-}
-
-#content-profile{
-	float: left;
-	width: 78%;
-}
-
-#item-header, #activity-navigation{
-	border-top: 1px solid #ffffff;
-	border-right: 2px solid #dddddd;
-	border-bottom: 2px solid #dddddd;
-	border-left: 1px solid #ffffff;
-	padding: 10px;
-	margin-top: 20px;
-	overflow: hidden;
-	text-decoration: none;
-	background: #fbfbfb;
-	font-size: 0.9em;
-	-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;
-}
-
-#item-header-avatar{
-	float: left;
-	margin-right: 20px;
-}
-
-#item-header-avatar img{
-	border: 3px solid #eeeeee;
-}
-
-#item-nav li, #subnav li{
-	margin-right: 10px;
-}
-
-#activity-filter-select.last label{
-	float: left;
-} 
-
-#activity-filter-select.last select{
-	float: right;
-}
-
-.activity-comments li{
-	border-bottom: 1px solid #dddddd;
-	padding: 0 0 10px 0;
-}
-
-.activity-comments>ul{
-	border-top: 1px solid #dddddd;
-	margin-top: 20px;
-	padding-top: 20px;
-}
 /** media queries device specific structural **/
 
 @media screen and () {
