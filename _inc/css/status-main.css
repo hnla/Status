@@ -348,20 +348,46 @@ input[type=submit]:hover{
 	background: #f6f6f6;
 }
 
-a.button, a.acomment-reply, a.acomment-delete{	
-	border-right: 1px solid #aaaaaa;
-	border-bottom: 1px solid #aaaaaa;
-	border-top: 1px solid #dddddd;
-	border-left: 1px solid #dddddd;
-	padding: 4px 10px;
-	text-decoration: none;
-	background: #fbfbfb;
+.activity-meta{
 	font-size: 0.9em;
-	-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;
 }
 
-a:hover.button{	
-	background: #f6f6f6;
+.activity-header{
+	font-size: 0.9em;
+	font-weight: bold;
+}
+
+a.acomment-reply{	
+	padding: 2px 0 0 15px;
+	margin-right: 5px;
+}
+
+a.unfav, a.fav{	
+	padding: 2px 0 0 15px;
+	margin-right: 5px;
+}
+
+a.delete-activity{	
+	padding: 2px 0 0 15px;
+	margin-right: 5px;
+}
+
+a:hover.acomment-reply{	
+	background: url('../images/icon-speech.png') 0px 3px no-repeat;
+	padding: 2px 0 0 15px;
+	margin-right: 5px;
+}
+
+a:hover.unfav, a:hover.fav{	
+	background: url('../images/icon-fav.png') 0px 3px no-repeat;
+	padding: 2px 0 0 15px;
+	margin-right: 5px;
+}
+
+a:hover.delete-activity{	
+	background: url('../images/icon-delete.png') 0px 3px no-repeat;
+	padding: 2px 0 0 15px;
+	margin-right: 5px;
 }
 
 #sidebar{

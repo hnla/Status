@@ -53,3 +53,5 @@ Tags: buddypress, two-column, fixed-width
 05/12/11 tam
 - Merged CSS as per discussion
 - Added in fix for favourites
+- First wave of icons which only show on hover for now until get feedback
+- Changed some bold fonts and font sizes to give the activity posts bit more impact
