@@ -296,7 +296,7 @@ a.acomment-reply{
 	padding: 2px 0 0 15px;
 	margin-right: 5px;
 }
-a.unfav, a.fav{	
+a.unfav, a.fav, a.show-comments, a.close-comments {	
 	padding: 2px 0 0 15px;
 	margin-right: 5px;
 }
