@@ -50,7 +50,9 @@
 				<?php if ( bp_activity_can_comment() ) : ?>
 
 					<a href="<?php bp_get_activity_comment_link(); ?>" class="button acomment-reply bp-primary-action" id="acomment-comment-<?php bp_activity_id(); ?>"><?php printf( __( 'Comment <span>%s</span>', 'buddypress' ), bp_activity_get_comment_count() ); ?></a>
-
+				<?php 
+				// Do_action moved to bring show links into correct position, hnla
+				do_action( 'bp_activity_entry_meta' ); ?>
 				<?php endif; ?>
 
 				<?php if ( bp_activity_can_favorite() ) : ?>
@@ -69,7 +71,7 @@
 
 				<?php if ( bp_activity_user_can_delete() ) bp_activity_delete_link(); ?>
 
-				<?php do_action( 'bp_activity_entry_meta' ); ?>
+				
 
 			</div>
 
