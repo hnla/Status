@@ -8,7 +8,18 @@ $profile_sidebar = false; //disable the main sidebar in profile member accounts
 
 /****  end misc stuff *******/
 
-// Register functions & regions
+// buddybar is being ditched instruction is to define use wp admin bar - likely we don't want 
+// adminbar but keeping this here commented out
+//define( 'BP_USE_WP_ADMIN_BAR', true );
+
+/*** redirect requests for BP component pages ***/
+
+function status_redirects() { 
+	if ( bp_is_groups_component() || bp_is_forums_component() ) bp_core_redirect( bp_get_root_domain() ); 
+	} 
+add_action( 'bp_actions', 'status_redirects' );
+
+/**** Register functions & regions ****/
 
 if ( !function_exists( 'status_setup' ) ) :
 function status_setup() {
