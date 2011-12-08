@@ -74,13 +74,6 @@ function status_get_file_last_mod($filename) {
 	return $version;
 }
 
-// test to seee what options for merging admin/bp, nav menus are available
-function m() {
-echo '<ul><li>say stuff here</li></ul>';
-}
-//add_action('bp_nav_items', 'm');
-
-
 /*** activity comments staus show comments ***/
 function status_show_comments() {
 	if( bp_activity_get_comment_count() ){
@@ -90,93 +83,50 @@ function status_show_comments() {
 }
 add_action('bp_activity_entry_meta', 'status_show_comments');
 
-/** Access status nav area through add_actions 
-* - use to add in BP profile links etc 
-* Hooks:
-* 'status_before_nav_ul'
-* 'status_inside_nav_ul'
-* 'status_after_nav_ul'
-*/
-function site_logo() {
+// Add Custom Menu Option
+add_action('init', 'status_adminbar_nav');
+function status_adminbar_nav() {
 
-	echo '<ul id="site-title">';
-	echo '<li><a href="/">site title/logo</a></li>';
-	echo '</ul>';
+		register_nav_menus( array(
+			'admin_bar_nav' => __( 'Admin Bar Menu' ),
+		) );
+
 }
-function status_core_user_links() {
-global $bp;
-	
-	echo '<ul id="user-profile-menu" class="main-nav">';
-	
-		// login / sign up links
-		if ( !is_user_logged_in() ) {
 
-			echo '<li class="bp-login no-arrow"><a href="' . bp_get_root_domain() . '/wp-login.php?redirect_to=' . urlencode( bp_get_root_domain() ) . '">' . __( 'Log In', 'buddypress' ) . '</a></li>';
+add_action('admin_bar_init', 'status_adminbar_menu_init');
+function status_adminbar_menu_init() {
+	if (!is_super_admin() || !is_admin_bar_showing() )
+		return;
+ 	add_action( 'admin_bar_menu', 'status_admin_bar_menu', 1000 );
+}
 
-			// Show "Sign Up" link if user registrations are allowed
-			if ( bp_get_signup_allowed() ) {
-			echo '<li class="bp-signup no-arrow"><a href="' . bp_get_signup_page(false) . '">' . __( 'Sign Up', 'buddypress' ) . '</a></li>';	
-	 	}
-			echo '</ul>';
-		}// close logged out links			
-			
-		// user profile links
+function status_admin_bar_menu() {
+	global $wp_admin_bar;
 
-	if ( !$bp->bp_nav || !is_user_logged_in() )
-		return false;
+		$menu_name = 'admin_bar_nav';
+		if ( ( $locations = get_nav_menu_locations() ) && isset( $locations[ $menu_name ] ) ) {
+			$menu = wp_get_nav_menu_object( $locations[ $menu_name ] );
 
-	echo '<li id="bp-adminbar-account-menu"><a href="' . bp_loggedin_user_domain() . '">';
-	echo __( 'My Account', 'buddypress' ) . '</a>';
-	echo '<ul>';
-
-	// Loop through each navigation item
-	$counter = 0;
-	foreach( (array)$bp->bp_nav as $nav_item ) {
-		$alt = ( 0 == $counter % 2 ) ? ' class="alt"' : '';
-
-		if ( -1 == $nav_item['position'] )
-			continue;
-
-		echo '<li' . $alt . '>';
-		echo '<a id="bp-admin-' . $nav_item['css_id'] . '" href="' . $nav_item['link'] . '">' . $nav_item['name'] . '</a>';
-
-		if ( isset( $bp->bp_options_nav[$nav_item['slug']] ) && is_array( $bp->bp_options_nav[$nav_item['slug']] ) ) {
-			echo '<ul>';
-			$sub_counter = 0;
-
-			foreach( (array)$bp->bp_options_nav[$nav_item['slug']] as $subnav_item ) {
-				$link = $subnav_item['link'];
-				$name = $subnav_item['name'];
-
-				if ( isset( $bp->displayed_user->domain ) )
-					$link = str_replace( $bp->displayed_user->domain, $bp->loggedin_user->domain, $subnav_item['link'] );
-
-				if ( isset( $bp->displayed_user->userdata->user_login ) )
-					$name = str_replace( $bp->displayed_user->userdata->user_login, $bp->loggedin_user->userdata->user_login, $subnav_item['name'] );
-
-				$alt = ( 0 == $sub_counter % 2 ) ? ' class="alt"' : '';
-				echo '<li' . $alt . '><a id="bp-admin-' . $subnav_item['css_id'] . '" href="' . $link . '">' . $name . '</a></li>';
-				$sub_counter++;
-			}
-			echo '</ul>';
+		    $menu_items = wp_get_nav_menu_items( $menu->term_id );
+		    if ($menu_items) {
+			    $wp_admin_bar->add_menu( array(
+			        'id' => 'status-admin-menu-0',
+			        'title' => 'Navigation',
+					'href' => '#' ) );
+			    foreach ( $menu_items as $menu_item ) {
+			        $wp_admin_bar->add_menu( array(
+			            'id' => 'status-admin-menu-' . $menu_item->ID,
+			            'parent' => 'status-admin-menu-' . $menu_item->menu_item_parent,
+			            'title' => $menu_item->title,
+			            'href' => $menu_item->url,
+			            'meta' => array(
+			                'title' => $menu_item->attr_title,
+			                'target' => $menu_item->target,
+			                'class' => implode( ' ', $menu_item->classes ),
+			            ),
+			        ) );
+			    }
+		    }
 		}
-
-		echo '</li>';
-
-		$counter++;
-	}
-
-	$alt = ( 0 == $counter % 2 ) ? ' class="alt"' : '';
-
-	echo '<li' . $alt . '><a id="bp-admin-logout" class="logout" href="' . wp_logout_url( home_url() ) . '">' . __( 'Log Out', 'buddypress' ) . '</a></li>';
-	echo '</ul>';
-	echo '</li>';
-	
-
-if(is_user_logged_in()) {
-	echo '</ul>';
 }
-}
-//add_action('status_before_nav_ul', 'site_logo');
-//add_action('status_before_nav_ul', 'status_core_user_links');
 ?>
