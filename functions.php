@@ -10,7 +10,7 @@ $profile_sidebar = false; //disable the main sidebar in profile member accounts
 
 // buddybar is being ditched instruction is to define use wp admin bar - likely we don't want 
 // adminbar but keeping this here commented out
-define( 'BP_USE_WP_ADMIN_BAR', true );
+//define( 'BP_USE_WP_ADMIN_BAR', true );
 
 /*** redirect requests for BP component pages ***/
 
@@ -175,6 +175,6 @@ if(is_user_logged_in()) {
 	echo '</ul>';
 }
 }
-add_action('status_before_nav_ul', 'site_logo');
-add_action('status_before_nav_ul', 'status_core_user_links');
+//add_action('status_before_nav_ul', 'site_logo');
+//add_action('status_before_nav_ul', 'status_core_user_links');
 ?>
