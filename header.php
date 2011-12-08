@@ -28,8 +28,16 @@
 
 	<body <?php body_class() ?> id="status-default">
 		<?php do_action( 'bp_before_header' ) ?>
-
-		
+			
+			<nav id="primary-navigation" class="clearfix" role="navigation">
+				<?php do_action('status_before_nav_ul'); ?>
+				 <ul>
+				 	<li><a href="/activity">Activity</a></li>
+					<li></li>
+					<?php do_action('status_inside_nav_ul'); ?>
+				 </ul>
+				<?php do_action('status_after_nav_ul'); ?>
+			</nav>
 
 		<?php do_action( 'bp_after_header' ) ?>
 		<?php do_action( 'bp_before_container' ) ?>

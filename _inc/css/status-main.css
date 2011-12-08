@@ -124,23 +124,53 @@ body#bp-default #wp-admin-bar .padder {
 }
 
 /** Generic nav elements **/
-nav {
+nav {background: #6e6e6e;} 
+nav > ul {
 	float: left;
+	margin-right: 20px; 
 }
 #nav li {
 	font-size: 0.9em;
 	margin-left: 10px;
 	padding-top: 5px;
 }
-ul#nav {
+#site-title {
 	margin-left: 20px;
 }
-nav ul li,
+/** user profile nav & loggin links **/
+nav #user-profile-menu {}
+nav #user-profile-menu  li {position: relative;}
+#user-profile-menu ul li a {
+	display: block;
+}
+/* ul subnav items */
+nav #user-profile-menu ul {
+	background: #464646;
+	left: -999em;
+	margin-left: 0;
+	position: absolute;
+	width: 185px;
+}
+nav #user-profile-menu ul li {
+	float: left;
+	width: 180px;
+}
+#user-profile-menu li:hover ul,
+#user-profile-menu li ul li:hover ul,
+#user-profile-menu li.sfhover ul,
+#user-profile-menu li ul li.sfhover ul {
+	left: auto;
+}
+#user-profile-menu li:hover ul ul,
+#user-profile-menu li.sfhover ul li ul {
+	left: -999em;
+}
+
+/** item-list-tabs, object nav, subnav **/
 .item-list-tabs li {
 	display: inline;
 	display: inline-block;
 }
-/** item-list-tabs, object nav, subnav **/
 #item-nav li, #subnav li {
 	margin-right: 10px;
 } 

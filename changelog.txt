@@ -68,3 +68,12 @@ Tags: buddypress, two-column, fixed-width
 - Removed welcome message lets use just activity
 - Redirected to index.php for activity - willing to work out later just getting done
 - Added tails to speech
+
+08/12/11 hugo
+- First pass at adding custom nav
+- Added back custom nav markup with do actions
+- functions.php provides an add_action function to build user profile nav elements
+- Added basic styles for dropdowns - need third level positioning sorting out
+- BP buddybar removed in functions.php
+- Not sure what happens with wp-admin-bar?
+- This is work in progress requiring further attention
