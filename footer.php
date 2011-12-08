@@ -7,11 +7,10 @@
 				<?php get_template_part('status-loop', 'friends');?>
 			</section>
 		</div>
-		<div id="widget-wrapper">
-			<section id="footer-widg-block">
-			<?php ###  we'll likely lose this widget block as it will upset the layout if used ? ##### ?>
+		<div id="widgets-wrapper">
+			<section id="footer-widget">
 			<?php if ( is_active_sidebar( 'first-footer-widget-area' ) || is_active_sidebar( 'second-footer-widget-area' ) || is_active_sidebar( 'third-footer-widget-area' ) || is_active_sidebar( 'fourth-footer-widget-area' ) ) : ?>
-				<div id="footer-widgets-block">
+				<div id="footer-widget-block">
 					<?php get_sidebar( 'footer' ) ?>
 				</div>
 			<?php endif; ?>

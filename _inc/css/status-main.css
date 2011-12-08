@@ -192,11 +192,15 @@ nav #user-profile-menu ul li {
 	font-size: 1.1em;
 }
 /** footer region **/
-#footer-wrapper {
+#widgets-wrapper  {
 	background: #242424;
 }
-#friends-wrapper, #widgets-wrapper {
+#footer-wrapper{
+	background: #111111;
+}
+#friends-wrapper{
 	background: #464646;
+	color:#eeeeee;
 }
 footer {
 	margin: 0 auto;
@@ -223,6 +227,46 @@ footer {
 #site-generator p {
 	margin: 0;
 }
+
+#footer {
+	margin: 20px 0;
+}
+#footer-widget {
+	font-size: 0.9em;
+}
+#site-generator {
+	margin: 20px 20px;
+	text-align: center;
+}
+#footer-widget-area {
+	margin-top: -19px;
+	overflow: hidden;
+}
+#footer-widget ul.xoxo li{
+	list-style:none;
+}
+#footer-widget-area div.widget-area > ul {
+	float: left;
+	margin-right: 2.5%;
+	width: 23%;
+}
+#footer-widget-area div.widget-area > ul > li {
+	margin-top: 19px;
+}
+#footer-widget-area h3.widgettitle {
+	clear: left;
+	padding: 5px 15px;
+	font-size: 12px;
+	margin: 0 0 10px 0;
+}
+#footer-widget-area div div.item-options {
+	margin-left: 0;
+	margin-right: 0;
+}
+#footer-widget-area ul.item-list li img.avatar {
+	margin-left: 15px; /* border is 4px */
+}
+div#fourth ul.xoxo { margin-right: 0; }
 /** sidebar **/
 
 /* >Primary page styling
