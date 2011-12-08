@@ -124,19 +124,17 @@ body#bp-default #wp-admin-bar .padder {
 }
 
 /** Generic nav elements **/
-nav {background: #6e6e6e;} 
-nav > ul {
+nav {
 	float: left;
-	margin-right: 20px; 
-}
+	margin-left: 20px
+} 
+
 #nav li {
 	font-size: 0.9em;
 	margin-left: 10px;
 	padding-top: 5px;
 }
-#site-title {
-	margin-left: 20px;
-}
+
 /** user profile nav & loggin links **/
 nav #user-profile-menu {}
 nav #user-profile-menu  li {position: relative;}
@@ -167,7 +165,7 @@ nav #user-profile-menu ul li {
 }
 
 /** item-list-tabs, object nav, subnav **/
-.item-list-tabs li {
+.item-list-tabs li, nav ul li {
 	display: inline;
 	display: inline-block;
 }
