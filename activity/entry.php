@@ -54,7 +54,7 @@
 
 						<?php if ( bp_activity_user_can_delete() ) bp_activity_delete_link(); ?>
 
-							<?php echo bp_core_time_since( bp_get_activity_date_recorded() ) ?>
+							<span class="time-since" data-timestamp="activity-time-since"><?php echo bp_core_time_since( bp_get_activity_date_recorded() ) ?></span>
 
 
 					</div>
