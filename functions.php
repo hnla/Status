@@ -15,7 +15,7 @@ $profile_sidebar = false; //disable the main sidebar in profile member accounts
 /*** redirect requests for BP component pages ***/
 
 function status_redirects() { 
-	if ( bp_is_groups_component() || bp_is_forums_component() ) bp_core_redirect( bp_get_root_domain() ); 
+	if ( bp_is_groups_component() || bp_is_members_component() || bp_is_forums_component() ) bp_core_redirect( bp_get_root_domain() ); 
 	} 
 add_action( 'bp_actions', 'status_redirects' );
 
