@@ -84,7 +84,8 @@ nav ul, .looplist, .item-list-tabs ul {
 
 #content-wrapper{
 	margin: 0 auto;
-	max-width: 1250px;
+	max-width: 1230px;
+	padding: 0px 10px;
 	overflow: hidden;
 }
 .home #content-wrapper{
@@ -94,7 +95,8 @@ nav ul, .looplist, .item-list-tabs ul {
 }
 .home.logged-in #content-wrapper{
 	margin: 0 auto;
-	max-width: 1250px;
+	max-width: 1230px;
+	padding: 0px 10px;
 	overflow: hidden;
 }
 #content-wrapper, #header-wrapper, #friends-wrapper,
@@ -116,12 +118,6 @@ footer {clear: both;}
 
 /* >Navigational
 ------------------------------------------------------------------------------*/
-
-/** rework BP buddybar **/
-#wp-admin-bar {background: #464646}
-body#bp-default #wp-admin-bar .padder {
-	max-width: 98%;
-}
 
 /** Generic nav elements **/
 nav {
@@ -196,7 +192,7 @@ nav #user-profile-menu ul li {
 	background: #242424;
 }
 #footer-wrapper{
-	background: #111111;
+	background-color:#464646;background-image:-ms-linear-gradient(bottom,#373737,#464646 5px);background-image:-moz-linear-gradient(bottom,#373737,#464646 5px);background-image:-o-linear-gradient(bottom,#373737,#464646 5px);background-image:-webkit-gradient(linear,left bottom,left top,from(#373737),to(#464646));background-image:-webkit-linear-gradient(bottom,#373737,#464646 5px);background-image:linear-gradient(bottom,#373737,#464646 5px);
 }
 #friends-wrapper{
 	background: #464646;
@@ -204,13 +200,14 @@ nav #user-profile-menu ul li {
 }
 footer {
 	margin: 0 auto;
-	max-width: 1250px;
+	max-width: 1230px;
 	padding: 10px;
 	font-size: 0.9em;
 }
 #friends-loop {
 	margin: 0 auto;
-	max-width: 1250px;
+	max-width: 1230px;
+	padding: 0px 10px;
 	font-size: 0.85em;
 }
 #friends-loop ul {margin: 0;}
@@ -222,7 +219,8 @@ footer {
 }
 #footer-widg-block {
 	margin: 0 auto;
-	max-width: 1250px;
+	max-width: 1230px;
+	padding: 0px 10px;
 }
 #site-generator p {
 	margin: 0;
@@ -235,8 +233,9 @@ footer {
 	font-size: 0.9em;
 }
 #site-generator {
-	margin: 20px 20px;
+	margin: 0px 20px;
 	text-align: center;
+	font-size: 0.9em;
 }
 #footer-widget-area {
 	margin-top: -19px;
@@ -359,7 +358,7 @@ div#fourth ul.xoxo { margin-right: 0; }
 }
 .activity-entry, .activity-comment{
 	clear: both;
-	background: #ffffff;
+	background: #F9F9F9;
 	border-top: 1px solid #ffffff;
 	border-right: 2px solid #dddddd;
 	border-bottom: 2px solid #dddddd;
@@ -389,11 +388,16 @@ ul#activity-stream{
 }
 .activity-meta{
 	font-size: 0.9em;
+	float: right;
 }
+.activity-inner{
+clear: right;}
+.activity-comments{clear:right;}
 
 .activity-header{
 	font-size: 0.9em;
 	font-weight: bold;
+	float: left;
 }
 a.acomment-reply{	
 	padding: 2px 0 0 15px;
@@ -445,7 +449,7 @@ a:hover.delete-activity{
 	margin-top: 20px;
 	overflow: hidden;
 	text-decoration: none;
-	background: #fbfbfb;
+	background: #F9F9F9;
 	font-size: 0.9em;
 	-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;
 }

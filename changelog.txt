@@ -82,4 +82,8 @@ Tags: buddypress, two-column, fixed-width
 - Changed front to be sign in / sign up directs to the registration if on (must have if on check wasn't there previously)
 - Must run WP 3.3 and BuddyPress 1.6 trunk to see this all work
 - Fixed up footer widgets and put back in default naming to get done for now
-- Added in function to allow custom menu in the admin bar
+
+09/12/11 tam
+- Added padding and reduced width on all wrapper elements
+- Moved date to the header with a float right and float left on header
+- Fixed some responsive issues
