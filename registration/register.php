@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 	<?php do_action( 'bp_before_register_page' ) ?>
 	<div id="content" role="main">
-	<section class="status-signup">
+	<article class="status-signup">
 		<form action="" name="signup_form" id="signup_form" class="standard-form" method="post" enctype="multipart/form-data">
 
 			<?php if ( 'registration-disabled' == bp_get_current_signup_step() ) : ?>
@@ -51,7 +51,7 @@
 
 				<?php /***** Extra Profile Details ******/ ?>
 
-				<?php if ( bp_is_active( 'xprofile' ) ) : ?>
+				<?php if ( bp_is_active( 'xprofile' ) && bp_has_profile( 'profile_group_id=1' ) ) :?>
 
 					<?php do_action( 'bp_before_signup_profile_fields' ) ?>
 
@@ -205,7 +205,7 @@
 			<?php do_action( 'bp_custom_signup_steps' ) ?>
 
 			</form>
-		</section>
+		</article>
 	</div><!-- / #content -->
 	<?php do_action( 'bp_after_register_page' ); ?>
 <?php get_footer(); ?>

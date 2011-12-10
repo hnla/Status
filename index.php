@@ -12,7 +12,7 @@
 <?php get_header(); ?>
 
 			<?php if ( !is_user_logged_in() ) : ?>
-				<div id="content" role="main">
+				<div id="content-home" role="main">
 					<article class="status-signup">
 						<?php do_action( 'bp_before_sidebar_login_form' ) ?>
 

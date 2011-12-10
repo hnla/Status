@@ -82,24 +82,24 @@ nav ul, .looplist, .item-list-tabs ul {
 ------------------------------------------------------------------------------*/
 /** Generic - site-wide **/
 
-#container {
+#content-wrapper {
 	margin: 0 auto;
 	max-width: 1230px;
 	padding: 0px 10px;
 	overflow: hidden;
 }
-.home #container {
+.home #content-wrapper {
 	margin: 50px auto;
 	max-width: 550px;
 	overflow: hidden;
 }
-.home.logged-in #container {
+.home.logged-in #content-wrapper {
 	margin: 0 auto;
 	max-width: 1230px;
 	padding: 0px 10px;
 	overflow: hidden;
 }
-#container, #header-wrapper, #friends-wrapper,
+#content-wrapper, #header-wrapper, #friends-wrapper,
 #widgets-wrapper, #footer-wrapper {
 	overflow: hidden;
 }

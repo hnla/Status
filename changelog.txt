@@ -87,3 +87,9 @@ Tags: buddypress, two-column, fixed-width
 - Added padding and reduced width on all wrapper elements
 - Moved date to the header with a float right and float left on header
 - Fixed some responsive issues
+
+10/12/11 tam
+- Adding back in content-wrapper removing container
+- Fixing back in content-home as did have a styling attached
+- Put in activate.php having just empty file isn't great
+- Made status-signup have article as index.php used that seems more logical than section
