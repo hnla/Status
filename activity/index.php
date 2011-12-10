@@ -146,4 +146,4 @@
 
 	</div><!-- / #content -->
 	<?php do_action( 'bp_after_directory_activity_page' ); ?>
-<?php get_footer(); ?></div>
+<?php get_footer(); ?>

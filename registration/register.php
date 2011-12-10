@@ -1,6 +1,18 @@
+<?php get_header(); ?>
+	<?php do_action( 'bp_before_register_page' ) ?>
+	<div id="content" role="main">
 	<section class="status-signup">
 		<form action="" name="signup_form" id="signup_form" class="standard-form" method="post" enctype="multipart/form-data">
 
+			<?php if ( 'registration-disabled' == bp_get_current_signup_step() ) : ?>
+				<?php do_action( 'template_notices' ) ?>
+				<?php do_action( 'bp_before_registration_disabled' ) ?>
+
+					<p><?php _e( 'User registration is currently not allowed.', 'buddypress' ); ?></p>
+
+				<?php do_action( 'bp_after_registration_disabled' ); ?>
+			<?php endif; // registration-disabled signup setp ?>			
+			
 			<?php if ( 'request-details' !== bp_get_current_signup_step() ) : ?>
 
 				<h2><?php _e( 'Create an Account', 'buddypress' ) ?></h2>
@@ -44,7 +56,7 @@
 					<?php do_action( 'bp_before_signup_profile_fields' ) ?>
 
 					<fieldset class="register-section" id="profile-details-section">
-<?php if ( bp_is_active( 'xprofile' ) && bp_has_profile( 'profile_group_id=1' ) ) :?>
+<?php if ( bp_is_active( 'xprofile' ) ) :?>
 <p>xprofile is true</p>
 
 <?php endif; ?>
@@ -194,3 +206,6 @@
 
 			</form>
 		</section>
+	</div><!-- / #content -->
+	<?php do_action( 'bp_after_register_page' ); ?>
+<?php get_footer(); ?>
