@@ -10,8 +10,8 @@
 ?>
 
 <?php get_header( 'buddypress' ); ?>
-	<div id="content-profile">
-
+	
+	<div id="content-profile-headerfull">
 			<?php do_action( 'bp_before_member_home_content' ); ?>
 
 			<div id="item-header" role="complementary">
@@ -19,8 +19,8 @@
 				<?php locate_template( array( 'members/single/member-header.php' ), true ); ?>
 
 			</div><!-- #item-header -->
-
-
+		</div>
+	<div id="content-profile">	
 			<div id="item-body">
 
 				<?php do_action( 'bp_before_member_body' );

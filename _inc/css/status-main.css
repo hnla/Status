@@ -41,7 +41,7 @@
 ------------------------------------------------------------------------------*/
 
 body {
-	background: #f4f4f4;
+	background: #f4f4f4 url('../images/wood_pattern.png');
 	/* temp font stack */
 	font: 100%/1.7 Arial, sans-serif;
 	color: #555;
@@ -52,6 +52,8 @@ h3 {font-size: 1.4em;}
 h4 {font-size: 1.2em ;}
 h5 {font-size: 1.1em;}
 h6 {font-size: 1em;}
+
+#item-header-content h2, .status-signup h2{margin: 0 0 10px 0;font-weight:700;}
 p {
 	margin: 0 0 10px 0;
 }
@@ -106,23 +108,58 @@ nav ul, .looplist, .item-list-tabs ul {
 #sidebar {
 	float: right;
 	width: 20%;
+	margin: 20px 0 0 0;
 }
-#content-profile {
+.home #sidebar{margin: 40px 0 0 0;}
+#content{
+	margin: 20px 0 20px 0;
+	float: left;
+	width: 75%;
+	background: #ffffff;
+	border-right: 1px solid #aaaaaa;
+	border-bottom: 1px solid #aaaaaa;
+	border-top: 1px solid #dddddd;
+	border-left: 1px solid #dddddd;
+	-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;
+	padding: 0px 20px 20px 20px;
+	-moz-box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
+	-webkit-box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
+	box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
+}
+#content-profile{
 	float: left;
 	width: 78%;
+}
+#content-stream{
+	float: left;
+	width: 78%;
+}
+#content-profile-headerfull{
+	width: 100%;
 }
 #content-home{
 	margin: 0;
 }
 footer {clear: both;}
-
+#sidebar .widget{
+	margin: 0 0 20px 0;
+	background: #ffffff;
+	border-right: 1px solid #aaaaaa;
+	border-bottom: 1px solid #aaaaaa;
+	border-top: 1px solid #dddddd;
+	border-left: 1px solid #dddddd;
+	-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;
+	padding:10px;
+	-moz-box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
+	-webkit-box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
+	box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
+}
 /* >Navigational
 ------------------------------------------------------------------------------*/
 
 /** Generic nav elements **/
 nav {
 	float: left;
-	margin-left: 20px
 } 
 #nav li {
 	font-size: 0.9em;
@@ -188,25 +225,23 @@ nav #user-profile-menu ul li {
 }
 /** footer region **/
 #widgets-wrapper  {
-	background: #242424;
+	background: #f9f9f9;
+	border-top: 1px solid #dddddd;
 }
 #footer-wrapper{
 	background-color:#464646;background-image:-ms-linear-gradient(bottom,#373737,#464646 5px);background-image:-moz-linear-gradient(bottom,#373737,#464646 5px);background-image:-o-linear-gradient(bottom,#373737,#464646 5px);background-image:-webkit-gradient(linear,left bottom,left top,from(#373737),to(#464646));background-image:-webkit-linear-gradient(bottom,#373737,#464646 5px);background-image:linear-gradient(bottom,#373737,#464646 5px);
 }
 #friends-wrapper{
-	background: #464646;
-	color:#eeeeee;
+	background: #f1f1f1;
+	border-top: 1px solid #cccccc;
+	border-bottom: 1px solid #ffffff;
 }
 footer {
-	margin: 0 auto;
-	max-width: 1230px;
 	padding: 10px;
 	font-size: 0.9em;
 }
 #friends-loop {
-	margin: 0 auto;
-	max-width: 1230px;
-	padding: 0px 10px;
+	color: #888888;
 	font-size: 0.85em;
 }
 #friends-loop ul {margin: 0;}
@@ -216,7 +251,7 @@ footer {
 	display: inline;
 	display: inline-block;
 }
-#footer-widg-block {
+#footer-widget-block {
 	margin: 0 auto;
 	max-width: 1230px;
 	padding: 0px 10px;
@@ -231,8 +266,8 @@ footer {
 	font-size: 0.9em;
 }
 #site-generator {
-	margin: 0px 20px;
-	text-align: center;
+	color: #aaaaaa;
+	text-shadow: -1px -1px 0px #111111;
 	font-size: 0.9em;
 }
 #footer-widget-area {
@@ -244,7 +279,7 @@ footer {
 }
 #footer-widget-area div.widget-area > ul {
 	float: left;
-	margin-right: 2.5%;
+	margin-right: 1%;
 	width: 23%;
 }
 #footer-widget-area div.widget-area > ul > li {
@@ -264,6 +299,9 @@ footer {
 	margin-left: 15px; /* border is 4px */
 }
 div#fourth ul.xoxo { margin-right: 0; }
+
+.widget-area ul{margin: 1em 0;
+padding: 0 0 0 10px;}
 /** sidebar **/
 
 /* >Primary page styling
@@ -271,53 +309,59 @@ div#fourth ul.xoxo { margin-right: 0; }
 /** home page **/
 
 /* until we know what we are doing with logged out signup some padding/margins */
-.home .status-signup {
+.home .status-signup{
 	background: #ffffff;
-	border-top: 1px solid #ffffff;
-	border-right: 2px solid #dddddd;
-	border-bottom: 2px solid #dddddd;
-	border-left: 1px solid #ffffff;
+	border-right: 1px solid #aaaaaa;
+	border-bottom: 1px solid #aaaaaa;
+	border-top: 1px solid #dddddd;
+	border-left: 1px solid #dddddd;
 	-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;
-	padding: 0px 20px 20px 20px;
+	padding: 20px 20px 20px 20px;
+	-moz-box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
+	-webkit-box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
+	box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
 }
 /* >Activity screens
 ------------------------------------------------------------------------------*/
 /** Activity 'what's new' **/
 #whats-new-declare {
-	margin-top: 20px;
+	margin: 40px 0 10px 0;
+	background: rgba(0, 0, 0, 0.024);
+	padding: 6px;
 }
 #whats-new-avatar {
 	float: left;
 	width: 80px;
 }
 #whats-new-avatar img {
-	padding: 10px;
+	padding: 2px;
+	margin: 10px 12px;
 	background: #ffffff;
-	border-top: 1px solid #ffffff;
-	border-right: 2px solid #dddddd;
-	border-bottom: 2px solid #dddddd;
-	border-left: 1px solid #ffffff;
+	border-right: 1px solid #aaaaaa;
+	border-bottom: 1px solid #aaaaaa;
+	border-top: 1px solid #dddddd;
+	border-left: 1px solid #dddddd;
 	-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;
 }
 
 #whats-new-wrapper{
-	margin-left: 90px;
+	margin-left: 80px;
 }
 
 #whats-new-tail{
 	background: url('../images/speech-tail.png') 0 15px no-repeat;
 	height: 50px;
-	width: 40px;	
+	width: 42px;	
 	float: left;
 }
 #whats-new-textarea {
 	margin-left: 40px;
 	padding: 10px;
 	background: #ffffff;
-	border-top: 1px solid #ffffff;
-	border-right: 2px solid #dddddd;
-	border-bottom: 2px solid #dddddd;
-	border-left: 1px solid #ffffff;
+	border-right: 1px solid #aaaaaa;
+	border-bottom: 1px solid #aaaaaa;
+	border-top: 1px solid #dddddd;
+	border-left: 1px solid #dddddd;
 	-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;
 }
 #what-new-content {
@@ -341,11 +385,14 @@ div#fourth ul.xoxo { margin-right: 0; }
 	margin-right: 10px;
 	padding: 5px 10px;
 	background: white;
-	border-top: 1px solid #ffffff;
-	border-right: 2px solid #dddddd;
-	border-bottom: 2px solid #dddddd;
-	border-left: 1px solid #ffffff;
+	border-right: 1px solid #aaaaaa;
+	border-bottom: 1px solid #aaaaaa;
+	border-top: 1px solid #dddddd;
+	border-left: 1px solid #dddddd;
 	-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;
+	-moz-box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
+	-webkit-box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
+	box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
 	color: #aaaaaa;
 	font-style: italic;
 }
@@ -357,11 +404,14 @@ div#fourth ul.xoxo { margin-right: 0; }
 .activity-entry, .activity-comment{
 	clear: both;
 	background: #F9F9F9;
-	border-top: 1px solid #ffffff;
-	border-right: 2px solid #dddddd;
-	border-bottom: 2px solid #dddddd;
-	border-left: 1px solid #ffffff;
+	border-right: 1px solid #aaaaaa;
+	border-bottom: 1px solid #aaaaaa;
+	border-top: 1px solid #dddddd;
+	border-left: 1px solid #dddddd;
 	-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;
+	-moz-box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
+	-webkit-box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
+	box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
 	margin-bottom: 20px;
 	overflow: hidden;
 	padding: 10px;
@@ -375,7 +425,13 @@ div#fourth ul.xoxo { margin-right: 0; }
 	margin: 0 20px 0 0;
 }
 .activity-avatar img{
-	border: 3px solid #eeeeee;
+	background: #ffffff;
+	border-right: 1px solid #aaaaaa;
+	border-bottom: 1px solid #aaaaaa;
+	border-top: 1px solid #dddddd;
+	border-left: 1px solid #dddddd;
+	-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;
+	padding: 2px;
 }
 ul#activity-stream{
 	margin: 20px 0 0 0;
@@ -438,11 +494,11 @@ a:hover.delete-activity{
 	padding: 0 0 10px 0;
 }
 /** Account / Profile screens **/
-#item-header, #activity-navigation{
-	border-top: 1px solid #ffffff;
-	border-right: 2px solid #dddddd;
-	border-bottom: 2px solid #dddddd;
-	border-left: 1px solid #ffffff;
+#item-header{
+	border-right: 1px solid #aaaaaa;
+	border-bottom: 1px solid #aaaaaa;
+	border-top: 1px solid #dddddd;
+	border-left: 1px solid #dddddd;
 	padding: 10px;
 	margin-top: 20px;
 	overflow: hidden;
@@ -450,6 +506,12 @@ a:hover.delete-activity{
 	background: #F9F9F9;
 	font-size: 0.9em;
 	-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;
+}
+#item-nav{
+	overflow: hidden;
+}
+#activity-navigation{
+	
 }
 #item-header-avatar{
 	float: left;
@@ -499,6 +561,32 @@ input[type=submit]:hover {
 #activity-filter-select.last select {
 	float: right;
 }
+
+.label{margin-top:10px;}
+
+.input{
+border: 1px solid #bbbbbb;
+background: #ffffff;
+padding:2px 5px;
+color: #888888;
+-webkit-box-shadow: inset 0 1px 0 #eee,#fff 0 1px 0;
+-moz-box-shadow: inset 0 1px 0 #eee,#fff 0 1px 0;
+box-shadow: inset 0 1px 0 #eee,#fff 0 1px 0;
+-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;
+}
+
+#signup-login{
+	border-right: 1px dashed #bbbbbb;
+	width: 45%;
+	float: left;
+	padding: 0 30px 0 0;
+}
+
+#signup-register{
+	float: right;
+	width: 45%;
+}
+
 /* >Classes
 ------------------------------------------------------------------------------*/
 

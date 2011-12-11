@@ -93,3 +93,11 @@ Tags: buddypress, two-column, fixed-width
 - Fixing back in content-home as did have a styling attached
 - Put in activate.php having just empty file isn't great
 - Made status-signup have article as index.php used that seems more logical than section
+
+11/12/11 tam
+- Better styling on boxes
+- New background for demo
+- Better avatar styling
+- Tightened up spacing
+- Start of sign up form styling
+- New icons with higher contrast

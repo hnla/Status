@@ -1,7 +1,15 @@
 <?php do_action( 'bp_before_sidebar' ) ?>
 
 <div id="sidebar" role="complementary">
+	<div class="widget">
 Need to decide what goes here.....
+</div>
+
+<section id="friends-loop">
+	<div class="widget">
+		<?php get_template_part('status-loop', 'friends');?>
+	</div>
+</section>
 <!--
 	<?php do_action( 'bp_inside_before_sidebar' ) ?>
 

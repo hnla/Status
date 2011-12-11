@@ -13,19 +13,11 @@
 
 			<?php if ( !is_user_logged_in() ) : ?>
 				<div id="content-home" role="main">
-					<article class="status-signup">
+					<article class="status-signup clearfix">
+						<section id="signup-login">
 						<?php do_action( 'bp_before_sidebar_login_form' ) ?>
 
-								<?php if ( bp_get_signup_allowed() ) : ?>
-
-									<p id="login-text">
-
-										<?php printf( __( 'Please <a href="%s" title="Create an account">create an account</a> to get started.', 'buddypress' ), site_url( bp_get_signup_slug() . '/' ) ) ?>
-
-									</p>
-
-								<?php endif; ?>
-								
+							<h2>Sign in</h2>
 								<form name="login-form" id="primary-login-form" class="standard-form" action="<?php echo site_url( 'wp-login.php', 'login_post' ) ?>" method="post">
 									<p class="control-pairs your-name">
 										<label for="site-user-login"><?php _e( 'Username', 'buddypress' ) ?></label>
@@ -47,6 +39,20 @@
 								</form>
 
 								<?php do_action( 'bp_after_sidebar_login_form' ) ?>
+						</section>
+						<section id="signup-register">
+							<h2>... or register</h2>
+								<?php if ( bp_get_signup_allowed() ) : ?>
+
+									<p id="login-text">
+
+										<?php printf( __( 'Please <a href="%s" title="Create an account">create an account</a> to get started.', 'buddypress' ), site_url( bp_get_signup_slug() . '/' ) ) ?>
+
+									</p>
+
+								<?php endif; ?>
+							
+						</section>
 					</article>
 				</div><!-- / #content -->
 			<?php endif; ?>

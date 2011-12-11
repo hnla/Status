@@ -14,7 +14,7 @@ if( is_user_logged_in() ) :
 					</ul>			
 			
 <?php else: ?>
-						<p style="color: #fff;">---Clearly you are Billy no mates and have no friends!</p>
+						<p>Oh deary me you don't seem to have any friends.  Start connecting by friending people and get involved in the community.</p>
 			
 <?php endif;
 			
