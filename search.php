@@ -1,0 +1,36 @@
+<?php
+
+/**
+ * Template Name: Status - Search
+ *
+ * @package Status
+ * @subpackage BP child theme
+ */
+
+?>
+
+<?php get_header(); ?>
+<div id="content" role="main">
+	<?php if ( have_posts() ) : ?>
+	<header class="post-header">
+		<h1 class="post-title"><?php printf( __( 'Search Results for: %s', TEMPLATE_DOMAIN), '<span>' . get_search_query() . '</span>' ); ?></h1>
+	</header>
+	<?php bp_dtheme_content_nav( 'nav-above' ); ?>
+	<?php while ( have_posts() ) : the_post(); 
+			get_template_part( 'content', get_post_format() );
+		endwhile;
+			bp_dtheme_content_nav( 'nav-below' );
+		else : ?>
+	<article id="post-0" class="post no-results not-found">
+		<header class="post-header">
+			<h2 class="post-title"><?php _e( 'Nothing Found', TEMPLATE_DOMAIN); ?></h2>
+		</header>
+		<div class="post-body">
+			<p><?php _e( 'Sorry, but nothing matched your search criteria. Please try again with some different keywords.', TEMPLATE_DOMAIN); ?></p>
+			<?php get_search_form(); ?>
+		</div>
+	</article>
+	<?php endif; ?>
+</div>
+<?php get_sidebar(); ?>
+<?php get_footer() ?>

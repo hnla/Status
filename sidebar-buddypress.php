@@ -1,13 +1,14 @@
 <?php
 
 /**
- * Template Name: Status - Sidebar
+ * Template Name: Status - Sidebar BuddyPress
  *
  * @package Status
  * @subpackage BP child theme
  */
 
 ?>
+
 <?php do_action( 'bp_before_sidebar' ) ?>
 
 <div id="sidebar" role="complementary">

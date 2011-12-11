@@ -23,9 +23,12 @@ add_action( 'bp_actions', 'status_redirects' );
 
 if ( !function_exists( 'status_setup' ) ) :
 function status_setup() {
-	
+	unregister_nav_menu('primary');
+	remove_custom_image_header();
+	remove_action( 'widgets_init', 'bp_dtheme_widgets_init' );
 	add_action( 'wp_enqueue_scripts', 'status_load_scripts' );
 	add_action( 'wp_print_styles', 'bp_dtheme_enqueue_styles');
+	add_theme_support( 'post-formats', array( 'aside', 'gallery', 'link', 'video', 'image', 'quote', 'status', 'chat' ) );
 }
 add_action( 'after_setup_theme', 'status_setup' );
 endif;
@@ -69,12 +72,6 @@ function status_get_file_last_mod($filename) {
 	}
 	return $version;
 }
-
-// test to seee what options for merging admin/bp, nav menus are available
-function m() {
-echo '<ul><li>say stuff here</li></ul>';
-}
-//add_action('bp_nav_items', 'm');
 
 
 /*** activity comments staus show comments ***/
@@ -224,4 +221,85 @@ function status_admin_bar_menu() {
 		}
 }
 
+function status_widgets_init() {
+	register_sidebar( array(
+		'name'          => 'Blog sidebar',
+		'id'            => 'sidebar',
+		'description'   => __( 'The sidebar widget area', 'buddypress' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">', 	  
+		'after_widget' => '</aside>',
+   		'before_title' => '<h3 class="widgettitle">',
+   		'after_title' => '</h3>'
+	) );
+	
+	register_sidebar( array(
+		'name'          => 'BuddyPress sidebar',
+		'id'            => 'sidebar-buddypress',
+		'description'   => __( 'The sidebar widget area', 'buddypress' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">', 	  
+		'after_widget' => '</aside>',
+   		'before_title' => '<h3 class="widgettitle">',
+   		'after_title' => '</h3>'
+	) );
+}
+add_action( 'widgets_init', 'status_widgets_init' );
+
+function status_blog_comments( $comment, $args, $depth ) {
+	$GLOBALS['comment'] = $comment;
+
+	if ( 'pingback' == $comment->comment_type )
+		return false;
+
+	if ( 1 == $depth )
+		$avatar_size = 50;
+	else
+		$avatar_size = 25;
+	?>
+
+	<li <?php comment_class() ?> id="comment-<?php comment_ID() ?>">
+		<div class="comment-avatar-box">
+			<div class="avb">
+				<a href="<?php echo get_comment_author_url() ?>" rel="nofollow">
+					<?php if ( $comment->user_id ) : ?>
+						<?php echo bp_core_fetch_avatar( array( 'item_id' => $comment->user_id, 'width' => $avatar_size, 'height' => $avatar_size, 'email' => $comment->comment_author_email ) ) ?>
+					<?php else : ?>
+						<?php echo get_avatar( $comment, $avatar_size ) ?>
+					<?php endif; ?>
+				</a>
+			</div>
+		</div>
+
+		<div class="comment-content">
+			<div class="comment-meta">
+				<p>
+					<?php
+						/* translators: 1: comment author url, 2: comment author name, 3: comment permalink, 4: comment date/timestamp*/
+						printf( __( '<a href="%1$s" rel="nofollow">%2$s</a> said on <a href="%3$s"><span class="time-since">%4$s</span></a>', 'buddypress' ), get_comment_author_url(), get_comment_author(), get_comment_link(), get_comment_date() );
+					?>
+				</p>
+			</div>
+
+			<div class="comment-entry">
+				<?php if ( $comment->comment_approved == '0' ) : ?>
+				 	<em class="moderate"><?php _e( 'Your comment is awaiting moderation.', 'buddypress' ); ?></em>
+				<?php endif; ?>
+
+				<?php comment_text() ?>
+			</div>
+
+			<div class="comment-options">
+					<?php if ( comments_open() ) : ?>
+						<?php comment_reply_link( array( 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ); ?>
+					<?php endif; ?>
+
+					<?php if ( current_user_can( 'edit_comment', $comment->comment_ID ) ) : ?>
+						<?php printf( '<a class="button comment-edit-link bp-secondary-action" href="%1$s" title="%2$s">%3$s</a> ', get_edit_comment_link( $comment->comment_ID ), esc_attr__( 'Edit comment', 'buddypress' ), __( 'Edit', 'buddypress' ) ) ?>
+					<?php endif; ?>
+
+			</div>
+
+		</div>
+
+<?php
+}
 ?>
