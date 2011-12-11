@@ -52,6 +52,8 @@ h3 {font-size: 1.4em;}
 h4 {font-size: 1.2em ;}
 h5 {font-size: 1.1em;}
 h6 {font-size: 1em;}
+
+#item-header-content h2, .status-signup h2{margin: 0 0 10px 0;font-weight:700;}
 p {
 	margin: 0 0 10px 0;
 }
@@ -106,23 +108,53 @@ nav ul, .looplist, .item-list-tabs ul {
 #sidebar {
 	float: right;
 	width: 20%;
+	margin: 20px 0 0 0;
 }
-#content-profile {
+#content{
+	margin: 20px 0 20px 0;
 	float: left;
-	width: 78%;
+	width: 75%;
+	background: #ffffff;
+	border-right: 1px solid #aaaaaa;
+	border-bottom: 1px solid #aaaaaa;
+	border-top: 1px solid #dddddd;
+	border-left: 1px solid #dddddd;
+	-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;
+	padding: 0px 20px 20px 20px;
+	-moz-box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
+	-webkit-box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
+	box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
+}
+#content-profile{
+	float: left;
+	width: 75%;
+}
+#content-profile-headerfull{
+	width: 100%;
 }
 #content-home{
 	margin: 0;
 }
 footer {clear: both;}
-
+#sidebar .widget{
+	margin: 0 0 20px 0;
+	background: #ffffff;
+	border-right: 1px solid #aaaaaa;
+	border-bottom: 1px solid #aaaaaa;
+	border-top: 1px solid #dddddd;
+	border-left: 1px solid #dddddd;
+	-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;
+	padding:10px;
+	-moz-box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
+	-webkit-box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
+	box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
+}
 /* >Navigational
 ------------------------------------------------------------------------------*/
 
 /** Generic nav elements **/
 nav {
 	float: left;
-	margin-left: 20px
 } 
 #nav li {
 	font-size: 0.9em;
@@ -277,14 +309,14 @@ padding: 0 0 0 10px;}
 /** home page **/
 
 /* until we know what we are doing with logged out signup some padding/margins */
-.home .status-signup {
+.home .status-signup{
 	background: #ffffff;
 	border-right: 1px solid #aaaaaa;
 	border-bottom: 1px solid #aaaaaa;
 	border-top: 1px solid #dddddd;
 	border-left: 1px solid #dddddd;
 	-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;
-	padding: 0px 20px 20px 20px;
+	padding: 20px 20px 20px 20px;
 	-moz-box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
 	-webkit-box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
 	box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
@@ -462,7 +494,7 @@ a:hover.delete-activity{
 	padding: 0 0 10px 0;
 }
 /** Account / Profile screens **/
-#item-header, #activity-navigation{
+#item-header{
 	border-right: 1px solid #aaaaaa;
 	border-bottom: 1px solid #aaaaaa;
 	border-top: 1px solid #dddddd;
@@ -474,6 +506,12 @@ a:hover.delete-activity{
 	background: #F9F9F9;
 	font-size: 0.9em;
 	-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;
+}
+#item-nav{
+	overflow: hidden;
+}
+#activity-navigation{
+	
 }
 #item-header-avatar{
 	float: left;
@@ -518,6 +556,32 @@ input[type=submit]:hover {
 #activity-filter-select.last select {
 	float: right;
 }
+
+.label{margin-top:10px;}
+
+.input{
+border: 1px solid #bbbbbb;
+background: #ffffff;
+padding:2px 5px;
+color: #888888;
+-webkit-box-shadow: inset 0 1px 0 #eee,#fff 0 1px 0;
+-moz-box-shadow: inset 0 1px 0 #eee,#fff 0 1px 0;
+box-shadow: inset 0 1px 0 #eee,#fff 0 1px 0;
+-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;
+}
+
+#signup-login{
+	border-right: 1px dashed #bbbbbb;
+	width: 45%;
+	float: left;
+	padding: 0 30px 0 0;
+}
+
+#signup-register{
+	float: right;
+	width: 45%;
+}
+
 /* >Classes
 ------------------------------------------------------------------------------*/
 
