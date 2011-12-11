@@ -116,10 +116,11 @@ nav ul, .looplist, .item-list-tabs ul {
 	float: left;
 	width: 75%;
 	background: #ffffff;
-	border-right: 1px solid #aaaaaa;
-	border-bottom: 1px solid #aaaaaa;
-	border-top: 1px solid #dddddd;
-	border-left: 1px solid #dddddd;
+	border-right: 1px solid #cccccc;
+	border-bottom: 1px solid #cccccc;
+	border-top: 1px solid #ffffff;
+	border-left: 1px solid #ffffff;
+	margin-left:10px;
 	-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;
 	padding: 0px 20px 20px 20px;
 	-moz-box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
@@ -130,10 +131,11 @@ nav ul, .looplist, .item-list-tabs ul {
 .edit-profile{
 	margin: 20px 0 0 0;
 	background: #ffffff;
-	border-right: 1px solid #aaaaaa;
-	border-bottom: 1px solid #aaaaaa;
-	border-top: 1px solid #dddddd;
-	border-left: 1px solid #dddddd;
+	border-right: 1px solid #cccccc;
+	border-bottom: 1px solid #cccccc;
+	border-top: 1px solid #ffffff;
+	border-left: 1px solid #ffffff;
+	margin-left:10px;
 	-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;
 	padding: 0px 20px 20px 20px;
 	-moz-box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
@@ -169,10 +171,11 @@ footer {clear: both;}
 #sidebar .widget{
 	margin: 0 0 20px 0;
 	background: #ffffff;
-	border-right: 1px solid #aaaaaa;
-	border-bottom: 1px solid #aaaaaa;
-	border-top: 1px solid #dddddd;
-	border-left: 1px solid #dddddd;
+	border-right: 1px solid #cccccc;
+	border-bottom: 1px solid #cccccc;
+	border-top: 1px solid #ffffff;
+	border-left: 1px solid #ffffff;
+	margin-left:10px;
 	-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;
 	padding:10px;
 	-moz-box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
@@ -345,10 +348,11 @@ padding: 0 0 0 10px;}
 /* until we know what we are doing with logged out signup some padding/margins */
 .home .status-signup{
 	background: #ffffff;
-	border-right: 1px solid #aaaaaa;
-	border-bottom: 1px solid #aaaaaa;
-	border-top: 1px solid #dddddd;
-	border-left: 1px solid #dddddd;
+	border-right: 1px solid #cccccc;
+	border-bottom: 1px solid #cccccc;
+	border-top: 1px solid #ffffff;
+	border-left: 1px solid #ffffff;
+	margin-left:10px;
 	-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;
 	padding: 20px 20px 20px 20px;
 	-moz-box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
@@ -359,9 +363,10 @@ padding: 0 0 0 10px;}
 ------------------------------------------------------------------------------*/
 /** Activity 'what's new' **/
 #whats-new-declare {
-	margin: 40px 0 10px 0;
+	margin: 15px 0px 10px 5px;
 	background: rgba(0, 0, 0, 0.024);
 	padding: 6px;
+	width: 99%;
 }
 #whats-new-avatar {
 	float: left;
@@ -371,10 +376,11 @@ padding: 0 0 0 10px;}
 	padding: 2px;
 	margin: 10px 12px;
 	background: #ffffff;
-	border-right: 1px solid #aaaaaa;
-	border-bottom: 1px solid #aaaaaa;
-	border-top: 1px solid #dddddd;
-	border-left: 1px solid #dddddd;
+	border-right: 1px solid #cccccc;
+	border-bottom: 1px solid #cccccc;
+	border-top: 1px solid #ffffff;
+	border-left: 1px solid #ffffff;
+	margin-left:10px;
 	-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;
 }
 
@@ -392,10 +398,10 @@ padding: 0 0 0 10px;}
 	margin-left: 40px;
 	padding: 10px;
 	background: #ffffff;
-	border-right: 1px solid #aaaaaa;
-	border-bottom: 1px solid #aaaaaa;
-	border-top: 1px solid #dddddd;
-	border-left: 1px solid #dddddd;
+	border-right: 1px solid #cccccc;
+	border-bottom: 1px solid #cccccc;
+	border-top: 1px solid #ffffff;
+	border-left: 1px solid #ffffff;
 	-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;
 }
 #what-new-content {
@@ -417,18 +423,15 @@ padding: 0 0 0 10px;}
 #whats-new-post-in-box {
 	float: right;
 	margin-right: 10px;
-	padding: 5px 10px;
+	padding: 8px 10px;
 	background: white;
-	border-right: 1px solid #aaaaaa;
-	border-bottom: 1px solid #aaaaaa;
+	border-right: 1px solid #cccccc;
+	border-bottom: 1px solid #cccccc;
 	border-top: 1px solid #dddddd;
 	border-left: 1px solid #dddddd;
 	-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;
-	-moz-box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
-	-webkit-box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
-	box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
 	color: #aaaaaa;
-	font-style: italic;
+	font-size: 0.8em;
 }
 /** Activity loop **/
 
@@ -438,10 +441,11 @@ padding: 0 0 0 10px;}
 .activity-entry, .activity-comment{
 	clear: both;
 	background: #F9F9F9;
-	border-right: 1px solid #aaaaaa;
-	border-bottom: 1px solid #aaaaaa;
-	border-top: 1px solid #dddddd;
-	border-left: 1px solid #dddddd;
+	border-right: 1px solid #cccccc;
+	border-bottom: 1px solid #cccccc;
+	border-top: 1px solid #ffffff;
+	border-left: 1px solid #ffffff;
+	margin-left:10px;
 	-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;
 	-moz-box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
 	-webkit-box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
@@ -460,10 +464,11 @@ padding: 0 0 0 10px;}
 }
 .activity-avatar img{
 	background: #ffffff;
-	border-right: 1px solid #aaaaaa;
-	border-bottom: 1px solid #aaaaaa;
-	border-top: 1px solid #dddddd;
-	border-left: 1px solid #dddddd;
+	border-right: 1px solid #cccccc;
+	border-bottom: 1px solid #cccccc;
+	border-top: 1px solid #ffffff;
+	border-left: 1px solid #ffffff;
+	margin-left:10px;
 	-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;
 	padding: 2px;
 }
@@ -538,17 +543,21 @@ a:hover.delete-activity{
 }
 /** Account / Profile screens **/
 #item-header{
-	border-right: 1px solid #aaaaaa;
-	border-bottom: 1px solid #aaaaaa;
-	border-top: 1px solid #dddddd;
-	border-left: 1px solid #dddddd;
-	padding: 10px;
 	margin-top: 20px;
 	overflow: hidden;
 	text-decoration: none;
 	background: #F9F9F9;
 	font-size: 0.9em;
+	border-right: 1px solid #cccccc;
+	border-bottom: 1px solid #cccccc;
+	border-top: 1px solid #ffffff;
+	border-left: 1px solid #ffffff;
+	margin-left:10px;
 	-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;
+	padding:10px;
+	-moz-box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
+	-webkit-box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
+	box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
 }
 #item-nav{
 	overflow: hidden;
@@ -586,18 +595,26 @@ input:invalid, textarea:invalid {
 	 border: 1px solid #CD6430;
 }
 input[type=submit]{	
-	border-right: 1px solid #aaaaaa;
-	border-bottom: 1px solid #aaaaaa;
+	border-right: 1px solid #bbbbbb;
+	border-bottom: 1px solid #bbbbbb;
 	border-top: 1px solid #dddddd;
 	border-left: 1px solid #dddddd;
 	padding: 10px 15px;
 	text-decoration: none;
 	background: #fbfbfb;
+	font-weight: 700;
 	-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;
 }
 
 input[type=submit]:hover {	
 	background: #f6f6f6;
+	border-right: 1px solid #bbbbbb;
+	border-bottom: 1px solid #bbbbbb;
+	border-top: 1px solid #ffffff;
+	border-left: 1px solid #ffffff;
+	-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;
+	color: #55bbee;
+	text-decoration:underline;
 }
 #activity-filter-select.last label {
 	float: left;
