@@ -474,6 +474,11 @@ a:hover.delete-activity{
 #status-default label {
 	display: block;
 }
+/* N.B adding html 'required' has effect of styling :invalid even though isn't yet submitted? or so it seems*/
+input:required, textarea:required {background: none;}
+input:invalid, textarea:invalid {
+	 border: 1px solid #CD6430;
+}
 input[type=submit]{	
 	border-right: 1px solid #aaaaaa;
 	border-bottom: 1px solid #aaaaaa;

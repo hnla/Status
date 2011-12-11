@@ -25,18 +25,24 @@
 									</p>
 
 								<?php endif; ?>
-
-								<form name="login-form" id="sidebar-login-form" class="standard-form" action="<?php echo site_url( 'wp-login.php', 'login_post' ) ?>" method="post">
-									<label><?php _e( 'Username', 'buddypress' ) ?><br />
-									<input type="text" name="log" id="sidebar-user-login" class="input" value="<?php if ( isset( $user_login) ) echo esc_attr(stripslashes($user_login)); ?>" tabindex="97" /></label>
-
-									<label><?php _e( 'Password', 'buddypress' ) ?><br />
-									<input type="password" name="pwd" id="sidebar-user-pass" class="input" value="" tabindex="98" /></label>
-
-									<p class="forgetmenot"><label><input name="rememberme" type="checkbox" id="sidebar-rememberme" value="forever" tabindex="99" /> <?php _e( 'Remember Me', 'buddypress' ) ?></label></p>
+								
+								<form name="login-form" id="primary-login-form" class="standard-form" action="<?php echo site_url( 'wp-login.php', 'login_post' ) ?>" method="post">
+									<p class="control-pairs your-name">
+										<label for="site-user-login"><?php _e( 'Username', 'buddypress' ) ?></label>
+										<input type="text" name="log" id="site-user-login" class="input focus" value="<?php if ( isset( $user_login) ) echo esc_attr(stripslashes($user_login)); ?>"   required />
+									</p>
+									
+									<p class="control-pairs your-pass">
+										<label for="site-user-pass"><?php _e( 'Password', 'buddypress' ) ?></label>
+										<input type="password" name="pwd" id="site-user-pass" class="input" value="" required />
+									</p>
+									
+									<p class="control-pairs forgetmenot">
+										<label for="site-rememberme"><input name="rememberme" type="checkbox" id="site-rememberme" value="forever"  /> <?php _e( 'Remember Me', 'buddypress' ) ?></label>
+									</p>
 
 									<?php do_action( 'bp_sidebar_login_form' ) ?>
-									<input type="submit" name="wp-submit" id="sidebar-wp-submit" value="<?php _e( 'Log In', 'buddypress' ); ?>" tabindex="100" />
+									<input type="submit" name="wp-submit" id="sidebar-wp-submit" value="<?php _e( 'Log In', 'buddypress' ); ?>"  />
 									<input type="hidden" name="testcookie" value="1" />
 								</form>
 
