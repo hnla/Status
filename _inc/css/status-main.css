@@ -126,6 +126,20 @@ nav ul, .looplist, .item-list-tabs ul {
 	-webkit-box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
 	box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
 }
+
+.edit-profile{
+	margin: 20px 0 0 0;
+	background: #ffffff;
+	border-right: 1px solid #aaaaaa;
+	border-bottom: 1px solid #aaaaaa;
+	border-top: 1px solid #dddddd;
+	border-left: 1px solid #dddddd;
+	-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;
+	padding: 0px 20px 20px 20px;
+	-moz-box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
+	-webkit-box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
+	box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
+}
 #content-profile{
 	float: left;
 	width: 78%;
@@ -529,6 +543,7 @@ a:hover.delete-activity{
 #item-header-avatar img{
 	border: 3px solid #eeeeee;
 }
+
 /* Lists & Loops
 ------------------------------------------------------------------------------*/
 
