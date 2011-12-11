@@ -13,7 +13,7 @@
 
 ?>
 
-<?php get_header( 'buddypress' ); ?>
+<?php get_header( 'status' ); ?>
 
 	<div id="content">
 			<?php do_action( 'bp_before_member_plugin_template' ); ?>
@@ -62,5 +62,5 @@
 
 	</div><!-- #content -->
 
-<?php get_sidebar( 'buddypress' ); ?>
-<?php get_footer( 'buddypress' ); ?>
+<?php get_sidebar( 'status' ); ?>
+<?php get_footer( 'status' ); ?>

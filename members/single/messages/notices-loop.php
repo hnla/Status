@@ -46,7 +46,7 @@
 <?php else: ?>
 
 	<div id="message" class="info">
-		<p><?php _e( 'Sorry, no notices were found.', 'buddypress' ); ?></p>
+		<p><?php _e( 'Sorry, no notices were found.', 'status' ); ?></p>
 	</div>
 
 <?php endif;?>

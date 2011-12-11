@@ -104,11 +104,11 @@ global $bp;
 		// login / sign up links
 		if ( !is_user_logged_in() ) {
 
-			echo '<li class="bp-login no-arrow"><a href="' . bp_get_root_domain() . '/wp-login.php?redirect_to=' . urlencode( bp_get_root_domain() ) . '">' . __( 'Log In', 'buddypress' ) . '</a></li>';
+			echo '<li class="bp-login no-arrow"><a href="' . bp_get_root_domain() . '/wp-login.php?redirect_to=' . urlencode( bp_get_root_domain() ) . '">' . __( 'Log In', 'status' ) . '</a></li>';
 
 			// Show "Sign Up" link if user registrations are allowed
 			if ( bp_get_signup_allowed() ) {
-			echo '<li class="bp-signup no-arrow"><a href="' . bp_get_signup_page(false) . '">' . __( 'Sign Up', 'buddypress' ) . '</a></li>';	
+			echo '<li class="bp-signup no-arrow"><a href="' . bp_get_signup_page(false) . '">' . __( 'Sign Up', 'status' ) . '</a></li>';	
 	 	}
 			echo '</ul>';
 		}// close logged out links			
@@ -119,7 +119,7 @@ global $bp;
 		return false;
 
 	echo '<li id="bp-adminbar-account-menu"><a href="' . bp_loggedin_user_domain() . '">';
-	echo __( 'My Account', 'buddypress' ) . '</a>';
+	echo __( 'My Account', 'status' ) . '</a>';
 	echo '<ul>';
 
 	// Loop through each navigation item
@@ -161,7 +161,7 @@ global $bp;
 
 	$alt = ( 0 == $counter % 2 ) ? ' class="alt"' : '';
 
-	echo '<li' . $alt . '><a id="bp-admin-logout" class="logout" href="' . wp_logout_url( home_url() ) . '">' . __( 'Log Out', 'buddypress' ) . '</a></li>';
+	echo '<li' . $alt . '><a id="bp-admin-logout" class="logout" href="' . wp_logout_url( home_url() ) . '">' . __( 'Log Out', 'status' ) . '</a></li>';
 	echo '</ul>';
 	echo '</li>';
 	
@@ -225,7 +225,7 @@ function status_widgets_init() {
 	register_sidebar( array(
 		'name'          => 'Blog sidebar',
 		'id'            => 'sidebar',
-		'description'   => __( 'The sidebar widget area', 'buddypress' ),
+		'description'   => __( 'The sidebar widget area', 'status' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">', 	  
 		'after_widget' => '</aside>',
    		'before_title' => '<h3 class="widgettitle">',
@@ -235,7 +235,7 @@ function status_widgets_init() {
 	register_sidebar( array(
 		'name'          => 'BuddyPress sidebar',
 		'id'            => 'sidebar-buddypress',
-		'description'   => __( 'The sidebar widget area', 'buddypress' ),
+		'description'   => __( 'The sidebar widget area', 'status' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">', 	  
 		'after_widget' => '</aside>',
    		'before_title' => '<h3 class="widgettitle">',
@@ -274,14 +274,14 @@ function status_blog_comments( $comment, $args, $depth ) {
 				<p>
 					<?php
 						/* translators: 1: comment author url, 2: comment author name, 3: comment permalink, 4: comment date/timestamp*/
-						printf( __( '<a href="%1$s" rel="nofollow">%2$s</a> said on <a href="%3$s"><span class="time-since">%4$s</span></a>', 'buddypress' ), get_comment_author_url(), get_comment_author(), get_comment_link(), get_comment_date() );
+						printf( __( '<a href="%1$s" rel="nofollow">%2$s</a> said on <a href="%3$s"><span class="time-since">%4$s</span></a>', 'status' ), get_comment_author_url(), get_comment_author(), get_comment_link(), get_comment_date() );
 					?>
 				</p>
 			</div>
 
 			<div class="comment-entry">
 				<?php if ( $comment->comment_approved == '0' ) : ?>
-				 	<em class="moderate"><?php _e( 'Your comment is awaiting moderation.', 'buddypress' ); ?></em>
+				 	<em class="moderate"><?php _e( 'Your comment is awaiting moderation.', 'status' ); ?></em>
 				<?php endif; ?>
 
 				<?php comment_text() ?>
@@ -293,7 +293,7 @@ function status_blog_comments( $comment, $args, $depth ) {
 					<?php endif; ?>
 
 					<?php if ( current_user_can( 'edit_comment', $comment->comment_ID ) ) : ?>
-						<?php printf( '<a class="button comment-edit-link bp-secondary-action" href="%1$s" title="%2$s">%3$s</a> ', get_edit_comment_link( $comment->comment_ID ), esc_attr__( 'Edit comment', 'buddypress' ), __( 'Edit', 'buddypress' ) ) ?>
+						<?php printf( '<a class="button comment-edit-link bp-secondary-action" href="%1$s" title="%2$s">%3$s</a> ', get_edit_comment_link( $comment->comment_ID ), esc_attr__( 'Edit comment', 'status' ), __( 'Edit', 'status' ) ) ?>
 					<?php endif; ?>
 
 			</div>

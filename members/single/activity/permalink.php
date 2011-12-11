@@ -1,4 +1,4 @@
-<?php get_header( 'buddypress' ) ?>
+<?php get_header( 'status' ) ?>
 
 <?php do_action( 'template_notices' ); ?>
 
@@ -16,4 +16,4 @@
 	<?php endif; ?>
 </div>
 
-<?php get_footer( 'buddypress' ) ?>
+<?php get_footer( 'status' ) ?>

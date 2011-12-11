@@ -32,7 +32,7 @@
 		<div id="header-wrapper">
 			<header>
 				<div id="branding" role="banner">
-					<h1 id="logo"><a href="<?php echo home_url(); ?>" title="<?php _ex( 'Home', 'Home page banner link title', 'buddypress' ); ?>"><?php bp_site_name(); ?></a></h1>
+					<h1 id="logo"><a href="<?php echo home_url(); ?>" title="<?php _ex( 'Home', 'Home page banner link title', 'status' ); ?>"><?php bp_site_name(); ?></a></h1>
 				</div>
 				<nav id="primary-navigation" role="navigation">
 					<?php wp_nav_menu( array( 'container' => false, 'menu_id' => 'nav', 'theme_location' => 'primary', 'fallback_cb' => 'bp_dtheme_main_nav' ) ); ?>
@@ -51,12 +51,12 @@
 	
 	if(1 > 2 )	{?>
 							<form action="<?php echo bp_search_form_action() ?>" method="post" id="search-form">
-							<label for="search-terms" class="accessibly-hidden"><?php _e( 'Search for:', 'buddypress' ); ?></label>
+							<label for="search-terms" class="accessibly-hidden"><?php _e( 'Search for:', 'status' ); ?></label>
 							<input type="text" id="search-terms" name="search-terms" value="<?php echo isset( $_REQUEST['s'] ) ? esc_attr( $_REQUEST['s'] ) : ''; ?>" />
 
 							<?php echo bp_search_form_type_select() ?>
 
-							<input type="submit" name="search-submit" id="search-submit" value="<?php _e( 'Search', 'buddypress' ) ?>" />
+							<input type="submit" name="search-submit" id="search-submit" value="<?php _e( 'Search', 'status' ) ?>" />
 
 							<?php wp_nonce_field( 'bp_search_form' ) ?>
 

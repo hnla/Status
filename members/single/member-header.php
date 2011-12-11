@@ -84,24 +84,24 @@
 				<?php bp_get_options_nav() ?>
 
 				<li id="activity-filter-select" class="last">
-					<label for="activity-filter-by"><?php _e( 'Show:', 'buddypress' ); ?></label>
+					<label for="activity-filter-by"><?php _e( 'Show:', 'status' ); ?></label>
 					<select id="activity-filter-by">
-						<option value="-1"><?php _e( 'Everything', 'buddypress' ) ?></option>
-						<option value="activity_update"><?php _e( 'Updates', 'buddypress' ) ?></option>
+						<option value="-1"><?php _e( 'Everything', 'status' ) ?></option>
+						<option value="activity_update"><?php _e( 'Updates', 'status' ) ?></option>
 
 						<?php
 						if ( !bp_is_current_action( 'groups' ) ) :
 							if ( bp_is_active( 'blogs' ) ) : ?>
 
-								<option value="new_blog_post"><?php _e( 'Posts', 'buddypress' ) ?></option>
-								<option value="new_blog_comment"><?php _e( 'Comments', 'buddypress' ) ?></option>
+								<option value="new_blog_post"><?php _e( 'Posts', 'status' ) ?></option>
+								<option value="new_blog_comment"><?php _e( 'Comments', 'status' ) ?></option>
 
 							<?php
 							endif;
 
 							if ( bp_is_active( 'friends' ) ) : ?>
 
-								<option value="friendship_accepted,friendship_created"><?php _e( 'Friendships', 'buddypress' ) ?></option>
+								<option value="friendship_accepted,friendship_created"><?php _e( 'Friendships', 'status' ) ?></option>
 
 							<?php endif;
 
@@ -109,15 +109,15 @@
 
 						if ( bp_is_active( 'forums' ) ) : ?>
 
-							<option value="new_forum_topic"><?php _e( 'Forum Topics', 'buddypress' ) ?></option>
-							<option value="new_forum_post"><?php _e( 'Forum Replies', 'buddypress' ) ?></option>
+							<option value="new_forum_topic"><?php _e( 'Forum Topics', 'status' ) ?></option>
+							<option value="new_forum_post"><?php _e( 'Forum Replies', 'status' ) ?></option>
 
 						<?php endif;
 
 						if ( bp_is_active( 'groups' ) ) : ?>
 
-							<option value="created_group"><?php _e( 'New Groups', 'buddypress' ) ?></option>
-							<option value="joined_group"><?php _e( 'Group Memberships', 'buddypress' ) ?></option>
+							<option value="created_group"><?php _e( 'New Groups', 'status' ) ?></option>
+							<option value="joined_group"><?php _e( 'Group Memberships', 'status' ) ?></option>
 
 						<?php endif;
 
@@ -138,11 +138,11 @@
 
 				<li id="blogs-order-select" class="last filter">
 
-					<label for="blogs-all"><?php _e( 'Order By:', 'buddypress' ); ?></label>
+					<label for="blogs-all"><?php _e( 'Order By:', 'status' ); ?></label>
 					<select id="blogs-all">
-						<option value="active"><?php _e( 'Last Active', 'buddypress' ); ?></option>
-						<option value="newest"><?php _e( 'Newest', 'buddypress' ); ?></option>
-						<option value="alphabetical"><?php _e( 'Alphabetical', 'buddypress' ); ?></option>
+						<option value="active"><?php _e( 'Last Active', 'status' ); ?></option>
+						<option value="newest"><?php _e( 'Newest', 'status' ); ?></option>
+						<option value="alphabetical"><?php _e( 'Alphabetical', 'status' ); ?></option>
 
 						<?php do_action( 'bp_member_blog_order_options' ); ?>
 
@@ -163,11 +163,11 @@
 
 					<li id="members-order-select" class="last filter">
 
-						<label for="members-all"><?php _e( 'Order By:', 'buddypress' ) ?></label>
+						<label for="members-all"><?php _e( 'Order By:', 'status' ) ?></label>
 						<select id="members-all">
-							<option value="active"><?php _e( 'Last Active', 'buddypress' ) ?></option>
-							<option value="newest"><?php _e( 'Newest Registered', 'buddypress' ) ?></option>
-							<option value="alphabetical"><?php _e( 'Alphabetical', 'buddypress' ) ?></option>
+							<option value="active"><?php _e( 'Last Active', 'status' ) ?></option>
+							<option value="newest"><?php _e( 'Newest Registered', 'status' ) ?></option>
+							<option value="alphabetical"><?php _e( 'Alphabetical', 'status' ) ?></option>
 
 							<?php do_action( 'bp_member_blog_order_options' ) ?>
 
@@ -190,12 +190,12 @@
 
 					<li id="groups-order-select" class="last filter">
 
-						<label for="groups-sort-by"><?php _e( 'Order By:', 'buddypress' ); ?></label>
+						<label for="groups-sort-by"><?php _e( 'Order By:', 'status' ); ?></label>
 						<select id="groups-sort-by">
-							<option value="active"><?php _e( 'Last Active', 'buddypress' ); ?></option>
-							<option value="popular"><?php _e( 'Most Members', 'buddypress' ); ?></option>
-							<option value="newest"><?php _e( 'Newly Created', 'buddypress' ); ?></option>
-							<option value="alphabetical"><?php _e( 'Alphabetical', 'buddypress' ); ?></option>
+							<option value="active"><?php _e( 'Last Active', 'status' ); ?></option>
+							<option value="popular"><?php _e( 'Most Members', 'status' ); ?></option>
+							<option value="newest"><?php _e( 'Newly Created', 'status' ); ?></option>
+							<option value="alphabetical"><?php _e( 'Alphabetical', 'status' ); ?></option>
 
 							<?php do_action( 'bp_member_group_order_options' ) ?>
 
@@ -243,11 +243,11 @@
 
 				<li id="forums-order-select" class="last filter">
 
-					<label for="forums-order-by"><?php _e( 'Order By:', 'buddypress' ); ?></label>
+					<label for="forums-order-by"><?php _e( 'Order By:', 'status' ); ?></label>
 					<select id="forums-order-by">
-						<option value="active"><?php _e( 'Last Active', 'buddypress' ); ?></option>
-						<option value="popular"><?php _e( 'Most Posts', 'buddypress' ); ?></option>
-						<option value="unreplied"><?php _e( 'Unreplied', 'buddypress' ); ?></option>
+						<option value="active"><?php _e( 'Last Active', 'status' ); ?></option>
+						<option value="popular"><?php _e( 'Most Posts', 'status' ); ?></option>
+						<option value="unreplied"><?php _e( 'Unreplied', 'status' ); ?></option>
 
 						<?php do_action( 'bp_forums_directory_order_options' ); ?>
 

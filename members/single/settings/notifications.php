@@ -8,7 +8,7 @@
  */
 ?>
 
-<?php get_header( 'buddypress' ) ?>
+<?php get_header( 'status' ) ?>
 
 <div id="content-profile-headerfull">
 			<?php do_action( 'bp_before_member_settings_template' ); ?>
@@ -26,19 +26,19 @@
 				<?php do_action( 'bp_before_member_body' ); ?>
 
 			
-				<h3><?php _e( 'Email Notification', 'buddypress' ); ?></h3>
+				<h3><?php _e( 'Email Notification', 'status' ); ?></h3>
 
 				<?php do_action( 'bp_template_content' ) ?>
 
 				<form action="<?php echo bp_displayed_user_domain() . bp_get_settings_slug() . '/notifications'; ?>" method="post" class="standard-form" id="settings-form">
-					<p><?php _e( 'Send a notification by email when:', 'buddypress' ); ?></p>
+					<p><?php _e( 'Send a notification by email when:', 'status' ); ?></p>
 
 					<?php do_action( 'bp_notification_settings' ); ?>
 
 					<?php do_action( 'bp_members_notification_settings_before_submit' ); ?>
 
 					<div class="submit">
-						<input type="submit" name="submit" value="<?php _e( 'Save Changes', 'buddypress' ); ?>" id="submit" class="auto" />
+						<input type="submit" name="submit" value="<?php _e( 'Save Changes', 'status' ); ?>" id="submit" class="auto" />
 					</div>
 
 					<?php do_action( 'bp_members_notification_settings_after_submit' ); ?>
@@ -55,6 +55,6 @@
 
 	</div><!-- #content -->
 
-<?php get_sidebar( 'buddypress' ) ?>
+<?php get_sidebar( 'status' ) ?>
 
-<?php get_footer( 'buddypress' ) ?>
+<?php get_footer( 'status' ) ?>
