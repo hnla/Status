@@ -16,7 +16,7 @@
 			<h1 class="post-title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'status' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
 		</hgroup>
 	</header>
-	<?php if ( is_search() || (is_page_template('blogsnews.php') ) ) : ?>
+	<?php if ( is_search() ) : ?>
 		<div class="post-summary">
 			<?php the_excerpt(); ?>
 		</div>
