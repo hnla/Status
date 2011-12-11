@@ -62,11 +62,11 @@ a, a:link {
  text-decoration: none;
 }
 a:visited {
-	color: #99ddee;
-	text-decoration: none;
+	color: #aaaaaa;
 }
 a:focus, a:hover {
-	color: #1188cc;
+	color: #111111;
+	text-decoration: underline;
 }
 header a, header a:link, header a:visited {
 	color: #cccccc;
@@ -475,7 +475,7 @@ ul#activity-stream{
 	margin-left: 80px;
 }
 .activity-meta{
-	font-size: 0.9em;
+	font-size: 0.8em;
 	float: right;
 }
 .activity-inner{
@@ -487,35 +487,44 @@ clear: right;}
 	font-weight: bold;
 	float: left;
 }
+.activity-details{
+	overflow: hidden;
+}
 a.acomment-reply{	
 	padding: 2px 0 0 15px;
-	margin-right: 5px;
+	margin-right: 8px;
 }
 a.unfav, a.fav, a.show-comments, a.close-comments {	
 	padding: 2px 0 0 15px;
-	margin-right: 5px;
+	margin-right: 8px;
 }
 a.show-comments, a.close-comments {
  cursor: pointer;
 }
 a.delete-activity{	
 	padding: 2px 0 0 15px;
-	margin-right: 5px;
+	margin-right: 8px;
 }
+a:hover.show-comments, a:hover.close-comments{
+	background: url('../images/icon-comments.png') 0px 3px no-repeat;
+	padding: 2px 0 0 15px;
+	margin-right: 8px;
+} 
+
 a:hover.acomment-reply{	
 	background: url('../images/icon-speech.png') 0px 3px no-repeat;
 	padding: 2px 0 0 15px;
-	margin-right: 5px;
+	margin-right: 8px;
 }
 a:hover.unfav, a:hover.fav{	
 	background: url('../images/icon-fav.png') 0px 3px no-repeat;
 	padding: 2px 0 0 15px;
-	margin-right: 5px;
+	margin-right: 8px;
 }
 a:hover.delete-activity{	
 	background: url('../images/icon-delete.png') 0px 3px no-repeat;
 	padding: 2px 0 0 15px;
-	margin-right: 5px;
+	margin-right: 8px;
 }
 /** Activity comments **/
 .activity-comments>ul {

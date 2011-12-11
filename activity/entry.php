@@ -24,8 +24,9 @@
 	</div>
 
 	<div class="activity-content">
+		<div class="activity-details">
 		<div class="activity-header">
-			<?php global $activities_template; echo  $activities_template->activity->action; ?>
+				<?php bp_activity_action(); ?>
 		</div>
 				<?php if ( is_user_logged_in() ) : ?>
 
@@ -54,12 +55,13 @@
 
 						<?php if ( bp_activity_user_can_delete() ) bp_activity_delete_link(); ?>
 
-							<span class="time-since" data-timestamp="activity-time-since"><?php echo bp_core_time_since( bp_get_activity_date_recorded() ) ?></span>
 
 
 					</div>
 
 				<?php endif; ?>
+		
+				</div>
 		<?php if ( 'activity_comment' == bp_get_activity_type() ) : ?>
 			<div class="activity-inreplyto">
 				<strong><?php _e( 'In reply to: ', 'buddypress' ); ?></strong><?php bp_activity_parent_content(); ?> <a href="<?php bp_activity_thread_permalink(); ?>" class="view" title="<?php _e( 'View Thread / Permalink', 'buddypress' ); ?>"><?php _e( 'View', 'buddypress' ); ?></a>
