@@ -110,6 +110,7 @@ nav ul, .looplist, .item-list-tabs ul {
 	width: 20%;
 	margin: 20px 0 0 0;
 }
+.home #sidebar{margin: 40px 0 0 0;}
 #content{
 	margin: 20px 0 20px 0;
 	float: left;
@@ -127,7 +128,11 @@ nav ul, .looplist, .item-list-tabs ul {
 }
 #content-profile{
 	float: left;
-	width: 75%;
+	width: 78%;
+}
+#content-stream{
+	float: left;
+	width: 78%;
 }
 #content-profile-headerfull{
 	width: 100%;
@@ -232,15 +237,10 @@ nav #user-profile-menu ul li {
 	border-bottom: 1px solid #ffffff;
 }
 footer {
-	margin: 0 auto;
-	max-width: 1230px;
 	padding: 10px;
 	font-size: 0.9em;
 }
 #friends-loop {
-	margin: 0 auto;
-	max-width: 1230px;
-	padding: 10px 10px 0 10px;
 	color: #888888;
 	font-size: 0.85em;
 }

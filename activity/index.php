@@ -11,7 +11,7 @@
 
 <?php get_header(); ?>
 	<?php do_action( 'bp_before_directory_activity_page' ); ?>
-	<div id="content" role="main">
+	<div id="content-stream" role="main">
 
 			<?php do_action( 'bp_before_directory_activity' ); ?>
 
@@ -146,4 +146,5 @@
 
 	</div><!-- / #content -->
 	<?php do_action( 'bp_after_directory_activity_page' ); ?>
+<?php get_sidebar( 'buddypress' ); ?>
 <?php get_footer(); ?>

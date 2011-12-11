@@ -2,22 +2,6 @@
 		<?php do_action( 'bp_after_container' ) ?>
 		<?php do_action( 'bp_before_footer' ) ?>
 		
-		<div id="friends-wrapper">
-			<section id="friends-loop">
-				<?php get_template_part('status-loop', 'friends');?>
-			</section>
-		</div>
-		
-		<div id="widgets-wrapper">
-			<section id="footer-widget">
-			<?php if ( is_active_sidebar( 'first-footer-widget-area' ) || is_active_sidebar( 'second-footer-widget-area' ) || is_active_sidebar( 'third-footer-widget-area' ) || is_active_sidebar( 'fourth-footer-widget-area' ) ) : ?>
-				<div id="footer-widget-block">
-					<?php get_sidebar( 'footer' ) ?>
-				</div>
-			<?php endif; ?>
-			</section>
-		</div>
-		
 		<div id="footer-wrapper">
 			<footer>
 			<?php if(has_nav_menu('footer')): ?>
