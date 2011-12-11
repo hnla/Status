@@ -41,7 +41,7 @@
 ------------------------------------------------------------------------------*/
 
 body {
-	background: #f4f4f4;
+	background: #f4f4f4 url('../images/wood_pattern.png');
 	/* temp font stack */
 	font: 100%/1.7 Arial, sans-serif;
 	color: #555;
@@ -188,14 +188,16 @@ nav #user-profile-menu ul li {
 }
 /** footer region **/
 #widgets-wrapper  {
-	background: #242424;
+	background: #f9f9f9;
+	border-top: 1px solid #dddddd;
 }
 #footer-wrapper{
 	background-color:#464646;background-image:-ms-linear-gradient(bottom,#373737,#464646 5px);background-image:-moz-linear-gradient(bottom,#373737,#464646 5px);background-image:-o-linear-gradient(bottom,#373737,#464646 5px);background-image:-webkit-gradient(linear,left bottom,left top,from(#373737),to(#464646));background-image:-webkit-linear-gradient(bottom,#373737,#464646 5px);background-image:linear-gradient(bottom,#373737,#464646 5px);
 }
 #friends-wrapper{
-	background: #464646;
-	color:#eeeeee;
+	background: #f1f1f1;
+	border-top: 1px solid #cccccc;
+	border-bottom: 1px solid #ffffff;
 }
 footer {
 	margin: 0 auto;
@@ -206,7 +208,8 @@ footer {
 #friends-loop {
 	margin: 0 auto;
 	max-width: 1230px;
-	padding: 0px 10px;
+	padding: 10px 10px 0 10px;
+	color: #888888;
 	font-size: 0.85em;
 }
 #friends-loop ul {margin: 0;}
@@ -216,7 +219,7 @@ footer {
 	display: inline;
 	display: inline-block;
 }
-#footer-widg-block {
+#footer-widget-block {
 	margin: 0 auto;
 	max-width: 1230px;
 	padding: 0px 10px;
@@ -231,8 +234,8 @@ footer {
 	font-size: 0.9em;
 }
 #site-generator {
-	margin: 0px 20px;
-	text-align: center;
+	color: #aaaaaa;
+	text-shadow: -1px -1px 0px #111111;
 	font-size: 0.9em;
 }
 #footer-widget-area {
@@ -244,7 +247,7 @@ footer {
 }
 #footer-widget-area div.widget-area > ul {
 	float: left;
-	margin-right: 2.5%;
+	margin-right: 1%;
 	width: 23%;
 }
 #footer-widget-area div.widget-area > ul > li {
@@ -264,6 +267,9 @@ footer {
 	margin-left: 15px; /* border is 4px */
 }
 div#fourth ul.xoxo { margin-right: 0; }
+
+.widget-area ul{margin: 1em 0;
+padding: 0 0 0 10px;}
 /** sidebar **/
 
 /* >Primary page styling
@@ -273,51 +279,57 @@ div#fourth ul.xoxo { margin-right: 0; }
 /* until we know what we are doing with logged out signup some padding/margins */
 .home .status-signup {
 	background: #ffffff;
-	border-top: 1px solid #ffffff;
-	border-right: 2px solid #dddddd;
-	border-bottom: 2px solid #dddddd;
-	border-left: 1px solid #ffffff;
+	border-right: 1px solid #aaaaaa;
+	border-bottom: 1px solid #aaaaaa;
+	border-top: 1px solid #dddddd;
+	border-left: 1px solid #dddddd;
 	-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;
 	padding: 0px 20px 20px 20px;
+	-moz-box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
+	-webkit-box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
+	box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
 }
 /* >Activity screens
 ------------------------------------------------------------------------------*/
 /** Activity 'what's new' **/
 #whats-new-declare {
-	margin-top: 20px;
+	margin: 40px 0 10px 0;
+	background: rgba(0, 0, 0, 0.024);
+	padding: 6px;
 }
 #whats-new-avatar {
 	float: left;
 	width: 80px;
 }
 #whats-new-avatar img {
-	padding: 10px;
+	padding: 2px;
+	margin: 10px 12px;
 	background: #ffffff;
-	border-top: 1px solid #ffffff;
-	border-right: 2px solid #dddddd;
-	border-bottom: 2px solid #dddddd;
-	border-left: 1px solid #ffffff;
+	border-right: 1px solid #aaaaaa;
+	border-bottom: 1px solid #aaaaaa;
+	border-top: 1px solid #dddddd;
+	border-left: 1px solid #dddddd;
 	-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;
 }
 
 #whats-new-wrapper{
-	margin-left: 90px;
+	margin-left: 80px;
 }
 
 #whats-new-tail{
 	background: url('../images/speech-tail.png') 0 15px no-repeat;
 	height: 50px;
-	width: 40px;	
+	width: 42px;	
 	float: left;
 }
 #whats-new-textarea {
 	margin-left: 40px;
 	padding: 10px;
 	background: #ffffff;
-	border-top: 1px solid #ffffff;
-	border-right: 2px solid #dddddd;
-	border-bottom: 2px solid #dddddd;
-	border-left: 1px solid #ffffff;
+	border-right: 1px solid #aaaaaa;
+	border-bottom: 1px solid #aaaaaa;
+	border-top: 1px solid #dddddd;
+	border-left: 1px solid #dddddd;
 	-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;
 }
 #what-new-content {
@@ -341,11 +353,14 @@ div#fourth ul.xoxo { margin-right: 0; }
 	margin-right: 10px;
 	padding: 5px 10px;
 	background: white;
-	border-top: 1px solid #ffffff;
-	border-right: 2px solid #dddddd;
-	border-bottom: 2px solid #dddddd;
-	border-left: 1px solid #ffffff;
+	border-right: 1px solid #aaaaaa;
+	border-bottom: 1px solid #aaaaaa;
+	border-top: 1px solid #dddddd;
+	border-left: 1px solid #dddddd;
 	-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;
+	-moz-box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
+	-webkit-box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
+	box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
 	color: #aaaaaa;
 	font-style: italic;
 }
@@ -357,11 +372,14 @@ div#fourth ul.xoxo { margin-right: 0; }
 .activity-entry, .activity-comment{
 	clear: both;
 	background: #F9F9F9;
-	border-top: 1px solid #ffffff;
-	border-right: 2px solid #dddddd;
-	border-bottom: 2px solid #dddddd;
-	border-left: 1px solid #ffffff;
+	border-right: 1px solid #aaaaaa;
+	border-bottom: 1px solid #aaaaaa;
+	border-top: 1px solid #dddddd;
+	border-left: 1px solid #dddddd;
 	-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;
+	-moz-box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
+	-webkit-box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
+	box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
 	margin-bottom: 20px;
 	overflow: hidden;
 	padding: 10px;
@@ -375,7 +393,13 @@ div#fourth ul.xoxo { margin-right: 0; }
 	margin: 0 20px 0 0;
 }
 .activity-avatar img{
-	border: 3px solid #eeeeee;
+	background: #ffffff;
+	border-right: 1px solid #aaaaaa;
+	border-bottom: 1px solid #aaaaaa;
+	border-top: 1px solid #dddddd;
+	border-left: 1px solid #dddddd;
+	-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;
+	padding: 2px;
 }
 ul#activity-stream{
 	margin: 20px 0 0 0;
@@ -439,10 +463,10 @@ a:hover.delete-activity{
 }
 /** Account / Profile screens **/
 #item-header, #activity-navigation{
-	border-top: 1px solid #ffffff;
-	border-right: 2px solid #dddddd;
-	border-bottom: 2px solid #dddddd;
-	border-left: 1px solid #ffffff;
+	border-right: 1px solid #aaaaaa;
+	border-bottom: 1px solid #aaaaaa;
+	border-top: 1px solid #dddddd;
+	border-left: 1px solid #dddddd;
 	padding: 10px;
 	margin-top: 20px;
 	overflow: hidden;
