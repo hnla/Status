@@ -229,6 +229,9 @@ nav #user-profile-menu ul li {
 	border-top: 1px solid #dddddd;
 }
 #footer-wrapper{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
 	background-color:#464646;background-image:-ms-linear-gradient(bottom,#373737,#464646 5px);background-image:-moz-linear-gradient(bottom,#373737,#464646 5px);background-image:-o-linear-gradient(bottom,#373737,#464646 5px);background-image:-webkit-gradient(linear,left bottom,left top,from(#373737),to(#464646));background-image:-webkit-linear-gradient(bottom,#373737,#464646 5px);background-image:linear-gradient(bottom,#373737,#464646 5px);
 }
 #friends-wrapper{
