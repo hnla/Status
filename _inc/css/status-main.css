@@ -140,6 +140,17 @@ nav ul, .looplist, .item-list-tabs ul {
 	-webkit-box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
 	box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
 }
+#profile-left{
+	float: left;
+	width: 78%;
+	border-right: 1px dashed #AAA;
+	padding: 0 20px 0 0;
+}
+#profile-right{
+	width: 17%;
+	float: right;
+	padding: 20px;
+}
 #content-profile{
 	float: left;
 	width: 78%;
