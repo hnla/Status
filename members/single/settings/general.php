@@ -9,7 +9,7 @@
 ?>
 
 <?php get_header( 'buddypress' ) ?>
-
+<div id="content-profile-headerfull">
 			<?php do_action( 'bp_before_member_settings_template' ); ?>
 
 			<div id="item-header">
@@ -17,7 +17,7 @@
 				<?php locate_template( array( 'members/single/member-header.php' ), true ); ?>
 
 			</div><!-- #item-header -->
-
+</div>
 		<div id="content">
 			<div id="item-body" role="main">
 
