@@ -11,13 +11,16 @@
 
 <?php get_header(); ?>
 <div id="content" role="main">
+	<?php do_action( 'bp_before_blog_search' ) ?>
 	<?php if ( have_posts() ) : ?>
 	<header class="post-header">
 		<h1 class="post-title"><?php printf( __( 'Search Results for: %s', 'status'), '<span>' . get_search_query() . '</span>' ); ?></h1>
 	</header>
 	<?php bp_dtheme_content_nav( 'nav-above' ); ?>
 	<?php while ( have_posts() ) : the_post(); 
+			do_action( 'bp_before_blog_post' );
 			get_template_part( 'content', get_post_format() );
+			do_action( 'bp_after_blog_post' );
 		endwhile;
 			bp_dtheme_content_nav( 'nav-below' );
 		else : ?>
@@ -31,6 +34,7 @@
 		</div>
 	</article>
 	<?php endif; ?>
+	<?php do_action( 'bp_after_blog_search' ) ?>
 </div>
 <?php get_sidebar(); ?>
 <?php get_footer() ?>
