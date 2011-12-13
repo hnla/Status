@@ -647,6 +647,522 @@ box-shadow: inset 0 1px 0 #eee,#fff 0 1px 0;
 	width: 45%;
 }
 
+/* default WordPress dump until sort fully */
+p {
+	margin-bottom: 10px;
+}
+
+p:last-child {
+	margin-bottom: 0;
+}
+
+hr {
+	background-color: #e7e7e7;
+	border: 0 none;
+	clear: both;
+	height: 1px;
+	margin: 20px 0;
+}
+
+/*--------------------------------------------------------------
+3.1 - Text
+--------------------------------------------------------------*/
+big {
+	font-size: 1.2em;
+}
+del {
+	text-decoration: line-through;
+}
+ins {
+	background: #fff9db;
+	text-decoration: none;
+}
+sub {
+	top: .5ex;
+}
+sup {
+	bottom: 1ex;
+}
+sub,
+sup {
+	height: 0;
+	line-height: 1;
+	position: relative;
+	vertical-align: baseline;
+}
+pre, blockquote {
+	margin-bottom: 20px;
+}
+pre,
+code p {
+	background: #f4f4f4;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	padding: 15px;
+	overflow: auto;
+}
+code {
+	font-family: "Monaco", courier, sans-serif;
+}
+blockquote {
+	font-family: georgia, times, serif;
+	font-style: italic;
+	line-height: 150%;
+	padding: 0 3em;
+	quotes: none;
+}
+blockquote p {
+	margin-bottom: 15px !important;
+}
+
+
+/*--------------------------------------------------------------
+3.3 - Lists
+--------------------------------------------------------------*/
+div.page ul,
+div.page ol,
+div.page dl,
+div.post ul,
+div.post ol,
+div.post dl {
+	margin: 0 0 18px 1.5em;
+}
+div.page ul,
+div.post ul {
+	list-style: square;
+}
+div.page ol,
+div.post ol {
+	list-style: decimal;
+}
+div.page ol ol,
+div.post ol ol {
+	list-style: lower-alpha;
+}
+div.page ol ol ol,
+div.post ol ol ol {
+	list-style: lower-roman;
+}
+dl {
+	margin-left: 0;
+}
+dt {
+	font-weight: bold;
+}
+dd {
+	margin: 0 0 15px 0;
+}
+div.post ul ul,
+div.post ol ol,
+div.post ol ul,
+div.post ul ol,
+div.page ul ul,
+div.page ol ol,
+div.page ol ul,
+div.page ul ol {
+	margin-bottom: 0px;
+}
+
+div.pagination {
+	background: #f4f4f4;
+	border: none;
+	color: #888;
+	font-size: 11px;
+	height: 19px;
+	margin: -20px -19px 0px -19px;
+	padding: 8px 20px;
+	position: relative;
+}
+div.pagination .pag-count {
+	float: left;
+}
+div.pagination .pagination-links {
+	float: right;
+}
+div.pagination .pagination-links span,
+div.pagination .pagination-links a {
+	font-size: 0.9em;
+	padding: 0 5px;
+}
+div.pagination .pagination-links a:hover {
+	font-weight: bold;
+}
+div#pag-bottom {
+	margin-top: -1px;
+}
+#nav-above {
+	display: none;
+}
+.paged #nav-above {
+	display: block;
+}
+
+.alignright {
+	float: right;
+	margin-left: 15px;
+}
+.alignleft {
+	float: left;
+	margin-right: 15px;
+}
+.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+/*--------------------------------------------------------------
+5.2 - Comments
+--------------------------------------------------------------*/
+.navigation,
+.paged-navigation,
+.comment-navigation {
+	overflow: hidden;
+	font-family: georgia, times, serif;
+	font-size: 14px;
+	font-style: italic;
+	margin: 5px 0 25px 0;
+	padding: 5px 0;
+}
+.comments {
+	float: right;
+}
+#trackbacks {
+	margin-top: 30px;
+}
+.commentlist .bypostauthor {
+}
+#comments {
+	margin-top: 30px;
+}
+#comments ol.commentlist {
+	border-bottom: 1px solid #e4e4e4;
+	margin: 0 0 30px 0;
+}
+#comments ol.commentlist ol {
+	list-style-type: decimal;
+	margin: 0 0 18px 2.5em;
+}
+#comments ol.commentlist ol ol {
+	list-style: lower-alpha;
+	margin-bottom: 0px;
+}
+#comments ol.commentlist ol ol ol {
+	list-style: lower-roman;
+}
+ol.commentlist li.comment {
+	border-top: 1px solid #e4e4e4;
+	clear: left;
+	list-style: none;
+	margin-bottom: 15px;
+}
+ol.commentlist ul.children li {
+	margin-bottom: 0;
+}
+ol.commentlist div.comment-avatar-box {
+	float: left;
+	margin: 15px 15px 0 0;
+}
+.commentlist ul.children div.comment-avatar-box {
+	float: left;
+	margin: 0 10px 0 0;
+}
+div.comment-avatar-box img {
+	border: 2px solid #eee;
+}
+div.comment-content {
+	overflow: hidden;
+}
+ul.children .comment-entry {
+	margin-bottom: 10px;
+}
+div.comment-meta {
+	color: #888;
+	font-size: 11px;
+	margin: 15px 0;
+	width: 100%;
+}
+div.comment-meta em {
+	font-style: normal;
+}
+#reply-title {
+	margin-top: 0;
+}
+#reply-title small {
+	float: right;
+	font-size: 11px;
+	font-weight: normal;
+}
+#reply-title small a {
+	margin-right: 0;
+}
+.commentlist ul.children {
+	background: #f5f5f5;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	margin: 15px 0 15px 70px;
+	padding: 0 10px;
+}
+.commentlist ul.children ul {
+	margin: 0 0 0 25px;
+	padding-right: 0;
+}
+.commentlist ul.children img.avatar {
+	border-style: none;
+	height: 25px;
+	margin: 0;
+	width: 25px;
+}
+.commentlist ul.children div.comment-meta {
+	font-size: 0.9em;
+	margin: 0 0 10px 0;
+}
+.commentlist ul.children li {
+	border-top: 2px solid #fffeff;
+	padding-top: 10px;
+}
+.commentlist ul.children li:first-child {
+	border-top: none;
+}
+.commentlist ul.children ul li:first-child {
+	border-top: 2px solid #fffeff;
+}
+#respond {
+	background-color: #fafafa;
+	border: 1px solid #e5e5e5;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	padding: 15px;
+}
+#respond .avb img {
+	float: inherit;
+}
+#respond .comment-avatar-box {
+	float: left;
+	margin: 0 15px 0 0;
+}
+#respond .form-submit {
+	margin-bottom: 0;
+}
+ol.commentlist #respond {
+	clear: left;
+	margin-left: 70px;
+}
+.commentlist ul.children #respond {
+	margin-bottom: 10px;
+	margin-left: 35px;
+	margin-right: 20px;
+}
+#respond div.comment-content {
+	border-style: none;
+}
+#nav-below {
+	margin: 0 0;
+	padding: 0 0;
+}
+#nav-above {
+	margin: 0 0 15px;
+	padding: 0;
+}
+.comment-options {
+	margin: 10px 0 2px;
+}
+.comment-options .comment-reply-link,
+.comment-options .comment-edit-link {
+	margin-right: 5px;
+	padding: 4px 8px;
+}
+.commentlist ul.children div.comment-options {
+	margin-bottom: 10px;
+}
+
+
+/*--------------------------------------------------------------
+5.3 - Gallery
+--------------------------------------------------------------*/
+.wp-caption {
+	background-color: #f3f3f3;
+	border: 1px solid #ddd;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	margin-bottom: 15px;
+	padding-top: 4px;
+	text-align: center;
+
+}
+.wp-caption img {
+	border: 0 none;
+	margin: 0;
+	padding: 0;
+
+}
+dd.wp-caption p.wp-caption-text,
+.wp-caption p.wp-caption-text {
+	font-size: 0.9em;
+	line-height: 17px;
+	margin: 0;
+	padding: 5px 4px 5px 0;
+}
+#content .gallery {
+	margin: 0 auto 15px;
+}
+#content .gallery .gallery-item {
+	margin-bottom: 0;
+	margin-left: 0;
+}
+.gallery-item img {
+	margin-bottom: 15px;
+}
+.gallery .gallery-caption {
+	color: #555;
+}
+
+
+/*--------------------------------------------------------------
+5.4 - Images
+--------------------------------------------------------------*/
+img.avatar {
+	border: 2px solid #eee;
+	float: left;
+}
+img.wp-smiley {
+	border: none !important;
+	clear: none !important;
+	float: none !important;
+	margin: 0 !important;
+	padding: 0 !important;
+}
+img.centered,
+img.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+img.alignright {
+	display: inline;
+	margin: 0 0 2px 7px;
+	padding: 4px;
+}
+img.alignleft {
+	display: inline;
+	margin: 0 7px 2px 0;
+	padding: 4px;
+}
+
+
+/*--------------------------------------------------------------
+5.5 - Posts
+--------------------------------------------------------------*/
+div.page,
+div.post,
+div.attachment {
+	margin: 0 0 15px 0;
+	overflow: hidden;
+}
+div.page:last-child,
+div.post:last-child,
+#item-body:last-child,
+#trackbacklist {
+	margin-bottom: 0;
+}
+h2.posttitle {
+	line-height: 120%;
+	margin: 0;
+}
+h2.pagetitle {
+	line-height: 120%;
+}
+h2.pagetitle a,
+h2.posttitle a {
+	color: #666;
+	text-decoration: none;
+}
+.edit-link,
+.page-link {
+	clear: both;
+	font-weight: bold;
+}
+div.post table,
+div.page table {
+	border: 1px solid #eee;
+	border-collapse: collapse;
+	border-spacing: 0;
+	margin-bottom: 15px;
+}
+div.post table th,
+div.page table th {
+	border-top: 1px solid #eee;
+	text-align: left;
+}
+div.post table td,
+div.page table td {
+	border-top: 1px solid #eee;
+}
+div.author-box {
+	background: #f0f0f0;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	float: left;
+	font-family: georgia, times, serif;
+	font-style: italic;
+	margin: 0 15px 15px 0;
+	padding: 10px;
+	text-align: center;
+	width: 70px;
+}
+div.author-box p {
+	word-wrap: break-word;
+}
+div.author-box p,
+div.comment-avatar-box p {
+	margin: 5px 0 0;
+}
+div.author-box a,
+div.comment-avatar-box a {
+	text-decoration: none;
+}
+div.author-box img {
+	float: none;
+	border: 4px solid #fff;
+	margin: 0;
+}
+div.post-content {
+	margin-left: 105px;
+}
+p.date span:first-child {
+	font-style: italic;
+}
+div.post .entry {
+	margin-bottom: 15px;
+}
+p.date,
+p.postmetadata {
+	border-bottom: 1px solid #e4e4e4;
+	border-top: 1px solid #e4e4e4;
+	color: #888;
+	font-family: Georgia, times, serif;
+	margin: 10px 0;
+	padding: 3px 0;
+}
+p.postmetadata {
+	clear: left;
+	overflow: hidden;
+}
+.page .tags,
+.post .tags {
+	float: left;
+}
+span.sticky-post {
+	font-style: normal;
+}
+
+
 /* >Classes
 ------------------------------------------------------------------------------*/
 
