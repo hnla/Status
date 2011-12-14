@@ -24,15 +24,15 @@
 				<td width="1%" class="thread-count">
 					<span class="unread-count"><?php bp_message_thread_unread_count() ?></span>
 				</td>
-				<td width="1%" class="thread-avatar"><?php bp_message_thread_avatar() ?></td>
+				<td width="8%" class="thread-avatar"><?php bp_message_thread_avatar() ?></td>
 
 				<?php if ( 'sentbox' != bp_current_action() ) : ?>
-					<td width="30%" class="thread-from">
+					<td width="25%" class="thread-from">
 						<?php _e( 'From:', 'status' ); ?> <?php bp_message_thread_from() ?><br />
 						<span class="activity"><?php bp_message_thread_last_post_date() ?></span>
 					</td>
 				<?php else: ?>
-					<td width="30%" class="thread-from">
+					<td width="25%" class="thread-from">
 						<?php _e( 'To:', 'status' ); ?> <?php bp_message_thread_to() ?><br />
 						<span class="activity"><?php bp_message_thread_last_post_date() ?></span>
 					</td>

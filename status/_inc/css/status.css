@@ -149,7 +149,7 @@ nav ul, .looplist, .item-list-tabs ul {
 	box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
 }
 
-.edit-profile{
+.edit-profile, .friends #content-profile, .messages #content-profile{
 	margin: 20px 0 0 0;
 	background: #ffffff;
 	border-right: 1px solid #cccccc;
@@ -210,6 +210,12 @@ footer {clear: both;}
 	padding: 10px;
 	border: 1px solid #dddddd;
 	margin: 10px 0px 0px 170px;}
+
+table{
+	width: 100%;
+	text-align: left;
+}	
+	
 /* >Navigational
 ------------------------------------------------------------------------------*/
 
@@ -516,7 +522,7 @@ clear: right;}
 .activity-comments{clear:right;}
 
 .activity-header{
-	font-size: 0.9em;
+	font-size: 0.8em;
 	font-weight: bold;
 	float: left;
 }
@@ -538,27 +544,55 @@ a.delete-activity{
 	padding: 2px 0 0 15px;
 	margin-right: 8px;
 }
+
+a.close-comments, a.show-comments{
+	padding: 2px 0 0 15px;
+	margin-right: 8px;
+	opacity: 0.5;
+} 
+
+a.acomment-reply{	
+	padding: 2px 0 0 15px;
+	margin-right: 8px;
+	opacity: 0.5;
+}
+a.fav, a.unfav{	
+	padding: 2px 0 0 15px;
+	margin-right: 8px;
+	opacity: 0.5;
+}
+a.delete-activity{	
+	padding: 2px 0 0 15px;
+	margin-right: 8px;
+	opacity: 0.5;
+}
+
 a:hover.show-comments, a:hover.close-comments{
 	background: url('../images/icon-comments.png') 0px 3px no-repeat;
 	padding: 2px 0 0 15px;
 	margin-right: 8px;
+	opacity: 1;
 } 
 
 a:hover.acomment-reply{	
 	background: url('../images/icon-speech.png') 0px 3px no-repeat;
 	padding: 2px 0 0 15px;
 	margin-right: 8px;
+	opacity: 1;
 }
 a:hover.unfav, a:hover.fav{	
 	background: url('../images/icon-fav.png') 0px 3px no-repeat;
 	padding: 2px 0 0 15px;
 	margin-right: 8px;
+	opacity: 1;
 }
 a:hover.delete-activity{	
 	background: url('../images/icon-delete.png') 0px 3px no-repeat;
 	padding: 2px 0 0 15px;
 	margin-right: 8px;
+	opacity: 1;
 }
+
 /** Activity comments **/
 .activity-comments>ul {
 	border-top: 1px solid #eeeeee;
@@ -660,6 +694,209 @@ div.activity-comments form div.ac-reply-content {
 	border: 3px solid #eeeeee;
 }
 
+table {
+	width: 100%;
+}
+table thead tr {
+	background: #eaeaea;
+}
+table#message-threads {
+	margin: 0 -19px;
+	width: auto;
+}
+table.profile-fields {
+	margin-bottom: 20px;
+}
+table.profile-fields:last-child {
+	margin-bottom: 0;
+}
+table.profile-fields p {
+	margin-top: 15px;
+}
+table.profile-fields p:last-child {
+	margin-top: 0;
+}
+div#sidebar table {
+	margin: 0 -16px;
+	width: 117%;
+}
+table tr td,
+table tr th {
+	padding: 8px;
+	vertical-align: middle;
+}
+table tr td.label {
+	border-right: 1px solid #eaeaea;
+	font-weight: bold;
+	width: 25%;
+}
+table tr td.thread-info p {
+	margin: 0;
+}
+table tr td.thread-info p.thread-excerpt {
+	color: #888;
+	font-size: 11px;
+	margin-top: 3px;
+}
+div#sidebar table td,
+table.forum td {
+	text-align: center;
+}
+table tr.alt td {
+	background: #f5f5f5;
+}
+table.notification-settings {
+	margin-bottom: 20px;
+	text-align: left;
+}
+#groups-notification-settings {
+	margin-bottom: 0;
+}
+table.notification-settings th.icon,
+table.notification-settings td:first-child {
+	display: none;
+}
+table.notification-settings th.title {
+	width: 80%;
+}
+table.notification-settings .yes,
+table.notification-settings .no {
+	text-align: center;
+	width: 40px;
+}
+table.forum {
+	margin: 0 -19px;
+	width: auto;
+}
+table.forum tr.sticky td {
+	font-size: 1.2em;
+	background: #fff9db;
+	border-top: 1px solid #ffe8c4;
+	border-bottom: 1px solid #ffe8c4;
+}
+table.forum tr.closed td.td-title {
+	background-image: url( ../images/closed.png );
+	background-position: 15px 50%;
+	background-repeat: no-repeat;
+	padding-left: 35px;
+}
+table.forum td p.topic-text {
+	color: #888;
+	font-size: 13px;
+}
+table.forum tr > td:first-child,
+table.forum tr > th:first-child {
+	padding-left: 15px;
+}
+table.forum tr > td:last-child,
+table.forum tr > th:last-child {
+	padding-right: 15px;
+}
+table.forum tr th#th-title,
+table.forum tr th#th-poster,
+table.forum tr th#th-group,
+table.forum td.td-poster,
+table.forum td.td-group,
+table.forum td.td-title {
+	text-align: left;
+}
+table.forum tr td.td-title a.topic-title {
+	font-size: 1.2em;
+}
+table.forum td.td-freshness {
+	white-space: nowrap;
+}
+table.forum td.td-freshness span.time-since {
+	font-size: 0.9em;
+	color: #888;
+}
+table.forum td img.avatar {
+	float: none;
+	margin: 0 5px -8px 0;
+}
+table.forum td.td-poster,
+table.forum td.td-group {
+	min-width: 140px;
+}
+table.forum th#th-title {
+	width: 80%;
+}
+table.forum th#th-freshness {
+	width: 25%;
+}
+table.forum th#th-postcount {
+	width: 15%;
+}
+table.forum p.topic-meta {
+	font-size: 0.9em;
+	margin: 5px 0 0 0;
+}
+
+/*--------------------------------------------------------------
+6.9 - Private Messaging Threads
+--------------------------------------------------------------*/
+table#message-threads tr.unread td {
+	background: #fff9db;
+	border-top: 1px solid #ffe8c4;
+	border-bottom: 1px solid #ffe8c4;
+	font-weight: bold;
+}
+li span.unread-count,
+tr.unread span.unread-count {
+	background: #dd0000;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	color: #fff;
+	font-weight: bold;
+	padding: 2px 8px;
+}
+div.item-list-tabs ul li a span.unread-count {
+	padding: 1px 6px;
+	color: #fff;
+}
+div.messages-options-nav {
+	background: #eee;
+	font-size: 11px;
+	margin: 0 -19px;
+	padding: 5px 15px;
+	text-align: right;
+}
+div#message-thread div.message-box {
+	margin: 0 -19px;
+	padding: 15px;
+}
+div#message-thread div.alt {
+	background: #f4f4f4;
+}
+div#message-thread p#message-recipients {
+	margin: 10px 0 20px 0;
+}
+div#message-thread img.avatar {
+	float: left;
+	margin: 0 10px 0 0;
+	vertical-align: middle;
+}
+div#message-thread strong {
+	font-size: 16px;
+	margin: 0;
+}
+div#message-thread strong a {
+	text-decoration: none;
+}
+div#message-thread strong span.activity {
+	margin: 4px 0 0 10px;
+}
+div#message-thread div.message-metadata {
+	overflow: hidden;
+}
+div#message-thread div.message-content {
+	margin-left: 45px;
+}
+div#message-thread div.message-options {
+	text-align: right;
+}
+
 /* Lists & Loops
 ------------------------------------------------------------------------------*/
 
@@ -680,7 +917,6 @@ div.activity-comments form div.ac-reply-content {
 input[type="text"],input[type="email"],input[type="password"],
 textarea{padding:0.5em;background:#ffffff;border:1px solid #eeeeee;-moz-border-radius:5px;-khtml-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;}
 
-/* N.B adding html 'required' has effect of styling :invalid even though isn't yet submitted? or so it seems*/
 input:required, textarea:required {background: none;}
 input:invalid, textarea:invalid {
 	 border: 1px solid #960606;
@@ -692,8 +928,11 @@ input:invalid, textarea:invalid {
 	width: 95%;
 }
 
+.standard-form label{font-weight: 700;}
 
-.submitbutton, .form-submit #submit, #signup_submit{	
+.standard-form{line-height:40px;}
+
+.submitbutton, .form-submit #submit, #signup_submit, #submit{	
 	border-right: 1px solid #bbbbbb;
 	border-bottom: 1px solid #bbbbbb;
 	border-top: 1px solid #dddddd;
@@ -707,7 +946,7 @@ input:invalid, textarea:invalid {
 	-moz-border-radius:5px;-khtml-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;
 }
 
-.submitbutton:hover, .form-submit #submit:hover, #signup_submit:hover;{	
+.submitbutton:hover, .form-submit #submit:hover, #signup_submit:hover, #submit:hover{	
 	background: #eeeeee;
 	border-right: 1px solid #bbbbbb;
 	border-bottom: 1px solid #bbbbbb;
@@ -918,10 +1157,16 @@ div.pagination {
 	color: #888;
 	font-size: 11px;
 	height: 19px;
-	margin: -20px -19px 0px -19px;
+	margin: 20px 0px;
 	padding: 8px 20px;
-	position: relative;
 }
+
+ul#members-list{margin:10px 0px;padding:0px;}
+
+ul#members-list .item{margin: 0 0 10px 70px;}
+
+ul#members-list li{border-bottom:1px solid #eeeeee;margin-bottom:10px;padding:10px 0;list-style:none;}
+
 div.pagination .pag-count {
 	float: left;
 }
