@@ -1,25 +1,22 @@
 <?php get_header(); ?>
 	<?php do_action( 'bp_before_register_page' ) ?>
-	<div id="content" role="main">
+	<div id="content-register" role="main">
 
 		<form action="" name="signup_form" id="signup_form" class="standard-form" method="post" enctype="multipart/form-data">
 
 			<?php if ( 'registration-disabled' == bp_get_current_signup_step() ) : ?>
-			<section id="signup-disabled">
-				<article class="status-signup-disbled">
+			<section id="signup-disabled" class="status-signup-disbled">
 				<?php do_action( 'template_notices' ) ?>
 				<?php do_action( 'bp_before_registration_disabled' ) ?>
 
 					<p><?php _e( 'User registration is currently not allowed.', 'status' ); ?></p>
 
 				<?php do_action( 'bp_after_registration_disabled' ); ?>
-				</article>
 			</section>
 			<?php endif; // registration-disabled signup setp ?>			
 			
 			<?php if ( 'request-details' == bp_get_current_signup_step() ) : ?>
-			<section id="do-signup">
-				<article class="status-signup-steps">
+			<section id="do-signup" class="status-signup-steps">
 				<h2><?php _e( 'Create an Account', 'status' ) ?></h2>
 
 				<?php do_action( 'template_notices' ) ?>
@@ -198,14 +195,12 @@
 				<?php do_action( 'bp_after_registration_submit_buttons' ) ?>
 
 				<?php wp_nonce_field( 'bp_new_signup' ) ?>
-				</article>
 			</section>
 			<?php endif; // request-details signup step ?>
 
 			<?php if ( 'completed-confirmation' == bp_get_current_signup_step() ) : ?>
 			
-			<section id="sign-up-confirm">
-				<article id="sign-up-complete">
+			<section id="sign-up-confirm" class="sign-up-complete">
 					<h2><?php _e( 'Sign Up Complete!', 'status' ) ?></h2>
 
 					<?php do_action( 'template_notices' ) ?>
@@ -218,7 +213,6 @@
 					<?php endif; ?>
 
 					<?php do_action( 'bp_after_registration_confirmed' ) ?>
-				</article>
 			</section>
 			<?php endif; // completed-confirmation signup step ?>
 

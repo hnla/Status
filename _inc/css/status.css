@@ -90,7 +90,7 @@ nav ul, .looplist, .item-list-tabs ul {
 	padding: 0px 10px 40px 0px;
 	overflow: hidden;
 }
-.home #content-wrapper {
+.home #content-wrapper{
 	margin: 50px auto;
 	max-width: 550px;
 	overflow: hidden;
@@ -101,6 +101,24 @@ nav ul, .looplist, .item-list-tabs ul {
 	overflow: hidden;
 	padding: 0px 10px 40px 0;
 }
+
+#content-register {
+	background: #ffffff;
+	border-right: 1px solid #cccccc;
+	border-bottom: 1px solid #cccccc;
+	border-top: 1px solid #ffffff;
+	border-left: 1px solid #ffffff;
+	margin: 50px auto;
+	max-width: 550px;
+	overflow: hidden;
+	-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;
+	padding: 20px 20px 20px 20px;
+	-moz-box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
+	-webkit-box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
+	box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
+}
+
+
 #content-wrapper, #header-wrapper, #friends-wrapper,
 #widgets-wrapper, #footer-wrapper {
 	overflow: hidden;
@@ -658,12 +676,24 @@ div.activity-comments form div.ac-reply-content {
 #status-default label {
 	display: block;
 }
+
+input[type="text"],input[type="email"],input[type="password"],
+textarea{padding:0.5em;background:#ffffff;border:1px solid #eeeeee;-moz-border-radius:5px;-khtml-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;}
+
 /* N.B adding html 'required' has effect of styling :invalid even though isn't yet submitted? or so it seems*/
 input:required, textarea:required {background: none;}
 input:invalid, textarea:invalid {
-	 border: 1px solid #CD6430;
+	 border: 1px solid #960606;
 }
-.submit, .form-submit #submit{	
+
+#signup_form input[type="text"],#signup_form input[type="email"],#signup_form input[type="password"],
+#signup_form textarea{
+	padding:0.5em;background:#ffffff;border:1px solid #eeeeee;-moz-border-radius:5px;-khtml-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;
+	width: 95%;
+}
+
+
+.submitbutton, .form-submit #submit, #signup_submit{	
 	border-right: 1px solid #bbbbbb;
 	border-bottom: 1px solid #bbbbbb;
 	border-top: 1px solid #dddddd;
@@ -677,7 +707,7 @@ input:invalid, textarea:invalid {
 	-moz-border-radius:5px;-khtml-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;
 }
 
-.submit:hover, .form-submit #submit:hover {	
+.submitbutton:hover, .form-submit #submit:hover, #signup_submit:hover;{	
 	background: #eeeeee;
 	border-right: 1px solid #bbbbbb;
 	border-bottom: 1px solid #bbbbbb;
@@ -1296,6 +1326,64 @@ span.sticky-post {
 /* For IE 6/7 (trigger hasLayout) */
 .clearfix {
   zoom:1;
+}
+
+
+.standard-form #blog-details-section {
+	clear: left;
+}
+.standard-form input:focus,
+.standard-form textarea:focus,
+.standard-form select:focus {
+	background: #fafafa;
+	color: #555;
+}
+form#send-invite-form {
+	margin-top: 20px;
+}
+div#invite-list {
+	background: #f5f5f5;
+	border: 1px solid #e4e4e4;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	height: 400px;
+	margin: 0 0 10px;
+	overflow: auto;
+	padding: 5px;
+	width: 160px;
+}
+
+/*--------------------------------------------------------------
+6.6 - Ajax Loading
+--------------------------------------------------------------*/
+a.loading,
+input.loading {
+    background-image: url( ../images/ajax-loader.gif );
+    background-position: 95% 50%;
+    background-repeat: no-repeat;
+    padding-right: 25px;
+}
+a.loading:hover,
+input.loading:hover {
+    background-image: url( ../images/ajax-loader.gif );
+    background-position: 95% 50%;
+    background-repeat: no-repeat;
+    padding-right: 25px;
+    color: #777;
+}
+
+.activity-list li.load-more {
+background: #F0F0F0 !important;
+border-right: 1px solid #DDD;
+border-bottom: 1px solid #DDD;
+-moz-border-radius: 4px;
+-webkit-border-radius: 4px;
+border-radius: 4px;
+font-size: 1.2em;
+margin: 15px 0 !important;
+padding: 10px 15px !important;
+text-align: center;
 }
 
 /*/mediaquery*/

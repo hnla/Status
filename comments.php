@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Template Name: Status - Comments
+ * Status - Comments
  *
  * @package Status
  * @subpackage BP child theme

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Template Name: Status - Content aside
+ * Status - Content aside
  *
  * @package Status
  * @subpackage BP child theme

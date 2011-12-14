@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Template Name: Status - Search
+ * Status - Search
  *
  * @package Status
  * @subpackage BP child theme

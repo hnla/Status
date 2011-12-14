@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Template Name: Status - 404
+ * Status - 404
  *
  * @package Status
  * @subpackage BP child theme

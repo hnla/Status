@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Template Name: Status - Sidebar
+ * Status - Sidebar
  *
  * @package Status
  * @subpackage BP child theme

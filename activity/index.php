@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Template Name: BuddyPress - Activity Directory
+ * BuddyPress - Activity Directory
  *
  * @package BuddyPress
  * @subpackage Theme
