@@ -42,14 +42,16 @@
 
 		<?php endif; ?>
 		</div>
+
+		<div id="item-buttons">
+
+			<?php do_action( 'bp_member_header_actions' ); ?>
+
+		</div><!-- #item-buttons -->
+		
 	</div>
 </div>	
 <div id="profile-right">
-	<div id="item-buttons">
-
-		<?php do_action( 'bp_member_header_actions' ); ?>
-
-	</div><!-- #item-buttons -->
 
 	<?php
 	/***

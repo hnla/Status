@@ -10,11 +10,27 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+				<div class="author-box">		<?php echo get_avatar( get_the_author_meta( 'user_email' ), '50' ); ?>		<p><?php printf( _x( 'by %s', 'Post written by...', 'status' ), str_replace( '<a href=', '<a rel="author" href=', bp_core_get_userlink( $post->post_author ) ) ); ?></p>	</div>	
 	<header class="post-header">
 		<hgroup>
 			<div class="post-format"><?php _e( 'Image', 'status' ); ?></div>
 			<h1 class="post-title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'status' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
 		</hgroup>
+		<div class="post-info">
+			<?php printf( __( '%1$s <span>in %2$s</span>', 'status' ), get_the_date(), get_the_category_list( ', ' ) ); ?>
+			<span class="post-utility alignright"><?php edit_post_link( __( 'Edit this entry', 'status' ) ); ?></span>
+			<span class="post-tags alignright">
+				<?php $tags_list = get_the_tag_list( '', ', ' ); 
+				if ( $tags_list ): ?>
+				<?php printf( __( 'Tags: %2$s', 'status'), 'tag-links', $tags_list ); ?> | 
+				<?php endif; ?>
+			</span>	
+			<span class="post-action alignright">
+				<a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'status' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php _e( 'Permlink', 'status'); ?></a>
+			</span>
+			
+		</div>
+		
 	</header>
 	<?php if ( is_search()) : ?>
 		<div class="post-summary">
@@ -27,24 +43,9 @@
 		</div>
 	<?php endif; ?>
 	<footer class="post-meta">
-		<div class="post-date"><?php echo get_the_date(); ?></div>
-		<div class="post-author"><?php _e( 'by', 'status'); ?> <?php the_author() ?></div>
 			<?php if ( comments_open() && ! post_password_required() ) : ?>
 			<div class="comments-link">
 				<?php comments_popup_link( __( '<span class="leave-reply">Comment</span>', 'status' ), __( '1 Comment', 'status' ), __( '% Comments', 'status' ) ); ?>
 			</div>
 		<?php endif; ?>
-		<div class="post-categories">
-				<?php _e( 'Categories: ', 'status'); ?><?php the_category( ' ' ); ?>
-		</div>
-		<div class="post-tags">
-			<?php $tags_list = get_the_tag_list( '', ', ' ); 
-			if ( $tags_list ): ?>
-				<?php printf( __( 'Tags: %2$s', 'status'), 'tag-links', $tags_list ); ?> | 
-			<?php endif; ?>
-		</div>
-			<div class="post-edit">
-					<?php edit_post_link( __( 'Edit &rarr;', 'status'), ' <span class="edit-link">', '</span> | ' ); ?>
-					<a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'status' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php _e( 'Permlink', 'status'); ?></a>
-	</footer>
 </article>

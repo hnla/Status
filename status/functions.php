@@ -13,11 +13,12 @@ $profile_sidebar = false; //disable the main sidebar in profile member accounts
 //define( 'BP_USE_WP_ADMIN_BAR', true );
 
 /*** redirect requests for BP component pages ***/
-
+/*
 function status_redirects() { 
 	if ( bp_is_groups_component() || bp_is_members_component() || bp_is_forums_component() ) bp_core_redirect( bp_get_root_domain() ); 
 	} 
 add_action( 'bp_actions', 'status_redirects' );
+*/
 
 /**** Register functions & regions ****/
 
@@ -27,7 +28,7 @@ function status_setup() {
 	remove_custom_image_header();
 	remove_action( 'widgets_init', 'bp_dtheme_widgets_init' );
 	add_action( 'wp_enqueue_scripts', 'status_load_scripts' );
-	add_action( 'wp_print_styles', 'bp_dtheme_enqueue_styles');
+	add_action( 'wp_enqueue_scripts', 'bp_dtheme_enqueue_styles');
 	add_theme_support( 'post-formats', array( 'aside', 'gallery', 'link', 'video', 'image', 'quote', 'status', 'chat' ) );
 }
 add_action( 'after_setup_theme', 'status_setup' );
