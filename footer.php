@@ -3,7 +3,7 @@
 		<?php do_action( 'bp_before_footer' ) ?>
 		
 		<div id="footer-wrapper">
-			<footer>
+			<footer class="bottom">
 			<?php if(has_nav_menu('footer')): ?>
 				<nav id="secondary-nav">
 					<?php wp_nav_menu(array('sort_column' => 'menu_order', 'container' => '', 'fallback_cb' => '', 'theme_location' => 'footer')) ?>
