@@ -1,20 +1,25 @@
 <?php get_header(); ?>
 	<?php do_action( 'bp_before_register_page' ) ?>
 	<div id="content" role="main">
-	<article class="status-signup">
+
 		<form action="" name="signup_form" id="signup_form" class="standard-form" method="post" enctype="multipart/form-data">
 
 			<?php if ( 'registration-disabled' == bp_get_current_signup_step() ) : ?>
+			<section id="signup-disabled">
+				<article class="status-signup-disbled">
 				<?php do_action( 'template_notices' ) ?>
 				<?php do_action( 'bp_before_registration_disabled' ) ?>
 
 					<p><?php _e( 'User registration is currently not allowed.', 'status' ); ?></p>
 
 				<?php do_action( 'bp_after_registration_disabled' ); ?>
+				</article>
+			</section>
 			<?php endif; // registration-disabled signup setp ?>			
 			
 			<?php if ( 'request-details' == bp_get_current_signup_step() ) : ?>
-
+			<section id="do-signup">
+				<article class="status-signup-steps">
 				<h2><?php _e( 'Create an Account', 'status' ) ?></h2>
 
 				<?php do_action( 'template_notices' ) ?>
@@ -29,31 +34,31 @@
 
 					<legend><?php _e( 'Account Details', 'status' ) ?></legend>
 					
-					<p class="control-pairs">
+					<div class="control-pairs">
 						<label for="signup_username">
-							<?php _e( 'Username', 'status' ) ?> <?php _e( '(required)', 'status' ) ?>
+							<?php _e( 'Username', 'status' ) ?> <span class="label-required"><?php _e( '(required)', 'status' ) ?></span>
 						</label>
 						<?php do_action( 'bp_signup_username_errors' ) ?>
-						<input type="text" name="signup_username" id="signup_username" value="<?php bp_signup_username_value() ?>" required />
-					</p>
+						<input type="text" name="signup_username" id="signup_username" value="<?php bp_signup_username_value() ?>" required placeholder="Your User Name" />
+					</div>
 					
-					<p class="control-pairs">
-					<label for="signup_email"><?php _e( 'Email Address', 'status' ) ?> <?php _e( '(required)', 'status' ) ?></label>
+					<div class="control-pairs">
+					<label for="signup_email"><?php _e( 'Email Address', 'status' ) ?> <span class="label-required"><?php _e( '(required)', 'status' ) ?></span></label>
 					<?php do_action( 'bp_signup_email_errors' ) ?>
-					<input type="email" name="signup_email" id="signup_email" value="<?php bp_signup_email_value() ?>" required />
-					</p>
+					<input type="email" name="signup_email" id="signup_email" value="<?php bp_signup_email_value() ?>" required placeholder="myemail@example.com" />
+					</div>
 					
-					<p class="control-pairs">
-					<label for="signup_password"><?php _e( 'Choose a Password', 'status' ) ?> <?php _e( '(required)', 'status' ) ?></label>
+					<div class="control-pairs">
+					<label for="signup_password"><?php _e( 'Choose a Password', 'status' ) ?> <span class="label-required"><?php _e( '(required)', 'status' ) ?></span></label>
 					<?php do_action( 'bp_signup_password_errors' ) ?>
-					<input type="password" name="signup_password" id="signup_password" value="" required />
-					</p>
+					<input type="password" name="signup_password" id="signup_password" value="" required placeholder="Min 6 mixed alpha/numeric characters" />
+					</div>
 					
-					<p class="control-pairs">
-					<label for="signup_password_confirm"><?php _e( 'Confirm Password', 'status' ) ?> <?php _e( '(required)', 'status' ) ?></label>
+					<div class="control-pairs">
+					<label for="signup_password_confirm"><?php _e( 'Confirm Password', 'status' ) ?> <span class="label-required"><?php _e( '(required)', 'status' ) ?></span></label>
 					<?php do_action( 'bp_signup_password_confirm_errors' ) ?>
-					<input type="password" name="signup_password_confirm" id="signup_password_confirm" value="" required />
-					</p>
+					<input type="password" name="signup_password_confirm" id="signup_password_confirm" value="" required placeholder="please repeat password" />
+					</div>
 				
 				</fieldset><!-- #basic-details-section -->
 
@@ -77,45 +82,45 @@
 							<div class="editfield">
 
 								<?php if ( 'textbox' == bp_get_the_profile_field_type() ) : ?>
-									<p class="control-pairs">
-										<label for="<?php bp_the_profile_field_input_name() ?>"><?php bp_the_profile_field_name() ?> <?php if ( bp_get_the_profile_field_is_required() ) : ?><?php _e( '(required)', 'status' ) ?><?php endif; ?></label>
+									<div class="control-pairs">
+										<label for="<?php bp_the_profile_field_input_name() ?>"><?php bp_the_profile_field_name() ?> <?php if ( bp_get_the_profile_field_is_required() ) : ?><span class="label-required"><?php _e( '(required)', 'status' ) ?></span><?php endif; ?></label>
 										<?php do_action( 'bp_' . bp_get_the_profile_field_input_name() . '_errors' ) ?>
 										<input type="text" name="<?php bp_the_profile_field_input_name() ?>" id="<?php bp_the_profile_field_input_name() ?>" value="<?php bp_the_profile_field_edit_value() ?>" />
-									</p>
+									</div>
 								<?php endif; ?>
 
 								<?php if ( 'textarea' == bp_get_the_profile_field_type() ) : ?>
-									<p class="control-pairs">
-										<label for="<?php bp_the_profile_field_input_name() ?>"><?php bp_the_profile_field_name() ?> <?php if ( bp_get_the_profile_field_is_required() ) : ?><?php _e( '(required)', 'status' ) ?><?php endif; ?></label>
+									<div class="control-pairs">
+										<label for="<?php bp_the_profile_field_input_name() ?>"><?php bp_the_profile_field_name() ?> <?php if ( bp_get_the_profile_field_is_required() ) : ?><span class="label-required"><?php _e( '(required)', 'status' ) ?><?php endif; ?></span></label>
 										<?php do_action( 'bp_' . bp_get_the_profile_field_input_name() . '_errors' ) ?>
 										<textarea rows="5" cols="40" name="<?php bp_the_profile_field_input_name() ?>" id="<?php bp_the_profile_field_input_name() ?>"><?php bp_the_profile_field_edit_value() ?></textarea>
-									</p>
+									</div>
 								<?php endif; ?>
 
 								<?php if ( 'selectbox' == bp_get_the_profile_field_type() ) : ?>
-									<p class="control-pairs">
-										<label for="<?php bp_the_profile_field_input_name() ?>"><?php bp_the_profile_field_name() ?> <?php if ( bp_get_the_profile_field_is_required() ) : ?><?php _e( '(required)', 'status' ) ?><?php endif; ?></label>
+									<div class="control-pairs">
+										<label for="<?php bp_the_profile_field_input_name() ?>"><?php bp_the_profile_field_name() ?> <?php if ( bp_get_the_profile_field_is_required() ) : ?><span class="label-required"><?php _e( '(required)', 'status' ) ?></span><?php endif; ?></label>
 										<?php do_action( 'bp_' . bp_get_the_profile_field_input_name() . '_errors' ) ?>
 										<select name="<?php bp_the_profile_field_input_name() ?>" id="<?php bp_the_profile_field_input_name() ?>">
 										<?php bp_the_profile_field_options() ?>
 										</select>
-									</p>
+									</div>
 								<?php endif; ?>
 
 								<?php if ( 'multiselectbox' == bp_get_the_profile_field_type() ) : ?>
-									<p class="control-pairs">
-										<label for="<?php bp_the_profile_field_input_name() ?>"><?php bp_the_profile_field_name() ?> <?php if ( bp_get_the_profile_field_is_required() ) : ?><?php _e( '(required)', 'status' ) ?><?php endif; ?></label>
+									<div class="control-pairs">
+										<label for="<?php bp_the_profile_field_input_name() ?>"><?php bp_the_profile_field_name() ?> <?php if ( bp_get_the_profile_field_is_required() ) : ?><span class="label-required"><?php _e( '(required)', 'status' ) ?></span><?php endif; ?></label>
 										<?php do_action( 'bp_' . bp_get_the_profile_field_input_name() . '_errors' ) ?>
 										<select name="<?php bp_the_profile_field_input_name() ?>" id="<?php bp_the_profile_field_input_name() ?>" multiple="multiple">
 										<?php bp_the_profile_field_options() ?>
 										</select>
-									</p>
+									</div>
 								<?php endif; ?>
 
 								<?php if ( 'radio' == bp_get_the_profile_field_type() ) : ?>
 									
-										<div class="radio">
-											<p class="label"><?php bp_the_profile_field_name() ?> <?php if ( bp_get_the_profile_field_is_required() ) : ?><?php _e( '(required)', 'status' ) ?><?php endif; ?></p>
+										<div class="radio control-pairs">
+											<p class="label"><?php bp_the_profile_field_name() ?> <?php if ( bp_get_the_profile_field_is_required() ) : ?><span class="label-required"><?php _e( '(required)', 'status' ) ?></span><?php endif; ?></p>
 
 											<?php do_action( 'bp_' . bp_get_the_profile_field_input_name() . '_errors' ) ?>
 											<?php  bp_the_profile_field_options() ?>
@@ -130,8 +135,8 @@
 
 								<?php if ( 'checkbox' == bp_get_the_profile_field_type() ) : ?>
 
-									<div class="checkbox">
-										<p class="label"><?php bp_the_profile_field_name() ?> <?php if ( bp_get_the_profile_field_is_required() ) : ?><?php _e( '(required)', 'status' ) ?><?php endif; ?></p>
+									<div class="checkbox control-pairs">
+										<p class="label"><?php bp_the_profile_field_name() ?> <?php if ( bp_get_the_profile_field_is_required() ) : ?><span class="label-required"><?php _e( '(required)', 'status' ) ?></span><?php endif; ?></p>
 
 										<?php do_action( 'bp_' . bp_get_the_profile_field_input_name() . '_errors' ) ?>
 										<?php bp_the_profile_field_options() ?>
@@ -141,9 +146,9 @@
 
 								<?php if ( 'datebox' == bp_get_the_profile_field_type() ) : ?>
 
-									<div class="datebox">
+									<div class="datebox control-pairs">
 									
-										<label for="<?php bp_the_profile_field_input_name() ?>_day"><?php bp_the_profile_field_name() ?> <?php if ( bp_get_the_profile_field_is_required() ) : ?><?php _e( '(required)', 'status' ) ?><?php endif; ?></label>
+										<label for="<?php bp_the_profile_field_input_name() ?>_day"><?php bp_the_profile_field_name() ?> <?php if ( bp_get_the_profile_field_is_required() ) : ?><span class="label-required"><?php _e( '(required)', 'status' ) ?></span><?php endif; ?></label>
 										<?php do_action( 'bp_' . bp_get_the_profile_field_input_name() . '_errors' ) ?>
 
 										<select name="<?php bp_the_profile_field_input_name() ?>_day" id="<?php bp_the_profile_field_input_name() ?>_day">
@@ -163,8 +168,10 @@
 								<?php endif; ?>
 
 								<?php do_action( 'bp_custom_profile_edit_fields' ) ?>
-
-								<p class="description"><?php bp_the_profile_field_description() ?></p>
+								
+								<?php if( bp_get_the_profile_field_description() ) : ?>
+								<p class="description xprofile-desc"><?php bp_the_profile_field_description() ?></p>
+								<?php endif; ?>
 
 							</div><!-- / .editfield -->
 
@@ -191,30 +198,34 @@
 				<?php do_action( 'bp_after_registration_submit_buttons' ) ?>
 
 				<?php wp_nonce_field( 'bp_new_signup' ) ?>
-
+				</article>
+			</section>
 			<?php endif; // request-details signup step ?>
 
 			<?php if ( 'completed-confirmation' == bp_get_current_signup_step() ) : ?>
+			
+			<section id="sign-up-confirm">
+				<article id="sign-up-complete">
+					<h2><?php _e( 'Sign Up Complete!', 'status' ) ?></h2>
 
-				<h2><?php _e( 'Sign Up Complete!', 'status' ) ?></h2>
+					<?php do_action( 'template_notices' ) ?>
+					<?php do_action( 'bp_before_registration_confirmed' ) ?>
 
-				<?php do_action( 'template_notices' ) ?>
-				<?php do_action( 'bp_before_registration_confirmed' ) ?>
+					<?php if ( bp_registration_needs_activation() ) : ?>
+						<p><?php _e( 'You have successfully created your account! To begin using this site you will need to activate your account via the email we have just sent to your address.', 'status' ) ?></p>
+					<?php else : ?>
+						<p><?php _e( 'You have successfully created your account! Please log in using the username and password you have just created.', 'status' ) ?></p>
+					<?php endif; ?>
 
-				<?php if ( bp_registration_needs_activation() ) : ?>
-					<p><?php _e( 'You have successfully created your account! To begin using this site you will need to activate your account via the email we have just sent to your address.', 'status' ) ?></p>
-				<?php else : ?>
-					<p><?php _e( 'You have successfully created your account! Please log in using the username and password you have just created.', 'status' ) ?></p>
-				<?php endif; ?>
-
-				<?php do_action( 'bp_after_registration_confirmed' ) ?>
-
+					<?php do_action( 'bp_after_registration_confirmed' ) ?>
+				</article>
+			</section>
 			<?php endif; // completed-confirmation signup step ?>
 
 			<?php do_action( 'bp_custom_signup_steps' ) ?>
 
 			</form>
-		</article>
+		
 	</div><!-- / #content -->
 	<?php do_action( 'bp_after_register_page' ); ?>
 <?php get_footer(); ?>
