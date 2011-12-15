@@ -12,24 +12,23 @@
 <?php get_header(); ?>
 
 			<?php if ( !is_user_logged_in() ) : ?>
-				<div id="content-home" role="main">
-					<article class="status-signup clearfix">
+				<div id="content-home" class="status-signup clearfix" role="main">
 						<section id="signup-login">
 						<?php do_action( 'bp_before_sidebar_login_form' ) ?>
 
 							<h2>Sign in</h2>
 								<form name="login-form" id="primary-login-form" class="standard-form" action="<?php echo site_url( 'wp-login.php', 'login_post' ) ?>" method="post">
-									<p class="control-pairs your-name">
+									<p class="your-name">
 										<label for="site-user-login"><?php _e( 'Username', 'status' ) ?></label>
 										<input type="text" name="log" id="site-user-login" class="input focus" value="<?php if ( isset( $user_login) ) echo esc_attr(stripslashes($user_login)); ?>"   required />
 									</p>
 									
-									<p class="control-pairs your-pass">
+									<p class="your-pass">
 										<label for="site-user-pass"><?php _e( 'Password', 'status' ) ?></label>
 										<input type="password" name="pwd" id="site-user-pass" class="input" value="" required />
 									</p>
 									
-									<p class="control-pairs forgetmenot">
+									<p class="forgetmenot">
 										<label for="site-rememberme"><input name="rememberme" type="checkbox" id="site-rememberme" value="forever"  /> <?php _e( 'Remember Me', 'status' ) ?></label>
 									</p>
 
@@ -53,7 +52,6 @@
 								<?php endif; ?>
 							
 						</section>
-					</article>
 				</div><!-- / #content -->
 			<?php endif; ?>
 			
