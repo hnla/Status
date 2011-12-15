@@ -147,7 +147,7 @@ td { vertical-align: top; }
 /*--------------------------------------------------------------
 2.1 - Content
 --------------------------------------------------------------*/
-#content-register {
+#content-register, #content, #content-404, .edit-profile,  #content-profile, .home .status-signup{
 	background: #ffffff;
 	border-right: 1px solid #cccccc;
 	border-bottom: 1px solid #cccccc;
@@ -166,52 +166,28 @@ td { vertical-align: top; }
 	margin: 20px 0 20px 0;
 	float: none;
 	width: 100%;
-	background: #ffffff;
-	border-right: 1px solid #cccccc;
-	border-bottom: 1px solid #cccccc;
-	border-top: 1px solid #ffffff;
-	border-left: 1px solid #ffffff;
-	-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;
 	padding: 0px 20px 20px 20px;
-	-moz-box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
-	-webkit-box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
-	box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
 }
-
-.groups #content{
+.edit-profile,  #content-profile{
+	margin: 20px 0 0 0;
+	padding: 0px 20px 20px 20px;
+}
+.home .status-signup{
+	padding: 20px 20px 20px 20px;
+}
+.groups #content, .activity #content-profile{
 	margin: 0px 0 20px 0;
 	float: none;
 	width: 100%;
 	background: none;
 	border: none;
-	-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;
 	padding: 0;
 	box-shadow: none;
 	-webkit-box-shadow: none;
 	-moz-box-shadow:none;
-}
-
-.edit-profile,  #content-profile{
-	margin: 20px 0 0 0;
-	background: #ffffff;
-	border-right: 1px solid #cccccc;
-	border-bottom: 1px solid #cccccc;
-	border-top: 1px solid #ffffff;
-	border-left: 1px solid #ffffff;
-	-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;
-	padding: 0px 20px 20px 20px;
-	-moz-box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
-	-webkit-box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
-	box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
 }
 .activity #content-profile{
 	margin-left: 0;
-	padding: 0;
-	box-shadow: none;
-	-webkit-box-shadow: none;
-	-moz-box-shadow:none;
-	border:none;
-	background:none;
 }
 #profile-left{
 	float:none;
@@ -219,37 +195,19 @@ td { vertical-align: top; }
 	border-right: 1px dashed #AAA;
 	padding: 0 20px 0 0;
 }
-#profile-right{
-	width: 100%;
+#content-profile, #content-stream, #profile-right{
 	float: none;
+	width: 100%;
+}
+#profile-right{
 	padding: 0 20px;
 	line-height: 28px;
-}
-#content-profile{
-	float: none;
-	width: 100%;
-}
-#content-stream{
-	float: none;
-	width: 100%;
 }
 #content-profile-headerfull{
 	width: 100%;
 }
 #content-home{
 	margin: 0;
-}
-.home .status-signup{
-	background: #ffffff;
-	border-right: 1px solid #cccccc;
-	border-bottom: 1px solid #cccccc;
-	border-top: 1px solid #ffffff;
-	border-left: 1px solid #ffffff;
-	-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;
-	padding: 20px 20px 20px 20px;
-	-moz-box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
-	-webkit-box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
-	box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
 }
 
 /*--------------------------------------------------------------
@@ -310,14 +268,6 @@ body {
 	font: 100%/1.7 Arial, sans-serif;
 	color: #555;
 }
-h1 {font-size: 1.8em;}
-h2 {font-size: 1.6em;}
-h3 {font-size: 1.4em;}
-h4 {font-size: 1.2em ;}
-h5 {font-size: 1.1em;}
-h6 {font-size: 1em;}
-
-#item-header-content h2, .status-signup h2{margin: 0 0 10px 0;font-weight:700;}
 
 a, a:link {
  color: #55bbee;
@@ -393,13 +343,18 @@ blockquote {
 	padding: 0 3em;
 	quotes: none;
 }
-blockquote p {
-	margin-bottom: 15px !important;
-}
 
 /*--------------------------------------------------------------
 3.2 - Headers
 --------------------------------------------------------------*/
+h1 {font-size: 1.8em;}
+h2 {font-size: 1.6em;}
+h3 {font-size: 1.4em;}
+h4 {font-size: 1.2em ;}
+h5 {font-size: 1.1em;}
+h6 {font-size: 1em;}
+
+#item-header-content h2, .status-signup h2{margin: 0 0 10px 0;font-weight:700;}
 
 /*--------------------------------------------------------------
 3.3 - Lists
@@ -459,7 +414,7 @@ div.pagination {
 	background: #f4f4f4;
 	border: none;
 	color: #888;
-	font-size: 11px;
+	font-size: 0.8em;
 	height: 19px;
 	margin: 20px 0px;
 	padding: 8px 20px;
@@ -516,7 +471,7 @@ div#pag-bottom {
 	margin-left: auto;
 	margin-right: auto;
 }
-.gap{margin-top:20px!important;}
+.gap{margin-top:20px;}
 /*--------------------------------------------------------------
 5.2 - Comments
 --------------------------------------------------------------*/
@@ -873,7 +828,6 @@ p.postmetadata {
 span.sticky-post {
 	font-style: normal;
 }
-
 .post-format{background:none repeat scroll 0 0 #EEEEEE;color:#888888;float:right;margin:0.5em 0 0 0.5em;padding:0.3em 0.5em;text-shadow:-1px -1px 0 #ffffff;border:1px solid #dddddd;-moz-border-radius:5px;-khtml-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;}
 
 /*--------------------------------------------------------------
@@ -1187,7 +1141,7 @@ div.ac-reply-avatar img {
 }
 div.activity-comments form div.ac-reply-content {
 	color: #888;
-	font-size: 11px;
+	font-size: 0.8em;
 	margin-left: 50px;
 	padding-left: 15px;
 }
@@ -1349,8 +1303,8 @@ form#send-invite-form {
 	margin-top: 20px;
 }
 div#invite-list {
-	background: #f5f5f5;
-	border: 1px solid #e4e4e4;
+	background: #f3f3f3;
+	border: 1px solid #eeeeee;
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
 	border-radius: 3px;
@@ -1390,22 +1344,20 @@ input.loading:hover {
 }
 
 .activity-list li.load-more {
-background: #F0F0F0 !important;
-border-right: 1px solid #DDD;
-border-bottom: 1px solid #DDD;
--moz-border-radius: 4px;
--webkit-border-radius: 4px;
-border-radius: 4px;
-font-size: 1.2em;
-margin: 15px 0 0 10px !important;
-padding: 10px 15px !important;
-text-align: center;
--moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;
-padding: 20px 20px 20px 20px;
--moz-box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
--webkit-box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
-box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
-
+	background: #ffffff;
+	border-right: 1px solid #cccccc;
+	border-bottom: 1px solid #cccccc;
+	border-top: 1px solid #ffffff;
+	border-left: 1px solid #ffffff;
+	font-size: 1.2em;
+	margin: 15px 0 0 10px !important;
+	padding: 10px 15px !important;
+	text-align: center;
+	-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;
+	padding: 20px 20px 20px 20px;
+	-moz-box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
+	-webkit-box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
+	box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
 }
 
 /*--------------------------------------------------------------
@@ -1418,7 +1370,7 @@ table thead tr {
 	background: #eaeaea;
 }
 table#message-threads {
-	margin: 0 -19px;
+	margin: 0;
 	width: auto;
 }
 table.profile-fields {
@@ -1434,8 +1386,8 @@ table.profile-fields p:last-child {
 	margin-top: 0;
 }
 div#sidebar table {
-	margin: 0 -16px;
-	width: 117%;
+	margin: 0;
+	width: 100%;
 }
 table tr td,
 table tr th {
@@ -1452,7 +1404,7 @@ table tr td.thread-info p {
 }
 table tr td.thread-info p.thread-excerpt {
 	color: #888;
-	font-size: 11px;
+	font-size: 0.9em;
 	margin-top: 3px;
 }
 div#sidebar table td,
@@ -1482,7 +1434,7 @@ table.notification-settings .no {
 	width: 40px;
 }
 table.forum {
-	margin: 0 -19px;
+	margin: 0;
 	width: auto;
 }
 table.forum tr.sticky td {
@@ -1499,7 +1451,7 @@ table.forum tr.closed td.td-title {
 }
 table.forum td p.topic-text {
 	color: #888;
-	font-size: 13px;
+	font-size: 0.9em;
 }
 table.forum tr > td:first-child,
 table.forum tr > th:first-child {
@@ -1529,7 +1481,7 @@ table.forum td.td-freshness span.time-since {
 }
 table.forum td img.avatar {
 	float: none;
-	margin: 0 5px -8px 0;
+	margin: 0 5px 0 0;
 }
 table.forum td.td-poster,
 table.forum td.td-group {
@@ -1571,7 +1523,7 @@ table.forum p.topic-meta {
 }
 #item-nav{
 	overflow: hidden;
-	border-bottom: 1px solid #DDD;
+	border-bottom: 1px solid #dddddd;
 }
 .groups #item-nav{
 	overflow: hidden;
@@ -1634,11 +1586,6 @@ div#item-header {
 div#item-header div#item-header-content {
 	margin-left: 170px;
 }
-div#item-header h2 {
-	font-size: 28px;
-	line-height: 120%;
-	margin: 0 0 15px 0;
-}
 div#item-header h2 a {
 	color: #777;
 	text-decoration: none;
@@ -1652,7 +1599,7 @@ div#item-header h2 {
 }
 div#item-header span.activity,
 div#item-header h2 span.highlight {
-	font-size: 11px;
+	font-size: 0.9em;
 	font-weight: normal;
 	line-height: 170%;
 	margin-bottom: 7px;
@@ -1749,7 +1696,7 @@ ul.item-list li div.meta {
 }
 ul.item-list li h5 span.small {
 	float: right;
-	font-size: 11px;
+	font-size: 0.8em;
 	font-weight: normal;
 }
 #group-admins li{list-style:none;}
@@ -1796,12 +1743,12 @@ div.item-list-tabs ul li a span.unread-count {
 div.messages-options-nav {
 	background: #eee;
 	font-size: 11px;
-	margin: 0 -19px;
+	margin: 0x;
 	padding: 5px 15px;
 	text-align: right;
 }
 div#message-thread div.message-box {
-	margin: 0 -19px;
+	margin: 0;
 	padding: 15px;
 }
 div#message-thread div.alt {
@@ -1840,13 +1787,76 @@ div#message-thread div.message-options {
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
+8.0 - Media queries
+--------------------------------------------------------------*/
+@media only screen and (min-width:800px){/* 1.0 - Structure */
+	#profile-left{
+		float: left;
+		width: 75%;
+		border-right: 1px dashed #AAA;
+		padding: 0 20px 0 0;
+	}
+	#profile-right{
+		width: 17%;
+		float: right;
+		padding: 0 20px;
+		line-height: 28px;
+	}
+	#content-profile{
+		float: left;
+		width: 75%;
+	}
+	#sidebar {
+		float: right;
+		width: 20%;
+		margin: 20px 0 0 0;
+	}
+	#content{
+		margin: 20px 0 20px 0;
+		float: left;
+		width: 74%;
+		background: #ffffff;
+		border-right: 1px solid #cccccc;
+		border-bottom: 1px solid #cccccc;
+		border-top: 1px solid #ffffff;
+		border-left: 1px solid #ffffff;
+		margin-left:10px;
+		-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;
+		padding: 0px 20px 20px 20px;
+		-moz-box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
+		-webkit-box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
+		box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
+	}
+	.groups #content{
+		margin: 0px 0 20px 0;
+		float: left;
+		width: 77%;
+		background: none;
+		border: none;
+		margin-left:10px;
+		-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;
+		padding: 0;
+		box-shadow: none;
+		-webkit-box-shadow: none;
+		-moz-box-shadow:none;
+	}
+	
+	.activity #content-profile{width:78%}
+	
+	#content-stream{
+		float: left;
+		width: 78%;
+	}
+}
+
+/*--------------------------------------------------------------
 ****** dump
 --------------------------------------------------------------*/
+/*
 nav ul, .looplist, .item-list-tabs ul {
 	list-style: none;
 	padding-left: 0;
 }
-/** Generic nav elements **/
 nav {
 	float: left;
 } 
@@ -1856,13 +1866,11 @@ nav {
 	padding-top: 5px;
 }
 
-/** user profile nav & loggin links **/
 nav #user-profile-menu {}
 nav #user-profile-menu  li {position: relative;}
 #user-profile-menu ul li a {
 	display: block;
 }
-/* ul subnav items */
 nav #user-profile-menu ul {
 	background: #464646;
 	left: -999em;
@@ -1885,7 +1893,6 @@ nav #user-profile-menu ul li {
 	left: -999em;
 }
 
-/** item-list-tabs, object nav, subnav **/
 .item-list-tabs li, nav ul li {
 	display: inline;
 	display: inline-block;
@@ -1972,73 +1979,11 @@ nav #user-profile-menu ul li {
 	margin-right: 0;
 }
 #footer-widget-area ul.item-list li img.avatar {
-	margin-left: 15px; /* border is 4px */
+	margin-left: 15px;
 }
 div#fourth ul.xoxo { margin-right: 0; }
 
 .widget-area ul{margin: 1em 0;
 padding: 0 0 0 10px;}
 
-
-/*--------------------------------------------------------------
-8.0 - Media queries
---------------------------------------------------------------*/
-@media only screen and (min-width:800px){/* 1.0 - Structure */
-	#profile-left{
-		float: left;
-		width: 75%;
-		border-right: 1px dashed #AAA;
-		padding: 0 20px 0 0;
-	}
-	#profile-right{
-		width: 17%;
-		float: right;
-		padding: 0 20px;
-		line-height: 28px;
-	}
-	#content-profile{
-		float: left;
-		width: 75%;
-	}
-	#sidebar {
-		float: right;
-		width: 20%;
-		margin: 20px 0 0 0;
-	}
-	#content{
-		margin: 20px 0 20px 0;
-		float: left;
-		width: 74%;
-		background: #ffffff;
-		border-right: 1px solid #cccccc;
-		border-bottom: 1px solid #cccccc;
-		border-top: 1px solid #ffffff;
-		border-left: 1px solid #ffffff;
-		margin-left:10px;
-		-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;
-		padding: 0px 20px 20px 20px;
-		-moz-box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
-		-webkit-box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
-		box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
-	}
-	.groups #content{
-		margin: 0px 0 20px 0;
-		float: left;
-		width: 77%;
-		background: none;
-		border: none;
-		margin-left:10px;
-		-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;
-		padding: 0;
-		box-shadow: none;
-		-webkit-box-shadow: none;
-		-moz-box-shadow:none;
-	}
-	
-	.activity #content-profile{width:78%}
-	
-	#content-stream{
-		float: left;
-		width: 78%;
-	}
-}
+*/
