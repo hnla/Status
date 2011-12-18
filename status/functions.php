@@ -35,11 +35,8 @@ function status_load_scripts() {
 }
 endif;
 
-// Cache busting dynamically
 function status_get_file_last_mod($filename) {
-	// what type of file? get the last bit after the dot
 	$filetype = explode('.', $filename);
-	//echo $filetype[1];
 	if($filetype[1] == 'css'){
  	$filename = dirname(__FILE__) . '/_inc/css/' . $filename;
 	}elseif($filetype[1] == 'js'){
@@ -48,23 +45,20 @@ function status_get_file_last_mod($filename) {
 	if( file_exists($filename) ){
 		$version =  date ("M d Y H:i:s.", filemtime($filename));
 	}else{
-		// manual cache busting
 		$version = 'V1.0';
 	}
 	return $version;
 }
 
-
-/*** activity comments staus show comments ***/
-function status_show_comments() {
+/*function status_show_comments() {
 	if( bp_activity_get_comment_count() ){
 	echo '<a class="button bp-primary-action show-comments" title="' . __('View comments to this entry', 'status') . '">' . __('Show Comments', 'status') . '</a>' ;
 	echo ' <a class="button bp-primary-action close-comments" title="' . __('Hide these comments', 'status') . '" >' . __('Close Comments', 'status') . '</a>';
 	}
 }
 add_action('bp_activity_entry_meta', 'status_show_comments');
+*/
 
-// Add Custom Menu Option
 add_action('init', 'status_adminbar_nav');
 function status_adminbar_nav() {
 
@@ -74,7 +68,6 @@ function status_adminbar_nav() {
 
 }
 
-// Add Custom Menu to the Admin bar
 add_action('admin_bar_init', 'status_adminbar_menu_init');
 function status_adminbar_menu_init() {
 	if (!is_super_admin() || !is_admin_bar_showing() )

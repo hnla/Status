@@ -10,7 +10,7 @@
 ?>
 
 <?php get_header(); ?>
-<div id="content-404" role="main">
+<div id="content-404" role="main"?>>
 	<?php do_action( 'bp_before_404' ); ?>
 	<article class="post error404 not-found">
 		<header class="post-header">
