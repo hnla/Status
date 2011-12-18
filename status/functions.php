@@ -186,4 +186,28 @@ function status_blog_comments( $comment, $args, $depth ) {
 
 <?php
 }
+
+function status_showfriends(){
+	global $members_template, $bp;
+	$user = $bp->loggedin_user->id;
+	if( is_user_logged_in() ) : 
+					if( bp_has_members('user_id=' . $user . '') && $user !== 0 ) : ?>
+					
+						<ul id="friends-list" class="looplist">
+						<?php	while ( bp_members() ) : bp_the_member(); ?>
+							<li>
+								<div class="item-avatar"><a href="<?php bp_member_permalink() ?>"><?php  bp_member_avatar('type=full&width=30&height=30') ?></a></div>
+							</li>				 
+		
+						<?php endwhile; ?>
+						</ul>			
+			
+	<?php else: ?>
+
+		<p><?php _e( 'Once you friend someone it will show up here.', 'status' ) ?></p>
+			
+	<?php endif;
+			
+	endif;
+}
 ?>

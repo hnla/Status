@@ -17,7 +17,7 @@
 		<section id="friends-loop">
 			<div class="widget">
 				<h3 class="widgettitle"><?php _e( 'Your Friends', 'status' ) ?></h3>
-				<?php get_template_part('status-loop', 'friends');?>
+				<?php status_showfriends();?>
 			</div>
 		</section>
 		<?php do_action( 'bp_sidebar_me' ) ?>
