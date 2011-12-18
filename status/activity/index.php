@@ -11,7 +11,7 @@
 
 <?php get_header(); ?>
 	<?php do_action( 'bp_before_directory_activity_page' ); ?>
-	<div id="content-stream" role="main">
+	<div id="content" role="main">
 
 			<?php do_action( 'bp_before_directory_activity' ); ?>
 
