@@ -282,13 +282,7 @@ footer {clear: both;}
 	color: #888;
 	font-size: 0.85em;
 }
-#friends-loop ul {margin: 0;}
-#friends-loop ul li {
-	background: #646464;
-	border: 1px solid #6E6E6E;
-	display: inline;
-	display: inline-block;
-}
+#friends-loop ul {margin: 0;padding:0;}
 
 /*--------------------------------------------------------------
 3.0 - Non-structural
@@ -738,7 +732,13 @@ img {
 	max-width: 100%;
 }
 img.avatar {
-	border: 2px solid #eee;
+	background: #ffffff;
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	border-top: 1px solid #fff;
+	border-left: 1px solid #fff;
+	-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;
+	padding: 2px;
 	float: left;
 }
 img.wp-smiley {
@@ -1127,7 +1127,7 @@ a:hover.delete-activity{
 	font-size: 0.8em;
 	float: right;
 }
-.activity-comments{clear:right;}
+.activity-comments{clear:both;}
 a.acomment-reply{	
 	padding: 2px 0 0 15px;
 	margin-right: 8px;
@@ -1418,7 +1418,7 @@ input.loading:hover {
 	border-top: 1px solid #fff;
 	border-left: 1px solid #fff;
 	font-size: 1.2em;
-	margin: 15px 0 0 10px !important;
+	margin: 15px 0 0 0 !important;
 	padding: 10px 15px !important;
 	text-align: center;
 	-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;
@@ -1608,7 +1608,13 @@ table.forum p.topic-meta {
 	margin-right: 20px;
 }
 #item-header-avatar img{
-	border: 3px solid #eee;
+	background: #ffffff;
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	border-top: 1px solid #fff;
+	border-left: 1px solid #fff;
+	-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;
+	padding: 2px;
 }
 .item-list li{
 	border-bottom: 1px solid #eee;
@@ -1694,6 +1700,8 @@ div#item-header div#item-actions h3 {
 }
 div#item-header ul {
 	overflow: hidden;
+	margin: 2px 0;
+	padding: 0;
 }
 div#item-header ul h5,
 div#item-header ul span,
@@ -1901,7 +1909,7 @@ div#message-thread div.message-options {
 	
 	#content-stream{
 		float: left;
-		width: 73%;
+		width: 76%;
 	}
 	
 	#content-home{
