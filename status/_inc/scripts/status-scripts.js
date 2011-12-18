@@ -27,7 +27,7 @@ var is_hidden = true;
 		}
 		});
 //if(jQuery(this).parents('.activity-entry').children('.activity-comments').css('display') == 'block'){
-		jQuery('a.close-comments').bind('click',function() {
+		jQuery('a.close-comments').on('click',function() {
 		//alert(is_hidden);
 		jQuery(this).parents('.activity-entry').children('.activity-comments').slideUp('2000');
 		jQuery(this).addClass('close-up');
