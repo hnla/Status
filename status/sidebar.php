@@ -9,16 +9,19 @@
 
 ?>
 <?php do_action( 'bp_before_sidebar' ) ?>
-
 <div id="sidebar" role="complementary">
-
-<section id="friends-loop">
-	<div class="widget">
-		<h3 class="widgettitle"><?php _e( 'Your Friends', 'status' ) ?></h3>
-		<?php get_template_part('status-loop', 'friends');?>
+	<?php do_action( 'bp_inside_before_sidebar' ) ?>
+	<?php do_action( 'bp_before_sidebar_me' ) ?>
+	<div id="sidebar-me">
+		<section id="friends-loop">
+			<div class="widget">
+				<h3 class="widgettitle"><?php _e( 'Your Friends', 'status' ) ?></h3>
+				<?php get_template_part('status-loop', 'friends');?>
+			</div>
+		</section>
+		<?php do_action( 'bp_sidebar_me' ) ?>
 	</div>
-</section>
-<!--
+<!--<?php do_action( 'bp_after_sidebar_me' ) ?>
 	<?php do_action( 'bp_inside_before_sidebar' ) ?>
 
 	<?php /* Show forum tags on the forums directory */
@@ -32,7 +35,6 @@
 	<?php dynamic_sidebar( 'sidebar' ) ?>
 
 	<?php do_action( 'bp_inside_after_sidebar' ) ?>
--->
 	</div>
-
 <?php do_action( 'bp_after_sidebar' ) ?>
+

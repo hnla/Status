@@ -16,8 +16,7 @@
 					<div class="status-signup">
 						<section id="signup-login">
 						<?php do_action( 'bp_before_sidebar_login_form' ) ?>
-
-							<h2>Sign in</h2>
+							<h2><?php _e( 'Sign in', 'status' ) ?></h2>
 								<form name="login-form" id="primary-login-form" class="standard-form" action="<?php echo site_url( 'wp-login.php', 'login_post' ) ?>" method="post">
 									<p class="your-name">
 										<label for="site-user-login"><?php _e( 'Username', 'status' ) ?></label>
@@ -41,11 +40,9 @@
 								<?php do_action( 'bp_after_sidebar_login_form' ) ?>
 						</section>
 						<section id="signup-register">
-							<h2>... or register</h2>
+							<h2><?php _e( '...or register', 'status' ) ?></h2>
 								<?php if ( bp_get_signup_allowed() ) : ?>
-
 									<p id="login-text">
-
 										<?php printf( __( 'Please <a href="%s" title="Create an account">create an account</a> to get started.', 'status' ), site_url( bp_get_signup_slug() . '/' ) ) ?>
 
 									</p>
