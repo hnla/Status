@@ -243,6 +243,17 @@ footer {clear: both;}
 	background-image: -webkit-linear-gradient(bottom,#373737,#464646 5px);
 	background-image: linear-gradient(bottom,#373737,#464646 5px);
 }
+#footer-wrapper a, #footer-wrapper a:link {
+ color: #cccccc;
+ text-decoration: none;
+}
+#footer-wrapper a:visited {
+	color: #bbbbbb;
+}
+#footer-wrapper a:focus, #footer-wrapper a:hover {
+	color: #ffffff;
+	text-decoration: underline;
+}
 
 /*--------------------------------------------------------------
 2.4 - Sidebar
@@ -294,19 +305,17 @@ body {
 }
 
 a, a:link {
- color: #55bbee;
+ color: #778315;
  text-decoration: none;
 }
 a:visited {
-	color: #aaaaaa;
+	color: #96a51a;
 }
 a:focus, a:hover {
-	color: #111111;
+	color: #96a51a;
 	text-decoration: underline;
 }
-header a, header a:link, header a:visited {
-	color: #cccccc;
-}
+
 p {
 	margin-bottom: 10px;
 }
@@ -450,7 +459,7 @@ nav {
 	margin-right: 10px;
 } 
 
-nav #user-profile-menu {}
+/*nav #user-profile-menu {}
 nav #user-profile-menu  li {position: relative;}
 #user-profile-menu ul li a {
 	display: block;
@@ -475,7 +484,7 @@ nav #user-profile-menu ul li {
 #user-profile-menu li:hover ul ul,
 #user-profile-menu li.sfhover ul li ul {
 	left: -999em;
-}
+}*/
 
 /*--------------------------------------------------------------
 4.1 - Pagination
@@ -1084,22 +1093,18 @@ margin-top: 0px;
 .activity-details{
 	overflow: hidden;
 }
-a.unfav, a.fav, a.show-comments, a.close-comments {	
-	padding: 2px 0 0 15px;
-	margin-right: 8px;
-}
-a.show-comments, a.close-comments {
- cursor: pointer;
-}
+
 a.delete-activity{	
 	padding: 2px 0 0 15px;
 	margin-right: 8px;
+	opacity: 0.5;
 }
 
 a.close-comments, a.show-comments{
 	padding: 2px 0 0 15px;
 	margin-right: 8px;
 	opacity: 0.5;
+	cursor: pointer;
 } 
 
 a.acomment-reply{	
@@ -1108,11 +1113,6 @@ a.acomment-reply{
 	opacity: 0.5;
 }
 a.fav, a.unfav{	
-	padding: 2px 0 0 15px;
-	margin-right: 8px;
-	opacity: 0.5;
-}
-a.delete-activity{	
 	padding: 2px 0 0 15px;
 	margin-right: 8px;
 	opacity: 0.5;
@@ -1325,24 +1325,27 @@ border: 1px solid #EEE;overflow:hidden;}
 	border-left: 1px solid #dddddd;
 	padding: 10px 15px;
 	text-decoration: none;
-	background: #f5f5f5;
-	color: #55bbee;
+	background: #ffffff;
+	color: #778315;
 	text-shadow: -1px -1px 0px #ffffff;
 	font-weight: 700;
 	-moz-border-radius:5px;-khtml-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;
 }
 
 .submitbutton:hover, .form-submit #submit:hover, #signup_submit:hover, #submit:hover, #searchsubmit:hover, .standard-form input[type="submit"]:hover{	
-	background: #eeeeee;
-	border-right: 1px solid #bbbbbb;
-	border-bottom: 1px solid #bbbbbb;
-	border-top: 1px solid #ffffff;
-	border-left: 1px solid #ffffff;
+	background: #fcfcfc;
+	border-right: 1px solid #888888;
+	border-bottom: 1px solid #888888;
+	border-top: 1px solid #cccccc;
+	border-left: 1px solid #cccccc;
 	text-shadow: -1px -1px 0px #ffffff;
+	color: #96a51a;
 	-moz-border-radius:5px;-khtml-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;
 	text-decoration:underline;
 }
+
 div.submit{margin:10px 0 0 0;}
+
 .label{margin-top:10px;}
 
 .input{
@@ -1879,13 +1882,13 @@ div#message-thread div.message-options {
 	}
 	#sidebar {
 		float: right;
-		width: 20%;
+		width: 22%;
 		margin: 20px 0 0 0;
 	}
 	#content{
 		margin: 20px 0 20px 0;
 		float: left;
-		width: 74%;
+		width: 73%;
 		background: #ffffff;
 		border-right: 1px solid #cccccc;
 		border-bottom: 1px solid #cccccc;
@@ -1900,7 +1903,7 @@ div#message-thread div.message-options {
 	.groups #content{
 		margin: 0px 0 20px 0;
 		float: left;
-		width: 77%;
+		width: 75%;
 		background: none;
 		border: none;
 		margin-left:10px;
@@ -1915,7 +1918,7 @@ div#message-thread div.message-options {
 	
 	#content-stream{
 		float: left;
-		width: 78%;
+		width: 76%;
 	}
 	
 	#content-home{
