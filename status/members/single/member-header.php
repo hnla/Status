@@ -63,7 +63,7 @@
 	 ?>
 
 <div id="item-nav">
-			<nav class="item-list-tabs no-ajax" id="object-nav" role="navigation">
+			<div class="item-list-tabs no-ajax" id="object-nav" role="navigation">
 				<ul>
 
 					<?php bp_get_displayed_user_nav(); ?>
@@ -71,7 +71,7 @@
 					<?php do_action( 'bp_member_options_nav' ); ?>
 
 				</ul>
-			</nav>
+			</div>
 		</div><!-- #item-nav -->
 		
 		
@@ -80,7 +80,7 @@
 		if ( bp_is_user_activity() || !bp_current_component() ) :
 		?>
 		<div id="activity-navigation">
-		<nav class="item-list-tabs no-ajax" id="subnav" role="navigation">
+		<div class="item-list-tabs no-ajax" id="subnav" role="navigation">
 			<ul>
 
 				<?php bp_get_options_nav() ?>
@@ -128,7 +128,7 @@
 					</select>
 				</li>
 			</ul>
-		</nav><!-- .item-list-tabs -->
+		</div><!-- .item-list-tabs -->
 		</div>
 		<?php
 		 elseif ( bp_is_user_blogs() ) :
