@@ -21,7 +21,7 @@
 		</section>
 		<?php do_action( 'bp_sidebar_me' ) ?>
 	</div>
-<!--<?php do_action( 'bp_after_sidebar_me' ) ?>
+	<?php do_action( 'bp_after_sidebar_me' ) ?>
 	<?php do_action( 'bp_inside_before_sidebar' ) ?>
 
 	<?php /* Show forum tags on the forums directory */
@@ -37,4 +37,3 @@
 	<?php do_action( 'bp_inside_after_sidebar' ) ?>
 	</div>
 <?php do_action( 'bp_after_sidebar' ) ?>
-
