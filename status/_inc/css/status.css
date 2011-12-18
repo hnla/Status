@@ -190,7 +190,7 @@ td { vertical-align: top; }
 .home .status-signup{
 	padding: 20px 20px 20px 20px;
 }
-.activity #content-profile, .activity #content, .home #content{
+.activity #content-profile, .activity #content, .home-page #content{
 	margin: 0px 0 20px 0;
 	float: none;
 	background: none;
@@ -1648,7 +1648,16 @@ table.forum p.topic-meta {
 	border-top:none;
 	border-left:none;
 }
-
+.my-groups #item-header{
+	background: #f9f9f9;
+	-moz-box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
+	-webkit-box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
+	box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	border-top: 1px solid #fff;
+	border-left: 1px solid #fff;
+}
 #item-nav{
 	overflow: hidden;
 	border-bottom: 1px solid #dddddd;
@@ -1941,7 +1950,7 @@ div#message-thread div.message-options {
 	}
 	.activity #content-profile{width:76%;float:left;}
 	
-	.activity #content, .home #content{
+	.activity #content, .home-page #content{
 		float: left;
 		width: 76%;
 	}
