@@ -14,7 +14,8 @@ if( is_user_logged_in() ) :
 					</ul>			
 			
 <?php else: ?>
-						<p>Oh deary me you don't seem to have any friends.  Start connecting by friending people and get involved in the community.</p>
+
+	<p><?php _e( 'Once you friend someone it will show up here.', 'status' ) ?></p>
 			
 <?php endif;
 			
