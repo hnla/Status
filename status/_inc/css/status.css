@@ -1083,7 +1083,6 @@ margin-top: 0px;
 }
 .activity-header{
 	font-size: 0.8em;
-	font-weight: bold;
 	float: left;
 }
 .activity-header p{
@@ -1097,25 +1096,25 @@ margin-top: 0px;
 a.delete-activity{	
 	padding: 2px 0 0 15px;
 	margin-right: 8px;
-	opacity: 0.5;
+	opacity: 0.3;
 }
 
 a.close-comments, a.show-comments{
 	padding: 2px 0 0 15px;
 	margin-right: 8px;
-	opacity: 0.5;
+	opacity: 0.3;
 	cursor: pointer;
 } 
 
 a.acomment-reply{	
 	padding: 2px 0 0 15px;
 	margin-right: 8px;
-	opacity: 0.5;
+	opacity: 0.3;
 }
 a.fav, a.unfav{	
 	padding: 2px 0 0 15px;
 	margin-right: 8px;
-	opacity: 0.5;
+	opacity: 0.3;
 }
 
 a:hover.show-comments, a:hover.close-comments{
