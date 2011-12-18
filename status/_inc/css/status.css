@@ -1317,7 +1317,7 @@ input:invalid, textarea:invalid {
 background: #F9F9F9;
 border: 1px solid #EEE;overflow:hidden;}
 
-.submitbutton, .form-submit #submit, #signup_submit, #submit, #searchsubmit, .standard-form input[type="submit"]{	
+.submitbutton, .form-submit #submit, #signup_submit, #submit, #searchsubmit, .standard-form input[type="submit"], .activity-comments input[type="submit"]{	
 	border-right: 1px solid #bbbbbb;
 	border-bottom: 1px solid #bbbbbb;
 	border-top: 1px solid #dddddd;
@@ -1328,10 +1328,10 @@ border: 1px solid #EEE;overflow:hidden;}
 	color: #778315;
 	text-shadow: -1px -1px 0px #ffffff;
 	font-weight: 700;
-	-moz-border-radius:5px;-khtml-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;
+	-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;
 }
 
-.submitbutton:hover, .form-submit #submit:hover, #signup_submit:hover, #submit:hover, #searchsubmit:hover, .standard-form input[type="submit"]:hover{	
+.submitbutton:hover, .form-submit #submit:hover, #signup_submit:hover, #submit:hover, #searchsubmit:hover, .standard-form input[type="submit"]:hover, .activity-comments input[type="submit"]:hover{	
 	background: #fcfcfc;
 	border-right: 1px solid #888888;
 	border-bottom: 1px solid #888888;
@@ -1339,7 +1339,7 @@ border: 1px solid #EEE;overflow:hidden;}
 	border-left: 1px solid #cccccc;
 	text-shadow: -1px -1px 0px #ffffff;
 	color: #96a51a;
-	-moz-border-radius:5px;-khtml-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;
+	-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;
 	text-decoration:underline;
 }
 
