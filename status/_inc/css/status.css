@@ -176,7 +176,7 @@ td { vertical-align: top; }
 .home .status-signup{
 	padding: 20px 20px 20px 20px;
 }
-.groups #content, .activity #content-profile{
+.activity #content-profile{
 	margin: 0px 0 20px 0;
 	float: none;
 	background: none;
@@ -385,6 +385,8 @@ h6 {font-size: 1em;}
 	font-weight:700;
 }
 
+ul#members-list h5, ul#member-list h5, ul#blogs-list h5, ul#blog-list h5, ul#admins-list h5, ul#admin-list h5, 
+ul#groups-list h5, ul#group-list h5{margin:0;}
 /*--------------------------------------------------------------
 3.3 - Lists
 --------------------------------------------------------------*/
@@ -454,6 +456,11 @@ nav {
 #item-nav li, #subnav li {
 	margin-right: 10px;
 } 
+
+.groups #item-nav li, .groups #subnav li {
+	margin-right: 30px;
+} 
+
 
 /*--------------------------------------------------------------
 4.1 - Pagination
@@ -901,11 +908,22 @@ span.sticky-post {
 	min-height: 100px;
 }
 
+.groups #whats-new-declare{	
+	border-bottom:1px solid #dddddd;
+	border-right:none;
+	border-top:none;
+	border-left:none;
+	margin: 0;
+}
+	
 #whats-new-avatar {
 	float: left;
 	width: 80px;
 }
 ul.item-list.activity-list li { padding: 10px;}
+.groups #item-nav .item-list-tabs ul{margin: 10px 0 0 0!important;
+padding: 0 0 10px 0;
+border-bottom: 1px solid #EEE;}
 #whats-new-avatar img {
 	padding: 2px;
 	margin: 10px 12px;
@@ -942,10 +960,10 @@ ul.item-list.activity-list li { padding: 10px;}
 	clear: both;
 }
 #whats-new-textarea textarea {
-	width: 99%;
 	height: 40px;
 	border: 1px solid #eee;
 	-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;
+	width: 97%;
 }
 #whats-new-options {
 	float: right;
@@ -1025,6 +1043,16 @@ padding-top: 10px;}
 	overflow: hidden;
 	padding: 10px;
 }
+.groups .activity-entry, .groups .activity-comment{
+	background: rgba(0, 0, 0, 0.024);
+	-moz-box-shadow:none;
+	-webkit-box-shadow:none;
+	box-shadow:none;
+	border-bottom:1px solid #dddddd;
+	border-right:none;
+	border-top:none;
+	border-left:none;
+}
 
 .activity-entry:hover{
 	background: #fffef2;
@@ -1048,9 +1076,6 @@ ul#activity-stream, ul#groups-list{
 }
 .item-list li{
 	list-style:none;
-}
-.activity-content{
-	margin-left: 80px;
 }
 .activity-inner{
 clear: right;
@@ -1208,7 +1233,12 @@ div.activity-comments form div.ac-reply-content {
 /*--------------------------------------------------------------
 6.3 - Directories - Members, Groups, Blogs, Forums
 --------------------------------------------------------------*/
-
+ul#member-list , 
+ul#admins-list, 
+ul#blog-list {
+	margin:0;
+	padding:0;
+}
 /*--------------------------------------------------------------
 6.4 - Error / Success Messages
 --------------------------------------------------------------*/
@@ -1294,6 +1324,11 @@ input:invalid, textarea:invalid {
 	width: 95%;
 }
 
+.standard-form input[type="text"],.standard-form input[type="email"],.standard-form input[type="password"],
+.standard-form textarea{
+	width: 95%;
+}
+
 .standard-form label{
 	font-weight: 700;
 	color:#555;
@@ -1303,8 +1338,9 @@ input:invalid, textarea:invalid {
 	line-height:40px;
 	padding: 10px;
 	background: #f9f9f9;
-	border: 1px solid #EEE;
+	border: 1px solid #eee;
 	overflow:hidden;
+	margin: 20px 0px;
 }
 
 .submitbutton, .form-submit #submit, #signup_submit, #submit, #searchsubmit, .standard-form input[type="submit"], .activity-comments input[type="submit"]{	
@@ -1382,7 +1418,7 @@ div#invite-list {
 	padding: 5px;
 	width: 160px;
 }
-
+ul#members-list .small .button{margin-left:10px;}
 /*--------------------------------------------------------------
 6.6 - Ajax Loading
 --------------------------------------------------------------*/
@@ -1588,6 +1624,17 @@ table.forum p.topic-meta {
 	-webkit-box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
 	box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
 }
+.groups #item-header{
+	background: rgba(0, 0, 0, 0.024);
+	-moz-box-shadow:none;
+	-webkit-box-shadow:none;
+	box-shadow:none;
+	border-bottom:1px solid #dddddd;
+	border-right:none;
+	border-top:none;
+	border-left:none;
+}
+
 #item-nav{
 	overflow: hidden;
 	border-bottom: 1px solid #dddddd;
@@ -1596,7 +1643,7 @@ table.forum p.topic-meta {
 	overflow: hidden;
 	border-bottom: none;
 	clear: both;
-	margin: 0 0 0 20px;
+	margin: 0px;
 }
 .groups #profile-right #item-nav{
 	margin: 0 0 0 0px;
@@ -1605,7 +1652,7 @@ table.forum p.topic-meta {
 
 #item-header-avatar{
 	float: left;
-	margin-right: 20px;
+	margin-right: 10px;
 }
 #item-header-avatar img{
 	background: #ffffff;
@@ -1647,9 +1694,6 @@ div#message p {
 }
 div#item-header {
 	overflow: hidden;
-}
-div#item-header div#item-header-content {
-	margin-left: 170px;
 }
 div#item-header h2 a {
 	text-decoration: none;
@@ -1891,20 +1935,6 @@ div#message-thread div.message-options {
 		-webkit-box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
 		box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
 	}
-	.groups #content{
-		margin: 0px 0 20px 0;
-		float: left;
-		width: 73%;
-		background: none;
-		border: none;
-		margin-left:10px;
-		-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;
-		padding: 0;
-		box-shadow: none;
-		-webkit-box-shadow: none;
-		-moz-box-shadow:none;
-	}
-	
 	.activity #content-profile{width:76%;float:left;}
 	
 	#content-stream{
