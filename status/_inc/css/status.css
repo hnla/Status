@@ -54,8 +54,8 @@ audio:not([controls]) { display: none; }
 html { font-size: 100%; overflow-y: scroll; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
 body { margin: 0; font-size: 13px; line-height: 1.231; }
 body, button, input, select, textarea { font-family: sans-serif; color: #222; }
-::-moz-selection { background: #fe57a1; color: #fff; text-shadow: none; }
-::selection { background: #fe57a1; color: #fff; text-shadow: none; }
+::-moz-selection { background: #fff400; text-shadow: none; }
+::selection { background: #fff400; text-shadow: none; }
 a:focus { outline: thin dotted; }
 a:hover, a:active { outline: 0; }
 abbr[title] { border-bottom: 1px dotted; }
@@ -167,13 +167,11 @@ td { vertical-align: top; }
 #content, #content-404{
 	margin: 20px 0 20px 0;
 	float: none;
-	width: 100%;
 	padding: 0px 20px 20px 20px;
 }
 .edit-profile,  #content-profile{
 	margin: 20px 0 0 0;
 	padding: 0px 20px 20px 20px;
-	width: 100%;
 }
 .home .status-signup{
 	padding: 20px 20px 20px 20px;
@@ -181,7 +179,6 @@ td { vertical-align: top; }
 .groups #content, .activity #content-profile{
 	margin: 0px 0 20px 0;
 	float: none;
-	width: 100%;
 	background: none;
 	border: none;
 	padding: 0;
@@ -194,20 +191,15 @@ td { vertical-align: top; }
 }
 #profile-left{
 	float:none;
-	width: 100%;
 	border-right: 1px dashed #AAA;
 	padding: 0 20px 0 0;
 }
 #content-profile, #content-stream, #profile-right{
 	float: none;
-	width: 100%;
 }
 #profile-right{
 	padding: 0 20px;
 	line-height: 28px;
-}
-#content-profile-headerfull{
-	width: 100%;
 }
 #content-home{
 	margin:20px 20px 50px 20px;
@@ -270,9 +262,21 @@ footer {clear: both;}
 	border-left: 1px solid #ffffff;
 	-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;
 	padding:10px;
+	overflow:hidden;
 	-moz-box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
 	-webkit-box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
 	box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
+}
+#friends-loop {
+	color: #888888;
+	font-size: 0.85em;
+}
+#friends-loop ul {margin: 0;}
+#friends-loop ul li {
+	background: #646464;
+	border: 1px solid #6E6E6E;
+	display: inline;
+	display: inline-block;
 }
 
 /*--------------------------------------------------------------
@@ -283,9 +287,10 @@ footer {clear: both;}
 3.1 - Text
 --------------------------------------------------------------*/
 body {
-	background: #f4f4f4 url('../images/wood_pattern.png');
+	background-color: #f4f4f4;
+	background-image: url('../images/wood_pattern.png');
 	font: 100%/1.7 Arial, sans-serif;
-	color: #555;
+	color: #111111;
 }
 
 a, a:link {
@@ -1158,15 +1163,15 @@ a.acomment-reply{
 	padding-top: 20px;
 }
 div.activity-comments form.ac-form {
-	background: #fafafa;
-	border: 1px solid #ddd;
+	background: #FAFAFA;
+	border-top: 1px solid #DDD;
 	-moz-border-radius: 4px;
 	-webkit-border-radius: 4px;
 	border-radius: 4px;
 	display: none;
-	margin: 10px 0 15px 33px;
-	padding: 8px;
-	clear:both;
+	margin: 10px 0 15px 0px;
+	padding: 10px 0;
+	clear: both;
 }
 div.activity-comments li form.ac-form {
 	margin-right: 15px;
@@ -1246,15 +1251,15 @@ div#message p {
 	padding: 10px 15px;
 }
 div#message.error p {
-	background-color: #db1717;
-	border-color: #a71a1a;
+	background-color: #9e192e;
+	border-color: #62101d;
 	clear: left;
 	color: #fff;
 }
 div#message.updated p {
-	background-color: #8ff57a;
-	border-color: #80cf70;
-	color: #1a6a00;
+	background-color: #96a51a;
+	border-color: #5d6610;
+	color: #fff;
 }
 .standard-form#signup_form div div.error {
 	background: #e41717;
@@ -1278,7 +1283,7 @@ ul.button-nav li {
 ul.button-nav li.current a {
 	font-weight: bold;
 }
-
+#item-header #message{margin:0;}
 /*--------------------------------------------------------------
 6.5 - Forms
 --------------------------------------------------------------*/
@@ -1307,9 +1312,11 @@ input:invalid, textarea:invalid {
 	width: 95%;
 }
 
-.standard-form label{font-weight: 700;}
+.standard-form label{font-weight: 700;color:#555555;}
 
-.standard-form{line-height:40px;}
+.standard-form{line-height:40px;padding: 10px;
+background: #F9F9F9;
+border: 1px solid #EEE;overflow:hidden;}
 
 .submitbutton, .form-submit #submit, #signup_submit, #submit, #searchsubmit, .standard-form input[type="submit"]{	
 	border-right: 1px solid #bbbbbb;
@@ -1335,7 +1342,7 @@ input:invalid, textarea:invalid {
 	-moz-border-radius:5px;-khtml-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;
 	text-decoration:underline;
 }
-div.submit{margin:10px 0 0 0}
+div.submit{margin:10px 0 0 0;}
 .label{margin-top:10px;}
 
 .input{
@@ -1644,12 +1651,6 @@ div#message p {
 	margin-top: 3px;
 	text-decoration: none;
 	background: #ffeaa6;
-	background-image: -webkit-linear-gradient(rgba(255, 255, 255, .5), rgba(255, 255, 255, 0));
-	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255, 255, 255, .5)), color-stop(100%,rgba(255, 255, 255, 0))); /* Chrome,Safari4+ */
-	background-image: -moz-linear-gradient(rgba(255, 255, 255, .5), rgba(255, 255, 255, 0));
-	background-image: -ms-linear-gradient(rgba(255, 255, 255, .5), rgba(255, 255, 255, 0));
-	background-image: -o-linear-gradient(rgba(255, 255, 255, .5), rgba(255, 255, 255, 0));
-	background-image: linear-gradient(rgba(255, 255, 255, .5), rgba(255, 255, 255, 0));
 }
 div#item-header {
 	overflow: hidden;
@@ -1867,9 +1868,9 @@ div#message-thread div.message-options {
 		padding: 0 20px 0 0;
 	}
 	#profile-right{
-		width: 17%;
+		width: 21%;
 		float: right;
-		padding: 0 20px;
+		padding: 0;
 		line-height: 28px;
 	}
 	#content-profile{
@@ -1890,7 +1891,6 @@ div#message-thread div.message-options {
 		border-bottom: 1px solid #cccccc;
 		border-top: 1px solid #ffffff;
 		border-left: 1px solid #ffffff;
-		margin-left:10px;
 		-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;
 		padding: 0px 20px 20px 20px;
 		-moz-box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
@@ -1969,17 +1969,6 @@ div#message-thread div.message-options {
 	border-bottom: 1px solid #ffffff;
 }
 
-#friends-loop {
-	color: #888888;
-	font-size: 0.85em;
-}
-#friends-loop ul {margin: 0;}
-#friends-loop ul li {
-	background: #646464;
-	border: 1px solid #6E6E6E;
-	display: inline;
-	display: inline-block;
-}
 #footer-widget-block {
 	margin: 0 auto;
 	max-width: 1230px;
