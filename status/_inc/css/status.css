@@ -1214,13 +1214,14 @@ div.activity-comments form .ac-textarea {
 	border-radius: 3px;
 	margin-bottom: 10px;
 	padding: 8px;
+	width:97%;
 }
 div.activity-comments form textarea {
 	border: none;
 	color: #555;
 	height: 60px;
 	padding: 0;
-	width: 100%;
+	width: 97%;
 }
 div.activity-comments form input {
 	margin-top: 5px;
