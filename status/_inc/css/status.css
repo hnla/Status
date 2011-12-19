@@ -110,9 +110,9 @@ td { vertical-align: top; }
   a, a:visited { text-decoration: underline; }
   a[href]:after { content: " (" attr(href) ")"; }
   abbr[title]:after { content: " (" attr(title) ")"; }
-  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }  /* Don't show links for images, or javascript/internal links */
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }
   pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
-  thead { display: table-header-group; } /* h5bp.com/t */
+  thead { display: table-header-group; }
   tr, img { page-break-inside: avoid; }
   img { max-width: 100% !important; }
   @page { margin: 0.5cm; }
@@ -559,12 +559,13 @@ div.pagination .pagination-links a:hover {
 	margin-top: 30px;
 }
 .commentlist .bypostauthor {
+	background: #fffef2;
 }
 #comments {
 	margin-top: 30px;
 }
 #comments ol.commentlist {
-	border-bottom: 1px solid #dddddd;
+	border-bottom: 1px solid #ddd;
 	margin: 0 0 30px 0;
 }
 #comments ol.commentlist ol {
@@ -912,7 +913,6 @@ span.sticky-post {
 /*--------------------------------------------------------------
 6.0 - BuddyPress
 --------------------------------------------------------------*/
-
 /*--------------------------------------------------------------
 6.1 - Activity
 --------------------------------------------------------------*/
@@ -925,7 +925,7 @@ span.sticky-post {
 }
 
 .groups #whats-new-declare{	
-	border-bottom:1px solid #dddddd;
+	border-bottom:1px solid #ddd;
 	border-right:none;
 	border-top:none;
 	border-left:none;
@@ -1094,10 +1094,10 @@ ul#activity-stream, ul#groups-list{
 	list-style:none;
 }
 .activity-inner{
-clear: right;
-padding-bottom: 10px;
-padding-top: 0px;
-margin-top: 0px;
+	clear: right;
+	padding-bottom: 10px;
+	padding-top: 0px;
+	margin-top: 0px;
 }
 .activity-header{
 	font-size: 0.8em;
@@ -1645,7 +1645,7 @@ table.forum p.topic-meta {
 	-moz-box-shadow:none;
 	-webkit-box-shadow:none;
 	box-shadow:none;
-	border-bottom:1px solid #dddddd;
+	border-bottom:1px solid #ddd;
 	border-right:none;
 	border-top:none;
 	border-left:none;
@@ -1662,7 +1662,7 @@ table.forum p.topic-meta {
 }
 #item-nav{
 	overflow: hidden;
-	border-bottom: 1px solid #dddddd;
+	border-bottom: 1px solid #ddd;
 }
 .groups #item-nav{
 	overflow: hidden;
@@ -1680,7 +1680,7 @@ table.forum p.topic-meta {
 	margin-right: 10px;
 }
 #item-header-avatar img{
-	background: #ffffff;
+	background: #fff;
 	border-right: 1px solid #ccc;
 	border-bottom: 1px solid #ccc;
 	border-top: 1px solid #fff;
@@ -1738,8 +1738,7 @@ div#item-header h2 span.highlight {
 	margin-bottom: 7px;
 	vertical-align: middle;
 }
-div#item-header h2 span.highlight {
-}
+
 div#item-header h2 span.highlight span {
 	background: #a1dcfa;
 	-moz-border-radius: 3px;
@@ -1756,8 +1755,7 @@ div#item-header h2 span.highlight span {
 	top: -2px;
 	vertical-align: middle;
 }
-div#item-header div#item-meta {
-}
+
 div#item-header div#item-actions {
 	float: right;
 	margin: 0 0 15px 15px;
@@ -1791,10 +1789,7 @@ div#item-header a.button {
 div#item-header div#message.info {
 	line-height: 80%;
 }
-ul.item-list li {
-}
-ul.item-list.activity-list li {
-}
+
 ul.single-line li {
 	border: none;
 }
@@ -1923,7 +1918,7 @@ div#message-thread div.message-options {
 /*--------------------------------------------------------------
 8.0 - Media queries
 --------------------------------------------------------------*/
-@media only screen and (min-width:800px){/* 1.0 - Structure */
+@media only screen and (min-width:800px){
 	#profile-left{
 		float: left;
 		width: 75%;
@@ -1963,8 +1958,8 @@ div#message-thread div.message-options {
 		left: 50%;
 		width: 550px;
 		height: 350px;
-		margin-top: -200px; /* Half the height */
-		margin-left: -250px; /* Half the width */
+		margin-top: -200px; 
+		margin-left: -250px;
 	}
 	#signup-login{
 		border-right: 1px dashed #bbb;
@@ -1979,71 +1974,3 @@ div#message-thread div.message-options {
 	}
 	
 }
-
-/*--------------------------------------------------------------
-****** dump
---------------------------------------------------------------*/
-/*
-
-
-#branding {
-	float: left;
-}
-#header-wrapper {
-	background: #333333;	
-	padding: 5px 0px;
-}
-#branding h1 {
-	padding: 0;
-	margin: 0;
-	font-size: 1.1em;
-}
-#widgets-wrapper  {
-	background: #f9f9f9;
-	border-top: 1px solid #dddddd;
-}
-#friends-wrapper{
-	background: #f1f1f1;
-	border-top: 1px solid #cccccc;
-	border-bottom: 1px solid #ffffff;
-}
-
-#footer-widget-block {
-	margin: 0 auto;
-	max-width: 1230px;
-	padding: 0px 10px;
-}
-#footer-widget-area {
-	margin-top: -19px;
-	overflow: hidden;
-}
-#footer-widget ul.xoxo li{
-	list-style:none;
-}
-#footer-widget-area div.widget-area > ul {
-	float: left;
-	margin-right: 1%;
-	width: 23%;
-}
-#footer-widget-area div.widget-area > ul > li {
-	margin-top: 19px;
-}
-#footer-widget-area h3.widgettitle {
-	clear: left;
-	padding: 5px 15px;
-	font-size: 12px;
-	margin: 0 0 10px 0;
-}
-#footer-widget-area div div.item-options {
-	margin-left: 0;
-	margin-right: 0;
-}
-#footer-widget-area ul.item-list li img.avatar {
-	margin-left: 15px;
-}
-div#fourth ul.xoxo { margin-right: 0; }
-
-.widget-area ul{margin: 1em 0;
-padding: 0 0 0 10px;}
-
-*/
