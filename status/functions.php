@@ -32,22 +32,12 @@ function status_load_scripts() {
 		$version = '20111020'; 
 		wp_enqueue_script("jquery");
 		wp_enqueue_script('modernizr', get_stylesheet_directory_uri() . '/_inc/scripts/modernizr.js', array("jquery"), '2.0');
-		wp_enqueue_script('status-scripts', get_stylesheet_directory_uri() . '/_inc/scripts/status-scripts.js', array("jquery"), $version);
+		//wp_enqueue_script('status-scripts', get_stylesheet_directory_uri() . '/_inc/scripts/status-scripts.js', array("jquery"), $version);
 		if ( is_singular() && get_option( 'thread_comments' ) && comments_open() )
 			wp_enqueue_script( 'comment-reply' );
 	}
 }
 endif;
-
-
-function status_show_comments() {
-	if( bp_activity_get_comment_count() ){
-	echo '<a class="button bp-primary-action show-comments" title="' . __('View comments to this entry', 'status') . '">' . __('Show Comments', 'status') . '</a>' ;
-	echo ' <a class="button bp-primary-action close-comments" title="' . __('Hide these comments', 'status') . '" >' . __('Close Comments', 'status') . '</a>';
-	}
-}
-add_action('bp_activity_entry_meta', 'status_show_comments');
-
 
 add_action('init', 'status_adminbar_nav');
 function status_adminbar_nav() {
