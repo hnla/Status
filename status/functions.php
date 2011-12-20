@@ -18,46 +18,36 @@ endif;
 if ( ! function_exists( 'bp_dtheme_enqueue_styles()' ) ) :
 function bp_dtheme_enqueue_styles(){
 	if (!is_admin()){
-	wp_enqueue_style( 'status',  get_stylesheet_directory_uri() . '/_inc/css/status.css', array(), status_get_file_last_mod('status.css') );
+		// Bump this when changes are made to bust cache
+	$version = '20111220';
+	wp_enqueue_style( 'status',  get_stylesheet_directory_uri() . '/_inc/css/status.css', array(), $version );
 	}
 }
 endif;
 
 if ( ! function_exists( 'status_load_scripts' ) ) :
 function status_load_scripts() {
-	if ( !is_admin() ) { 
+	if ( !is_admin() ) {
+		// Bump this when changes are made to bust cache
+		$version = '20111020'; 
 		wp_enqueue_script("jquery");
-		//wp_enqueue_script('modernizr', get_stylesheet_directory_uri() . '/_inc/scripts/modernizr.js', array("jquery"), '2.0');
-		//wp_enqueue_script('status-scripts', get_stylesheet_directory_uri() . '/_inc/scripts/status-scripts.js', array("jquery"), status_get_file_last_mod('status-scripts.js'));
+		wp_enqueue_script('modernizr', get_stylesheet_directory_uri() . '/_inc/scripts/modernizr.js', array("jquery"), '2.0');
+		wp_enqueue_script('status-scripts', get_stylesheet_directory_uri() . '/_inc/scripts/status-scripts.js', array("jquery"), $version);
 		if ( is_singular() && get_option( 'thread_comments' ) && comments_open() )
 			wp_enqueue_script( 'comment-reply' );
 	}
 }
 endif;
 
-function status_get_file_last_mod($filename) {
-	$filetype = explode('.', $filename);
-	if($filetype[1] == 'css'){
- 	$filename = dirname(__FILE__) . '/_inc/css/' . $filename;
-	}elseif($filetype[1] == 'js'){
-		$filename = dirname(__FILE__) . '/_inc/scripts/' . $filename;
-	}
-	if( file_exists($filename) ){
-		$version =  date ("M d Y H:i:s.", filemtime($filename));
-	}else{
-		$version = 'V1.0';
-	}
-	return $version;
-}
 
-/*function status_show_comments() {
+function status_show_comments() {
 	if( bp_activity_get_comment_count() ){
 	echo '<a class="button bp-primary-action show-comments" title="' . __('View comments to this entry', 'status') . '">' . __('Show Comments', 'status') . '</a>' ;
 	echo ' <a class="button bp-primary-action close-comments" title="' . __('Hide these comments', 'status') . '" >' . __('Close Comments', 'status') . '</a>';
 	}
 }
 add_action('bp_activity_entry_meta', 'status_show_comments');
-*/
+
 
 add_action('init', 'status_adminbar_nav');
 function status_adminbar_nav() {
