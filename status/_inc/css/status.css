@@ -1260,7 +1260,7 @@ ul#blog-list {
 6.4 - Error / Success Messages
 --------------------------------------------------------------*/
 div#message {
-	margin: 0 0 15px;
+	margin: 10px 0;
 }
 #message.info {
 	margin-bottom: 0;
@@ -1794,6 +1794,9 @@ div#item-header div#message.info {
 ul.single-line li {
 	border: none;
 }
+ul.item-list li {
+position: relative;
+}
 ul.item-list li img.avatar {
 	float: left;
 	margin: 0 10px 10px 0;
@@ -1818,6 +1821,9 @@ ul.item-list li div.action {
 	float: right;
 	text-align: right;
 	font-size: 0.8em;
+	position: absolute;
+	top: 0;
+	right: 0;
 }
 ul.item-list li div.meta {
 	color: #888;
