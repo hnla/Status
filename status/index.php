@@ -10,7 +10,6 @@
 ?>
 
 <?php get_header(); ?>
-
 			<?php if ( !is_user_logged_in() ) : ?>
 				<div id="content-home" role="main">
 					<div class="status-signup">
@@ -20,7 +19,7 @@
 								<form name="login-form" id="primary-login-form" class="standard-form" action="<?php echo site_url( 'wp-login.php', 'login_post' ) ?>" method="post">
 									<p class="your-name">
 										<label for="site-user-login"><?php _e( 'Username', 'status' ) ?></label>
-										<input type="text" name="log" id="site-user-login" class="input focus" value="<?php if ( isset( $user_login) ) echo esc_attr(stripslashes($user_login)); ?>"   required />
+										<input type="text" name="log" id="site-user-login" class="input focus" value="<?php if ( isset( $user_login) ) echo esc_attr(stripslashes($user_login)); ?>"   required placeholder="Username"/>
 									</p>
 									
 									<p class="your-pass">
