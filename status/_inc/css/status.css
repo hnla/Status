@@ -125,7 +125,7 @@ td { vertical-align: top; }
 #content-wrapper {
 	margin: 0 auto;
 	max-width: 1230px;
-	padding: 0px 10px 40px 10px;
+	padding: 20px 10px 40px 10px;
 	overflow: hidden;
 }
 .home #content-wrapper{
@@ -149,7 +149,7 @@ td { vertical-align: top; }
 #content-register{
 	max-width: 550px;
 }
-#content-register, #content, #content-404, .edit-profile,  #content-profile, .home .status-signup{
+#content-register, #content, #content-404,  #content-profile, .home .status-signup{
 	background: #fff;
 	border-right: 1px solid #ccc;
 	border-bottom: 1px solid #ccc;
@@ -205,7 +205,7 @@ td { vertical-align: top; }
 }
 #profile-left{
 	float:none;
-	border-right: 1px dashed #AAA;
+	border-right: none;
 	padding: 0 20px 0 0;
 }
 #content-profile, #content-stream, #profile-right{
@@ -398,8 +398,8 @@ h6 {font-size: 1em;}
 	margin: 0 0 10px 0;
 	font-weight:700;
 }
-
-#sidebar h3{margin:0;}
+#new-topic-post h4{margin:0;padding:0;}
+#sidebar h3,#topic-meta h3{margin:0;}
 
 ul#members-list h5, ul#member-list h5, ul#blogs-list h5, ul#blog-list h5, ul#admins-list h5, ul#admin-list h5, 
 ul#groups-list h5, ul#group-list h5{margin:0;}
@@ -473,7 +473,7 @@ nav {
 	margin-right: 10px;
 } 
 
-.groups #item-nav li, .groups #subnav li {
+.groups #item-nav li, .groups #subnav li, .members #item-nav li, .members #subnav li{
 	margin-right: 30px;
 } 
 
@@ -486,7 +486,7 @@ div.pagination {
 	border: none;
 	color: #888;
 	font-size: 0.8em;
-	height: 19px;
+	height: 35px;
 	margin: 20px 0px;
 	padding: 8px 20px;
 }
@@ -937,7 +937,7 @@ span.sticky-post {
 	width: 80px;
 }
 ul.item-list.activity-list li { padding: 10px;}
-.groups #item-nav .item-list-tabs ul{margin: 10px 0 0 0!important;
+.groups #item-nav .item-list-tabs ul, .members #item-nav .item-list-tabs ul{margin: 10px 0 0 0!important;
 padding: 0 0 10px 0;
 border-bottom: 1px solid #EEE;}
 #whats-new-avatar img {
@@ -1031,7 +1031,7 @@ border-bottom: 1px solid #EEE;}
 li.feed{float: left;
 padding-top: 10px;}
 
-#activity-filter-select.last label {
+#activity-filter-select.last label, #members-order-select label {
 	float: left;
 } 
 #activity-filter-select.last select {
@@ -1246,7 +1246,26 @@ div.activity-comments form div.ac-reply-content {
 /*--------------------------------------------------------------
 6.2 - Admin Bar
 --------------------------------------------------------------*/
-
+#wpadminbar {
+direction: ltr;
+color: #CCC;
+font: normal 13px/28px sans-serif;
+position: fixed;
+height:auto!important;
+min-width: 250px;
+top: 0;
+left: 0;
+width: 100%;
+min-width:none;
+z-index: 99999;
+background-color: #464646;
+background-image: -ms-linear-gradient(bottom,#373737,#464646 5px);
+background-image: -moz-linear-gradient(bottom,#373737,#464646 5px);
+background-image: -o-linear-gradient(bottom,#373737,#464646 5px);
+background-image: -webkit-gradient(linear,left bottom,left top,from(#373737),to(#464646));
+background-image: -webkit-linear-gradient(bottom,#373737,#464646 5px);
+background-image: linear-gradient(bottom,#373737,#464646 5px);
+}
 /*--------------------------------------------------------------
 6.3 - Directories - Members, Groups, Blogs, Forums
 --------------------------------------------------------------*/
@@ -1346,11 +1365,13 @@ input:invalid, textarea:invalid {
 	width: 95%;
 }
 
-.standard-form label{
+.standard-form label, #members-directory-form label{
 	font-weight: 700;
 	color:#555;
 }
 
+#members-directory-form label, #forums-order-select label{float:left;margin-right:10px;}
+#forums-order-select label{	vertical-align: middle;}
 .standard-form{
 	line-height:40px;
 	padding: 10px;
@@ -1360,12 +1381,12 @@ input:invalid, textarea:invalid {
 	margin: 20px 0px;
 }
 
-.submitbutton, .form-submit #submit, #signup_submit, #submit, #searchsubmit, .standard-form input[type="submit"], .activity-comments input[type="submit"]{	
+.submitbutton, #members-directory-form input[type="submit"], .form-submit #submit, #signup_submit, #submit, #searchsubmit, .standard-form input[type="submit"], .activity-comments input[type="submit"]{	
 	border-right: 1px solid #bbb;
 	border-bottom: 1px solid #bbb;
 	border-top: 1px solid #ddd;
 	border-left: 1px solid #ddd;
-	padding: 10px 15px;
+	padding: 8px 15px;
 	text-decoration: none;
 	background: #fff;
 	color: #778315;
@@ -1374,7 +1395,12 @@ input:invalid, textarea:invalid {
 	-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;
 }
 
-.submitbutton:hover, .form-submit #submit:hover, #signup_submit:hover, #submit:hover, #searchsubmit:hover, .standard-form input[type="submit"]:hover, .activity-comments input[type="submit"]:hover{	
+.dir-search{
+	background: #f3f3f3;
+	border: 1px solid #eeeeee;
+	padding:10px;
+}
+.submitbutton:hover, #members-directory-form input[type="submit"]:hover, .form-submit #submit:hover, #signup_submit:hover, #submit:hover, #searchsubmit:hover, .standard-form input[type="submit"]:hover, .activity-comments input[type="submit"]:hover{	
 	background: #fcfcfc;
 	border-right: 1px solid #888;
 	border-bottom: 1px solid #888;
@@ -1484,6 +1510,9 @@ input.loading:hover {
 /*--------------------------------------------------------------
 6.7 - Topics and Tables - Forums and General
 --------------------------------------------------------------*/
+ul#topic-post-list{margin:0;}
+#topic-post-list{background:#ffffff;padding:10px;}
+#topic-post-list .post-content{margin:0;}
 table {
 	width: 100%;
 }
@@ -1493,6 +1522,9 @@ table thead tr {
 table#message-threads {
 	margin: 0;
 	width: auto;
+}
+table td.thread-avatar{
+	width:9%;
 }
 table.profile-fields {
 	margin-bottom: 20px;
@@ -1726,7 +1758,7 @@ div#item-header h2 a {
 }
 div#item-header img.avatar {
 	float: left;
-	margin: 0 15px 19px 0;
+	margin: 5px 10px 10px 10px;
 }
 div#item-header h2 {
 	margin-bottom: 5px;
@@ -1785,8 +1817,9 @@ div#item-header ul.avatars img.avatar {
 div#item-header div.generic-button,
 div#item-header a.button {
 	float: left;
-	margin: 10px 10px 0 0;
+	margin: 10px 10px 10px 0;
 }
+#forum-topic-form ul{margin:0;}
 div#item-header div#message.info {
 	line-height: 80%;
 }
@@ -1978,6 +2011,12 @@ div#message-thread div.message-options {
 	#signup-register{
 		float: right;
 		width: 45%;
+	}
+	#content-wrapper {
+		margin: 0 auto;
+		max-width: 1230px;
+		padding: 0px 10px 40px 10px;
+		overflow: hidden;
 	}
 	
 }
