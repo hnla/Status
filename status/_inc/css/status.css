@@ -136,7 +136,7 @@ td { vertical-align: top; }
 	margin: 0 auto;
 	max-width: 1230px;
 	overflow: hidden;
-	padding: 0px 10px 40px 10px;
+	padding: 20px 10px 40px 10px;
 }
 #content-wrapper, #header-wrapper, #friends-wrapper,
 #widgets-wrapper, #footer-wrapper {
@@ -2017,6 +2017,12 @@ div#message-thread div.message-options {
 		max-width: 1230px;
 		padding: 0px 10px 40px 10px;
 		overflow: hidden;
+	}
+	.home.logged-in #content-wrapper {
+		margin: 0 auto;
+		max-width: 1230px;
+		overflow: hidden;
+		padding: 0px 10px 40px 10px;
 	}
 	
 }
