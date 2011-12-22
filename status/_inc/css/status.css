@@ -936,10 +936,12 @@ span.sticky-post {
 	float: left;
 	width: 80px;
 }
-ul.item-list.activity-list li { padding: 10px;}
+ul.item-list.activity-list li { padding: 10px;border-bottom:none;}
 .groups #item-nav .item-list-tabs ul, .members #item-nav .item-list-tabs ul{margin: 10px 0 0 0!important;
 padding: 0 0 10px 0;
-border-bottom: 1px solid #EEE;}
+margin: 10px 0 0 0;
+border-bottom: 1px solid #ddd;
+font-size:0.9em;}
 #whats-new-avatar img {
 	padding: 2px;
 	margin: 10px 12px;
@@ -1022,7 +1024,7 @@ border-bottom: 1px solid #EEE;}
 
 #activity-show .activity-type-tabs{float:left;}
 
-#activity-show li{margin: 0 10px 0 0}
+#activity-show li{margin: 0 10px 0 10px;}
 
 #activity-show #subnav ul{margin:0;}
 
@@ -1045,7 +1047,7 @@ padding-top: 10px;}
 }
 .activity-entry, .activity-comment{
 	clear: both;
-	background: #f9f9f9;
+	background: #fff;
 	border-right: 1px solid #ccc;
 	border-bottom: 1px solid #ccc;
 	border-top: 1px solid #fff;
@@ -1175,9 +1177,11 @@ a.acomment-reply{
 }
 
 .activity-comments>ul {
-	border-top: 1px solid #eee;
-	margin-top: 20px;
-	padding-top: 20px;
+	background:#f7f7f7;
+	border-top:1px solid #ddd;
+	margin: 10px 0 0 0;
+	padding: 10px;
+	font-size:0.9em;
 }
 div.activity-comments form.ac-form {
 	background: #fafafa;
@@ -1239,7 +1243,7 @@ div.activity-comments form div.ac-reply-content {
 	padding-left: 15px;
 }
 .activity-comments li {
-	border-bottom: 1px solid #eee;
+	border-bottom: none;
 	padding: 10px 0 10px 0;
 }
 
@@ -1722,7 +1726,7 @@ table.forum p.topic-meta {
 	padding: 2px;
 }
 .item-list li{
-	border-bottom: 1px solid #eee;
+	border-bottom: 1px solid #ddd;
 	margin: 0 0 10px 0;
 	padding: 0 0 10px 0;
 }

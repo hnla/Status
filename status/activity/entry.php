@@ -35,12 +35,11 @@
 
 							<a href="<?php bp_get_activity_comment_link(); ?>" class="button acomment-reply bp-primary-action" id="acomment-comment-<?php bp_activity_id(); ?>"><?php printf( __( 'Comment <span>%s</span>', 'status' ), bp_activity_get_comment_count() ); ?></a>
 						 	<?php if (bp_activity_get_comment_count()) : ?>
-							<a class="button bp-primary-action show-comments" title="<?php _e('View comments to this entry', 'status') ?>"> <?php _e('Show Comments', 'status') ?></a>
-						 	<a class="button bp-primary-action close-comments" title="<?php _e('Hide these comments', 'status') ?>" ><?php _e('Close Comments', 'status') ?> </a>
+								<a class="button bp-primary-action show-comments" title="<?php _e('Show comments', 'status') ?>"> <?php _e('Show', 'status') ?></a>
+						 	<a class="button bp-primary-action close-comments" title="<?php _e('Hide comments', 'status') ?>" ><?php _e('Close', 'status') ?> </a>
 						 <?php endif; ?>
 						 
 						 <?php 
-						// Do_action moved to bring show links into correct position, hnla
 						do_action( 'bp_activity_entry_meta' ); ?>
 						<?php endif; ?>
 
@@ -120,11 +119,10 @@
 	
 	<?php if( bp_activity_get_comment_count() ): ?>
 	<script type="text/javascript">
-//	function showhide() {
 		jQuery('.activity-comments').hide();
 		jQuery('a.close-comments').hide();
 		jQuery('a.show-comments').click(function() {
-		//alert('say stuff');
+	
 			if(jQuery(this).parents('.activity-content').siblings('.activity-comments').css('display') == 'none'){
 				jQuery(this).parents('.activity-content').siblings('.activity-comments').slideDown('slow');
 				jQuery(this).hide();

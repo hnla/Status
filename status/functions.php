@@ -18,7 +18,6 @@ endif;
 if ( ! function_exists( 'bp_dtheme_enqueue_styles()' ) ) :
 function bp_dtheme_enqueue_styles(){
 	if (!is_admin()){
-		// Bump this when changes are made to bust cache
 	$version = '20111220';
 	wp_enqueue_style( 'status',  get_stylesheet_directory_uri() . '/_inc/css/status.css', array(), $version );
 	}
@@ -28,7 +27,6 @@ endif;
 if ( ! function_exists( 'status_load_scripts' ) ) :
 function status_load_scripts() {
 	if ( !is_admin() ) {
-		// Bump this when changes are made to bust cache
 		$version = '20111020'; 
 		wp_enqueue_script("jquery");
 		wp_enqueue_script('modernizr', get_stylesheet_directory_uri() . '/_inc/scripts/modernizr.js', array("jquery"), '2.0');
