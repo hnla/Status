@@ -1102,7 +1102,7 @@ padding-top: 10px;}
 }
 
 .activity-entry:hover{
-	background: #fff9db;
+	background: #fffeee;
 }
 .acomment-avatar{
 	float: left;
@@ -1147,7 +1147,7 @@ ul#activity-stream, ul#groups-list{
 	font-size: 0.9em;
 }
 
-a.delete-activity{	
+a.delete-activity, a.delete-activity-single{	
 	padding: 2px 0 0 15px;
 	margin-right: 8px;
 	opacity: 0.3;
@@ -1190,7 +1190,7 @@ a:hover.unfav, a:hover.fav{
 	margin-right: 8px;
 	opacity: 1;
 }
-a:hover.delete-activity{	
+a:hover.delete-activity, a:hover.delete-activity-single{	
 	background: url('../images/icon-delete.png') 0px 3px no-repeat;
 	padding: 2px 0 0 15px;
 	margin-right: 8px;
@@ -1641,9 +1641,9 @@ table.forum {
 }
 table.forum tr.sticky td {
 	font-size: 1.2em;
-	background: #fff9db;
-	border-top: 1px solid #ffe8c4;
-	border-bottom: 1px solid #ffe8c4;
+	background: #fffeee;
+	border-top: 1px solid #fff9db;
+	border-bottom: 1px solid #fff9db;
 }
 table.forum tr.closed td.td-title {
 	background-image: url( ../images/closed.png );
