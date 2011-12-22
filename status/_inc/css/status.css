@@ -158,9 +158,9 @@ td { vertical-align: top; }
 	overflow: hidden;
 	-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;
 	padding: 20px 20px 20px 20px;
-	-moz-box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
-	-webkit-box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
-	box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
+	-moz-box-shadow:0 0 0 0 rgba(0, 0, 0, 0.024), 0 0 0 0 rgba(255, 255, 255, 0.15), 0 0 0 5px rgba(0, 0, 0, 0.02) inset;
+	-webkit-box-shadow:0 0 0 0 rgba(0, 0, 0, 0.024), 0 0 0 0 rgba(255, 255, 255, 0.15), 0 0 0 5px rgba(0, 0, 0, 0.02) inset;
+	box-shadow:0 0 0 0 rgba(0, 0, 0, 0.024), 0 0 0 0 rgba(255, 255, 255, 0.15), 0 0 0 5px rgba(0, 0, 0, 0.02) inset;
 }
 #content{
 	margin: 20px 0 20px 0;
@@ -171,9 +171,9 @@ td { vertical-align: top; }
 	border-left: 1px solid #fff;
 	-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;
 	padding: 0px 20px 20px 20px;
-	-moz-box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
-	-webkit-box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
-	box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
+	-moz-box-shadow:0 0 0 0 rgba(0, 0, 0, 0.024), 0 0 0 0 rgba(255, 255, 255, 0.15), 0 0 0 5px rgba(0, 0, 0, 0.02) inset;
+	-webkit-box-shadow:0 0 0 0 rgba(0, 0, 0, 0.024), 0 0 0 0 rgba(255, 255, 255, 0.15), 0 0 0 5px rgba(0, 0, 0, 0.02) inset;
+	box-shadow:0 0 0 0 rgba(0, 0, 0, 0.024), 0 0 0 0 rgba(255, 255, 255, 0.15), 0 0 0 5px rgba(0, 0, 0, 0.02) inset;
 }
 
 .status-signup{
@@ -286,11 +286,11 @@ footer {clear: both;}
 	border-top: 1px solid #fff;
 	border-left: 1px solid #fff;
 	-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;
-	padding:10px;
+	padding:10px 15px;
 	overflow:hidden;
-	-moz-box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
-	-webkit-box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
-	box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
+	-moz-box-shadow:0 0 0 0 rgba(0, 0, 0, 0.024), 0 0 0 0 rgba(255, 255, 255, 0.15), 0 0 0 5px rgba(0, 0, 0, 0.02) inset;
+	-webkit-box-shadow:0 0 0 0 rgba(0, 0, 0, 0.024), 0 0 0 0 rgba(255, 255, 255, 0.15), 0 0 0 5px rgba(0, 0, 0, 0.02) inset;
+	box-shadow:0 0 0 0 rgba(0, 0, 0, 0.024), 0 0 0 0 rgba(255, 255, 255, 0.15), 0 0 0 5px rgba(0, 0, 0, 0.02) inset;
 }
 #friends-loop {
 	color: #888;
@@ -917,8 +917,7 @@ span.sticky-post {
 6.1 - Activity
 --------------------------------------------------------------*/
 #whats-new-declare {
-	margin: 15px 0px 20px 5px;
-	background: rgba(0, 0, 0, 0.024);
+	margin: 15px 0px 20px 0;
 	padding: 6px;
 	width: 99%;
 	min-height: 100px;
@@ -1015,9 +1014,9 @@ font-size:0.9em;}
 	font-size: 0.8em;
 	overflow:hidden;
 	color:#888;
-	-moz-box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
-	-webkit-box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
-	box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
+	-moz-box-shadow:0 0 0 0 rgba(0, 0, 0, 0.024), 0 0 0 0 rgba(255, 255, 255, 0.15), 0 0 0 5px rgba(0, 0, 0, 0.02) inset;
+	-webkit-box-shadow:0 0 0 0 rgba(0, 0, 0, 0.024), 0 0 0 0 rgba(255, 255, 255, 0.15), 0 0 0 5px rgba(0, 0, 0, 0.02) inset;
+	box-shadow:0 0 0 0 rgba(0, 0, 0, 0.024), 0 0 0 0 rgba(255, 255, 255, 0.15), 0 0 0 5px rgba(0, 0, 0, 0.02) inset;
 }
 
 #activity-show #subnav{float:right}
@@ -1054,9 +1053,9 @@ padding-top: 10px;}
 	border-left: 1px solid #fff;
 	margin-left:10px;
 	-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;
-	-moz-box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
-	-webkit-box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
-	box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
+	-moz-box-shadow:0 0 0 0 rgba(0, 0, 0, 0.024), 0 0 0 0 rgba(255, 255, 255, 0.15), 0 0 0 5px rgba(0, 0, 0, 0.02) inset;
+	-webkit-box-shadow:0 0 0 0 rgba(0, 0, 0, 0.024), 0 0 0 0 rgba(255, 255, 255, 0.15), 0 0 0 5px rgba(0, 0, 0, 0.02) inset;
+	box-shadow:0 0 0 0 rgba(0, 0, 0, 0.024), 0 0 0 0 rgba(255, 255, 255, 0.15), 0 0 0 5px rgba(0, 0, 0, 0.02) inset;
 	margin-bottom: 20px;
 	overflow: hidden;
 	padding: 10px;
@@ -1081,9 +1080,9 @@ padding-top: 10px;}
 	border-left: 1px solid #fff;
 	margin-left:10px;
 	-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;
-	-moz-box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
-	-webkit-box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
-	box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
+	-moz-box-shadow:0 0 0 0 rgba(0, 0, 0, 0.024), 0 0 0 0 rgba(255, 255, 255, 0.15), 0 0 0 5px rgba(0, 0, 0, 0.02) inset;
+	-webkit-box-shadow:0 0 0 0 rgba(0, 0, 0, 0.024), 0 0 0 0 rgba(255, 255, 255, 0.15), 0 0 0 5px rgba(0, 0, 0, 0.02) inset;
+	box-shadow:0 0 0 0 rgba(0, 0, 0, 0.024), 0 0 0 0 rgba(255, 255, 255, 0.15), 0 0 0 5px rgba(0, 0, 0, 0.02) inset;
 	margin-bottom: 20px;
 	overflow: hidden;
 	padding: 10px;
@@ -1523,9 +1522,9 @@ input.loading:hover {
 	text-align: center;
 	-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;
 	padding: 20px 20px 20px 20px;
-	-moz-box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
-	-webkit-box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
-	box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
+	-moz-box-shadow:0 0 0 0 rgba(0, 0, 0, 0.024), 0 0 0 0 rgba(255, 255, 255, 0.15), 0 0 0 5px rgba(0, 0, 0, 0.02) inset;
+	-webkit-box-shadow:0 0 0 0 rgba(0, 0, 0, 0.024), 0 0 0 0 rgba(255, 255, 255, 0.15), 0 0 0 5px rgba(0, 0, 0, 0.02) inset;
+	box-shadow:0 0 0 0 rgba(0, 0, 0, 0.024), 0 0 0 0 rgba(255, 255, 255, 0.15), 0 0 0 5px rgba(0, 0, 0, 0.02) inset;
 }
 
 /*--------------------------------------------------------------
@@ -1690,9 +1689,9 @@ table.forum p.topic-meta {
 	border-left: 1px solid #fff;
 	-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;
 	padding:10px;
-	-moz-box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
-	-webkit-box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
-	box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
+	-moz-box-shadow:0 0 0 0 rgba(0, 0, 0, 0.024), 0 0 0 0 rgba(255, 255, 255, 0.15), 0 0 0 5px rgba(0, 0, 0, 0.02) inset;
+	-webkit-box-shadow:0 0 0 0 rgba(0, 0, 0, 0.024), 0 0 0 0 rgba(255, 255, 255, 0.15), 0 0 0 5px rgba(0, 0, 0, 0.02) inset;
+	box-shadow:0 0 0 0 rgba(0, 0, 0, 0.024), 0 0 0 0 rgba(255, 255, 255, 0.15), 0 0 0 5px rgba(0, 0, 0, 0.02) inset;
 }
 .groups #item-header{
 	background: rgba(0, 0, 0, 0.024);
@@ -1706,9 +1705,9 @@ table.forum p.topic-meta {
 }
 .my-groups #item-header, .groups-activity #item-header{
 	background: #f9f9f9;
-	-moz-box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
-	-webkit-box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
-	box-shadow:0 0 0 6px rgba(0, 0, 0, 0.024), 0 0 3px 0 rgba(255, 255, 255, 0.15), 0 0 0 6px rgba(0, 0, 0, 0.02) inset;
+	-moz-box-shadow:0 0 0 0 rgba(0, 0, 0, 0.024), 0 0 0 0 rgba(255, 255, 255, 0.15), 0 0 0 5px rgba(0, 0, 0, 0.02) inset;
+	-webkit-box-shadow:0 0 0 0 rgba(0, 0, 0, 0.024), 0 0 0 0 rgba(255, 255, 255, 0.15), 0 0 0 5px rgba(0, 0, 0, 0.02) inset;
+	box-shadow:0 0 0 0 rgba(0, 0, 0, 0.024), 0 0 0 0 rgba(255, 255, 255, 0.15), 0 0 0 5px rgba(0, 0, 0, 0.02) inset;
 	border-right: 1px solid #ccc;
 	border-bottom: 1px solid #ccc;
 	border-top: 1px solid #fff;
