@@ -1102,7 +1102,7 @@ padding-top: 10px;}
 }
 
 .activity-entry:hover{
-	background: #fffef2;
+	background: #fff9db;
 }
 .acomment-avatar{
 	float: left;
@@ -1140,6 +1140,11 @@ ul#activity-stream, ul#groups-list{
 }
 .activity-details{
 	overflow: hidden;
+}
+
+.activity-inreplyto{
+	color: #999;
+	font-size: 0.9em;
 }
 
 a.delete-activity{	
@@ -1213,14 +1218,11 @@ a.acomment-reply{
 	font-size:0.9em;
 }
 div.activity-comments form.ac-form {
-	background: #fafafa;
-	border-top: 1px solid #ddd;
-	-moz-border-radius: 4px;
-	-webkit-border-radius: 4px;
-	border-radius: 4px;
+	background: #f7f7f7;
+	border-top: 1px solid #fff;
 	display: none;
-	margin: 10px 0 15px 0px;
-	padding: 10px 0;
+	margin: 0;
+	padding: 10px;
 	clear: both;
 }
 div.activity-comments li form.ac-form {
@@ -1254,7 +1256,7 @@ div.activity-comments form textarea {
 	color: #555;
 	height: 60px;
 	padding: 0;
-	width: 97%;
+	width: 100%;
 }
 div.activity-comments form input {
 	margin-top: 5px;
@@ -1263,7 +1265,13 @@ div.activity-comments form div.ac-reply-avatar {
 	float: left;
 }
 div.ac-reply-avatar img {
-	border: 2px solid #fff !important;
+	background: #ffffff;
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	border-top: 1px solid #fff;
+	border-left: 1px solid #fff;
+	-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;
+	padding: 2px;
 }
 div.activity-comments form div.ac-reply-content {
 	color: #888;
@@ -1544,6 +1552,10 @@ input.loading:hover {
 	font-weight:bold;
 }
 
+.activity-list li.load-more:hover{
+	background:#fff9db;
+}
+
 /*--------------------------------------------------------------
 6.7 - Topics and Tables - Forums and General
 --------------------------------------------------------------*/
@@ -1760,7 +1772,7 @@ table.forum p.topic-meta {
 }
 .item-list li{
 	border-bottom: 1px solid #ddd;
-	margin: 0 0 10px 1px;
+	margin: 0 1px 10px 1px;
 	padding: 0 0 10px 0;
 }
 .item-body {
