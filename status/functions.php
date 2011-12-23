@@ -29,10 +29,10 @@ if ( ! function_exists( 'status_load_scripts' ) ) :
 function status_load_scripts() {
 	if ( !is_admin() ) {
 		// Bump this when changes are made to bust cache
-		$version = '20111020'; 
+		$version = '201110201'; 
 		wp_enqueue_script("jquery");
 		wp_enqueue_script('modernizr', get_stylesheet_directory_uri() . '/_inc/scripts/modernizr.js', array("jquery"), '2.0');
-		//wp_enqueue_script('status-scripts', get_stylesheet_directory_uri() . '/_inc/scripts/status-scripts.js', array("jquery"), $version);
+		wp_enqueue_script('status-scripts', get_stylesheet_directory_uri() . '/_inc/scripts/status-scripts.js', array("jquery"), $version);
 		if ( is_singular() && get_option( 'thread_comments' ) && comments_open() )
 			wp_enqueue_script( 'comment-reply' );
 	}
