@@ -1558,6 +1558,15 @@ div#invite-list {
 	width: 160px;
 }
 ul#members-list .small .button{margin-left:10px;}
+select{
+	padding: 2px 4px;
+	line-height: 40px;
+	border: 1px solid #CCC;
+	background: white;
+	margin-left: 10px;
+	font-size: 1em;
+	color: #666;
+}
 /*--------------------------------------------------------------
 6.6 - Ajax Loading
 --------------------------------------------------------------*/
