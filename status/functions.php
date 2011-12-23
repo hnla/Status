@@ -27,7 +27,7 @@ endif;
 if ( ! function_exists( 'status_load_scripts' ) ) :
 function status_load_scripts() {
 	if ( !is_admin() ) {
-		$version = '201110201'; 
+		$version = '20111223'; 
 		wp_enqueue_script("jquery");
 		wp_enqueue_script('modernizr', get_stylesheet_directory_uri() . '/_inc/scripts/modernizr.js', array("jquery"), '2.0');
 		wp_enqueue_script('status-scripts', get_stylesheet_directory_uri() . '/_inc/scripts/status-scripts.js', array("jquery"), $version);
