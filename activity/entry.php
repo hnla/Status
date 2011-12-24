@@ -28,39 +28,7 @@
 		<div class="activity-header">
 				<?php bp_activity_action(); ?>
 		</div>
-				<?php if ( is_user_logged_in() ) : ?>
-
-					<div class="activity-meta">
-						<?php if ( bp_activity_can_comment() ) : ?>
-
-							<a href="<?php bp_get_activity_comment_link(); ?>" class="button acomment-reply bp-primary-action" id="acomment-comment-<?php bp_activity_id(); ?>"><?php printf( __( 'Comment <span>%s</span>', 'status' ), bp_activity_get_comment_count() ); ?></a>
-						 
-						 <?php 
-						// Do_action moved to bring show links into correct position, hnla
-						do_action( 'bp_activity_entry_meta' ); ?>
-						<?php endif; ?>
-
-						<?php if ( bp_activity_can_favorite() ) : ?>
-
-							<?php if ( !bp_get_activity_is_favorite() ) : ?>
-
-								<a href="<?php bp_activity_favorite_link(); ?>" class="button fav bp-secondary-action" title="<?php esc_attr_e( 'Mark as Favorite', 'status' ); ?>"><?php _e( 'Favorite', 'status' ) ?></a>
-
-							<?php else : ?>
-
-								<a href="<?php bp_activity_unfavorite_link(); ?>" class="button unfav bp-secondary-action" title="<?php esc_attr_e( 'Remove Favorite', 'status' ); ?>"><?php _e( 'Remove Favorite', 'status' ) ?></a>
-
-							<?php endif; ?>
-
-						<?php endif; ?>
-
-						<?php if ( bp_activity_user_can_delete() ) bp_activity_delete_link(); ?>
-
-
-
-					</div>
-
-				<?php endif; ?>
+	
 		
 				</div>
 		<?php if ( 'activity_comment' == bp_get_activity_type() ) : ?>
@@ -78,8 +46,42 @@
 		<?php endif; ?>
 
 		<?php do_action( 'bp_activity_entry_content' ); ?>
-
 	</div>
+	<?php if ( is_user_logged_in() ) : ?>
+
+		<div class="activity-meta">
+			<?php if ( bp_activity_can_comment() ) : ?>
+
+				<a href="<?php bp_get_activity_comment_link(); ?>" class="button acomment-reply bp-primary-action" id="acomment-comment-<?php bp_activity_id(); ?>" title="View comments and reply"><?php printf( __( 'Comment <span>%s</span>', 'status' ), bp_activity_get_comment_count() ); ?></a>
+						 
+			 <?php 
+			// Do_action moved to bring show links into correct position, hnla
+			do_action( 'bp_activity_entry_meta' ); ?>
+			<?php endif; ?>
+
+			<?php if ( bp_activity_can_favorite() ) : ?>
+
+				<?php if ( !bp_get_activity_is_favorite() ) : ?>
+
+					<a href="<?php bp_activity_favorite_link(); ?>" class="button fav bp-secondary-action" title="<?php esc_attr_e( 'Mark as Favorite', 'status' ); ?>"><?php _e( 'Favorite', 'status' ) ?></a>
+
+				<?php else : ?>
+
+					<a href="<?php bp_activity_unfavorite_link(); ?>" class="button unfav bp-secondary-action" title="<?php esc_attr_e( 'Remove Favorite', 'status' ); ?>"><?php _e( 'Remove Favorite', 'status' ) ?></a>
+
+				<?php endif; ?>
+
+			<?php endif; ?>
+
+			<?php if ( bp_activity_user_can_delete() ) bp_activity_delete_link(); ?>
+
+
+
+		</div>
+
+	<?php endif; ?>
+		
+	
 	<?php do_action( 'bp_before_activity_entry_comments' ); ?>
 
 	<?php if ( ( is_user_logged_in() && bp_activity_can_comment() ) || bp_activity_get_comment_count() ) : ?>

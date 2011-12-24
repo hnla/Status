@@ -958,7 +958,7 @@ span.sticky-post {
 	float: left;
 	width: 80px;
 }
-ul.item-list.activity-list li { padding: 10px;border-bottom:none;}
+ul.item-list.activity-list li { padding: 10px;border-bottom: 1px solid #DDDDDD;}
 .groups #item-nav .item-list-tabs ul, .members #item-nav .item-list-tabs ul{margin: 10px 0 0 0!important;
 padding: 0 0 10px 0;
 margin: 10px 0 0 0;
@@ -1188,52 +1188,41 @@ ul#activity-stream, ul#groups-list{
 	font-size: 0.9em;
 }
 
-a.delete-activity, a.delete-activity-single{	
-	padding: 2px 0 0 15px;
+a.delete-activity, a.delete-activity-single, a.acomment-delete{	
+	background: url('../images/icons.png') 0px -96px no-repeat;
+	padding: 2px 0 0 20px;
 	margin-right: 8px;
 	opacity: 0.3;
 }
 
-a.close-comments, a.show-comments{
-	padding: 2px 0 0 15px;
-	margin-right: 8px;
-	opacity: 0.3;
-	cursor: pointer;
-} 
-
 a.acomment-reply{	
-	padding: 2px 0 0 15px;
+	background: url('../images/icons.png') 0px -16px no-repeat;
+	padding: 2px 0 0 20px;
 	margin-right: 8px;
 	opacity: 0.3;
 }
 a.fav, a.unfav{	
-	padding: 2px 0 0 15px;
+	background: url('../images/icons.png') 0px -56px no-repeat;
+	padding: 2px 0 0 20px;
 	margin-right: 8px;
 	opacity: 0.3;
 }
 
-a:hover.show-comments, a:hover.close-comments{
-	background: url('../images/icon-comments.png') 0px 3px no-repeat;
-	padding: 2px 0 0 15px;
-	margin-right: 8px;
-	opacity: 1;
-} 
-
 a:hover.acomment-reply{	
-	background: url('../images/icon-speech.png') 0px 3px no-repeat;
-	padding: 2px 0 0 15px;
+	background: url('../images/icons.png') 0px 3px no-repeat;
+	padding: 2px 0 0 20px;
 	margin-right: 8px;
 	opacity: 1;
 }
 a:hover.unfav, a:hover.fav{	
-	background: url('../images/icon-fav.png') 0px 3px no-repeat;
-	padding: 2px 0 0 15px;
+	background: url('../images/icons.png') 0px -36px no-repeat;
+	padding: 2px 0 0 20px;
 	margin-right: 8px;
 	opacity: 1;
 }
-a:hover.delete-activity, a:hover.delete-activity-single{	
-	background: url('../images/icon-delete.png') 0px 3px no-repeat;
-	padding: 2px 0 0 15px;
+a:hover.delete-activity, a:hover.delete-activity-single, a:hover.acomment-delete{	
+	background: url('../images/icons.png') 0px -76px no-repeat;
+	padding: 2px 0 0 20px;
 	margin-right: 8px;
 	opacity: 1;
 }
@@ -1243,13 +1232,8 @@ a:hover.delete-activity, a:hover.delete-activity-single{
 --------------------------------------------------------------*/
 .activity-meta, .acomment-options{
 	font-size: 0.8em;
-	float: right;
 }
 .activity-comments{clear:both;}
-a.acomment-reply{	
-	padding: 2px 0 0 15px;
-	margin-right: 8px;
-}
 
 .activity-comments>ul {
 	background:#f7f7f7;
@@ -1262,12 +1246,12 @@ div.activity-comments form.ac-form {
 	background: #f7f7f7;
 	border-top: 1px solid #fff;
 	display: none;
-	margin: 0;
+	margin: 10px 0 0 0;
 	padding: 10px;
 	clear: both;
 }
 div.activity-comments li form.ac-form {
-	margin-right: 15px;
+   margin: 10px 0 0;
 	clear: both;
 }
 div.activity-comments form.root {
