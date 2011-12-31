@@ -92,8 +92,8 @@ function status_widgets_init() {
 		'name'          => 'Blog sidebar',
 		'id'            => 'sidebar',
 		'description'   => __( 'The sidebar widget area', 'status' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">', 	  
-		'after_widget' => '</aside>',
+		'before_widget' => '<section id="%1$s" class="widget %2$s">', 	  
+		'after_widget' => '</section>',
    		'before_title' => '<h3 class="widgettitle">',
    		'after_title' => '</h3>'
 	) );
@@ -102,8 +102,8 @@ function status_widgets_init() {
 		'name'          => 'BuddyPress sidebar',
 		'id'            => 'sidebar-buddypress',
 		'description'   => __( 'The sidebar widget area', 'status' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">', 	  
-		'after_widget' => '</aside>',
+		'before_widget' => '<section id="%1$s" class="widget %2$s">', 	  
+		'after_widget' => '</section>',
    		'before_title' => '<h3 class="widgettitle">',
    		'after_title' => '</h3>'
 	) );
