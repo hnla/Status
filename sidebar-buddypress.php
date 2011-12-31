@@ -13,12 +13,12 @@
 	<?php do_action( 'bp_inside_before_sidebar' ) ?>
 	<?php do_action( 'bp_before_sidebar_me' ) ?>
 	<section id="sidebar-me">
-		<article id="friends-loop">
+		<section id="friends-loop">
 			<div class="widget">
 				<h3 class="widgettitle"><?php _e( 'Your Friends', 'status' ) ?></h3>
 				<?php status_showfriends();?>
 			</div>
-		</article>
+		</section>
 		<?php do_action( 'bp_sidebar_me' ) ?>
 	</section>
 	<?php do_action( 'bp_after_sidebar_me' ) ?>
