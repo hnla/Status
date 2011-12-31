@@ -9,7 +9,7 @@
 
 ?>
 <?php do_action( 'bp_before_sidebar' ) ?>
-<div id="sidebar" role="complementary">
+<div id="sidebar" class="secondary" role="complementary">
 	<?php do_action( 'bp_inside_before_sidebar' ) ?>
 	<?php do_action( 'bp_before_sidebar_me' ) ?>
 	<div id="sidebar-me">

@@ -12,7 +12,7 @@
 
 <?php do_action( 'bp_before_member_blogs_content' ); ?>
 
-<div class="blogs myblogs" role="main">
+<div class="blogs myblogs primary" role="main">
 
 	<?php locate_template( array( 'blogs/blogs-loop.php' ), true ); ?>
 

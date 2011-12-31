@@ -15,7 +15,7 @@
 
 <?php get_header( 'status' ); ?>
 
-	<div id="content">
+	<div id="content" class="primary">
 			<?php do_action( 'bp_before_member_plugin_template' ); ?>
 
 			<div id="item-header">

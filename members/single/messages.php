@@ -22,7 +22,7 @@
 	else :
 		do_action( 'bp_before_member_messages_content' ); ?>
 
-	<div class="messages" role="main">
+	<div class="messages primary" role="main">
 
 		<?php
 			if ( bp_is_current_action( 'notices' ) )

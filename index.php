@@ -11,7 +11,7 @@
 
 <?php get_header(); ?>
 			<?php if ( !is_user_logged_in() ) : ?>
-				<div id="content-home" role="main">
+				<div id="content-home" class="primary" role="main">
 					<div class="status-signup">
 						<section id="signup-login">
 						<?php do_action( 'bp_before_sidebar_login_form' ) ?>

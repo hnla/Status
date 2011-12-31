@@ -10,7 +10,7 @@
 ?>
 
 <?php get_header(); ?>
-<div id="content" role="main">
+<div id="content" class="primary" role="main">
 	<?php do_action( 'bp_before_blog_page' ) ?>
 	<?php the_post(); ?>
 	<?php get_template_part( 'content', 'page' );?>

@@ -13,7 +13,7 @@
 
 <?php do_action( 'bp_before_profile_content' ); ?>
 
-<div class="edit-profile" role="main">
+<div class="edit-profile primary" role="main">
 
 	<?php
 		// Profile Edit

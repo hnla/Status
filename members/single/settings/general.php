@@ -19,7 +19,7 @@
 			</div><!-- #item-header -->
 </div>
 		<div id="content">
-			<div id="item-body" role="main">
+			<div id="item-body" class="primary" role="main">
 
 				<?php do_action( 'bp_before_member_body' ); ?>
 

@@ -10,7 +10,7 @@
 ?>
 
 <?php get_header(); ?>
-<div id="content" role="main">
+<div id="content" class="primary" role="main">
 	<?php do_action( 'bp_before_archive' ) ?>
 	<?php if ( have_posts() ) the_post(); ?>
 		<header class="post-header">
