@@ -1,6 +1,6 @@
 <?php get_header( 'status' ); ?>
 
-	<div id="content">
+	<div id="content" class="primary" role="main">
 
 		<?php do_action( 'bp_before_activation_page' ) ?>
 

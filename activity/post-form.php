@@ -1,13 +1,13 @@
 <?php
-
 /**
- * BuddyPress - Activity Post Form
+* BuddyPress - Activity Post Form
  *
- * @package BuddyPress
- * @subpackage bp-default
+ * @package BP Default
+ * @subpackage Status
+ * @since Status 1.0
  */
-
 ?>
+
 <div id="whats-new-declare" class="clearfix">
 <form action="<?php bp_activity_post_form_action(); ?>" method="post" id="whats-new-form" name="whats-new-form" role="complementary">
 	<?php do_action( 'bp_before_activity_post_form' ); ?>

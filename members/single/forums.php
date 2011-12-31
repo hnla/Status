@@ -1,12 +1,11 @@
 <?php
-
 /**
- * BuddyPress - Users Forums
+* BuddyPress - Users Forums
  *
- * @package BuddyPress
- * @subpackage bp-default
+ * @package BP Default
+ * @subpackage Status
+ * @since Status 1.0
  */
-
 ?>
 
 

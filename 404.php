@@ -1,13 +1,13 @@
 <?php
-
 /**
- * Status - 404
+ * 404
  *
- * @package Status
- * @subpackage BP child theme
+ * @package BP Default
+ * @subpackage Status
+ * @since Status 1.0
  */
-
 ?>
+
 
 <?php get_header(); ?>
 <div id="content-404" class="primary" role="main">

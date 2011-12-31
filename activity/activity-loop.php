@@ -1,14 +1,13 @@
 <?php
-
 /**
- * BuddyPress - Activity Loop
+* BuddyPress - Activity Loop
+*
+* Querystring is set via AJAX in _inc/ajax.php - bp_dtheme_object_filter()
  *
- * Querystring is set via AJAX in _inc/ajax.php - bp_dtheme_object_filter()
- *
- * @package BuddyPress
- * @subpackage bp-default
+ * @package BP Default
+ * @subpackage Status
+ * @since Status 1.0
  */
-
 ?>
 
 <?php do_action( 'bp_before_activity_loop' ); ?>

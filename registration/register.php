@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 	<?php do_action( 'bp_before_register_page' ) ?>
-	<div id="content-register" role="main">
+	<div id="content-register" class="primary" role="main">
 
 		<form action="" name="signup_form" id="signup_form" class="standard-form" method="post" enctype="multipart/form-data">
 

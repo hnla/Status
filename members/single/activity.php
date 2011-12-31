@@ -1,12 +1,11 @@
 <?php
-
 /**
- * BuddyPress - Users Activity
+* BuddyPress - Users Activity
  *
- * @package BuddyPress
- * @subpackage bp-default
+ * @package BP Default
+ * @subpackage Status
+ * @since Status 1.0
  */
-
 ?>
 
 <?php do_action( 'bp_before_member_activity_post_form' ); ?>

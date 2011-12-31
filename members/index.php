@@ -1,12 +1,11 @@
 <?php
-
 /**
- * BuddyPress - Members Directory
+ * BuddyPress members directory
  *
- * @package BuddyPress
- * @subpackage bp-default
+ * @package BP Default
+ * @subpackage Status
+ * @since Status 1.0
  */
-
 ?>
 
 <?php get_header( 'status' ); ?>

@@ -1,12 +1,11 @@
 <?php
-
 /**
- * BuddyPress - Users Header
+* BuddyPress - Users Header
  *
- * @package BuddyPress
- * @subpackage bp-default
+ * @package BP Default
+ * @subpackage Status
+ * @since Status 1.0
  */
-
 ?>
 
 <?php do_action( 'bp_before_member_header' ); ?>

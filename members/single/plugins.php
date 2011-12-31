@@ -1,16 +1,15 @@
 <?php
-
 /**
- * BuddyPress - Users Plugins
+* BuddyPress - Users Plugins
+*
+* This is a fallback file that external plugins can use if the template they
+* need is not installed in the current theme. Use the actions in this template
+* to output everything your plugin needs.
  *
- * This is a fallback file that external plugins can use if the template they
- * need is not installed in the current theme. Use the actions in this template
- * to output everything your plugin needs.
- *
- * @package BuddyPress
- * @subpackage bp-default
+ * @package BP Default
+ * @subpackage Status
+ * @since Status 1.0
  */
-
 ?>
 
 <?php get_header( 'status' ); ?>

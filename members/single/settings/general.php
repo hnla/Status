@@ -1,12 +1,13 @@
 <?php
-
 /**
- * BuddyPress Member Settings
+* BuddyPress - Members Settings
  *
- * @package BuddyPress
- * @subpackage bp-default
+ * @package BP Default
+ * @subpackage Status
+ * @since Status 1.0
  */
 ?>
+
 
 <?php get_header( 'status' ) ?>
 <div id="content-profile-headerfull">

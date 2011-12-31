@@ -1,13 +1,13 @@
 <?php
-
 /**
- * BuddyPress - Activity Directory
+* BuddyPress - Activity Directory
  *
- * @package BuddyPress
- * @subpackage Theme
+ * @package BP Default
+ * @subpackage Status
+ * @since Status 1.0
  */
-
 ?>
+
 
 <?php get_header(); ?>
 	<?php do_action( 'bp_before_directory_activity_page' ); ?>

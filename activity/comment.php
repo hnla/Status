@@ -1,15 +1,14 @@
 <?php
-
 /**
- * BuddyPress - Activity Stream Comment
+* BuddyPress - Activity Stream Comment
+*
+* This template is used by bp_activity_comments() functions to show
+* each activity.
  *
- * This template is used by bp_activity_comments() functions to show
- * each activity.
- *
- * @package BuddyPress
- * @subpackage bp-default
+ * @package BP Default
+ * @subpackage Status
+ * @since Status 1.0
  */
-
 ?>
 
 <?php do_action( 'bp_before_activity_comment' ); ?>

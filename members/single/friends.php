@@ -1,13 +1,13 @@
 <?php
-
 /**
- * BuddyPress - Users Friends
+* BuddyPress - Users Friends
  *
- * @package BuddyPress
- * @subpackage bp-default
+ * @package BP Default
+ * @subpackage Status
+ * @since Status 1.0
  */
-
 ?>
+
 
 <?php
 

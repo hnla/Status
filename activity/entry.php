@@ -1,16 +1,16 @@
 <?php
-
 /**
- * BuddyPress - Activity Stream (Single Item)
+* BuddyPress - Activity Stream (Single Item)
+*
+* This template is used by activity-loop.php and AJAX functions to show
+* each activity.
  *
- * This template is used by activity-loop.php and AJAX functions to show
- * each activity.
- *
- * @package BuddyPress
- * @subpackage bp-default
+ * @package BP Default
+ * @subpackage Status
+ * @since Status 1.0
  */
-
 ?>
+
 
 <?php do_action( 'bp_before_activity_entry' ); ?>
 
