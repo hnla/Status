@@ -1,13 +1,13 @@
 <?php
-
 /**
- * Status - Sidebar
+ * Sidebar
  *
- * @package Status
- * @subpackage BP child theme
+ * @package BP Default
+ * @subpackage Status
+ * @since Status 1.0
  */
-
 ?>
+
 <?php do_action( 'bp_before_sidebar' ) ?>
 <div id="sidebar" class="secondary" role="complementary">
 	<?php do_action( 'bp_inside_before_sidebar' ) ?>

@@ -1,10 +1,10 @@
 <?php
-
-/*
- * Status - Sidebar BuddyPress
+/**
+ * Sidebar
  *
- * @package Status
- * @subpackage BP child theme
+ * @package BP Default
+ * @subpackage Status
+ * @since Status 1.0
  */
 ?>
 

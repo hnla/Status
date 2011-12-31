@@ -1,13 +1,13 @@
 <?php
-
 /**
- * Status - Content quote
+ * Content - page
  *
- * @package Status
- * @subpackage BP child theme
+ * @package BP Default
+ * @subpackage Status
+ * @since Status 1.0
  */
-
 ?>
+
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 			<div class="author-box">		<?php echo get_avatar( get_the_author_meta( 'user_email' ), '50' ); ?>		<p><?php printf( _x( 'by %s', 'Post written by...', 'status' ), str_replace( '<a href=', '<a rel="author" href=', bp_core_get_userlink( $post->post_author ) ) ); ?></p>	</div>

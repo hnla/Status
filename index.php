@@ -1,13 +1,13 @@
 <?php
-
 /**
- * Status - Home Page
+ * Home page
  *
- * @package Status
- * @subpackage BP child theme
+ * @package BP Default
+ * @subpackage Status
+ * @since Status 1.0
  */
-
 ?>
+
 
 <?php get_header(); ?>
 			<?php if ( !is_user_logged_in() ) : ?>

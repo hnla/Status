@@ -1,14 +1,12 @@
 <?php
-
 /**
- * Status - Single
+ * Single page
  *
- * @package Status
- * @subpackage BP child theme
+ * @package BP Default
+ * @subpackage Status
+ * @since Status 1.0
  */
-
 ?>
-
 <?php get_header(); ?>
 <div id="content" class="primary" role="main">
 	<?php do_action( 'bp_before_blog_single_post' ) ?>

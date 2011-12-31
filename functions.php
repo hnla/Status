@@ -1,7 +1,11 @@
 <?php
 /**
-* Status theme functions
-*/
+ * Functions file
+ *
+ * @package BP Default
+ * @subpackage Status
+ * @since Status 1.0
+ */
 
 if ( !function_exists( 'status_setup' ) ) :
 function status_setup() {

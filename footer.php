@@ -1,3 +1,13 @@
+<?php
+/**
+ * Footer
+ *
+ * @package BP Default
+ * @subpackage Status
+ * @since Status 1.0
+ */
+?>
+
 		</div>
 		<?php do_action( 'bp_after_container' ) ?>
 		<?php do_action( 'bp_before_footer' ) ?>
