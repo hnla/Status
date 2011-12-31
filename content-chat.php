@@ -33,11 +33,11 @@
 		
 	</header>
 	<?php if ( is_search() ) : ?>
-	<div class="post-summary">
+	<section class="post-summary">
 		<?php the_excerpt( __( 'View the gallery', 'status' ) ); ?>
-	</div>
+	</section>
 	<?php else : ?>
-	<div class="post-body">
+	<section class="post-content">
 		<?php if ( post_password_required() ) : ?>
 		<?php the_content( __( 'View the gallery', 'status' ) ); ?>
 		<?php else : ?>
@@ -53,7 +53,7 @@
 			<p class="post-pictures"><?php printf( _n( 'This gallery contains <a %1$s>%2$s photo</a>.', 'This gallery contains <a %1$s>%2$s photos</a>', $total_images, 'status' ), 'href="' . get_permalink() . '" title="' . sprintf( esc_attr__( 'Permalink to %s', 'status' ), the_title_attribute( 'echo=0' ) ) . '" rel="bookmark"', number_format_i18n( $total_images )); ?></p>
 		<?php endif; ?>
 			<?php the_excerpt(); ?>
-	</div>
+	</section>
 	<?php endif; ?>
 	<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( '<span>Pages:</span>', 'status' ), 'after' => '</div>' ) ); ?>		
 	<footer class="post-meta">

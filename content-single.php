@@ -29,10 +29,10 @@
 		</div>
 		
 	</header>
-	<div class="post-body">
+	<section class="post-content">
 		<?php the_content(); ?>
 		<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'status'), 'after' => '</div>' ) ); ?>
-	</div>
+	</section>
 	<footer class="post-meta">
 		<div class="alignleft"><?php previous_post_link( '%link', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'status' ) . '</span> %title' ); ?></div>
 		<div class="alignright"><?php next_post_link( '%link', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'status' ) . '</span>' ); ?></div>

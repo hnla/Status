@@ -33,14 +33,14 @@
 		
 	</header>
 	<?php if ( is_search()) : ?>
-		<div class="post-summary">
+	<section class="post-summary">
 			<?php the_excerpt(); ?>
-		</div>
+		</section>
 	<?php else : ?>
-	<div class="post-body">
+	<section class="post-content">
 		<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'status' ) ); ?>
 		<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( '<span>Pages:</span>', 'status' ), 'after' => '</div>' ) ); ?>
-	</div>
+	</section>
 	<?php endif; ?>
 	<footer class="post-meta">
 	<?php if ( comments_open() && ! post_password_required() ) : ?>

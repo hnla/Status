@@ -1070,7 +1070,7 @@ table {
 width: 100%;
 text-align: left;
 }
-.post-body, .post-header {
+.post-content, .post-header {
 margin-left: 120px;
 }
 div.page,
