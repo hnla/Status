@@ -123,49 +123,50 @@ function status_blog_comments( $comment, $args, $depth ) {
 	?>
 
 	<li <?php comment_class() ?> id="comment-<?php comment_ID() ?>">
-		<div class="comment-avatar-box">
-			<div class="avb">
-				<a href="<?php echo get_comment_author_url() ?>" rel="nofollow">
-					<?php if ( $comment->user_id ) : ?>
-						<?php echo bp_core_fetch_avatar( array( 'item_id' => $comment->user_id, 'width' => $avatar_size, 'height' => $avatar_size, 'email' => $comment->comment_author_email ) ) ?>
-					<?php else : ?>
-						<?php echo get_avatar( $comment, $avatar_size ) ?>
-					<?php endif; ?>
-				</a>
-			</div>
-		</div>
+		<article id="comment-<?php comment_ID(); ?>" class="comment">
+			<section class="comment-meta">
+				<div class="comment-avatar-box">
+					<div class="avb">
+						<a href="<?php echo get_comment_author_url() ?>" rel="nofollow">
+							<?php if ( $comment->user_id ) : ?>
+								<?php echo bp_core_fetch_avatar( array( 'item_id' => $comment->user_id, 'width' => $avatar_size, 'height' => $avatar_size, 'email' => $comment->comment_author_email ) ) ?>
+							<?php else : ?>
+								<?php echo get_avatar( $comment, $avatar_size ) ?>
+							<?php endif; ?>
+						</a>
+					</div>
+				</div>
+			</section>
+			<section class="comment-content">
+				<div class="comment-meta">
+					<p>
+						<?php
+							/* translators: 1: comment author url, 2: comment author name, 3: comment permalink, 4: comment date/timestamp*/
+							printf( __( '<a href="%1$s" rel="nofollow">%2$s</a> said on <a href="%3$s"><span class="time-since">%4$s</span></a>', 'status' ), get_comment_author_url(), get_comment_author(), get_comment_link(), get_comment_date() );
+						?>
+					</p>
+				</div>
 
-		<div class="comment-content">
-			<div class="comment-meta">
-				<p>
-					<?php
-						/* translators: 1: comment author url, 2: comment author name, 3: comment permalink, 4: comment date/timestamp*/
-						printf( __( '<a href="%1$s" rel="nofollow">%2$s</a> said on <a href="%3$s"><span class="time-since">%4$s</span></a>', 'status' ), get_comment_author_url(), get_comment_author(), get_comment_link(), get_comment_date() );
-					?>
-				</p>
-			</div>
-
-			<div class="comment-entry">
-				<?php if ( $comment->comment_approved == '0' ) : ?>
-				 	<em class="moderate"><?php _e( 'Your comment is awaiting moderation.', 'status' ); ?></em>
-				<?php endif; ?>
-
-				<?php comment_text() ?>
-			</div>
-
-			<div class="comment-options">
-					<?php if ( comments_open() ) : ?>
-						<?php comment_reply_link( array( 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ); ?>
+				<div class="comment-entry">
+					<?php if ( $comment->comment_approved == '0' ) : ?>
+					 	<em class="moderate"><?php _e( 'Your comment is awaiting moderation.', 'status' ); ?></em>
 					<?php endif; ?>
 
-					<?php if ( current_user_can( 'edit_comment', $comment->comment_ID ) ) : ?>
-						<?php printf( '<a class="button comment-edit-link bp-secondary-action" href="%1$s" title="%2$s">%3$s</a> ', get_edit_comment_link( $comment->comment_ID ), esc_attr__( 'Edit comment', 'status' ), __( 'Edit', 'status' ) ) ?>
-					<?php endif; ?>
+					<?php comment_text() ?>
+				</div>
 
-			</div>
+				<div class="comment-options">
+						<?php if ( comments_open() ) : ?>
+							<?php comment_reply_link( array( 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ); ?>
+						<?php endif; ?>
 
-		</div>
+						<?php if ( current_user_can( 'edit_comment', $comment->comment_ID ) ) : ?>
+							<?php printf( '<a class="button comment-edit-link bp-secondary-action" href="%1$s" title="%2$s">%3$s</a> ', get_edit_comment_link( $comment->comment_ID ), esc_attr__( 'Edit comment', 'status' ), __( 'Edit', 'status' ) ) ?>
+						<?php endif; ?>
 
+				</div>
+			</section>
+		</article>
 <?php
 }
 
