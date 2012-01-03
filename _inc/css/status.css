@@ -342,7 +342,7 @@ overflow: hidden;
 }
 .home #content-wrapper {
 max-width: 550px;
-padding: 0px;
+padding: 0;
 }
 .home.logged-in #content-wrapper {
 margin: 0 auto;
@@ -373,9 +373,9 @@ border-radius: 3px;
 -moz-border-radius: 3px;
 -webkit-border-radius: 3px;
 padding: 20px 20px 20px 20px;
-box-shadow: 0 0px 3px rgba(0, 0, 0,0.2);
--moz-box-shadow: 0 0px 3px rgba(0, 0, 0,0.2);
--webkit-box-shadow: 0 0px 3px rgba(0, 0, 0,0.2);
+box-shadow: 0 0 3px rgba(0, 0, 0,0.2);
+-moz-box-shadow: 0 0 3px rgba(0, 0, 0,0.2);
+-webkit-box-shadow: 0 0 3px rgba(0, 0, 0,0.2);
 margin: 0 1px 0 1px;
 }
 #content {
@@ -390,25 +390,25 @@ border-radius: 3px;
 -moz-border-radius: 3px;
 -webkit-border-radius: 3px;
 padding: 0px 20px 20px 20px;
-box-shadow: 0 0px 3px rgba(0, 0, 0,0.2);
--moz-box-shadow: 0 0px 3px rgba(0, 0, 0,0.2);
--webkit-box-shadow: 0 0px 3px rgba(0, 0, 0,0.2);
+box-shadow: 0 0 3px rgba(0, 0, 0,0.2);
+-moz-box-shadow: 0 0 3px rgba(0, 0, 0,0.2);
+-webkit-box-shadow: 0 0 3px rgba(0, 0, 0,0.2);
 margin: 0 1px 0 1px;
 }
 
 .status-signup {
 }
 #content, #content-404 {
-margin: 20px 0 20px 0;
+margin: 20px 0;
 float: none;
 padding: 0 20px 20px 20px;
 }
 .edit-profile,  #content-profile {
 margin: 20px 0 0 0;
-padding: 0px 20px 20px 20px;
+padding: 0 20px 20px 20px;
 }
 .home .status-signup {
-padding: 20px 20px 20px 20px;
+padding: 20px;
 }
 .activity #content-profile, .activity #content, .home-page #content {
 margin: 0 0 20px 0;
@@ -829,7 +829,7 @@ margin-top: 30px;
 #comments ol.commentlist {
 border-bottom: 1px solid #ddd;
 margin: 0 0 30px 0;
-padding:0;
+padding: 0;
 }
 #comments ol.commentlist ol {
 list-style-type: decimal;
@@ -847,7 +847,7 @@ border-top: 1px solid #e4e4e4;
 clear: left;
 list-style: none;
 margin-bottom: 15px;
-padding:10px;
+padding: 10px;
 }
 ol.commentlist ul.children li {
 margin-bottom: 0;
@@ -898,16 +898,16 @@ margin: 0 0 0 25px;
 padding-right: 0;
 }
 .commentlist ul.children img.avatar {
-	background: #ffffff;
-	border-bottom: 1px solid #ccc;
-	border-left: 1px solid #fff;
-	border-right: 1px solid #ccc;
-	border-top: 1px solid #fff;
-	border-radius: 3px;
-	-khtml-border-radius: 3px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-	padding: 2px;
+background: #ffffff;
+border-bottom: 1px solid #ccc;
+border-left: 1px solid #fff;
+border-right: 1px solid #ccc;
+border-top: 1px solid #fff;
+border-radius: 3px;
+-khtml-border-radius: 3px;
+-moz-border-radius: 3px;
+-webkit-border-radius: 3px;
+padding: 2px;
 height: 25px;
 margin: 0;
 width: 25px;
@@ -934,7 +934,7 @@ border-radius: 3px;
 -moz-border-radius: 3px;
 -webkit-border-radius: 3px;
 padding: 15px;
-clear:both;
+clear: both;
 }
 #respond .avb img {
 float: inherit;
@@ -973,7 +973,7 @@ margin: 10px 0 2px;
 .comment-options .comment-edit-link {
 margin-right: 5px;
 padding: 0;
-font-size:0.9em;
+font-size: 0.9em;
 }
 .commentlist ul.children div.comment-options {
 margin-bottom: 10px;
@@ -1085,12 +1085,9 @@ div.post:last-child,
 #trackbacklist {
 margin-bottom: 0;
 }
-h2.posttitle {
+h2.posttitle, h2.pagetitle {
 line-height: 120%;
 margin: 0;
-}
-h2.pagetitle {
-line-height: 120%;
 }
 h2.pagetitle a,
 h2.posttitle a {
@@ -1181,22 +1178,22 @@ color: #888;
 float: right;
 margin: 10px 0 0 10px;
 padding: 10px;
-font-size:0.8em;
+font-size: 0.8em;
 border-radius: 3px;
 -khtml-border-radius: 3px;
 -moz-border-radius: 3px;
 -webkit-border-radius: 3px;
 }
-.post-info{
-	padding:0 0 10px 0;
-	color:#888;
-	font-style:italic;
-	font-size:0.9em;
+.post-info {
+padding: 0 0 10px 0;
+color: #888;
+font-style: italic;
+font-size: 0.9em;
 }
-.post-meta{
-	padding: 10px 0;
-	margin-bottom: 10px;
-	overflow: hidden;
+.post-meta {
+padding: 10px 0;
+margin-bottom: 10px;
+overflow: hidden;
 }
 /*--------------------------------------------------------------
 6.0 - BuddyPress
@@ -1247,9 +1244,9 @@ border-radius: 3px;
 -khtml-border-radius: 3px;
 -moz-border-radius: 3px;
 -webkit-border-radius: 3px;
-box-shadow: 0 0px 3px rgba(0, 0, 0,0.2);
--moz-box-shadow: 0 0px 3px rgba(0, 0, 0,0.2);
--webkit-box-shadow: 0 0px 3px rgba(0, 0, 0,0.2);
+box-shadow: 0 0 3px rgba(0, 0, 0,0.2);
+-moz-box-shadow: 0 0 3px rgba(0, 0, 0,0.2);
+-webkit-box-shadow: 0 0 3px rgba(0, 0, 0,0.2);
 }
 
 #whats-new-wrapper {
@@ -1274,9 +1271,9 @@ border-radius: 3px;
 -khtml-border-radius: 3px;
 -moz-border-radius: 3px;
 -webkit-border-radius: 3px;
-box-shadow: 0 0px 3px rgba(0, 0, 0,0.2);
--moz-box-shadow: 0 0px 3px rgba(0, 0, 0,0.2);
--webkit-box-shadow: 0 0px 3px rgba(0, 0, 0,0.2);
+box-shadow: 0 0 3px rgba(0, 0, 0,0.2);
+-moz-box-shadow: 0 0 3px rgba(0, 0, 0,0.2);
+-webkit-box-shadow: 0 0 3px rgba(0, 0, 0,0.2);
 }
 #what-new-content {
 clear: both;
@@ -1328,9 +1325,9 @@ border-radius: 3px;
 font-size: 0.8em;
 overflow: hidden;
 color: #888;
-box-shadow: 0 0px 3px rgba(0, 0, 0,0.2);
--moz-box-shadow: 0 0px 3px rgba(0, 0, 0,0.2);
--webkit-box-shadow: 0 0px 3px rgba(0, 0, 0,0.2);
+box-shadow: 0 0 3px rgba(0, 0, 0,0.2);
+-moz-box-shadow: 0 0 3px rgba(0, 0, 0,0.2);
+-webkit-box-shadow: 0 0 3px rgba(0, 0, 0,0.2);
 margin: 0 1px 0 1px;
 }
 
@@ -1383,9 +1380,9 @@ border-radius: 3px;
 -khtml-border-radius: 3px;
 -moz-border-radius: 3px;
 -webkit-border-radius: 3px;
-box-shadow: 0 0px 3px rgba(0, 0, 0,0.2);
--moz-box-shadow: 0 0px 3px rgba(0, 0, 0,0.2);
--webkit-box-shadow: 0 0px 3px rgba(0, 0, 0,0.2);
+box-shadow: 0 0 3px rgba(0, 0, 0,0.2);
+-moz-box-shadow: 0 0 3px rgba(0, 0, 0,0.2);
+-webkit-box-shadow: 0 0 3px rgba(0, 0, 0,0.2);
 overflow: hidden;
 padding: 10px;
 }
@@ -1412,9 +1409,9 @@ border-radius: 3px;
 -khtml-border-radius: 3px;
 -moz-border-radius: 3px;
 -webkit-border-radius: 3px;
-box-shadow: 0 0px 3px rgba(0, 0, 0,0.2);
--moz-box-shadow: 0 0px 3px rgba(0, 0, 0,0.2);
--webkit-box-shadow: 0 0px 3px rgba(0, 0, 0,0.2);
+box-shadow: 0 0 3px rgba(0, 0, 0,0.2);
+-moz-box-shadow: 0 0 3px rgba(0, 0, 0,0.2);
+-webkit-box-shadow: 0 0 3px rgba(0, 0, 0,0.2);
 overflow: hidden;
 padding: 10px;
 }
@@ -1850,7 +1847,7 @@ margin-left: 10px;
 select {
 padding: 2px 4px;
 line-height: 40px;
-border: 1px solid #CCC;
+border: 1px solid #ccc;
 background: white;
 margin-left: 10px;
 font-size: 1em;
@@ -1897,10 +1894,10 @@ border-radius: 3px;
 -khtml-border-radius: 3px;
 -moz-border-radius: 3px;
 -webkit-border-radius: 3px;
-padding: 20px 20px 20px 20px;
-box-shadow: 0 0px 3px rgba(0, 0, 0,0.2);
--moz-box-shadow: 0 0px 3px rgba(0, 0, 0,0.2);
--webkit-box-shadow: 0 0px 3px rgba(0, 0, 0,0.2);
+padding: 20px;
+box-shadow: 0 0 3px rgba(0, 0, 0,0.2);
+-moz-box-shadow: 0 0 3px rgba(0, 0, 0,0.2);
+-webkit-box-shadow: 0 0 3px rgba(0, 0, 0,0.2);
 font-size: 0.9em;
 font-weight: bold;
 }
@@ -2081,11 +2078,11 @@ border-radius: 3px;
 -moz-border-radius: 3px;
 -webkit-border-radius: 3px;
 padding: 10px;
-box-shadow: 0 0px 3px rgba(0, 0, 0,0.2);
--moz-box-shadow: 0 0px 3px rgba(0, 0, 0,0.2);
--webkit-box-shadow: 0 0px 3px rgba(0, 0, 0,0.2);
+box-shadow: 0 0 3px rgba(0, 0, 0,0.2);
+-moz-box-shadow: 0 0 3px rgba(0, 0, 0,0.2);
+-webkit-box-shadow: 0 0 3px rgba(0, 0, 0,0.2);
 }
-.my-groups #item-header{
+.my-groups #item-header {
 }
 #item-nav {
 overflow: hidden;
@@ -2097,13 +2094,9 @@ border-bottom: none;
 clear: both;
 margin: 0px;
 }
-.groups #profile-right #item-nav {
-margin: 0 0 0 0px;
-}
-#profile-right #iten-nav {
+.groups #profile-right #item-nav, #profile-right #iten-nav {
 margin: 0;
 }
-
 #item-header-avatar {
 float: left;
 margin-right: 10px;
@@ -2136,7 +2129,7 @@ padding: 1px 8px;
 }
 span.user-nicename {
 display: inline-block;
-font-weight: bold;
+font-weight: 700;
 }
 span.activity,
 div#message p {
@@ -2145,14 +2138,14 @@ border-radius: 3px;
 -khtml-border-radius: 3px;
 -moz-border-radius: 3px;
 -webkit-border-radius: 3px;
-font-weight: normal;
+font-weight: 400;
 margin-top: 3px;
 text-decoration: none;
 background: #ffeaa6;
 }
 div#item-header {
 overflow: hidden;
-margin-top:10px;
+margin-top: 10px;
 }
 div#item-header h2 a {
 text-decoration: none;
@@ -2167,7 +2160,7 @@ margin-bottom: 5px;
 div#item-header span.activity,
 div#item-header h2 span.highlight {
 font-size: 0.9em;
-font-weight: normal;
+font-weight: 400;
 line-height: 170%;
 margin-bottom: 7px;
 vertical-align: middle;
@@ -2317,7 +2310,7 @@ color: #fff;
 div.messages-options-nav {
 background: #eee;
 font-size: 11px;
-margin: 0x;
+margin: 0;
 padding: 5px 15px;
 text-align: right;
 }
@@ -2337,7 +2330,6 @@ margin: 0 10px 0 0;
 vertical-align: middle;
 }
 div#message-thread strong {
-font-size: 16px;
 margin: 0;
 }
 div#message-thread strong a {
@@ -2423,14 +2415,14 @@ width: 45%;
 #content-wrapper {
 margin: 0 auto;
 max-width: 1230px;
-padding: 0px 10px 40px 10px;
+padding: 0 10px 40px 10px;
 overflow: hidden;
 }
 .home.logged-in #content-wrapper {
 margin: 0 auto;
 max-width: 1230px;
 overflow: hidden;
-padding: 0px 10px 40px 10px;
+padding: 0 10px 40px 10px;
 }
 
 }
