@@ -2357,10 +2357,6 @@ text-align: right;
 8.0 - Media queries
 --------------------------------------------------------------*/
 @media only screen and (min-width:960px) {
-body {
-	font: 100%/1.7 Arial, sans-serif;
-}
-
 #profile-left {
 float: left;
 width: 75%;
