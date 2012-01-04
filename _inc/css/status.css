@@ -337,7 +337,7 @@ page-break-after: avoid;
 #content-wrapper {
 margin: 0 auto;
 max-width: 1230px;
-padding: 20px 10px 40px 10px;
+padding: 2em 0.5em;
 overflow: hidden;
 }
 .home #content-wrapper {
@@ -348,7 +348,7 @@ padding: 0;
 margin: 0 auto;
 max-width: 1230px;
 overflow: hidden;
-padding: 20px 10px 40px 10px;
+padding: 1em 0.5em 2em 0.5em;
 }
 #content-wrapper, #header-wrapper, #friends-wrapper,
 #widgets-wrapper, #footer-wrapper {
@@ -372,14 +372,14 @@ border-radius: 3px;
 -khtml-border-radius: 3px;
 -moz-border-radius: 3px;
 -webkit-border-radius: 3px;
-padding: 20px 20px 20px 20px;
+padding: 1em;
 box-shadow: 0 0 2px rgba(0, 0, 0,0.1);
 -moz-box-shadow: 0 0 2px rgba(0, 0, 0,0.1);
 -webkit-box-shadow: 0 0 2px rgba(0, 0, 0,0.1);
 margin: 0 1px 0 1px;
 }
 #content {
-margin: 20px 0 20px 0;
+margin: 1em 0;
 background: #fff;
 border-bottom: 1px solid #ddd;
 border-left: 1px solid #fff;
@@ -389,7 +389,7 @@ border-radius: 3px;
 -khtml-border-radius: 3px;
 -moz-border-radius: 3px;
 -webkit-border-radius: 3px;
-padding: 0px 20px 20px 20px;
+padding: 0 1em 1em 1em;
 box-shadow: 0 0 2px rgba(0, 0, 0,0.1);
 -moz-box-shadow: 0 0 2px rgba(0, 0, 0,0.1);
 -webkit-box-shadow: 0 0 2px rgba(0, 0, 0,0.1);
@@ -399,19 +399,19 @@ margin: 0 1px 0 1px;
 .status-signup {
 }
 #content, #content-404 {
-margin: 20px 0;
+margin: 1em 0;
 float: none;
-padding: 0 20px 20px 20px;
+padding: 0 1em 1em 1em;
 }
 .edit-profile,  #content-profile {
-margin: 20px 0 0 0;
-padding: 0 20px 20px 20px;
+margin: 1em 0 0 0;
+padding: 0 1em 1em 1em;
 }
 .home .status-signup {
-padding: 20px;
+padding: 1em;
 }
 .activity #content-profile, .activity #content, .home-page #content {
-margin: 0 0 20px 0;
+margin: 0 0 1em 0;
 float: none;
 background: none;
 border: none;
@@ -426,17 +426,16 @@ margin-left: 0;
 #profile-left {
 float: none;
 border-right: none;
-padding: 0 20px 0 0;
+padding: 0 1em 0 0;
 }
 #content-profile, #content-stream, #profile-right {
 float: none;
 }
 #profile-right {
-padding: 0 20px;
 line-height: 28px;
 }
 #content-home {
-margin: 20px 20px 50px 20px;
+margin: 1em 1em 3em 1em;
 }
 
 /*--------------------------------------------------------------
@@ -497,10 +496,6 @@ text-decoration: underline;
 #sidebar {
 float: none;
 width: 100%;
-margin: 20px 0 0 0;
-}
-.home #sidebar {
-margin: 20px 0 0 0;
 }
 #sidebar .widget {
 margin: 0 1px 20px 1px;
@@ -538,7 +533,7 @@ padding: 0;
 body {
 background-color: #f4f4f4;
 background-image: url('../images/bright_squares.png');
-font: 100%/1.7 Arial, sans-serif;
+font: 90%/1.5 Arial, sans-serif;
 color: #333;
 }
 
@@ -1070,8 +1065,11 @@ table {
 width: 100%;
 text-align: left;
 }
-.post-content, .post-header {
+.post-header {
 margin-left: 120px;
+}
+.post-content{
+	clear:both;
 }
 div.page,
 div.post,
@@ -1202,7 +1200,7 @@ overflow: hidden;
 6.1 - Activity
 --------------------------------------------------------------*/
 #whats-new-declare {
-margin: 15px 0 20px 0;
+margin: 10px 0 20px 0;
 padding: 6px;
 width: 99%;
 min-height: 100px;
@@ -1349,8 +1347,9 @@ margin: 0;
 
 #activity-filter-select {
 padding-top: 10px;
+position: relative;
+top: 10px;
 }
-
 li.feed {
 float: left;
 padding-top: 10px;
@@ -1743,7 +1742,9 @@ border: 1px solid #eee;
 overflow: hidden;
 margin: 20px 0px;
 }
-
+.form-allowed-tags{
+	line-height:1.7;
+}
 .submitbutton, #blogs-directory-form input[type="submit"], .submitbutton, #members-directory-form input[type="submit"], .form-submit #submit, #signup_submit, #submit, #searchsubmit, .standard-form input[type="submit"], .activity-comments input[type="submit"] {
 border-right: 1px solid #ccc;
 border-bottom: 1px solid #ccc;
@@ -2355,12 +2356,16 @@ text-align: right;
 /*--------------------------------------------------------------
 8.0 - Media queries
 --------------------------------------------------------------*/
-@media only screen and (min-width:800px) {
+@media only screen and (min-width:960px) {
+body {
+	font: 100%/1.7 Arial, sans-serif;
+}
+
 #profile-left {
 float: left;
 width: 75%;
 border-right: 1px dashed #aaa;
-padding: 0 20px 0 0;
+padding: 0 1em 0 0;
 }
 #profile-right {
 width: 21%;
@@ -2374,11 +2379,11 @@ width: 73%;
 }
 #sidebar {
 float: right;
-width: 22%;
-margin: 20px 0 0 0;
+width: 23%;
+margin: 1em 0 0 0;
 }
 #content {
-margin: 20px 0 20px 0;
+margin: 1em 0;
 float: left;
 width: 73%;
 }
@@ -2405,9 +2410,14 @@ margin-left: -250px;
 border-right: 1px dashed #bbb;
 width: 45%;
 float: left;
-padding: 0 30px 0 0;
+padding: 0 1.5em 0 0;
 }
-
+#signup-login-full {
+border-right: 1px dashed #bbb;
+width: 100%;
+float: left;
+padding: 0 1.5em 0 0;
+}
 #signup-register {
 float: right;
 width: 45%;
@@ -2415,14 +2425,18 @@ width: 45%;
 #content-wrapper {
 margin: 0 auto;
 max-width: 1230px;
-padding: 0 10px 40px 10px;
+padding: 0 1em 2em 1em;
 overflow: hidden;
 }
 .home.logged-in #content-wrapper {
 margin: 0 auto;
 max-width: 1230px;
 overflow: hidden;
-padding: 0 10px 40px 10px;
+padding: 0 1em 2em 1em;
 }
-
+#activity-filter-select {
+padding-top: 10px;
+position:relative;
+top:0;
+}
 }
