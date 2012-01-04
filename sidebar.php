@@ -11,17 +11,22 @@
 <?php do_action( 'bp_before_sidebar' ) ?>
 <aside id="sidebar" class="secondary widget-area" role="complementary">
 	<?php do_action( 'bp_inside_before_sidebar' ) ?>
-	<?php do_action( 'bp_before_sidebar_me' ) ?>
-	<section id="sidebar-me">
-		<section id="friends-loop">
-			<div class="widget">
-				<h3 class="widgettitle"><?php _e( 'Your Friends', 'status' ) ?></h3>
-				<?php status_showfriends();?>
-			</div>
+	<?php if ( is_user_logged_in() ) : ?>
+		<?php do_action( 'bp_before_sidebar_me' ) ?>
+		<section id="sidebar-me">
+			<section id="friends-loop">
+				<div class="widget">
+					<h3 class="widgettitle"><?php _e( 'Your Friends', 'status' ) ?></h3>
+					<?php status_showfriends();?>
+				</div>
+			</section>
+			<?php do_action( 'bp_sidebar_me' ) ?>
+			<?php if ( bp_is_active( 'messages' ) ) : ?>
+				<?php bp_message_get_notices(); /* Site wide notices to all users */ ?>
+			<?php endif; ?>
 		</section>
-		<?php do_action( 'bp_sidebar_me' ) ?>
-	</section>
-	<?php do_action( 'bp_after_sidebar_me' ) ?>
+		<?php do_action( 'bp_after_sidebar_me' ) ?>
+	<?php endif; ?>
 	<?php /* Show forum tags on the forums directory */
 	if ( bp_is_active( 'forums' ) && bp_is_forums_component() && bp_is_directory() ) : ?>
 		<section id="forum-directory-tags" class="widget tags">
