@@ -2379,7 +2379,7 @@ line-height: 28px;
 margin-right: 3%;
 float: left;
 min-height: 1px;
-width: 74%;
+width: 71%;
 }
 #sidebar {
 width: 23.1%;
@@ -2436,16 +2436,16 @@ width: 45%;
 #content-wrapper {
 margin: 0 auto;
 max-width: 1230px;
-padding: 10px 20px 40px 20px;
+padding: 15px 20px 40px 20px;
 overflow: hidden;
 }
 .home.logged-in #content-wrapper {
 margin: 0 auto;
 max-width: 1230px;
 overflow: hidden;
-padding: 10px 20px 40px 20px;
+padding: 15px 20px 40px 20px;
 }
-#activity-filter-select {
+#activity-filter-select, #forums-order-select {
 top:10px;
 position:relative;
 }
