@@ -1491,7 +1491,7 @@ display: block;
 padding: 10px 15px;
 }
 div#message.error p {
-background-color: #9e192e;
+background-color: #cc2233;
 border-color: #62101d;
 clear: left;
 color: #fff;
@@ -1502,7 +1502,7 @@ border-color: #5d6610;
 color: #fff;
 }
 .standard-form#signup_form div div.error {
-background: #e41717;
+background: #cc2233;
 -moz-border-radius: 3px;
 -webkit-border-radius: 3px;
 border-radius: 3px;
@@ -1524,11 +1524,16 @@ ul.button-nav li.current a {
 font-weight: bold;
 }
 #item-header #message {
+	clear:both;
 margin: 0;
+padding-top:10px;
 }
 /*--------------------------------------------------------------
 6.5 - Forms
 --------------------------------------------------------------*/
+#content-profile textarea, #content-profile input[type="text"]{
+	width:100%;
+}
 #status-default fieldset {
 margin: 1.1em 0;
 }
@@ -1596,7 +1601,7 @@ margin: 20px 0px;
 .form-allowed-tags{
 	line-height:1.7;
 }
-.submitbutton, #blogs-directory-form input[type="submit"], .submitbutton, #members-directory-form input[type="submit"], .form-submit #submit, #signup_submit, #submit, #searchsubmit, .standard-form input[type="submit"], .activity-comments input[type="submit"] {
+.submit input[type="submit"], .submitbutton, #blogs-directory-form input[type="submit"], .submitbutton, #members-directory-form input[type="submit"], .form-submit #submit, #signup_submit, #submit, #searchsubmit, .standard-form input[type="submit"], .activity-comments input[type="submit"] {
 border-right: 1px solid #ccc;
 border-bottom: 1px solid #ccc;
 border-top: 1px solid #eee;
@@ -1611,6 +1616,9 @@ border-radius: 3px;
 -khtml-border-radius: 3px;
 -moz-border-radius: 3px;
 -webkit-border-radius: 3px;
+box-shadow: 0 1px 2px #ccc;
+-webkit-box-shadow: 0 1px 2px #ccc;
+-moz-box-shadow: 0 1px 2px #ccc;
 }
 
 .dir-search {
@@ -1618,7 +1626,7 @@ background: #f3f3f3;
 border: 1px solid #eeeeee;
 padding: 10px;
 }
-.submitbutton:hover #blogs-directory-form input[type="submit"], .submitbutton:hover, #members-directory-form input[type="submit"]:hover, .form-submit #submit:hover, #signup_submit:hover, #submit:hover, #searchsubmit:hover, .standard-form input[type="submit"]:hover, .activity-comments input[type="submit"]:hover {
+.submit:hover input[type="submit"], .submitbutton:hover #blogs-directory-form input[type="submit"], .submitbutton:hover, #members-directory-form input[type="submit"]:hover, .form-submit #submit:hover, #signup_submit:hover, #submit:hover, #searchsubmit:hover, .standard-form input[type="submit"]:hover, .activity-comments input[type="submit"]:hover {
 background: #fcfcfc;
 border-right: 1px solid #ccc;
 border-bottom: 1px solid #ccc;
