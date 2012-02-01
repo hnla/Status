@@ -36,6 +36,6 @@
 		<?php do_action( 'bp_before_header' ) ?>
 		<?php do_action( 'bp_after_header' ) ?>
 		<?php do_action( 'bp_before_container' ) ?>
-		
+		<div id="site-wrapper">
 		<div id="content-wrapper">
 		

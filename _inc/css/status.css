@@ -182,10 +182,12 @@ td { vertical-align: top; }
 /*--------------------------------------------------------------
 2.0 - Structural
 --------------------------------------------------------------*/
+#site-wrapper{
+	padding: 0 20px;
+}
 #content-wrapper {
 margin: 0 auto;
-max-width: 1230px;
-padding: 20px;
+max-width: 1240px;
 overflow: hidden;
 }
 .home #content-wrapper {
@@ -194,9 +196,9 @@ padding: 0;
 }
 .home.logged-in #content-wrapper {
 margin: 0 auto;
-max-width: 1230px;
+max-width: 1240px;
 overflow: hidden;
-padding: 20px;
+padding: 20px 0px;
 }
 #content-wrapper, #header-wrapper, #friends-wrapper,
 #widgets-wrapper, #footer-wrapper {
@@ -249,9 +251,12 @@ margin: 0 1px 0 1px;
 float: none;
 padding: 0 1em 1em 1em;
 }
-.edit-profile,  #content-profile {
-margin: 1em 0 0 0;
-padding: 0 1em 1em 1em;
+#content-profile {
+margin: 0;
+padding: 0;
+}
+#content-profile #item-body{
+	padding:0 1em 1em 1em;
 }
 .home .status-signup {
 padding: 1em;
@@ -309,8 +314,6 @@ text-shadow: -1px -1px 0px #111;
 font-size: 0.9em;
 }
 #footer-wrapper {
-position: fixed;
-bottom: 0;
 width: 100%;
 }
 .bottom {
@@ -1071,7 +1074,6 @@ width: 80px;
 }
 ul.item-list.activity-list li {
 padding: 10px;
-border-bottom: 1px solid #DDDDDD;
 }
 .groups #item-nav .item-list-tabs ul, .members #item-nav .item-list-tabs ul {
 margin: 10px 0 0 0!important;
@@ -1134,7 +1136,7 @@ border-radius: 3px;
 -moz-border-radius: 3px;
 -khtml-border-radius: 3px;
 -webkit-border-radius: 3px;
-width: 97%;
+width: 97%!important;
 }
 #whats-new-options {
 float: right;
@@ -1146,7 +1148,7 @@ float: right;
 #whats-new-post-in-box {
 float: right;
 margin-right: 10px;
-padding: 6px 10px;
+padding: 4px 10px;
 background: white;
 border-right: 1px solid #ddd;
 border-bottom: 1px solid #ddd;
@@ -1236,6 +1238,7 @@ box-shadow: 0 0 2px rgba(0, 0, 0,0.1);
 overflow: hidden;
 padding: 10px;
 }
+
 .groups .activity-entry, .groups .activity-comment {
 background: rgba(0, 0, 0, 0.024);
 -moz-box-shadow: none;
@@ -1286,7 +1289,7 @@ border-radius: 3px;
 padding: 2px;
 }
 ul#activity-stream, ul#groups-list {
-margin: 20px 0 0 0;
+margin: 0;
 padding: 0;
 }
 .item-list li {
@@ -1364,11 +1367,11 @@ clear: both;
 }
 
 .activity-comments>ul {
-background: #f7f7f7;
-border-top: 1px solid #ddd;
-margin: 10px 0 0 0;
-padding: 10px;
-font-size: 0.9em;
+	background: #F7F7F7;
+	border-top: 1px solid #DDD;
+	margin: 10px 0 0 0;
+	padding: 0;
+	font-size: 0.9em;
 }
 div.activity-comments form.ac-form {
 background: #f7f7f7;
@@ -1396,7 +1399,7 @@ background-repeat: no-repeat;
 }
 div.activity-comments form .ac-textarea {
 background: #fff;
-border: 1px inset #ccc;
+border: 1px solid #ccc;
 border-radius: 3px;
 -khtml-border-radius: 3px;
 -moz-border-radius: 3px;
@@ -1448,7 +1451,6 @@ padding: 10px 0 10px 0;
 direction: ltr;
 color: #ccc;
 font: normal 13px/28px sans-serif;
-position: fixed;
 height: auto!important;
 min-width: 250px;
 top: 0;
@@ -1554,6 +1556,14 @@ border: 1px solid #eee;
 -khtml-border-radius: 5px;
 -webkit-border-radius: 5px;
 border-radius: 5px;
+-webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+-moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+-ms-transition: border linear 0.2s, box-shadow linear 0.2s;
+-o-transition: border linear 0.2s, box-shadow linear 0.2s;
+transition: border linear 0.2s, box-shadow linear 0.2s;
+-webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+-moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 input:required, textarea:required {
@@ -1602,23 +1612,41 @@ margin: 20px 0px;
 	line-height:1.7;
 }
 .submit input[type="submit"], .submitbutton, #blogs-directory-form input[type="submit"], .submitbutton, #members-directory-form input[type="submit"], .form-submit #submit, #signup_submit, #submit, #searchsubmit, .standard-form input[type="submit"], .activity-comments input[type="submit"] {
-border-right: 1px solid #ccc;
-border-bottom: 1px solid #ccc;
-border-top: 1px solid #eee;
-border-left: 1px solid #eee;
-padding: 8px 15px;
-text-decoration: none;
-background: #fff;
-color: #778315;
-text-shadow: -1px -1px 0px #fff;
-font-weight: 700;
-border-radius: 3px;
--khtml-border-radius: 3px;
--moz-border-radius: 3px;
--webkit-border-radius: 3px;
-box-shadow: 0 1px 2px #ccc;
--webkit-box-shadow: 0 1px 2px #ccc;
--moz-box-shadow: 0 1px 2px #ccc;
+    cursor: pointer;
+    display: inline-block;
+    background-color: #e6e6e6;
+    background-repeat: no-repeat;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), color-stop(25%, #ffffff), to(#e6e6e6));
+    background-image: -webkit-linear-gradient(#ffffff, #ffffff 25%, #e6e6e6);
+    background-image: -moz-linear-gradient(top, #ffffff, #ffffff 25%, #e6e6e6);
+    background-image: -ms-linear-gradient(#ffffff, #ffffff 25%, #e6e6e6);
+    background-image: -o-linear-gradient(#ffffff, #ffffff 25%, #e6e6e6);
+    background-image: linear-gradient(#ffffff, #ffffff 25%, #e6e6e6);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#e6e6e6', GradientType=0);
+    padding: 5px 14px 6px;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+    color: #333;
+    line-height: normal;
+    border: 1px solid #ccc;
+    border-bottom-color: #bbb;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+    -webkit-transition: 0.1s linear all;
+    -moz-transition: 0.1s linear all;
+    -ms-transition: 0.1s linear all;
+    -o-transition: 0.1s linear all;
+    transition: 0.1s linear all;
+}
+input:focus, textarea:focus {
+  outline: 0;
+  border-color: rgba(0, 0, 0, 0.8);
+  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(0, 0, 0, 0.6);
+  -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(0, 0, 0, 0.6);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(0, 0, 0, 0.6);
 }
 
 .dir-search {
@@ -1627,21 +1655,9 @@ border: 1px solid #eeeeee;
 padding: 10px;
 }
 .submit:hover input[type="submit"], .submitbutton:hover #blogs-directory-form input[type="submit"], .submitbutton:hover, #members-directory-form input[type="submit"]:hover, .form-submit #submit:hover, #signup_submit:hover, #submit:hover, #searchsubmit:hover, .standard-form input[type="submit"]:hover, .activity-comments input[type="submit"]:hover {
-background: #fcfcfc;
-border-right: 1px solid #ccc;
-border-bottom: 1px solid #ccc;
-border-top: 1px solid #eee;
-border-left: 1px solid #eee;
-text-shadow: -1px -1px 0px #fff;
-color: #96a51a;
-border-radius: 3px;
--khtml-border-radius: 3px;
--moz-border-radius: 3px;
--webkit-border-radius: 3px;
-text-decoration: underline;
-box-shadow: 0 1px 5px #aaa;
--webkit-box-shadow: 0 1px 5px #aaa;
--moz-box-shadow: 0 1px 5px #aaa;
+    background-position: 0 -15px;
+    color: #333;
+    text-decoration: none;
 }
 
 div.submit {
@@ -1742,28 +1758,43 @@ color: #777;
 }
 
 .activity-list li.load-more {
-background: #fff;
-border-bottom: 1px solid #ddd;
-border-left: 1px solid #fff;
-border-right: 1px solid #ddd;
-border-top: 1px solid #fff;
-margin: 15px 1px;
-padding: 10px 15px;
-text-align: center;
-border-radius: 3px;
--khtml-border-radius: 3px;
--moz-border-radius: 3px;
--webkit-border-radius: 3px;
-padding: 20px;
-box-shadow: 0 0 2px rgba(0, 0, 0,0.1);
--moz-box-shadow: 0 0 2px rgba(0, 0, 0,0.1);
--webkit-box-shadow: 0 0 2px rgba(0, 0, 0,0.1);
-font-size: 0.9em;
-font-weight: bold;
+    cursor: pointer;
+    text-align:center;
+    background-color: #e6e6e6;
+    background-repeat: no-repeat;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), color-stop(25%, #ffffff), to(#e6e6e6));
+    background-image: -webkit-linear-gradient(#ffffff, #ffffff 25%, #e6e6e6);
+    background-image: -moz-linear-gradient(top, #ffffff, #ffffff 25%, #e6e6e6);
+    background-image: -ms-linear-gradient(#ffffff, #ffffff 25%, #e6e6e6);
+    background-image: -o-linear-gradient(#ffffff, #ffffff 25%, #e6e6e6);
+    background-image: linear-gradient(#ffffff, #ffffff 25%, #e6e6e6);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#e6e6e6', GradientType=0);
+    padding: 5px 14px 6px;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+    color: #333;
+    line-height: normal;
+    border: 1px solid #ccc;
+    border-bottom-color: #bbb;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+    -webkit-transition: 0.1s linear all;
+    -moz-transition: 0.1s linear all;
+    -ms-transition: 0.1s linear all;
+    -o-transition: 0.1s linear all;
+    transition: 0.1s linear all;
+	font-size: 0.9em;
+	font-weight: bold
+	margin: 10px 0;
 }
 
 .activity-list li.load-more:hover {
-background: #fff9db;
+    background-position: 0 -15px;
+    color: #333;
+    text-decoration: none;
 }
 
 /*--------------------------------------------------------------
@@ -1974,7 +2005,7 @@ border-radius: 3px;
 padding: 2px;
 }
 .item-list li {
-border-bottom: 1px solid #ddd;
+border-top: 1px solid #ddd;
 margin: 0 1px 10px 1px;
 padding: 0 0 10px 0;
 }
@@ -2224,40 +2255,39 @@ text-align: right;
 	border-right: 1px dashed #aaa;
 }
 #profile-right {
-width: 30%;
-float: left;
-min-height: 1px;
-line-height: 28px;
+	float: right;
+	min-height: 1px;
+	width: 30%;
 }
 #content-profile {
-margin-right: 3%;
-float: left;
-min-height: 1px;
-width: 71%;
+	margin-right: 3%;
+	float: left;
+	min-height: 1px;
+	width: 73.8%;
 }
 #sidebar {
 width: 23.1%;
-float: left;
+float: right;
 min-height: 1px;
 }
 #content{
-margin-right: 3%;
-float: left;
-width: 71%;
-min-height: 1px;
+	margin-right: 3%;
+	float: left;
+	min-height: 1px;
+	width: 74%;
 }
 .activity #content-profile {
-width: 74%;
-margin-right: 3%;
-float: left;
-min-height: 1px;
+	margin-right: 3%;
+	float: left;
+	min-height: 1px;
+	width: 74%;
 }
 	
 .activity #content, .home-page #content {
-width: 74%;
-margin-right: 3%;
-float: left;
-min-height: 1px;
+	margin-right: 3%;
+	float: left;
+	min-height: 1px;
+	width: 74%;
 }
 	
 #content-home {
@@ -2286,16 +2316,17 @@ float: right;
 width: 45%;
 }
 #content-wrapper {
-margin: 0 auto;
-max-width: 1230px;
-padding: 20px 20px 40px 20px;
-overflow: hidden;
+	margin: 0 auto;
+	max-width: 1240px;
+	overflow: hidden;
+	padding: 20px 0px 40px 0px;
+	overflow: hidden;
 }
 .home.logged-in #content-wrapper {
-margin: 0 auto;
-max-width: 1230px;
-overflow: hidden;
-padding: 30px 20px 40px 20px;
+	margin: 0 auto;
+	max-width: 1240px;
+	overflow: hidden;
+padding: 30px 0px 40px 0px;
 }
 #activity-filter-select {
 padding-top: 0;
@@ -2307,4 +2338,13 @@ top: 10px;
 top:10px;
 position:relative;
 }
+#footer-wrapper {
+position: fixed;
+bottom: 0;
+width: 100%;
+}
+#wpadminbar {
+position: fixed;
+}
+
 }
