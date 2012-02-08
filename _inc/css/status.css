@@ -1595,8 +1595,11 @@ margin: 20px 0px;
 	line-height:1.7;
 }
 form .editfield{
-	border-top: 1px solid #ddd;
+	border-top: 1px solid #DDD;
 	padding: 10px 0;
+}
+form.design input[type="text"]{
+	max-width: 100px;
 }
 ul.button-nav{
 	margin: 0;
