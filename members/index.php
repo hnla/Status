@@ -11,7 +11,7 @@
 <?php get_header( 'status' ); ?>
 	<?php do_action( 'bp_before_directory_members_page' ); ?>
 
-	<div id="content-profile">
+	<div id="content">
 		<?php do_action( 'bp_before_directory_members' ); ?>
 
 		<form action="" method="post" id="members-directory-form" class="dir-form">

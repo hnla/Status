@@ -247,7 +247,7 @@ margin: 0 1px 0 1px;
 
 .status-signup {
 }
-#content, #content-404, .directory #content-profile {
+#content, #content-404 {
 float: none;
 padding: 0 1em 1em 1em;
 }
@@ -1600,6 +1600,8 @@ ul.button-nav{
 	margin: 0;
 	padding: 0;
 	overflow: hidden;
+	background: #EEE;
+	padding: 5px 20px 0 20px;
 	list-style: none;
 }
 .clear-value, .submit input[type="submit"], .submitbutton, #blogs-directory-form input[type="submit"], .submitbutton, #members-directory-form input[type="submit"], .form-submit #submit, #signup_submit, #submit, #searchsubmit, .standard-form input[type="submit"], .activity-comments input[type="submit"] {
@@ -1983,7 +1985,7 @@ box-shadow: 0 0 2px rgba(0, 0, 0,0.1);
 .home #item-nav{
 	margin-bottom:0;
 }
-.home #subnav, .activity #subnav{
+.home #subnav{
 	margin-bottom:20px;
 }
 #item-nav li{
@@ -2031,10 +2033,7 @@ padding: 2px;
 .item-list li {
 border-top: 1px solid #ddd;
 margin: 0 1px 10px 1px;
-padding: 15px 0 10px 0;
-}
-#subnav .item-list li{
-	padding: 0 0 10px 0;
+padding: 0 0 10px 0;
 }
 .item-body {
 margin: 20px 0;
@@ -2048,9 +2047,6 @@ padding: 1px 8px;
 span.user-nicename {
 display: inline-block;
 font-weight: 700;
-}
-#blogs-order-select{
-	float:right;
 }
 span.activity,
 div#message p {
@@ -2190,17 +2186,12 @@ list-style: none;
 div.item-list-tabs#object-nav {
 margin-top: 0;
 }
-#subnav{
+div.item-list-tabs#subnav {
 	margin-top:10px;
 	background-color: #eee;
 	border: 1px solid #ddd;
 	font-size: 0.9em;
-	overflow:hidden;
 }
-.activity #subnav{
-	margin-top:0;
-}
-
 #subnav ul{
 	margin: 0px;
 }

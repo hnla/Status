@@ -30,7 +30,7 @@
 			<?php endif; ?>
 
 			<?php do_action( 'template_notices' ); ?>
-			<div id="activity-show">
+			<div id="item-nav">
 			<div class="item-list-tabs activity-type-tabs" role="navigation">
 				<ul>
 					<?php do_action( 'bp_before_activity_type_tab_all' ); ?>
@@ -80,6 +80,7 @@
 					<?php do_action( 'bp_activity_type_tabs' ); ?>
 				</ul>
 			</div>
+			</div>
 			<div class="item-list-tabs no-ajax" id="subnav" role="navigation">
 				<ul>
 					<li class="feed"><a href="<?php bp_sitewide_activity_feed_link() ?>" title="<?php _e( 'RSS Feed', 'buddypress' ); ?>"><?php _e( 'RSS', 'buddypress' ); ?></a></li>
@@ -128,7 +129,6 @@
 				</ul>
 			</div><!-- .item-list-tabs -->
 			
-			</div>
 			<?php do_action( 'bp_before_directory_activity_list' ); ?>
 
 			<div class="activity" role="main">
