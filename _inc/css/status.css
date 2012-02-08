@@ -1724,6 +1724,9 @@ color: #666;
 .friendship-button{
 	margin-top: 10px;
 }
+#item-header-content .friendship-button{
+	margin-top: 0px;
+}
 /*--------------------------------------------------------------
 6.6 - Ajax Loading
 --------------------------------------------------------------*/
