@@ -1981,7 +1981,7 @@ background-image: -webkit-gradient(linear,left bottom,left top,from(#373737),to(
 background-image: -webkit-linear-gradient(bottom,#373737,#464646 5px);
 background-image: linear-gradient(bottom,#373737,#464646 5px);
 font-size: 0.9em;
-margin-bottom: 20px;
+margin-bottom: 30px;
 text-shadow: -1px -1px 0px #111;
 box-shadow: 0 0 2px rgba(0, 0, 0,0.1);
 -moz-box-shadow: 0 0 2px rgba(0, 0, 0,0.1);
