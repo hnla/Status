@@ -23,6 +23,17 @@
 
 			</div><!-- #item-header -->
 		</div>
+		<div id="item-nav">
+			<div class="item-list-tabs no-ajax" id="object-nav" role="navigation">
+				<ul>
+
+					<?php bp_get_displayed_user_nav(); ?>
+
+					<?php do_action( 'bp_member_options_nav' ); ?>
+
+				</ul>
+			</div>
+		</div><!-- #item-nav -->
 	<div id="content-profile">
 			<div id="item-body" role="main">
 

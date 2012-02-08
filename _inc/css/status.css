@@ -563,13 +563,6 @@ padding-top: 5px;
 display: inline;
 display: inline-block;
 }
-#item-nav li, #subnav li {
-margin-right: 10px;
-}
-
-.groups #item-nav li, .groups #subnav li, .members #item-nav li, .members #subnav li, .blogs #subnav {
-margin-right: 30px;
-}
 
 
 /*--------------------------------------------------------------
@@ -1075,13 +1068,7 @@ width: 80px;
 ul.item-list.activity-list li {
 padding: 10px;
 }
-.groups #item-nav .item-list-tabs ul, .members #item-nav .item-list-tabs ul {
-margin: 10px 0 0 0!important;
-padding: 0 0 10px 0;
-margin: 10px 0 0 0;
-border-bottom: 1px solid #ddd;
-font-size: 0.9em;
-}
+
 #whats-new-avatar img {
 padding: 2px;
 margin: 10px 12px;
@@ -1534,7 +1521,7 @@ padding-top:10px;
 6.5 - Forms
 --------------------------------------------------------------*/
 #content-profile textarea, #content-profile input[type="text"]{
-	width:100%;
+	width:97%;
 }
 #status-default fieldset {
 margin: 1.1em 0;
@@ -1543,15 +1530,11 @@ margin: 1.1em 0;
 font-weight: bold;
 font-size: 1.2em;
 }
-#status-default label {
-display: block;
-}
-
 input[type="text"],input[type="email"],input[type="password"],
 textarea {
 padding: 0.5em;
 background: #fff;
-border: 1px solid #eee;
+border: 1px solid #ddd;
 -moz-border-radius: 5px;
 -khtml-border-radius: 5px;
 -webkit-border-radius: 5px;
@@ -1577,7 +1560,7 @@ border: 1px solid #960606;
 #signup_form textarea {
 padding: 0.5em;
 background: #fff;
-border: 1px solid #eee;
+border: 1px solid #ddd;
 -moz-border-radius: 5px;
 -khtml-border-radius: 5px;
 -webkit-border-radius: 5px;
@@ -1642,11 +1625,10 @@ margin: 20px 0px;
     transition: 0.1s linear all;
 }
 input:focus, textarea:focus {
-  outline: 0;
-  border-color: rgba(0, 0, 0, 0.8);
-  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(0, 0, 0, 0.6);
-  -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(0, 0, 0, 0.6);
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(0, 0, 0, 0.6);
+    border-color: rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(0, 0, 0, 0.6);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(0, 0, 0, 0.6);
 }
 
 .dir-search {
@@ -1787,7 +1769,7 @@ color: #777;
     -o-transition: 0.1s linear all;
     transition: 0.1s linear all;
 	font-size: 0.9em;
-	font-weight: bold
+	font-weight: bold;
 	margin: 10px 0;
 }
 
@@ -1973,20 +1955,45 @@ box-shadow: 0 0 2px rgba(0, 0, 0,0.1);
 -moz-box-shadow: 0 0 2px rgba(0, 0, 0,0.1);
 -webkit-box-shadow: 0 0 2px rgba(0, 0, 0,0.1);
 }
-.my-groups #item-header {
-}
 #item-nav {
 overflow: hidden;
-border-bottom: 1px solid #ddd;
+padding: 0;
+background-color: #464646;
+background-image: -ms-linear-gradient(bottom,#373737,#464646 5px);
+background-image: -moz-linear-gradient(bottom,#373737,#464646 5px);
+background-image: -o-linear-gradient(bottom,#373737,#464646 5px);
+background-image: -webkit-gradient(linear,left bottom,left top,from(#373737),to(#464646));
+background-image: -webkit-linear-gradient(bottom,#373737,#464646 5px);
+background-image: linear-gradient(bottom,#373737,#464646 5px);
+font-size: 0.9em;
+margin-bottom: 20px;
+text-shadow: -1px -1px 0px #111;
 }
-.groups #item-nav {
-overflow: hidden;
-border-bottom: none;
-clear: both;
-margin: 0px;
+#item-nav li{
+	border-right: 1px solid #555;
 }
-.groups #profile-right #item-nav, #profile-right #iten-nav {
-margin: 0;
+#item-nav li, #subnav li{
+	padding: 5px 20px;
+}
+
+#item-nav li:hover{
+	background: #333;
+}
+#subnav li{
+	border-right: 1px solid #ddd;
+}
+#subnav li:hover{
+	background: #f9f9f9;
+}
+#item-nav a{
+	color: #fff;
+}
+#item-nav a:hover{
+	text-decoration:none;
+	color: #ccc;
+}
+#item-nav ul{
+	margin:  0;
 }
 #item-header-avatar {
 float: left;
@@ -2161,6 +2168,13 @@ div.item-list-tabs#object-nav {
 margin-top: 0;
 }
 div.item-list-tabs#subnav {
+	margin-top:10px;
+	background-color: #eee;
+	border: 1px solid #ddd;
+	font-size: 0.9em;
+}
+#subnav ul{
+	margin: 0px;
 }
 div.item-list-tabs ul li.feed a {
 background: url( ../images/rss.png ) center left no-repeat;
@@ -2274,7 +2288,7 @@ min-height: 1px;
 	margin-right: 3%;
 	float: left;
 	min-height: 1px;
-	width: 74%;
+	width: 71%;
 }
 .activity #content-profile {
 	margin-right: 3%;
