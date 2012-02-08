@@ -1481,9 +1481,9 @@ clear: left;
 color: #fff;
 }
 div#message.updated p {
-background-color: #96a51a;
-border-color: #5d6610;
-color: #fff;
+	background-color: #E0EFD5;
+	border-color: #A9D38B;
+	color: #548331;
 }
 .standard-form#signup_form div div.error {
 background: #cc2233;
@@ -1602,7 +1602,7 @@ ul.button-nav{
 	overflow: hidden;
 	list-style: none;
 }
-.clear-value, .submit input[type="submit"], .submitbutton, #blogs-directory-form input[type="submit"], .submitbutton, #members-directory-form input[type="submit"], .form-submit #submit, #signup_submit, #submit, #searchsubmit, .standard-form input[type="submit"], .activity-comments input[type="submit"] {
+.generic-button a, .clear-value, .submit input[type="submit"], .submitbutton, #blogs-directory-form input[type="submit"], .submitbutton, #members-directory-form input[type="submit"], .form-submit #submit, #signup_submit, #submit, #searchsubmit, .standard-form input[type="submit"], .activity-comments input[type="submit"] {
     cursor: pointer;
     display: inline-block;
     background-color: #e6e6e6;
@@ -1644,12 +1644,15 @@ background: #f3f3f3;
 border: 1px solid #eeeeee;
 padding: 10px;
 }
-.submit:hover input[type="submit"], .submitbutton:hover #blogs-directory-form input[type="submit"], .submitbutton:hover, #members-directory-form input[type="submit"]:hover, .form-submit #submit:hover, #signup_submit:hover, #submit:hover, #searchsubmit:hover, .standard-form input[type="submit"]:hover, .activity-comments input[type="submit"]:hover {
+.generic-button a:hover, .clear-value:hover, .submit:hover input[type="submit"], .submitbutton:hover #blogs-directory-form input[type="submit"], .submitbutton:hover, #members-directory-form input[type="submit"]:hover, .form-submit #submit:hover, #signup_submit:hover, #submit:hover, #searchsubmit:hover, .standard-form input[type="submit"]:hover, .activity-comments input[type="submit"]:hover {
     background-position: 0 -15px;
     color: #333;
     text-decoration: none;
 }
-
+.groups #item-header-content{
+	margin-bottom: 20px;
+	overflow:hidden;
+}
 div.submit {
 margin: 10px 0 0 0;
 }
@@ -1695,17 +1698,16 @@ form#send-invite-form {
 margin-top: 20px;
 }
 div#invite-list {
-background: #f3f3f3;
-border: 1px solid #eee;
-border-radius: 3px;
--khtml-border-radius: 3px;
--moz-border-radius: 3px;
--webkit-border-radius: 3px;
 height: 400px;
 margin: 0 0 10px;
 overflow: auto;
 padding: 5px;
 width: 160px;
+}
+#invite-list ul{
+	list-style: none;
+	margin: 0;
+	padding: 0 0 0 10px;
 }
 ul#members-list .small .button {
 margin-left: 10px;
@@ -1718,6 +1720,9 @@ background: white;
 margin-left: 10px;
 font-size: 1em;
 color: #666;
+}
+.friendship-button{
+	margin-top: 10px;
 }
 /*--------------------------------------------------------------
 6.6 - Ajax Loading
@@ -1974,7 +1979,7 @@ background-image: -webkit-gradient(linear,left bottom,left top,from(#373737),to(
 background-image: -webkit-linear-gradient(bottom,#373737,#464646 5px);
 background-image: linear-gradient(bottom,#373737,#464646 5px);
 font-size: 0.9em;
-margin-bottom: 30px;
+margin-bottom: 20px;
 text-shadow: -1px -1px 0px #111;
 box-shadow: 0 0 2px rgba(0, 0, 0,0.1);
 -moz-box-shadow: 0 0 2px rgba(0, 0, 0,0.1);
