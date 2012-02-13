@@ -1997,7 +1997,8 @@ box-shadow: 0 0 2px rgba(0, 0, 0,0.1);
 #item-nav li{
 	border-right: 1px solid #555;
 }
-#item-nav li, #subnav li{
+#item-nav li a, #subnav li a{
+	display: block;
 	padding: 5px 20px;
 }
 
