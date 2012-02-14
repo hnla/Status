@@ -915,9 +915,6 @@ table {
 width: 100%;
 text-align: left;
 }
-.post-header {
-margin-left: 120px;
-}
 body.error404 .post-header {
 	margin-left: 0;
 }
