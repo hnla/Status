@@ -16,7 +16,7 @@ function status_setup() {
 	add_action( 'wp_enqueue_scripts', 'bp_dtheme_enqueue_styles');
 	add_theme_support( 'post-formats', array( 'aside', 'gallery', 'link', 'video', 'image', 'quote', 'status', 'chat' ) );
 }
-add_action( 'after_setup_theme', 'status_setup' );
+add_action( 'after_setup_theme', 'status_setup', 15 );
 endif;
 
 if ( ! function_exists( 'bp_dtheme_enqueue_styles()' ) ) :
