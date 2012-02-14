@@ -1192,8 +1192,7 @@ margin: 0;
 float: right;
 }
 li.feed {
-float: left;
-padding-top: 10px;
+padding: 0 0 0 20px;
 }
 
 /*--------------------------------------------------------------
@@ -2388,6 +2387,7 @@ padding: 30px 0px 40px 0px;
 }
 #activity-filter-select {
 float: right;
+padding: 5px 10px 0 0;
 }
 
 #content-profile-headerfull #activity-filter-select, #forums-order-select {

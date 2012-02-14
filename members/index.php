@@ -25,7 +25,7 @@
 				<?php bp_directory_members_search_form(); ?>
 
 			</div><!-- #members-dir-search -->
-
+			<div id="item-nav">
 			<div class="item-list-tabs" role="navigation">
 				<ul>
 					<li class="selected" id="members-all"><a href="<?php echo trailingslashit( bp_get_root_domain() . '/' . bp_get_members_root_slug() ); ?>"><?php printf( __( 'All Members <span>%s</span>', 'status' ), bp_get_total_member_count() ); ?></a></li>
@@ -40,7 +40,7 @@
 
 				</ul>
 			</div><!-- .item-list-tabs -->
-
+			</div>
 			<div class="item-list-tabs" id="subnav" role="navigation">
 				<ul>
 
