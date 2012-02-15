@@ -38,7 +38,7 @@
 			
 		<?php endif; ?>
 	</header>
-	<?php if (( is_search() ) || (is_home()) || (is_category()) || (is_archive() ) || (is_page_template('blogsnews.php') )) :?>
+	<?php if (( is_search() ) || (is_home()) || (is_category()) || (is_archive() ) || (is_page_template('template-blog.php') )) :?>
 		<?php if(function_exists('the_post_thumbnail')) { ?>
 			<?php if(get_the_post_thumbnail() != "") { ?>
 					<div class="post-featured-thumb">
@@ -46,7 +46,7 @@
 					</div>
 		<?php } } ?>
 		<section class="post-summary">
-			<?php the_excerpt( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'status' ) ); ?>
+			<?php the_excerpt(); ?>
 		</section>
 	<?php else : ?>
 		<section class="post-content">
