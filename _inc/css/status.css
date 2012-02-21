@@ -2317,7 +2317,6 @@ text-align: right;
 	width: 30%;
 }
 #content-profile {
-	margin-right: 3%;
 	float: left;
 	min-height: 1px;
 	width: 73.8%;
@@ -2328,20 +2327,17 @@ float: right;
 min-height: 1px;
 }
 #content{
-	margin-right: 3%;
 	float: left;
 	min-height: 1px;
 	width: 71%;
 }
 .activity #content-profile {
-	margin-right: 3%;
 	float: left;
 	min-height: 1px;
 	width: 74%;
 }
 	
 .activity #content, .home-page #content {
-	margin-right: 3%;
 	float: left;
 	min-height: 1px;
 	width: 74%;
