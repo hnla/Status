@@ -2001,7 +2001,7 @@ box-shadow: 0 0 2px rgba(0, 0, 0,0.1);
 	padding: 5px 20px;
 }
 #item-nav li:hover, #item-nav li.selected{
-	background: #333;
+	background: #444;
 }
 #item-nav li .span{
 	background: #222;
@@ -2016,6 +2016,9 @@ box-shadow: 0 0 2px rgba(0, 0, 0,0.1);
 }
 #subnav li:hover{
 	background: #f9f9f9;
+}
+#subnav li#activity-filter-select:hover{
+	background:#eee;
 }
 #item-nav a{
 	color: #fff;
@@ -2088,7 +2091,7 @@ text-decoration: none;
 }
 div#item-header img.avatar {
 float: left;
-margin: 5px 10px 10px 0;
+margin: 5px 15px 10px 0;
 }
 div#item-header h2 {
 margin-bottom: 5px;
@@ -2230,7 +2233,13 @@ div.profile h4 {
 margin-bottom: auto;
 margin-top: 15px;
 }
-
+#member-stats{
+	font-size: 1.1em;
+	color: #888;
+	clear:both;
+	border-top: 1px solid #ccc;
+	padding: 10px 0 10px 0;
+}
 /*--------------------------------------------------------------
 6.9 - Private Messaging Threads
 --------------------------------------------------------------*/
@@ -2397,5 +2406,17 @@ width: 100%;
 #wpadminbar {
 position: fixed;
 }
-
+#member-stats{
+	float: right;
+	font-size: 1.1em;
+	color: #888;
+	border-left: 1px solid #ccc;
+	padding: 10px 0 10px 20px;
+	width: 20%;
+	clear:none;
+	border-top:none;
+}
+#item-header-content{
+	float:left;
+}
 }

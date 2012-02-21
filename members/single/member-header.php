@@ -16,7 +16,6 @@
 
 		</a>
 	</div><!-- #item-header-avatar -->
-
 	<div id="item-header-content">
 	<h2>
 		<a href="<?php bp_displayed_user_link(); ?>"><?php bp_displayed_user_fullname(); ?></a>
@@ -59,6 +58,17 @@
 
 	</div>
 </div>
+
+	<div id="member-stats">
+		<ul>
+			<li>21 status updates</li>
+			<li>6 forum topics</li>
+			<li>23 forum posts</li>
+			<li>4 blog comments</li>
+			<li>Followers: [2] Following: [2]</li>
+		</ul>
+	</div>
+
 <?php do_action( 'bp_after_member_header' ); ?>
 
 <?php do_action( 'template_notices' ); ?>
