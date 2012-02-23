@@ -65,7 +65,7 @@
 			<li>6 forum topics</li>
 			<li>23 forum posts</li>
 			<li>4 blog comments</li>
-			<li>Followers: [2] Following: [2]</li>
+			<li>Followers: <psan>2</span> Following: <span>2</span></li>
 		</ul>
 	</div>
 
