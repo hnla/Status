@@ -58,16 +58,7 @@
 
 	</div>
 </div>
-
-	<div id="member-stats">
-		<ul>
-			<li>21 status updates</li>
-			<li>6 forum topics</li>
-			<li>23 forum posts</li>
-			<li>4 blog comments</li>
-			<li>Followers: [2] Following: [2]</li>
-		</ul>
-	</div>
+<?php do_action( 'status_stats' ); ?>
 
 <?php do_action( 'bp_after_member_header' ); ?>
 
