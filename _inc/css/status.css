@@ -2140,6 +2140,7 @@ div#item-header ul span,
 div#item-header ul hr {
 display: none;
 }
+div#item-header #member-stats ul span {display: inline;}
 div#item-header ul img.avatar,
 div#item-header ul.avatars img.avatar {
 height: 30px;

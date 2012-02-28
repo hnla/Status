@@ -672,4 +672,148 @@ $(function () {
 }
 add_action('bp_after_profile_edit_content', 'status_custom_javascript');
 
+/**
+* User Stats function - member/single member-header.php display
+*/
+
+// member status updates
+	function bp_member_profile_stats_member_status() {
+	echo bp_member_profile_stats_get_member_status();
+}
+	function bp_member_profile_stats_get_member_status() {
+	
+		if ( !bp_is_active( 'activity' ) )
+		return;
+		
+		$total_count = bp_member_profile_stats_get_member_status_count();
+		
+		if ( $total_count == 0 ) {
+			$content = '<li>' . __( ' No updates', 'bp-member-profile-stats' ) . '</li>';
+		} else if ( $total_count == 1 ) {
+			$content = '<li><span class="status-count">'. $total_count .'</span>' . __( ' update', 'status' ) . '</li>';
+		} else {
+			$content = '<li><span class="status-count">'. $total_count .'</span>' . __( ' updates', 'status' ) . '</li>';
+		}
+		
+		return apply_filters( 'bp_member_profile_stats_get_member_status', $content, $total_count );
+	
+	}
+
+function bp_member_profile_stats_get_member_status_count( $user_id = false ) {
+	global $bp, $wpdb;
+	
+	if ( !$user_id )
+		$user_id = ( $bp->displayed_user->id ) ? $bp->displayed_user->id : $bp->loggedin_user->id;
+	
+	$total_count = $wpdb->get_var( $wpdb->prepare( "SELECT count(a.id) FROM {$bp->activity->table_name} a WHERE a.user_id = {$user_id} AND type = 'activity_update' AND a.component = '{$bp->activity->id}'" ) );
+	
+	if ( !$total_count )
+		$total_count == 0;
+	
+	return $total_count;
+}
+// forum posts
+function bp_member_profile_stats_member_posts() {
+	echo bp_member_profile_stats_get_member_posts();
+}
+	function bp_member_profile_stats_get_member_posts() {
+	
+		if ( !bp_is_active( 'forums' ) )
+			return;
+		
+		$total_count = bp_member_profile_stats_get_member_post_count();
+		
+		if ( $total_count == 0 ) {
+			$content = '<li>' . __( ' No forum posts', 'bp-member-profile-stats' ) . '</li>';
+		} else if ( $total_count == 1 ) {
+			$content = '<li><span class="post-count">'. $total_count .'</span>' . __( ' forum post', 'status' ) . '</li>';
+		} else {
+			$content = '<li><span class="post-count">'. $total_count .'</span>' . __( ' forum posts', 'status' ) . '</li>';
+		}
+		
+		return apply_filters( 'bp_member_profile_stats_get_member_posts', $content, $total_count );
+	
+	}
+function bp_member_profile_stats_get_member_post_count( $user_id = false ) {
+	global $bp, $wpdb, $bbdb;
+	
+	do_action( 'bbpress_init' );
+			
+	if ( !$user_id )
+		$user_id = ( $bp->displayed_user->id ) ? $bp->displayed_user->id : $bp->loggedin_user->id;
+			
+	$total_count = $wpdb->get_var( $wpdb->prepare( "SELECT count(post_id) FROM {$bbdb->posts} WHERE poster_id = {$user_id} AND post_status = 0" ) );
+		
+	if ( !$total_count )
+		$total_count == 0;
+	
+	return $total_count;
+}
+// forum topics
+function bp_member_profile_stats_member_topics() {
+	echo bp_member_profile_stats_get_member_topics();
+}
+	function bp_member_profile_stats_get_member_topics() {
+	
+		if ( !bp_is_active( 'forums' ) )
+			return;
+		
+		$total_count = bp_forums_total_topic_count_for_user();
+		
+		if ( $total_count == 0 ) {
+			$content = '<li>' . __( ' No forum topics', 'bp-member-profile-stats' ) . '</li>';
+		} else if ( $total_count == 1 ) {
+			$content = '<li><span class="topic-count">'. $total_count .'</span>' . __( ' forum topic', 'status' ) . '</li>';
+		} else {
+			$content = '<li><span class="topic-count">'. $total_count .'</span>' . __( ' forum topics', 'status' ) . '</li>';
+		}
+		
+		return apply_filters( 'bp_member_profile_stats_get_member_topics', $content, $total_count );
+	
+	}
+// Blog comments
+function bp_member_profile_stats_member_comments() {
+	echo bp_member_profile_stats_get_member_comments();
+}
+	function bp_member_profile_stats_get_member_comments() {
+		
+		$total_count = bp_member_profile_stats_get_member_comment_count();
+		
+		if ( $total_count == 0 ) {
+			$content = '<li>' . __( ' No blog comments', 'bp-member-profile-stats' ) . '</li>';
+		} else if ( $total_count == 1 ) {
+			$content = '<li><span class="comment-count">'. $total_count .'</span>' . __( ' blog comment', 'status' ) . '</li>';
+		} else {
+			$content = '<li><span class="comment-count">'. $total_count .'</span>' . __( ' blog comments', 'status' ) . '</li>';
+		}
+		
+		return apply_filters( 'bp_member_profile_stats_get_member_comments', $content, $total_count );
+	
+	}
+function bp_member_profile_stats_get_member_comment_count( $user_id = false ) {
+	global $bp, $wpdb;
+	
+	if ( !$user_id )
+		$user_id = ( $bp->displayed_user->id ) ? $bp->displayed_user->id : $bp->loggedin_user->id;
+			
+	$total_count = $wpdb->get_var( $wpdb->prepare( "SELECT count( comment_ID ) FROM {$wpdb->comments} WHERE comment_approved = 1 AND user_id = {$user_id}" ) );
+		
+	if ( !$total_count )
+		$total_count == 0;
+	
+	return $total_count;
+}
+function status_display_member_stats() {?>
+	<div id="member-stats">
+		<ul>
+		<?php  bp_member_profile_stats_member_status(); ?>
+		<?php  bp_member_profile_stats_member_posts(); ?>
+		<?php	 bp_member_profile_stats_member_topics(); ?>
+		<?php  bp_member_profile_stats_member_comments(); ?>
+		</ul>
+	</div>
+<?php
+}
+add_action('status_stats', 'status_display_member_stats');
+
 ?>
