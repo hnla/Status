@@ -195,10 +195,7 @@ function status_showfriends(){
 }
 
 /* ----- User-specific Front-end theme settings ----- */
-
-/**
- * Spit out customizations.
- */
+/*** Spit out customizations.*/
 function status_custom_user_settings () {
 	$_present = bp_get_option('bp-xprofile-status-field_ids');
 	if (!$_present) return false;
@@ -261,24 +258,18 @@ function status_custom_user_settings () {
 	'</style>';
 }
 
-/**
- * Set up custom background handler.
- */
+/*** Set up custom background handler.*/
 function status_setup_user_theme () {
 	add_custom_background('status_custom_user_settings', '');
 }
 add_action('after_setup_theme', 'status_setup_user_theme', 20);
 
-/**
- * Group name getting utility function.
- */
+/*** Group name getting utility function. */
 function status_get_design_group_name () {
 	return __('Design', 'status');
 }
 
-/**
- * Group ID getting utility function.
- */
+/*** Group ID getting utility function.*/
 function status_get_design_group_id () {
 	static $group_id;
 	if ($group_id) return $group_id;
@@ -307,20 +298,12 @@ function status_get_design_group_id () {
 	return $group_id;
 }
 
-/**
- * Place the design link in the navigation.
- */
+/*** Place the design link in the navigation.*/
 function status_design_group_url_setup () {
 	global $bp;
 	
 	$name = status_get_design_group_name();
 	$slug = 'edit/group/' . status_get_design_group_id();
-	/*
-	bp_core_new_nav_item(array(
-		'name' => $name,
-		'slug' => trailingslashit($bp->profile->slug) . $slug,
-	));
-	*/
 	bp_core_new_subnav_item(array(
 		'name' => $name,
 		'slug' => $slug,
@@ -332,9 +315,7 @@ function status_design_group_url_setup () {
 }
 add_action('bp_init', 'status_design_group_url_setup');
 
-/**
- * Shoot down the extra group in profile editing fields
- */
+/*** Shoot down the extra group in profile editing fields */
 function status_filter_profile_tab_links ($tabs) {
 	global $bp;
 	$group_id = status_get_design_group_id();
@@ -353,18 +334,14 @@ function status_filter_profile_tab_links ($tabs) {
 }
 add_filter('xprofile_filter_profile_group_tabs', 'status_filter_profile_tab_links');
 
-/**
- * Allows new field type (fileupload)
- */
+/*** Allows new field type (fileupload) */
 function status_allow_file_upload_xfield ($fields) {
 	@$fields[] = 'status-fileupload';
 	return $fields;
 }
 add_filter('xprofile_field_types', 'status_allow_file_upload_xfield');
 
-/**
- * Show editable field (fileupload)
- */
+/*** Show editable field (fileupload) */
 function status_show_file_upload_xfield () {
 	global $field;
 	if ('status-fileupload' != $field->type) return false;
@@ -382,9 +359,7 @@ function status_show_file_upload_xfield () {
 }
 add_action('bp_custom_profile_edit_fields', 'status_show_file_upload_xfield');
 
-/**
- * Actually upload the file
- */
+/*** Actually upload the file */
 function status_handle_image_upload ($user_id) {
 	if (!$_POST) return false;
 	if (!$user_id) return false;
@@ -672,16 +647,12 @@ $(function () {
 }
 add_action('bp_after_profile_edit_content', 'status_custom_javascript');
 
-/**
-* User Stats function - member/single member-header.php display
-*/
-
-// member status updates
-	function bp_member_profile_stats_member_status() {
+/*** User Stats function - member/single member-header.php display */
+function bp_member_profile_stats_member_status() {
 	echo bp_member_profile_stats_get_member_status();
 }
-	function bp_member_profile_stats_get_member_status() {
 	
+function bp_member_profile_stats_get_member_status() {	
 		if ( !bp_is_active( 'activity' ) )
 		return;
 		
@@ -712,11 +683,12 @@ function bp_member_profile_stats_get_member_status_count( $user_id = false ) {
 	
 	return $total_count;
 }
-// forum posts
+
 function bp_member_profile_stats_member_posts() {
 	echo bp_member_profile_stats_get_member_posts();
 }
-	function bp_member_profile_stats_get_member_posts() {
+
+function bp_member_profile_stats_get_member_posts() {
 	
 		if ( !bp_is_active( 'forums' ) )
 			return;
@@ -732,8 +704,8 @@ function bp_member_profile_stats_member_posts() {
 		}
 		
 		return apply_filters( 'bp_member_profile_stats_get_member_posts', $content, $total_count );
+}
 	
-	}
 function bp_member_profile_stats_get_member_post_count( $user_id = false ) {
 	global $bp, $wpdb, $bbdb;
 	
@@ -749,11 +721,12 @@ function bp_member_profile_stats_get_member_post_count( $user_id = false ) {
 	
 	return $total_count;
 }
-// forum topics
+
 function bp_member_profile_stats_member_topics() {
 	echo bp_member_profile_stats_get_member_topics();
 }
-	function bp_member_profile_stats_get_member_topics() {
+	
+function bp_member_profile_stats_get_member_topics() {
 	
 		if ( !bp_is_active( 'forums' ) )
 			return;
@@ -769,9 +742,8 @@ function bp_member_profile_stats_member_topics() {
 		}
 		
 		return apply_filters( 'bp_member_profile_stats_get_member_topics', $content, $total_count );
-	
-	}
-// Blog comments
+}
+
 function bp_member_profile_stats_member_comments() {
 	echo bp_member_profile_stats_get_member_comments();
 }
@@ -788,8 +760,8 @@ function bp_member_profile_stats_member_comments() {
 		}
 		
 		return apply_filters( 'bp_member_profile_stats_get_member_comments', $content, $total_count );
-	
-	}
+}
+
 function bp_member_profile_stats_get_member_comment_count( $user_id = false ) {
 	global $bp, $wpdb;
 	
@@ -803,6 +775,7 @@ function bp_member_profile_stats_get_member_comment_count( $user_id = false ) {
 	
 	return $total_count;
 }
+
 function status_display_member_stats() {?>
 	<div id="member-stats">
 		<ul>
