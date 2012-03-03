@@ -1,6 +1,20 @@
 <?php
 /**
- * Functions file
+ * BP-Default theme functions and definitions
+ *
+ * Sets up the theme and provides some helper functions. Some helper functions
+ * are used in the theme as custom template tags. Others are attached to action and
+ * filter hooks in WordPress and BuddyPress to change core functionality.
+ *
+ * The first function, status_setup(), sets up the theme by registering support
+ * for various features in WordPress and BuddyPress, such as post formats, theme
+ * compatibility, and enqueues this theme's JavaScripts.
+ *
+ * Functions that are not pluggable (not wrapped in function_exists()) are instead attached
+ * to a filter or action hook. The hook can be removed by using remove_action() or
+ * remove_filter() and you can attach your own function to the hook.
+ *
+ * For more information on hooks, actions, and filters, see http://codex.wordpress.org/Plugin_API.
  *
  * @package Status
  * @since 1.0
@@ -17,48 +31,79 @@
  	return;
  
 if ( !function_exists( 'status_setup' ) ) :
+/**
+ * Sets up theme defaults and registers support for various WordPress and BuddyPress features.
+ *
+ * Note that this function is hooked into the after_setup_theme hook, which runs
+ * before the init hook. The init hook is too late for some features, such as indicating
+ * support post thumbnails.
+ *
+ * @since 1.0
+ */
 function status_setup() {
-	unregister_nav_menu('primary');
-	remove_custom_image_header();
-	remove_action( 'widgets_init', 'bp_dtheme_widgets_init' );
-	add_action( 'wp_enqueue_scripts', 'status_load_scripts' );
-	add_action( 'wp_enqueue_scripts', 'bp_dtheme_enqueue_styles');
-	add_theme_support( 'post-formats', array( 'aside', 'gallery', 'link', 'video', 'image', 'quote', 'status', 'chat' ) );
+	// We're not using BP-Default's primary nav menu, or custom header images.
+		unregister_nav_menu( 'primary' );
+		remove_custom_image_header();
+
+		// Enqueue javascript
+		add_action( 'wp_enqueue_scripts', 'status_enqueue_scripts' );
+
+		// This theme uses wp_nav_menu() in one location.
+		register_nav_menus( array(
+			'admin_bar_nav' => __( 'Admin Bar Custom Navigation Menu', 'status' ),
+		) );
+
+		// Add theme support for post formats
+		add_theme_support( 'post-formats', array( 'aside', 'gallery', 'link', 'video', 'image', 'quote', 'status', 'chat' ) );
+
+		// This theme comes with all the BuddyPress goodies
+		add_theme_support( 'buddypress' );
 }
 add_action( 'after_setup_theme', 'status_setup', 15 );
 endif;
 
 if ( ! function_exists( 'bp_dtheme_enqueue_styles()' ) ) :
+/**
+ * Enqueue theme CSS safely
+ *
+ * @see http://codex.wordpress.org/Function_Reference/wp_enqueue_style
+ * @since 1.0
+ */
 function bp_dtheme_enqueue_styles(){
 	if (!is_admin()){
-	$version = '20111220';
+	$version = '20120303';
 	wp_enqueue_style( 'status',  get_stylesheet_directory_uri() . '/_inc/css/status.css', array(), $version );
 	}
 }
 endif;
 
 if ( ! function_exists( 'status_load_scripts' ) ) :
+/**
+ * Enqueue theme javascript safely
+ *
+ * @see http://codex.wordpress.org/Function_Reference/wp_enqueue_script
+ * @since 1.0
+ */
 function status_load_scripts() {
-	if ( !is_admin() ) {
-		$version = '20111223'; 
-		wp_enqueue_script("jquery");
-		wp_enqueue_script('modernizr', get_stylesheet_directory_uri() . '/_inc/scripts/modernizr.js', array("jquery"), '2.0');
-		wp_enqueue_script('status-scripts', get_stylesheet_directory_uri() . '/_inc/scripts/status-scripts.js', array("jquery"), $version);
+	if ( is_admin() )
+			return;
+
+		$version = '20120303'; 
+		wp_enqueue_script( 'modernizr',      get_stylesheet_directory_uri() . '/_inc/scripts/modernizr.js',      array( 'jquery' ), $version );
+		wp_enqueue_script( 'status-scripts', get_stylesheet_directory_uri() . '/_inc/scripts/status-scripts.js', array( 'jquery' ), $version );
+
+		// Only load comment-reply javascript if we're on a single post and threaded comments has been enabled
 		if ( is_singular() && get_option( 'thread_comments' ) && comments_open() )
 			wp_enqueue_script( 'comment-reply' );
-	}
 }
 endif;
 
-add_action('init', 'status_adminbar_nav');
-function status_adminbar_nav() {
-
-		register_nav_menus( array(
-			'admin_bar_nav' => __( 'Admin Bar Custom Navigation Menu', 'status' ),
-		) );
-
-}
-
+/**
+ * Register the admin bar menu if the Toolbar is enabled and current user
+ * is a bona fide super admin (with cape).
+ *
+ * @since 1.0
+ */
 add_action('admin_bar_init', 'status_adminbar_menu_init');
 function status_adminbar_menu_init() {
 	if (!is_super_admin() || !is_admin_bar_showing() )
@@ -66,59 +111,92 @@ function status_adminbar_menu_init() {
  	add_action( 'admin_bar_menu', 'status_admin_bar_menu', 1000 );
 }
 
+/**
+ * Register our admin bar extension menu
+ *
+ * @global obj $wp_admin_bar
+ * @since 1.0
+ * @todo Double-check inline comments for accuracy
+ */
 function status_admin_bar_menu() {
 	global $wp_admin_bar;
 
 		$menu_name = 'admin_bar_nav';
-		if ( ( $locations = get_nav_menu_locations() ) && isset( $locations[ $menu_name ] ) ) {
-			$menu = wp_get_nav_menu_object( $locations[ $menu_name ] );
+		$locations = get_nav_menu_locations();
 
-		    $menu_items = wp_get_nav_menu_items( $menu->term_id );
-		    if ($menu_items) {
-			    $wp_admin_bar->add_menu( array(
-			        'id' => 'status-admin-menu-0',
-			        'title' => 'Navigation',
-					'href' => '#' ) );
-			    foreach ( $menu_items as $menu_item ) {
-			        $wp_admin_bar->add_menu( array(
-			            'id' => 'status-admin-menu-' . $menu_item->ID,
-			            'parent' => 'status-admin-menu-' . $menu_item->menu_item_parent,
-			            'title' => $menu_item->title,
-			            'href' => $menu_item->url,
-			            'meta' => array(
-			                'title' => $menu_item->attr_title,
-			                'target' => $menu_item->target,
-			                'class' => implode( ' ', $menu_item->classes ),
-			            ),
-			        ) );
-			    }
-		    }
+		// Bail out if this nav menu hasn't been set up
+		if ( ! isset( $locations[ $menu_name ] ) )
+			return;
+
+		$menu       = wp_get_nav_menu_object( $locations[ $menu_name ] );
+		$menu_items = wp_get_nav_menu_items( $menu->term_id );
+
+		// If the menu has no items, don't do anything
+		if ( ! $menu_items )
+			return;
+
+		// Add menu
+		$wp_admin_bar->add_menu( array(
+			'href'  => '#',
+			'id'    => 'status-admin-menu-0',
+			'title' => 'Navigation',
+		) );
+
+		// Add menu items
+		foreach ( $menu_items as $menu_item ) {
+			$wp_admin_bar->add_menu( array(
+				'href'   => $menu_item->url,
+				'id'     => 'status-admin-menu-' . $menu_item->ID,
+				'parent' => 'status-admin-menu-' . $menu_item->menu_item_parent,
+				'meta'   => array(
+					'title'  => $menu_item->attr_title,
+					'target' => $menu_item->target,
+					'class'  => implode( ' ', $menu_item->classes ),
+				),
+				'title'  => $menu_item->title,
+			) );
 		}
 }
 
+/**
+ * Register widget areas.
+ *
+ * @since 1.0
+ */
 function status_widgets_init() {
 	register_sidebar( array(
-		'name'          => 'Blog sidebar',
-		'id'            => 'sidebar',
-		'description'   => __( 'The sidebar widget area', 'status' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">', 	  
-		'after_widget' => '</section>',
-   		'before_title' => '<h3 class="widgettitle">',
-   		'after_title' => '</h3>'
-	) );
-	
+			'name'          => __( 'Blog sidebar', 'status' ),
+			'id'            => 'sidebar',
+			'description'   => __( 'The sidebar widget area', 'status' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h3 class="widgettitle">',
+			'after_title'   => '</h3>',
+		) );
+
 	register_sidebar( array(
-		'name'          => 'BuddyPress sidebar',
-		'id'            => 'sidebar-buddypress',
-		'description'   => __( 'The sidebar widget area', 'status' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">', 	  
-		'after_widget' => '</section>',
-   		'before_title' => '<h3 class="widgettitle">',
-   		'after_title' => '</h3>'
+			'name'          => __( 'BuddyPress sidebar', 'status' ),
+			'id'            => 'sidebar-buddypress',
+			'description'   => __( 'The sidebar widget area', 'status' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h3 class="widgettitle">',
+			'after_title'   => '</h3>',
 	) );
 }
 add_action( 'widgets_init', 'status_widgets_init' );
 
+/**
+ * Template for comments and pingbacks.
+ *
+ * Used as a callback by wp_list_comments() for displaying the comments.
+ *
+ * @param mixed $comment Comment record from database
+ * @param array $args Arguments from wp_list_comments() call
+ * @param int $depth Comment nesting level
+ * @see wp_list_comments()
+ * @since 1.0
+ */
 function status_blog_comments( $comment, $args, $depth ) {
 	$GLOBALS['comment'] = $comment;
 
@@ -126,6 +204,7 @@ function status_blog_comments( $comment, $args, $depth ) {
 		return false;
 
 	if ( 1 == $depth )
+		// Use smaller avatars the deeper the comment depth
 		$avatar_size = 50;
 	else
 		$avatar_size = 25;
@@ -146,6 +225,7 @@ function status_blog_comments( $comment, $args, $depth ) {
 					</div>
 				</div>
 			</section>
+			
 			<section class="comment-content">
 				<div class="comment-meta">
 					<p>
@@ -175,11 +255,12 @@ function status_blog_comments( $comment, $args, $depth ) {
 
 				</div>
 			</section>
+			
 		</article>
 <?php
 }
 
-function status_showfriends(){
+function status_showfriends() {
 	global $members_template, $bp;
 	$user = $bp->loggedin_user->id;
 	if( is_user_logged_in() ) : 
