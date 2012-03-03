@@ -45,7 +45,7 @@ add_action('init', 'status_adminbar_nav');
 function status_adminbar_nav() {
 
 		register_nav_menus( array(
-			'admin_bar_nav' => __( 'Admin Bar Custom Navigation Menu' ),
+			'admin_bar_nav' => __( 'Admin Bar Custom Navigation Menu', 'status' ),
 		) );
 
 }
@@ -353,7 +353,7 @@ function status_show_file_upload_xfield () {
 		bp_get_the_profile_field_name() .
 	'</label>';
 	echo '<input type="file" name="status-fileupload" />';
-	echo '&nbsp;<a href="#clear-background" class="clear-value" id="' . bp_get_the_profile_field_input_name() . '-clear">' . esc_attr(__('Clear')) . '</a>';
+	echo '&nbsp;<a href="#clear-background" class="clear-value" id="' . bp_get_the_profile_field_input_name() . '-clear">' . esc_attr(__('Clear', 'status')) . '</a>';
 	echo '<input type="hidden" name="' . bp_get_the_profile_field_input_name() . '" id="' . bp_get_the_profile_field_input_name() . '" value="' . esc_attr($background_image) . '" />';
 	echo '<div id="' . bp_get_the_profile_field_input_name() . '-preview"><img src="' . ($background_image ? esc_url($background_image) : '') . '" /></div>';
 }
