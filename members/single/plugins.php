@@ -6,9 +6,8 @@
 * need is not installed in the current theme. Use the actions in this template
 * to output everything your plugin needs.
  *
- * @package BP Default
- * @subpackage Status
- * @since Status 1.0
+ * @package Status
+ * @since 1.0
  */
 ?>
 

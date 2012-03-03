@@ -4,9 +4,8 @@
 *
 * Querystring is set via AJAX in _inc/ajax.php - bp_dtheme_object_filter()
  *
- * @package BP Default
- * @subpackage Status
- * @since Status 1.0
+ * @package Status
+ * @since 1.0
  */
 ?>
 

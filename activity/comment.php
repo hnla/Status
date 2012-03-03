@@ -5,9 +5,8 @@
 * This template is used by bp_activity_comments() functions to show
 * each activity.
  *
- * @package BP Default
- * @subpackage Status
- * @since Status 1.0
+ * @package Status
+ * @since 1.0
  */
 ?>
 

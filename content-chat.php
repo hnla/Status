@@ -2,9 +2,8 @@
 /**
  * Content - chat
  *
- * @package BP Default
- * @subpackage Status
- * @since Status 1.0
+ * @package Status
+ * @since 1.0
  */
 ?>
 
