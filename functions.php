@@ -5,7 +5,17 @@
  * @package Status
  * @since 1.0
  */
+ // Exit if accessed directly
+ if ( ! defined( 'ABSPATH' ) ) exit;
 
+ // If BuddyPress is not activated, switch back to the default WP theme
+ if ( ! defined( 'BP_VERSION' ) )
+ 	switch_theme( WP_DEFAULT_THEME, WP_DEFAULT_THEME );
+
+ // Bail out if enough of BuddyPress isn't loaded
+ if ( ! function_exists( 'bp_is_active' ) )
+ 	return;
+ 
 if ( !function_exists( 'status_setup' ) ) :
 function status_setup() {
 	unregister_nav_menu('primary');
