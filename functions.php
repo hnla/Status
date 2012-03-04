@@ -77,14 +77,14 @@ function bp_dtheme_enqueue_styles(){
 }
 endif;
 
-if ( ! function_exists( 'status_load_scripts' ) ) :
+if ( ! function_exists( 'status_enqueue_scripts' ) ) :
 /**
  * Enqueue theme javascript safely
  *
  * @see http://codex.wordpress.org/Function_Reference/wp_enqueue_script
  * @since 1.0
  */
-function status_load_scripts() {
+function status_enqueue_scripts() {
 	if ( is_admin() )
 			return;
 
@@ -766,7 +766,7 @@ function bp_member_profile_stats_get_member_status_count( $user_id = false ) {
 	if ( !$user_id )
 		$user_id = ( $bp->displayed_user->id ) ? $bp->displayed_user->id : $bp->loggedin_user->id;
 	
-	$total_count = $wpdb->get_var( $wpdb->prepare( "SELECT count(a.id) FROM {$bp->activity->table_name} a WHERE a.user_id = {$user_id} AND type = 'activity_update' AND a.component = '{$bp->activity->id}'" ) );
+		$total_count = $wpdb->get_var( $wpdb->prepare( "SELECT count(a.id) FROM {$bp->activity->table_name} a WHERE a.user_id = {$user_id} AND type = 'activity_update' AND a.component = '{$bp->activity->id}'" ) );
 	
 	if ( !$total_count )
 		$total_count == 0;
@@ -858,7 +858,7 @@ function bp_member_profile_stats_get_member_comment_count( $user_id = false ) {
 	if ( !$user_id )
 		$user_id = ( $bp->displayed_user->id ) ? $bp->displayed_user->id : $bp->loggedin_user->id;
 			
-	$total_count = $wpdb->get_var( $wpdb->prepare( "SELECT count( comment_ID ) FROM {$wpdb->comments} WHERE comment_approved = 1 AND user_id = {$user_id}" ) );
+		$total_count = $wpdb->get_var( $wpdb->prepare( "SELECT count( comment_ID ) FROM {$wpdb->comments} WHERE comment_approved = 1 AND user_id = {$user_id}" ) );
 		
 	if ( !$total_count )
 		$total_count == 0;
