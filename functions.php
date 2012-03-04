@@ -47,6 +47,9 @@ function status_setup() {
 
 		// Enqueue javascript
 		add_action( 'wp_enqueue_scripts', 'status_enqueue_scripts' );
+		
+		// Enqueue scripts
+		add_action( 'wp_enqueue_scripts', 'bp_dtheme_enqueue_styles' );
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
