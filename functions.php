@@ -288,61 +288,130 @@ function status_showfriends() {
 }
 
 /* ----- User-specific Front-end theme settings ----- */
+
+function status_get_background_image () {
+	global $bp;
+	$user_id = (int)$bp->displayed_user->id;
+	return (array)get_user_meta($user_id, 'status_design_bg_image', true);
+}
+
+function status_get_user_options () {
+	global $bp;
+	$user_id = (int)$bp->displayed_user->id;
+	$options = (array)get_user_meta($user_id, 'status_design_options', true);
+	$bg_image = status_get_background_image();
+
+	return wp_parse_args($options, array(
+		'bg-position' => 'left',
+		'bg-repeat' => 'repeat',
+		'bg-attachment' => 'fixed',
+		'bg-color' => '#fff',
+		'bg-image' => $bg_image,
+		'link-color' => '#f00',
+	));
+}
+
+function status_save_changes () {
+	if (empty($_POST)) return false;
+	if (!isset($_POST['status_design'])) return false;
+	
+	$nonce = isset($_POST['_nonce']) ? $_POST['_nonce'] : false;
+	if (!$nonce) return false;
+	if (!wp_verify_nonce($nonce, 'status-design_form')) return false;
+	
+	global $current_user, $bp;
+	$user_id = (int)$current_user->id;
+	if (!$user_id) return false;
+	
+	$update = array();
+	foreach ($_POST['status_design'] as $key => $value) {
+		$update[$key] = strip_tags($value);
+	}
+	if (isset($_POST['_status_design-remove_background'])) {
+		$old = status_get_background_image();
+		if ($old['file'] && file_exists($old['file'])) @unlink($old['file']);
+		update_user_meta($user_id, 'status_design_bg_image', array());
+	}
+	status_handle_image_upload();
+	if ($update) {
+		update_user_meta($user_id, 'status_design_options', $update);
+		wp_redirect($bp->loggedin_user->domain . $bp->profile->slug . '/design'); die;
+	}
+}
+
+/*** Actually upload the file */
+function status_handle_image_upload () {
+	global $current_user;
+	$user_id = (int)$current_user->id;
+	if (!$user_id) return false;
+	
+	$old = status_get_background_image();
+
+	// Determine if we have an upload
+	if (!isset($_FILES['status_design-bg_image'])) return false;
+	if (
+		(!empty( $_FILES['status_design-bg_image']['type'] ) && !preg_match('/(jpe?g|gif|png)$/i', $_FILES['status_design-bg_image']['type'])) 
+		|| 
+		!preg_match( '/(jpe?g|gif|png)$/i', $_FILES['status_design-bg_image']['name']) 
+	) {
+		//xprofile_delete_field_data($_present['status-background_image'], $user_id);
+		return false;
+	}
+	
+	if (!function_exists('wp_handle_upload')) @require_once(ABSPATH . 'wp-admin/includes/file.php');
+	$result = wp_handle_upload($_FILES['status_design-bg_image'], array('test_form'=>false));
+	if (isset($result['error'])) return false;
+	$result['file'] = str_replace('\\', '/', $result['file']);
+
+	update_user_meta($user_id, 'status_design_bg_image', $result);
+
+	if ($old['file'] && $result['file'] != $old['file'] && file_exists($old['file'])) {
+		@unlink($old['file']);
+	}
+}
+
+
 /*** Spit out customizations.*/
-function status_custom_user_settings () {
+function status_apply_custom_user_settings () {
 	$_present = bp_get_option('bp-xprofile-status-field_ids');
 	if (!$_present) return false;
 	
 	$_positions = array(
-		'left' => __('Left', 'status'),
-		'right' => __('Right', 'status'),
-		'center' => __('Center', 'status'),
+		'left',
+		'right', 
+		'center',
 	);
 	$_repeats = array(
-		'no-repeat' => __('No repeat', 'status'),
-		'repeat' => __('Tile', 'status'),
-		'repeat-x' => __('Tile horizontally', 'status'),
-		'repeat-y' => __('Tile vertically', 'status'),
+		'no-repeat',
+		'repeat',
+		'repeat-x',
+		'repeat-y',
 	);
 	$_attachments = array(
-		'scroll' => __('Scroll', 'status'),
-		'fixed' => __('Fixed', 'status'),
+		'scroll',
+		'fixed',
 	);
 	
-	$color = xprofile_get_field_data($_present['status-link_color']);
-	$color = $color ? $color : false;
-
-	$bg_image = xprofile_get_field_data($_present['status-background_image']);
-	$bg_image = $bg_image ? $bg_image : get_background_image();
-
-	$bg_color = xprofile_get_field_data($_present['status-background_color']);
-	$bg_color = $bg_color ? $bg_color : "#" . get_theme_mod("background_color", (defined('BACKGROUND') ? BACKGROUND : 'ffffff'));
-
-	$position = xprofile_get_field_data($_present['status-background_position']);
-	if ($position && in_array($position, $_positions)) {
-		$opts = array_flip($_positions);
-		$position = $opts[$position];
-	}
-	$position = $position ? $position : get_theme_mod('background_position_x', 'left');
-
-	$repeat = xprofile_get_field_data($_present['status-background_repeat']);
-	if ($repeat && in_array($repeat, $_repeats)) {
-		$opts = array_flip($_repeats);
-		$repeat = $opts[$repeat];
-	}
-	$repeat = $repeat ? $repeat : get_theme_mod('background_repeat', 'repeat');
-
-	$attachment = xprofile_get_field_data($_present['status-background_attachment']);
-	if ($position && in_array($repeat, $_attachments)) {
-		$opts = array_flip($_attachments);
-		$position = $opts[$position];
-	}
-	$attachment = $attachment ? strtolower($attachment) : get_theme_mod('background_attachment', 'scroll');
+	$options = status_get_user_options();
 	
-	$image = $bg_image ? "background-image: url({$bg_image});" : '';
-	$position = ($position && $image) ? "background-position: top {$position};" : '';
-	$repeat = ($repeat && $image) ? "background-repeat: {$repeat};" : '';
-	$attachment = ($attachment && $image) ? "background-attachment: {$attachment};" : '';
+	$color = $options['link-color'] ? $options['link-color'] : false;
+	$bg_image = $options['bg-image'] ? $options['bg-image'] : get_background_image();
+	$bg_color = $options['bg-color'] ? $options['bg-color'] : "#" . get_theme_mod("background_color", (defined('BACKGROUND') ? BACKGROUND : 'ffffff'));
+
+
+	$position = $options['bg-position'];
+	$position = ($position && in_array($position, $_positions)) ? $position : get_theme_mod('background_position_x', 'left');
+
+	$repeat = $options['bg-repeat'];
+	$repeat = ($repeat && in_array($repeat, $_repeats)) ? $repeat : get_theme_mod('background_repeat', 'repeat');
+
+	$attachment = $options['bg-attachment'];
+	$attachment = ($attachment && in_array($attachment, $_attachments)) ? strtolower($attachment) : get_theme_mod('background_attachment', 'scroll');
+	
+	$image = $bg_image ? "background-image: url({$bg_image['url']});" : '';
+	$position = ($position) ? "background-position: top {$position};" : '';
+	$repeat = ($repeat) ? "background-repeat: {$repeat};" : '';
+	$attachment = ($attachment) ? "background-attachment: {$attachment};" : '';
 	$background_color = ($bg_color && '#' != $bg_color) ? "background-color: {$bg_color};" : '';
 	
 	echo '<style type="text/css">' .
@@ -353,7 +422,7 @@ function status_custom_user_settings () {
 
 /*** Set up custom background handler.*/
 function status_setup_user_theme () {
-	add_custom_background('status_custom_user_settings', '');
+	add_custom_background('status_apply_custom_user_settings', '');
 }
 add_action('after_setup_theme', 'status_setup_user_theme', 20);
 
@@ -362,306 +431,105 @@ function status_get_design_group_name () {
 	return __('Design', 'status');
 }
 
-/*** Group ID getting utility function.*/
-function status_get_design_group_id () {
-	static $group_id;
-	if ($group_id) return $group_id;
-	
-	global $wpdb;
-	$bp_prefix = bp_core_get_table_prefix();
-	$_default_group_name = status_get_design_group_name();
-	
-	$group_name = bp_get_option('bp-xprofile-status-group-name');
-	$group_name = $group_name ? $group_name : $_default_group_name;
-	
-	$group_id = (int)$wpdb->get_var($wpdb->prepare("SELECT id FROM {$bp_prefix}bp_xprofile_groups WHERE name=%s LIMIT 1", $group_name));
-	if (!$group_id) {
-		$group_id = xprofile_insert_field_group(array(
-			'name' => $group_name,
-		));
-	}
-	// Handle group name change
-	if ($group_name != $_default_group_name) { // Name changed
-		$grp = new BP_XProfile_Group($group_id);
-		$grp->name = $_default_group_name;
-		$grp->save();
-		$group_name = $_default_group_name;
-	}
-	bp_update_option('bp-xprofile-status-group-name', $group_name);
-	return $group_id;
-}
-
 /*** Place the design link in the navigation.*/
 function status_design_group_url_setup () {
-	global $bp;
+	global $bp, $current_user;
+	if ($current_user->id != $bp->displayed_user->id) return false;
 	
 	$name = status_get_design_group_name();
-	$slug = 'edit/group/' . status_get_design_group_id();
+	$slug = 'design';
 	bp_core_new_subnav_item(array(
 		'name' => $name,
 		'slug' => $slug,
 		'parent_url' => $bp->loggedin_user->domain . $bp->profile->slug . '/',
 		'parent_slug' => $bp->profile->slug,
-		'screen_function' => '__return_false',
+		'screen_function' => 'status_dispatch_page_handlers',
 		'position' => 40 
 	));
 }
 add_action('bp_init', 'status_design_group_url_setup');
 
-/*** Shoot down the extra group in profile editing fields */
-function status_filter_profile_tab_links ($tabs) {
-	global $bp;
-	$group_id = status_get_design_group_id();
-	
-	// If this is the design group, show no tabs
-	if (bp_get_current_profile_group_id() == $group_id) {
-		$tabs = array();
-	} else { // Else, remove the design tab
-		$link = trailingslashit("{$bp->displayed_user->domain}{$bp->profile->slug}/edit/group/{$group_id}");
-		foreach ($tabs as $key => $tab) {
-			if (preg_match('/' . preg_quote($link, '/') . '/', $tab)) unset($tabs[$key]);
-		}
-	}
-	
-	return array_filter($tabs);
+
+function status_dispatch_page_handlers () {
+	status_save_changes();
+	add_action('bp_template_title', 'status_show_design_title');
+	add_action('bp_template_content',  'status_show_design_body');
+	add_action('bp_head', 'status_design_dependencies');
+	bp_core_load_template(apply_filters('bp_core_template_plugin', 'members/single/plugins'));
 }
-add_filter('xprofile_filter_profile_group_tabs', 'status_filter_profile_tab_links');
 
-/*** Allows new field type (fileupload) */
-function status_allow_file_upload_xfield ($fields) {
-	@$fields[] = 'status-fileupload';
-	return $fields;
+function status_show_design_title () {
+	echo '<h3>' . status_get_design_group_name() . '</h3>';
 }
-add_filter('xprofile_field_types', 'status_allow_file_upload_xfield');
 
-/*** Show editable field (fileupload) */
-function status_show_file_upload_xfield () {
-	global $field;
-	if ('status-fileupload' != $field->type) return false;
+function status_show_design_body () {
+	$options = status_get_user_options();
 	
-	$raw_background_image = isset($field->data->value) ? maybe_unserialize($field->data->value) : array();
-	$background_image = isset($raw_background_image) ? $raw_background_image : false;
+	echo '<form action="" method="POST" enctype="multipart/form-data" >';
 	
-	echo '<label for="' . bp_get_the_profile_field_input_name() . '">' . 
-		bp_get_the_profile_field_name() .
-	'</label>';
-	echo '<input type="file" name="status-fileupload" />';
-	echo '&nbsp;<a href="#clear-background" class="clear-value" id="' . bp_get_the_profile_field_input_name() . '-clear">' . esc_attr(__('Clear', 'status')) . '</a>';
-	echo '<input type="hidden" name="' . bp_get_the_profile_field_input_name() . '" id="' . bp_get_the_profile_field_input_name() . '" value="' . esc_attr($background_image) . '" />';
-	echo '<div id="' . bp_get_the_profile_field_input_name() . '-preview"><img src="' . ($background_image ? esc_url($background_image) : '') . '" /></div>';
+	echo '<input type="hidden" name="_nonce" value="' . esc_attr(wp_create_nonce('status-design_form')) . '" />';
+	
+	echo '<p>' .
+		'<label for="status-design-link_color">' . _e('Link color', 'status') . '</label>' .
+		'<input type="text" size="7" id="status-design-link_color" name="status_design[link-color]" value="' . $options['link-color'] . '" />' .
+	'</p>';
+	
+	echo '<p id="status-design-background_image-wrapper">' .
+		'<label for="">' . _e('Background image', 'status') . '</label>' .
+		'<input type="file" id="" name="status_design-bg_image" />' .
+		(
+			$options['bg-image'] ? '<div><img src="' . $options['bg-image']['url'] . '" />' .
+				'<br /><a href="#remove-background" id="status-design-remove_background">' . __('Remove background image', 'status') . '</a></div>'
+			: ''
+		) .
+	'</p>';
+	
+	echo '<p>' .
+		'<label for="status-design-position-left">' . _e('Background position', 'status') . '</label>' .
+			'<label for="status-design-position-left"><input type="radio" id="status-design-position-left" name="status_design[bg-position]" ' . (("left" == $options['bg-position']) ? 'checked="checked"' : '') . ' value="left" /> Left</label> ' .
+			'<label for="status-design-position-right"><input type="radio" id="status-design-position-right" name="status_design[bg-position]" ' . (("right" == $options['bg-position']) ? 'checked="checked"' : '') . ' value="right" /> Right</label> ' .
+			'<label for="status-design-position-center"><input type="radio" id="status-design-position-center" name="status_design[bg-position]" ' . (("center" == $options['bg-position']) ? 'checked="checked"' : '') . ' value="center" /> Center</label> ' .
+	'</p>';
+	
+	echo '<p>' .
+		'<label for="status-design-repeat-no">' . _e('Background repeat', 'status') . '</label>' .
+			'<label for="status-design-repeat-no"><input type="radio" id="status-design-repeat-no" name="status_design[bg-repeat]" ' . (("no-repeat" == $options['bg-repeat']) ? 'checked="checked"' : '') . ' value="no-repeat" /> None</label> ' .
+			'<label for="status-design-repeat-repeat"><input type="radio" id="status-design-repeat-repeat" name="status_design[bg-repeat]" ' . (("repeat" == $options['bg-repeat']) ? 'checked="checked"' : '') . ' value="repeat" /> Tile</label> ' .
+			'<label for="status-design-repeat-x"><input type="radio" id="status-design-repeat-x" name="status_design[bg-repeat]" ' . (("repeat-x" == $options['bg-repeat']) ? 'checked="checked"' : '') . ' value="repeat-x" /> Tile horizontally</label> ' .
+			'<label for="status-design-repeat-y"><input type="radio" id="status-design-repeat-y" name="status_design[bg-repeat]" ' . (("repeat-y" == $options['bg-repeat']) ? 'checked="checked"' : '') . ' value="repeat-y" /> Tile vertically</label> ' .
+	'</p>';
+	
+	echo '<p>' .
+		'<label for="status-design-attachment-fixed">' . _e('Background attachment', 'status') . '</label>' .
+			'<label for="status-design-attachment-scroll"><input type="radio" id="status-design-attachment-scroll" name="status_design[bg-attachment]" ' . (("scroll" == $options['bg-attachment']) ? 'checked="checked"' : '') . ' value="scroll" /> Scroll</label> ' .
+			'<label for="status-design-attachment-fixed"><input type="radio" id="status-design-attachment-fixed" name="status_design[bg-attachment]" ' . (("fixed" == $options['bg-attachment']) ? 'checked="checked"' : '') . ' value="fixed" /> Fixed</label> ' .
+	'</p>';
+	
+	echo '<p>' .
+		'<label for="status-design-background_color">' . _e('Background color', 'status') . '</label>' .
+		'<input type="text" size="7" id="status-design-background_color" name="status_design[bg-color]" value="' . $options['bg-color'] . '" />' .
+	'</p>';
+	
+	echo '<p>' .
+		'<input type="submit" class="button button-primary" value="' . esc_attr('Save', 'status') . '" />' .
+	'</p>';
+	
+	echo '</form>';
+	
+	add_action('wp_footer', 'status_custom_javascript');
 }
-add_action('bp_custom_profile_edit_fields', 'status_show_file_upload_xfield');
-
-/*** Actually upload the file */
-function status_handle_image_upload ($user_id) {
-	if (!$_POST) return false;
-	if (!$user_id) return false;
-	check_admin_referer('bp_xprofile_edit');
-
-	$_present = bp_get_option('bp-xprofile-status-field_ids');
-	$old_path = get_user_meta($user_id, 'status-image_path', true);
-
-	// Determine if we have an upload
-	if (!isset($_FILES['status-fileupload'])) return false;
-	if (
-		(!empty( $_FILES['status-fileupload']['type'] ) && !preg_match('/(jpe?g|gif|png)$/i', $_FILES['status-fileupload']['type'])) 
-		|| 
-		!preg_match( '/(jpe?g|gif|png)$/i', $_FILES['status-fileupload']['name']) 
-	) {
-		xprofile_delete_field_data($_present['status-background_image'], $user_id);
-		return false;
-	}
-	
-	if (!function_exists('wp_handle_upload')) @require_once(ABSPATH . 'wp-admin/includes/file.php');
-	$result = wp_handle_upload($_FILES['status-fileupload'], array('test_form'=>false));
-	if (isset($result['error'])) return false;
-	$result['file'] = str_replace('\\', '/', $result['file']);
-
-	xprofile_set_field_data(
-		$_present['status-background_image'],
-		$user_id,
-		$result['url']
-	);
-
-	if ($old_path && $result['file'] != $old_path && file_exists($old_path)) {
-		@unlink($old_path);
-	}
-	update_user_meta($user_id, 'status-image_path', $result['file']);
-}
-add_action('xprofile_updated_profile', 'status_handle_image_upload');
-
-/**
- * Create xProfile fields if they don't already exist.
- */
-function status_create_xprofile_fields () {
-	$group_id = status_get_design_group_id();
-
-	$_present = bp_get_option('bp-xprofile-status-field_ids');
-	$_present = $_present ? $_present : array();
-	$_fields = array(
-		'status-link_color' => __('Link color', 'status'),
-		'status-background_image' => __('Background image', 'status'),
-		'status-background_position' => __('Background position', 'status'),
-		'status-background_repeat' => __('Background repeat', 'status'),
-		'status-background_attachment' => __('Background attachment', 'status'),
-		'status-background_color' => __('Background color', 'status'),
-	);
-	
-	// Single-line fields
-	if (!@$_present['status-link_color']) { // Field not created
-		$_present['status-link_color'] = xprofile_insert_field(array(
-			'field_group_id' => $group_id,
-			'type' => 'textbox',
-			'field_order' => 1,
-			'name' => $_fields['status-link_color'],
-		));
-	} else if (!xprofile_get_field_id_from_name($_fields['status-link_color'])) { // Field not translated
-		$field = xprofile_get_field($_present['status-link_color']);
-		$field->name = $_fields['status-link_color'];
-		$field->save();
-	}
-	if (!@$_present['status-background_color']) { // Field not created
-		$_present['status-background_color'] = xprofile_insert_field(array(
-			'field_group_id' => $group_id,
-			'type' => 'textbox',
-			'field_order' => 100,
-			'name' => $_fields['status-background_color'],
-		));
-	} else if (!xprofile_get_field_id_from_name($_fields['status-background_color'])) { // Field not translated
-		$field = xprofile_get_field($_present['status-background_color']);
-		$field->name = $_fields['status-background_color'];
-		$field->save();
-	}
-	if (!@$_present['status-background_image']) { // Field not created
-		$_present['status-background_image'] = xprofile_insert_field(array(
-			'field_group_id' => $group_id,
-			'type' => 'status-fileupload',
-			'field_order' => 2,
-			'name' => $_fields['status-background_image'],
-		));
-	} else if (!xprofile_get_field_id_from_name($_fields['status-background_image'])) { // Field not translated
-		$field = xprofile_get_field($_present['status-background_image']);
-		$field->name = $_fields['status-background_image'];
-		$field->save();
-	} else if (xprofile_get_field_id_from_name($_fields['status-background_image'])) { // Specific check for updated fields
-		// Can probably be removed for production
-		$field = xprofile_get_field($_present['status-background_image']);
-		$field->type = 'status-fileupload';
-		$field->save();
-	}
-	
-	// Radio fields
-	if (!@$_present['status-background_position']) { // Field not created
-		$_present['status-background_position'] = xprofile_insert_field(array(
-			'field_group_id' => $group_id,
-			'type' => 'radio',
-			'field_order' => 3,
-			'name' => $_fields['status-background_position'],
-		));
-		xprofile_insert_field(array(
-			'field_group_id' => $group_id,
-			'parent_id' => $_present['status-background_position'],
-			'type' => 'radio',
-			'name' => __('Left', 'status'),
-		));
-		xprofile_insert_field(array(
-			'field_group_id' => $group_id,
-			'parent_id' => $_present['status-background_position'],
-			'type' => 'radio',
-			'name' => __('Center', 'status'),
-		));
-		xprofile_insert_field(array(
-			'field_group_id' => $group_id,
-			'parent_id' => $_present['status-background_position'],
-			'type' => 'radio',
-			'name' => __('Right', 'status'),
-		));
-	} else if (!xprofile_get_field_id_from_name($_fields['status-background_position'])) { // Field not translated
-		$field = xprofile_get_field($_present['status-background_position']);
-		$field->name = $_fields['status-background_position'];
-		$field->save();
-	}
-	if (!@$_present['status-background_repeat']) { // Field not created
-		$_present['status-background_repeat'] = xprofile_insert_field(array(
-			'field_group_id' => $group_id,
-			'type' => 'radio',
-			'field_order' => 4,
-			'name' => $_fields['status-background_repeat'],
-		));
-		xprofile_insert_field(array(
-			'field_group_id' => $group_id,
-			'parent_id' => $_present['status-background_repeat'],
-			'type' => 'radio',
-			'name' => __('No repeat', 'status'),
-		));
-		xprofile_insert_field(array(
-			'field_group_id' => $group_id,
-			'parent_id' => $_present['status-background_repeat'],
-			'type' => 'radio',
-			'name' => __('Tile', 'status'),
-		));
-		xprofile_insert_field(array(
-			'field_group_id' => $group_id,
-			'parent_id' => $_present['status-background_repeat'],
-			'type' => 'radio',
-			'name' => __('Tile horizontally', 'status'),
-		));
-		xprofile_insert_field(array(
-			'field_group_id' => $group_id,
-			'parent_id' => $_present['status-background_repeat'],
-			'type' => 'radio',
-			'name' => __('Tile vertically', 'status'),
-		));
-	} else if (!xprofile_get_field_id_from_name($_fields['status-background_repeat'])) { // Field not translated
-		$field = xprofile_get_field($_present['status-background_repeat']);
-		$field->name = $_fields['status-background_repeat'];
-		$field->save();
-	}
-	if (!@$_present['status-background_attachment']) { // Field not created
-		$_present['status-background_attachment'] = xprofile_insert_field(array(
-			'field_group_id' => $group_id,
-			'type' => 'radio',
-			'field_order' => 5,
-			'name' => $_fields['status-background_attachment'],
-		));
-		xprofile_insert_field(array(
-			'field_group_id' => $group_id,
-			'parent_id' => $_present['status-background_attachment'],
-			'type' => 'radio',
-			'name' => __('Scroll', 'status'),
-		));
-		xprofile_insert_field(array(
-			'field_group_id' => $group_id,
-			'parent_id' => $_present['status-background_attachment'],
-			'type' => 'radio',
-			'name' => __('Fixed', 'status'),
-		));
-	} else if (!xprofile_get_field_id_from_name($_fields['status-background_attachment'])) { // Field not translated
-		$field = xprofile_get_field($_present['status-background_attachment']);
-		$field->name = $_fields['status-background_attachment'];
-		$field->save();
-	}
-	
-	bp_update_option('bp-xprofile-status-field_ids', $_present);
-}
-add_action('init', 'status_create_xprofile_fields');
 
 /**
  * Load script and style dependencies, as appropriate.
  */
-function status_edit_profile_dependencies () {
-	if (bp_get_current_profile_group_id() != status_get_design_group_id()) return false;
+function status_design_dependencies () {
 	wp_enqueue_style("farbtastic");
 	wp_enqueue_script("jquery");
 	wp_enqueue_script("farbtastic", admin_url("js/farbtastic.js"), array("jquery"));
 	add_thickbox();
 }
-add_action('xprofile_screen_edit_profile', 'status_edit_profile_dependencies');
 
 function status_custom_javascript () {
-	if (bp_get_current_profile_group_id() != status_get_design_group_id()) return false;
-	$_present = bp_get_option('bp-xprofile-status-field_ids');
-	if (!$_present) return false;
 ?>
 <script type="text/javascript">
 (function ($) {
@@ -689,56 +557,36 @@ $(function () {
 	/* ----- Color picker ----- */
 	
 	// Init values
-	if (!$("#field_<?php echo $_present['status-link_color'];?>").val()) $("#field_<?php echo $_present['status-link_color'];?>").val(colorToHex($("a").css("color")));
-	if (!$("#field_<?php echo $_present['status-background_color'];?>").val()) $("#field_<?php echo $_present['status-background_color'];?>").val(colorToHex($("body").css("background-color")));
+	if (!$("#status-design-link_color").val()) $("#status-design-link_color").val(colorToHex($("a").css("color")));
+	if (!$("#status-design-background_color").val()) $("#status-design-background_color").val(colorToHex($("body").css("background-color")));
 	
-	$.each(['<?php echo $_present['status-link_color'];?>', '<?php echo $_present['status-background_color'];?>'], function (idx, cls) {
-		$("#field_" + cls)
-			.after('<div id="status-' + cls + '-colorpicker" style="display:none" />')
+	$.each(['link', 'background'], function (idx, cls) {
+		$("#status-design-" + cls + "_color")
+			.after('<div id="status-design-' + cls + '_color-colorpicker" style="display:none" />')
 			.focus(function () {
-				$("#status-" + cls + "-colorpicker").show();
+				$("#status-design-" + cls + "_color-colorpicker").show();
 			})
 			.blur(function () {
-				$("#status-" + cls + "-colorpicker").hide();
+				$("#status-design-" + cls + "_color-colorpicker").hide();
 			})
 		;
-		$("#status-" + cls + "-colorpicker").farbtastic("#field_" + cls);
+		$("#status-design-" + cls + "_color-colorpicker").farbtastic("#status-design-" + cls + "_color");
 	});
 	
 	/* ----- Background image ----- */
-	$("#field_<?php echo $_present['status-background_image'];?>-clear").click(function () {
-		$("#field_<?php echo $_present['status-background_image'];?>").val('');
-		$("#field_<?php echo $_present['status-background_image'];?>-preview img:first").attr("src", '').hide();
+	$("#status-design-remove_background").click(function () {
+		$("#status-design-background_image-wrapper")
+			.find("img").remove().end()
+			.find("input").remove().end()
+			.append('<input type="hidden" name="_status_design-remove_background" value="1" />')
+		;
 		return false;
 	});
-	if ($("#field_<?php echo $_present['status-background_image'];?>-preview img:first").attr("src")) $("#field_<?php echo $_present['status-background_image'];?>-preview img:first").show();
-	else $("#field_<?php echo $_present['status-background_image'];?>-preview img:first").hide();
-	
-	/* ----- Hacks ------ */
-	
-	// Form enctype hack, because there's no hook to do it normally
-	$("#profile-edit-form").attr("enctype", "multipart/form-data");
-	
-	/* ----- Tmp hacks -----*/
-	// Apply radio field classes
-	$(
-		"#field_<?php echo $_present['status-background_attachment'];?>," +
-		"#field_<?php echo $_present['status-background_position'];?>," +
-		"#field_<?php echo $_present['status-background_repeat'];?>"
-	).find("label").addClass("inline-label");
-	// Throw in some inline CSS, temporarily
-	$(".inline-label").css({
-		"display": "inline",
-		"margin-left": "10px"
-	});
-	// Replace the group editing title
-	$("#profile-edit-form>h4:first").text('<?php echo esc_js(status_get_design_group_name()); ?>');
 });
 })(jQuery);
 </script>
 <?php
 }
-add_action('bp_after_profile_edit_content', 'status_custom_javascript');
 
 /*** User Stats function - member/single member-header.php display */
 function bp_member_profile_stats_member_status() {
