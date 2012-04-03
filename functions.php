@@ -588,109 +588,106 @@ $(function () {
 <?php
 }
 
-/*** User Stats function - member/single member-header.php display */
-function bp_member_profile_stats_member_status() {
-	echo bp_member_profile_stats_get_member_status();
+// Create stats
+function status_member_profile_stats_member_status() {
+	echo status_member_profile_stats_get_member_status();
 }
 	
-function bp_member_profile_stats_get_member_status() {	
+function status_member_profile_stats_get_member_status() {	
 		if ( !bp_is_active( 'activity' ) )
 		return;
-		
-		$total_count = bp_member_profile_stats_get_member_status_count();
+	 
+		$total_count = status_user_activity_count($action = 'activity_update' );
 		
 		if ( $total_count == 0 ) {
-			$content = '<li>' . __( ' No updates', 'bp-member-profile-stats' ) . '</li>';
+			$content = '<li>' . __( ' No updates', 'status' ) . '</li>';
 		} else if ( $total_count == 1 ) {
 			$content = '<li><span class="status-count">'. $total_count .'</span>' . __( ' update', 'status' ) . '</li>';
 		} else {
 			$content = '<li><span class="status-count">'. $total_count .'</span>' . __( ' updates', 'status' ) . '</li>';
 		}
 		
-		return apply_filters( 'bp_member_profile_stats_get_member_status', $content, $total_count );
-	
-	}
-
-function bp_member_profile_stats_get_member_status_count( $user_id = false ) {
-	global $bp, $wpdb;
-	
-	if ( !$user_id )
-		$user_id = ( $bp->displayed_user->id ) ? $bp->displayed_user->id : $bp->loggedin_user->id;
-	
-		$total_count = $wpdb->get_var( $wpdb->prepare( "SELECT count(a.id) FROM {$bp->activity->table_name} a WHERE a.user_id = {$user_id} AND type = 'activity_update' AND a.component = '{$bp->activity->id}'" ) );
-	
-	if ( !$total_count )
-		$total_count == 0;
-	
-	return $total_count;
+		return apply_filters( 'status_member_profile_stats_get_member_status', $content, $total_count );	
 }
 
-function bp_member_profile_stats_member_posts() {
-	echo bp_member_profile_stats_get_member_posts();
+function status_member_profile_stats_member_topics() {
+	echo status_member_profile_stats_get_member_topics();
 }
 
-function bp_member_profile_stats_get_member_posts() {
-	
+function status_member_profile_stats_get_member_topics() {
+global $bp;	
 		if ( !bp_is_active( 'forums' ) )
 			return;
 		
-		$total_count = bp_member_profile_stats_get_member_post_count();
+		$user_id = ( $bp->displayed_user->id ) ? $bp->displayed_user->id : $bp->loggedin_user->id;		
+		$total_count = bp_forums_total_topic_count_for_user($user_id);
 		
 		if ( $total_count == 0 ) {
-			$content = '<li>' . __( ' No forum posts', 'bp-member-profile-stats' ) . '</li>';
-		} else if ( $total_count == 1 ) {
-			$content = '<li><span class="post-count">'. $total_count .'</span>' . __( ' forum post', 'status' ) . '</li>';
-		} else {
-			$content = '<li><span class="post-count">'. $total_count .'</span>' . __( ' forum posts', 'status' ) . '</li>';
-		}
-		
-		return apply_filters( 'bp_member_profile_stats_get_member_posts', $content, $total_count );
-}
-	
-function bp_member_profile_stats_get_member_post_count( $user_id = false ) {
-	global $bp, $wpdb, $bbdb;
-	
-	do_action( 'bbpress_init' );
-			
-	if ( !$user_id )
-		$user_id = ( $bp->displayed_user->id ) ? $bp->displayed_user->id : $bp->loggedin_user->id;
-			
-	$total_count = $wpdb->get_var( $wpdb->prepare( "SELECT count(post_id) FROM {$bbdb->posts} WHERE poster_id = {$user_id} AND post_status = 0" ) );
-		
-	if ( !$total_count )
-		$total_count == 0;
-	
-	return $total_count;
-}
-
-function bp_member_profile_stats_member_topics() {
-	echo bp_member_profile_stats_get_member_topics();
-}
-	
-function bp_member_profile_stats_get_member_topics() {
-	
-		if ( !bp_is_active( 'forums' ) )
-			return;
-		
-		$total_count = bp_forums_total_topic_count_for_user();
-		
-		if ( $total_count == 0 ) {
-			$content = '<li>' . __( ' No forum topics', 'bp-member-profile-stats' ) . '</li>';
+			$content = '<li>' . __( ' No forum topics', 'status' ) . '</li>';
 		} else if ( $total_count == 1 ) {
 			$content = '<li><span class="topic-count">'. $total_count .'</span>' . __( ' forum topic', 'status' ) . '</li>';
 		} else {
 			$content = '<li><span class="topic-count">'. $total_count .'</span>' . __( ' forum topics', 'status' ) . '</li>';
 		}
 		
-		return apply_filters( 'bp_member_profile_stats_get_member_topics', $content, $total_count );
+		return apply_filters( 'status_member_profile_stats_get_member_posts', $content, $total_count );
+}
+	
+function status_member_profile_stats_member_replies() {
+	echo status_member_profile_stats_get_member_replies();
+}
+	
+function status_member_profile_stats_get_member_replies() {
+global $bp;	
+		if ( !bp_is_active( 'forums' ) )
+			return;
+		
+		/**  
+		*this method is prefered but doesn't appear to return a valid result, returns positive value 
+		* feels as though it returns the sam value as forum topic started or vis versa
+		* falling back to using activity table
+		*$user_id = ( $bp->displayed_user->id ) ? $bp->displayed_user->id : $bp->loggedin_user->id;		
+		*$total_count = bp_forums_total_replied_count_for_user($user_id);
+		*/
+		$total_count = status_user_activity_count($action = 'new_forum_post' );
+		
+		if ( $total_count == 0 ) {
+			$content = '<li>' . __( ' No forum replies', 'bp-member-profile-stats' ) . '</li>';
+		} else if ( $total_count == 1 ) {
+			$content = '<li><span class="topic-replies">'. $total_count .'</span>' . __( ' forum reply', 'status' ) . '</li>';
+		} else {
+			$content = '<li><span class="topic-replies">'. $total_count .'</span>' . __( ' forum replies', 'status' ) . '</li>';
+		}
+		
+		return apply_filters( 'status_member_profile_stats_get_member_topics', $content, $total_count );
 }
 
-function bp_member_profile_stats_member_comments() {
-	echo bp_member_profile_stats_get_member_comments();
+function status_member_profile_stats_new_blog_post() {
+	echo status_member_profile_stats_get_new_blog_post();
 }
-	function bp_member_profile_stats_get_member_comments() {
+	
+function status_member_profile_stats_get_new_blog_post() {
+	
+		$total_count = status_user_activity_count($action = 'new_blog_post' );
 		
-		$total_count = bp_member_profile_stats_get_member_comment_count();
+		if ( $total_count == 0 ) {
+			return;
+		} else if ( $total_count == 1 ) {
+			$content = '<li><span class="blog-count">'. $total_count .'</span>' . __( ' blog post', 'status' ) . '</li>';
+		} else {
+			$content = '<li><span class="blog-count">'. $total_count .'</span>' . __( ' blog posts', 'status' ) . '</li>';
+		}
+		
+		return apply_filters( 'status_member_profile_stats_get_new_blog_post', $content, $total_count );
+}
+
+function status_member_profile_stats_member_comments() {
+	echo status_member_profile_stats_get_member_comments();
+}
+
+function status_member_profile_stats_get_member_comments() {
+		
+		$total_count = status_member_profile_stats_get_member_comment_count();
 		
 		if ( $total_count == 0 ) {
 			$content = '<li>' . __( ' No blog comments', 'bp-member-profile-stats' ) . '</li>';
@@ -700,10 +697,10 @@ function bp_member_profile_stats_member_comments() {
 			$content = '<li><span class="comment-count">'. $total_count .'</span>' . __( ' blog comments', 'status' ) . '</li>';
 		}
 		
-		return apply_filters( 'bp_member_profile_stats_get_member_comments', $content, $total_count );
+		return apply_filters( 'status_member_profile_stats_get_member_comments', $content, $total_count );
 }
 
-function bp_member_profile_stats_get_member_comment_count( $user_id = false ) {
+function status_member_profile_stats_get_member_comment_count( $user_id = false ) {
 	global $bp, $wpdb;
 	
 	if ( !$user_id )
@@ -720,14 +717,14 @@ function bp_member_profile_stats_get_member_comment_count( $user_id = false ) {
 function status_display_member_stats() {?>
 	<div id="member-stats">
 		<ul>
-		<?php  bp_member_profile_stats_member_status(); ?>
-		<?php  bp_member_profile_stats_member_posts(); ?>
-		<?php	 bp_member_profile_stats_member_topics(); ?>
-		<?php  bp_member_profile_stats_member_comments(); ?>
+		<?php  status_member_profile_stats_member_status();   ?>
+		<?php  status_member_profile_stats_member_topics();   ?>
+		<?php	 status_member_profile_stats_member_replies();  ?>
+		<?php  status_member_profile_stats_new_blog_post();   ?>
+		<?php  status_member_profile_stats_member_comments(); ?>
 		</ul>
 	</div>
 <?php
 }
 add_action('status_stats', 'status_display_member_stats');
-
 ?>
