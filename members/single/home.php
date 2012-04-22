@@ -9,7 +9,7 @@
 
 
 <?php get_header( 'status' ); ?>
-	
+
 	<div id="content-profile-headerfull">
 			<?php do_action( 'bp_before_member_home_content' ); ?>
 
@@ -30,8 +30,8 @@
 				</ul>
 			</div>
 		</div><!-- #item-nav -->
-		
-	<div id="content-profile">	
+
+	<div id="content-profile">
 			<div id="item-body">
 
 				<?php do_action( 'bp_before_member_body' );
@@ -73,7 +73,7 @@
 			<?php do_action( 'bp_after_member_home_content' ); ?>
 
 
-	
+
 	</div><!-- #content -->
 <?php get_sidebar( 'status' ); ?>
 <?php get_footer( 'status' ); ?>

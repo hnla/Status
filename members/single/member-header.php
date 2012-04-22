@@ -36,15 +36,15 @@
 			</div>
 
 		<?php endif; ?>
-		
+
 
 		<div id="item-buttons">
 
 			<?php do_action( 'bp_member_header_actions' ); ?>
 
 		</div><!-- #item-buttons -->
-		
-	
+
+
 
 	<?php
 	/***

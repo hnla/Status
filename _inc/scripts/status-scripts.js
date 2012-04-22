@@ -19,10 +19,10 @@ jQuery(document).ready( function() {
  */
 function supplemental_listener (e) {
 	if (e.keyCode != 27) return true;
-	
+
 	$(".activity-comments").hide();
 	$(document).unbind('keyup', supplemental_listener); // Remove the listener.
-	
+
 	return true;
 }
 
@@ -37,19 +37,19 @@ function supplemental_listener (e) {
 function initialize_comments_handling () {
 	// Hide comments by default
 	$(".activity-comments").hide();
-	
+
 	// Handle comments click
 	$(".acomment-reply.button").click(function () {
 		var $me = $(this);
-	
+
 		// Get activity parent
 		var $parent = $me.parents("li"); // This will only apply to activity updates - remove class, or add other specific class for group updates (.groups.created_group) etc.
 		if (!$parent.length) return false; // Can't find parent - pretend nothing happened
-		
+
 		// Get comments for this item
 		var $comments = $parent.find(".activity-comments");
 		if (!$comments.length) return true; // No comments? Bail out and let the default handler do its thing
-		
+
 		// Comments toggling logic
 		if ($comments.is(":visible")) { // If comments are visible, we have 2 possible scenarios:
 			// 1) Regular click on comments link - hide the comments
@@ -62,7 +62,7 @@ function initialize_comments_handling () {
 			$comments.show(); // Show comments
 			$(document).bind('keyup', supplemental_listener); // Bind supplemental handler
 		}
-		
+
 		// Allow default handler to pick up where we left off.
 		return true;
 	});
