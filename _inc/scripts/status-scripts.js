@@ -39,9 +39,8 @@ function initialize_comments_handling () {
 	$(".activity-comments").hide();
 
 	// Handle comments click
-	$(".acomment-reply.button").click(function () {
+	$(".acomment-reply.button").on('click', function () {
 		var $me = $(this);
-
 		// Get activity parent
 		var $parent = $me.parents("li"); // This will only apply to activity updates - remove class, or add other specific class for group updates (.groups.created_group) etc.
 		if (!$parent.length) return false; // Can't find parent - pretend nothing happened

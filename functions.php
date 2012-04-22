@@ -119,7 +119,6 @@ function status_adminbar_menu_init() {
  *
  * @global obj $wp_admin_bar
  * @since 1.0
- * @todo Double-check inline comments for accuracy
  */
 function status_admin_bar_menu() {
 	global $wp_admin_bar;
@@ -264,8 +263,7 @@ function status_blog_comments( $comment, $args, $depth ) {
 }
 
 function status_showfriends() {
-	global $members_template, $bp;
-	$user = $bp->loggedin_user->id;
+	$user = bp_loggedin_user_id();
 	if( is_user_logged_in() ) : 
 					if( bp_has_members('user_id=' . $user . '') && $user !== 0 ) : ?>
 
@@ -290,15 +288,11 @@ function status_showfriends() {
 /* ----- User-specific Front-end theme settings ----- */
 
 function status_get_background_image () {
-	global $bp;
-	$user_id = (int)$bp->displayed_user->id;
-	return (array)get_user_meta($user_id, 'status_design_bg_image', true);
+	return (array)get_user_meta(bp_displayed_user_id(), 'status_design_bg_image', true);
 }
 
 function status_get_user_options () {
-	global $bp;
-	$user_id = (int)$bp->displayed_user->id;
-	$options = (array)get_user_meta($user_id, 'status_design_options', true);
+	$options = (array)get_user_meta(bp_displayed_user_id(), 'status_design_options', true);
 	$bg_image = status_get_background_image();
 
 	return wp_parse_args($options, array(
@@ -319,8 +313,8 @@ function status_save_changes () {
 	if (!$nonce) return false;
 	if (!wp_verify_nonce($nonce, 'status-design_form')) return false;
 
-	global $current_user, $bp;
-	$user_id = (int)$current_user->id;
+	global $bp;
+	$user_id = bp_current_user_id();
 	if (!$user_id) return false;
 
 	$update = array();
@@ -335,14 +329,13 @@ function status_save_changes () {
 	status_handle_image_upload();
 	if ($update) {
 		update_user_meta($user_id, 'status_design_options', $update);
-		wp_redirect($bp->loggedin_user->domain . $bp->profile->slug . '/design'); die;
+		wp_redirect(bp_loggedin_user_domain() . $bp->profile->slug . '/design'); die;
 	}
 }
 
 /*** Actually upload the file */
 function status_handle_image_upload () {
-	global $current_user;
-	$user_id = (int)$current_user->id;
+	$user_id = bp_current_user_id();
 	if (!$user_id) return false;
 
 	$old = status_get_background_image();
@@ -433,15 +426,15 @@ function status_get_design_group_name () {
 
 /*** Place the design link in the navigation.*/
 function status_design_group_url_setup () {
-	global $bp, $current_user;
-	if ($current_user->id != $bp->displayed_user->id) return false;
+	global $bp;
+	if ( ! bp_is_my_profile() ) return false;
 
 	$name = status_get_design_group_name();
 	$slug = 'design';
 	bp_core_new_subnav_item(array(
 		'name' => $name,
 		'slug' => $slug,
-		'parent_url' => $bp->loggedin_user->domain . $bp->profile->slug . '/',
+		'parent_url' => bp_loggedin_user_domain() . $bp->profile->slug . '/',
 		'parent_slug' => $bp->profile->slug,
 		'screen_function' => 'status_dispatch_page_handlers',
 		'position' => 40 
@@ -574,7 +567,7 @@ $(function () {
 	});
 
 	/* ----- Background image ----- */
-	$("#status-design-remove_background").click(function () {
+	$("#status-design-remove_background").on('click', function () {
 		$("#status-design-background_image-wrapper")
 			.find("img").remove().end()
 			.find("input").remove().end()
@@ -628,11 +621,10 @@ function status_member_profile_stats_member_topics() {
 }
 
 function status_member_profile_stats_get_member_topics() {
-global $bp;
 		if ( !bp_is_active( 'forums' ) )
 			return;
 
-		$user_id = ( $bp->displayed_user->id ) ? $bp->displayed_user->id : $bp->loggedin_user->id;
+		$user_id = ( bp_displayed_user_id() ) ? bp_displayed_user_id() : bp_loggedin_user_id();
 		$total_count = bp_forums_total_topic_count_for_user($user_id);
 
 		if ( $total_count == 0 ) {
@@ -651,7 +643,6 @@ function status_member_profile_stats_member_replies() {
 }
 
 function status_member_profile_stats_get_member_replies() {
-global $bp;
 		if ( !bp_is_active( 'forums' ) )
 			return;
 
@@ -659,13 +650,13 @@ global $bp;
 		*this method is prefered but doesn't appear to return a valid result, returns positive value 
 		* feels as though it returns the sam value as forum topic started or vis versa
 		* falling back to using activity table
-		*$user_id = ( $bp->displayed_user->id ) ? $bp->displayed_user->id : $bp->loggedin_user->id;
+		*$user_id = ( bp_displayed_user_id() ) ? bp_displayed_user_id() : bp_loggedin_user_id();
 		*$total_count = bp_forums_total_replied_count_for_user($user_id);
 		*/
 		$total_count = status_user_activity_count($action = 'new_forum_post' );
 
 		if ( $total_count == 0 ) {
-			$content = '<li>' . __( ' No forum replies', 'bp-member-profile-stats' ) . '</li>';
+			$content = '<li>' . __( ' No forum replies', 'status' ) . '</li>';
 		} else if ( $total_count == 1 ) {
 			$content = '<li><span class="topic-replies">'. $total_count .'</span>' . __( ' forum reply', 'status' ) . '</li>';
 		} else {
@@ -714,10 +705,10 @@ function status_member_profile_stats_get_member_comments() {
 }
 
 function status_member_profile_stats_get_member_comment_count( $user_id = false ) {
-	global $bp, $wpdb;
+	global $wpdb;
 
 	if ( !$user_id )
-		$user_id = ( $bp->displayed_user->id ) ? $bp->displayed_user->id : $bp->loggedin_user->id;
+		$user_id = ( bp_displayed_user_id() ) ? bp_displayed_user_id() : bp_loggedin_user_id();
 
 		$total_count = $wpdb->get_var( $wpdb->prepare( "SELECT count( comment_ID ) FROM {$wpdb->comments} WHERE comment_approved = 1 AND user_id = {$user_id}" ) );
 
