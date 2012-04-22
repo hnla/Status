@@ -19,7 +19,7 @@
 
 			</div><!-- #item-header -->
 
-	</div>	
+	</div>
 	<div id="item-nav">
 		<div class="item-list-tabs no-ajax" id="object-nav" role="navigation">
 			<ul>
@@ -31,7 +31,7 @@
 			</ul>
 		</div>
 	</div><!-- #item-nav -->
-	
+
 			<div id="content">
 			<div id="item-body" class="primary" role="main">
 
@@ -46,7 +46,7 @@
 					</ul>
 				</div><!-- .item-list-tabs -->
 
-			
+
 				<h3><?php _e( 'Email Notification', 'status' ); ?></h3>
 
 				<?php do_action( 'bp_template_content' ) ?>

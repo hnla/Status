@@ -21,12 +21,12 @@
 										<label for="site-user-login"><?php _e( 'Username', 'status' ) ?></label>
 										<input type="text" name="log" id="site-user-login" class="input focus" value="<?php if ( isset( $user_login) ) echo esc_attr(stripslashes($user_login)); ?>"   required placeholder="Username"/>
 									</p>
-									
+
 									<p class="your-pass">
 										<label for="site-user-pass"><?php _e( 'Password', 'status' ) ?></label>
 										<input type="password" name="pwd" id="site-user-pass" class="input" value="" required />
 									</p>
-									
+
 									<p class="forgetmenot">
 										<label for="site-rememberme"><input name="rememberme" type="checkbox" id="site-rememberme" value="forever"  /> <?php _e( 'Remember Me', 'status' ) ?></label>
 									</p>
@@ -55,12 +55,12 @@
 										<label for="site-user-login"><?php _e( 'Username', 'status' ) ?></label>
 										<input type="text" name="log" id="site-user-login" class="input focus" value="<?php if ( isset( $user_login) ) echo esc_attr(stripslashes($user_login)); ?>"   required placeholder="Username"/>
 									</p>
-									
+
 									<p class="your-pass">
 										<label for="site-user-pass"><?php _e( 'Password', 'status' ) ?></label>
 										<input type="password" name="pwd" id="site-user-pass" class="input" value="" required />
 									</p>
-									
+
 									<p class="forgetmenot">
 										<label for="site-rememberme"><input name="rememberme" type="checkbox" id="site-rememberme" value="forever"  /> <?php _e( 'Remember Me', 'status' ) ?></label>
 									</p>
@@ -73,12 +73,12 @@
 								<?php do_action( 'bp_after_sidebar_login_form' ) ?>
 						</section>
 						<?php endif; ?>
-						
+
 						</div>
 				</div><!-- / #content -->
 			<?php endif; ?>
-			
+
 			<?php if ( is_user_logged_in() ) : ?>
-						<?php locate_template( array( 'activity/index.php' ), true ); ?>			
+						<?php locate_template( array( 'activity/index.php' ), true ); ?>
 			<?php endif; ?>
 <?php get_footer( ); ?>

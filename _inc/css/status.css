@@ -349,7 +349,7 @@ zoom: 1;
 Print styles.
 Inlined to avoid required HTTP connection: h5bp.com/r
 ========================================================================== */
- 
+
 @media print {
 * {
 background: transparent !important;
@@ -1280,7 +1280,7 @@ border-left: none;
 margin: 0;
 padding: 0 0 20px 0;
 }
-	
+
 #whats-new-avatar {
 float: left;
 width: 80px;
@@ -2562,13 +2562,13 @@ float: left;
 min-height: 1px;
 width: 74%;
 }
-	
+
 .activity #content, .home-page #content {
 float: left;
 min-height: 1px;
 width: 74%;
 }
-	
+
 #content-home {
 position: absolute;
 top: 50%;

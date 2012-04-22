@@ -24,18 +24,18 @@
 						if ( $tags_list ): ?>
 						<?php printf( __( 'Tags: %2$s', 'status'), 'tag-links', $tags_list ); ?> | 
 						<?php endif; ?>
-					</span>	
+					</span>
 					<span class="post-action alignright">
 						<a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'status' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php _e( 'Permlink', 'status'); ?></a>
 					</span>
-			
+
 				</div>
-				
+
 				</header>
 		<?php else : ?>
 				<header class="post-header">
 				<h1 class="post-title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'status' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
-			
+
 			<div class="post-info">
 				<?php printf( __( '%1$s <span>in %2$s</span>', 'status' ), get_the_date(), get_the_category_list( ', ' ) ); ?>
 				<span class="post-utility alignright"><?php edit_post_link( __( 'Edit this entry', 'status' ) ); ?></span>
@@ -44,11 +44,11 @@
 					if ( $tags_list ): ?>
 					<?php printf( __( 'Tags: %2$s', 'status'), 'tag-links', $tags_list ); ?> | 
 					<?php endif; ?>
-				</span>	
+				</span>
 				<span class="post-action alignright">
 					<a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'status' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php _e( 'Permlink', 'status'); ?></a>
 				</span>
-			
+
 			</div>
 				</header>
 		<?php endif; ?>
@@ -68,6 +68,6 @@
 			<div class="comments-link">
 				<?php comments_popup_link( __( '<span class="leave-reply">Comment</span>', 'status' ), __( '1 Comment', 'status' ), __( '% Comments', 'status' ) ); ?>
 			</div>
-		<?php endif; ?>			
+		<?php endif; ?>
 	</footer>
 </article>

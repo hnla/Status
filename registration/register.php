@@ -13,8 +13,8 @@
 
 				<?php do_action( 'bp_after_registration_disabled' ); ?>
 			</section>
-			<?php endif; // registration-disabled signup setp ?>			
-			
+			<?php endif; // registration-disabled signup setp ?>
+
 			<?php if ( 'request-details' == bp_get_current_signup_step() ) : ?>
 			<section id="do-signup" class="status-signup-steps">
 				<h2><?php _e( 'Create an Account', 'status' ) ?></h2>
@@ -30,7 +30,7 @@
 					<?php /***** Basic Account Details ******/ ?>
 
 					<legend><?php _e( 'Account Details', 'status' ) ?></legend>
-					
+
 					<div class="control-pairs">
 						<label for="signup_username">
 							<?php _e( 'Username', 'status' ) ?> <span class="label-required"><?php _e( '(required)', 'status' ) ?></span>
@@ -38,25 +38,25 @@
 						<?php do_action( 'bp_signup_username_errors' ) ?>
 						<input type="text" name="signup_username" id="signup_username" value="<?php bp_signup_username_value() ?>" required placeholder="Your User Name" />
 					</div>
-					
+
 					<div class="control-pairs">
 					<label for="signup_email"><?php _e( 'Email Address', 'status' ) ?> <span class="label-required"><?php _e( '(required)', 'status' ) ?></span></label>
 					<?php do_action( 'bp_signup_email_errors' ) ?>
 					<input type="email" name="signup_email" id="signup_email" value="<?php bp_signup_email_value() ?>" required placeholder="myemail@example.com" />
 					</div>
-					
+
 					<div class="control-pairs">
 					<label for="signup_password"><?php _e( 'Choose a Password', 'status' ) ?> <span class="label-required"><?php _e( '(required)', 'status' ) ?></span></label>
 					<?php do_action( 'bp_signup_password_errors' ) ?>
 					<input type="password" name="signup_password" id="signup_password" value="" required placeholder="Min 6 mixed alpha/numeric characters" />
 					</div>
-					
+
 					<div class="control-pairs">
 					<label for="signup_password_confirm"><?php _e( 'Confirm Password', 'status' ) ?> <span class="label-required"><?php _e( '(required)', 'status' ) ?></span></label>
 					<?php do_action( 'bp_signup_password_confirm_errors' ) ?>
 					<input type="password" name="signup_password_confirm" id="signup_password_confirm" value="" required placeholder="please repeat password" />
 					</div>
-				
+
 				</fieldset><!-- #basic-details-section -->
 
 				<?php do_action( 'bp_after_account_details_fields' ) ?>
@@ -115,7 +115,7 @@
 								<?php endif; ?>
 
 								<?php if ( 'radio' == bp_get_the_profile_field_type() ) : ?>
-									
+
 										<div class="radio control-pairs">
 											<p class="label"><?php bp_the_profile_field_name() ?> <?php if ( bp_get_the_profile_field_is_required() ) : ?><span class="label-required"><?php _e( '(required)', 'status' ) ?></span><?php endif; ?></p>
 
@@ -126,7 +126,7 @@
 											<a class="clear-value" href="javascript:clear( '<?php bp_the_profile_field_input_name() ?>' );"><?php _e( 'Clear', 'status' ) ?></a>
 											<?php endif; ?>
 										</div>
-									
+
 
 								<?php endif; ?>
 
@@ -144,7 +144,7 @@
 								<?php if ( 'datebox' == bp_get_the_profile_field_type() ) : ?>
 
 									<div class="datebox control-pairs">
-									
+
 										<label for="<?php bp_the_profile_field_input_name() ?>_day"><?php bp_the_profile_field_name() ?> <?php if ( bp_get_the_profile_field_is_required() ) : ?><span class="label-required"><?php _e( '(required)', 'status' ) ?></span><?php endif; ?></label>
 										<?php do_action( 'bp_' . bp_get_the_profile_field_input_name() . '_errors' ) ?>
 
@@ -159,13 +159,13 @@
 										<select name="<?php bp_the_profile_field_input_name() ?>_year" id="<?php bp_the_profile_field_input_name() ?>_year">
 											<?php bp_the_profile_field_options( 'type=year' ) ?>
 										</select>
-									
+
 									</div>
 
 								<?php endif; ?>
 
 								<?php do_action( 'bp_custom_profile_edit_fields' ) ?>
-								
+
 								<?php if( bp_get_the_profile_field_description() ) : ?>
 								<p class="description xprofile-desc"><?php bp_the_profile_field_description() ?></p>
 								<?php endif; ?>
@@ -180,7 +180,7 @@
 
 					</fieldset><!-- #profile-details-section -->
 					<?php /***** End Extra Profile Details ******/ ?>
-					
+
 					<?php do_action( 'bp_after_signup_profile_fields' ) ?>
 
 				<?php endif; ?>
@@ -199,7 +199,7 @@
 			<?php endif; // request-details signup step ?>
 
 			<?php if ( 'completed-confirmation' == bp_get_current_signup_step() ) : ?>
-			
+
 			<section id="sign-up-confirm" class="sign-up-complete">
 					<h2><?php _e( 'Sign Up Complete!', 'status' ) ?></h2>
 
@@ -219,7 +219,7 @@
 			<?php do_action( 'bp_custom_signup_steps' ) ?>
 
 			</form>
-		
+
 	</div><!-- / #content -->
 	<?php do_action( 'bp_after_register_page' ); ?>
 <?php get_footer(); ?>

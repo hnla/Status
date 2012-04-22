@@ -20,7 +20,7 @@
 				<?php get_search_form(); ?>
 				<?php do_action( 'bp_404' ); ?>
 		</div>
-	</article>	
+	</article>
 	<?php do_action( 'bp_after_404' ) ?>
 </div>
 <?php get_footer(); ?>

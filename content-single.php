@@ -20,13 +20,13 @@
 				if ( $tags_list ): ?>
 				<?php printf( __( 'Tags: %2$s', 'status'), 'tag-links', $tags_list ); ?> | 
 				<?php endif; ?>
-			</span>	
+			</span>
 			<span class="post-action alignright">
 				<a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'status' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php _e( 'Permlink', 'status'); ?></a>
 			</span>
-			
+
 		</div>
-		
+
 	</header>
 	<section class="post-content">
 		<?php the_content(); ?>
@@ -35,6 +35,6 @@
 	<footer class="post-meta">
 		<div class="alignleft"><?php previous_post_link( '%link', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'status' ) . '</span> %title' ); ?></div>
 		<div class="alignright"><?php next_post_link( '%link', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'status' ) . '</span>' ); ?></div>
-		
+
 	</footer>
 </article>

@@ -8,7 +8,7 @@
  /*
  Template Name: blog
  */
- 
+
 ?>
 
 

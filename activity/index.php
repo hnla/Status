@@ -127,7 +127,7 @@
 					</li>
 				</ul>
 			</div><!-- .item-list-tabs -->
-			
+
 			<?php do_action( 'bp_before_directory_activity_list' ); ?>
 
 			<div class="activity" role="main">

@@ -44,7 +44,7 @@
 
 				</ul>
 			</div><!-- .item-list-tabs -->
-			
+
 
 				<h3><?php _e( 'General Settings', 'status' ); ?></h3>
 

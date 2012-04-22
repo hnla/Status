@@ -21,14 +21,14 @@
 				if ( $tags_list ): ?>
 				<?php printf( __( 'Tags: %2$s', 'status'), 'tag-links', $tags_list ); ?> | 
 				<?php endif; ?>
-			</span>	
+			</span>
 			<span class="post-action alignright">
 				<a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'status' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php _e( 'Permlink', 'status'); ?></a>
 			</span>
 		</div>
 	</header>
 	<section class="post-content">
-		<?php the_content(); ?>	
+		<?php the_content(); ?>
 		<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( '<span>Pages:</span>', 'status'), 'after' => '</div>' ) ); ?>
 	</section>
 	<footer class="post-meta">

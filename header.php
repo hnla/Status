@@ -18,7 +18,7 @@
 		<title><?php wp_title( '|', true, 'right' ); bloginfo( 'name' ); ?></title>
 		<link rel="profile" href="http://gmpg.org/xfn/11">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		
+
 		<?php do_action( 'bp_head' ) ?>
 
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ) ?>" />
@@ -37,4 +37,3 @@
 		<?php do_action( 'bp_before_container' ) ?>
 		<div id="site-wrapper">
 		<div id="content-wrapper">
-		

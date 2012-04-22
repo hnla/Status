@@ -27,8 +27,8 @@
 		<div class="activity-header">
 				<?php bp_activity_action(); ?>
 		</div>
-	
-		
+
+
 				</div>
 		<?php if ( 'activity_comment' == bp_get_activity_type() ) : ?>
 			<div class="activity-inreplyto">
@@ -52,7 +52,7 @@
 			<?php if ( bp_activity_can_comment() ) : ?>
 
 				<a href="<?php bp_get_activity_comment_link(); ?>" class="button acomment-reply bp-primary-action" id="acomment-comment-<?php bp_activity_id(); ?>" title="View comments and reply"><?php printf( __( 'Comment <span>%s</span>', 'status' ), bp_activity_get_comment_count() ); ?></a>
-						 
+
 			 <?php 
 			// Do_action moved to bring show links into correct position, hnla
 			do_action( 'bp_activity_entry_meta' ); ?>
@@ -79,8 +79,8 @@
 		</div>
 
 	<?php endif; ?>
-		
-	
+
+
 	<?php do_action( 'bp_before_activity_entry_comments' ); ?>
 
 	<?php if ( ( is_user_logged_in() && bp_activity_can_comment() ) || bp_activity_get_comment_count() ) : ?>
@@ -108,7 +108,7 @@
 				</form>
 
 			<?php endif; ?>
-	
+
 		</div>
 
 	<?php endif; ?>

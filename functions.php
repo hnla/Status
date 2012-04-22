@@ -29,7 +29,7 @@
  // Bail out if enough of BuddyPress isn't loaded
  if ( ! function_exists( 'bp_is_active' ) )
  	return;
- 
+
 if ( !function_exists( 'status_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress and BuddyPress features.
@@ -47,7 +47,7 @@ function status_setup() {
 
 		// Enqueue javascript
 		add_action( 'wp_enqueue_scripts', 'status_enqueue_scripts' );
-		
+
 		// Enqueue scripts
 		add_action( 'wp_enqueue_scripts', 'bp_dtheme_enqueue_styles' );
 
@@ -228,7 +228,7 @@ function status_blog_comments( $comment, $args, $depth ) {
 					</div>
 				</div>
 			</section>
-			
+
 			<section class="comment-content">
 				<div class="comment-meta">
 					<p>
@@ -258,7 +258,7 @@ function status_blog_comments( $comment, $args, $depth ) {
 
 				</div>
 			</section>
-			
+
 		</article>
 <?php
 }
@@ -268,22 +268,22 @@ function status_showfriends() {
 	$user = $bp->loggedin_user->id;
 	if( is_user_logged_in() ) : 
 					if( bp_has_members('user_id=' . $user . '') && $user !== 0 ) : ?>
-					
+
 						<ul id="friends-list" class="looplist">
 						<?php	while ( bp_members() ) : bp_the_member(); ?>
 							<li>
 								<div class="item-avatar"><a href="<?php bp_member_permalink() ?>"><?php  bp_member_avatar('type=full&width=30&height=30') ?></a></div>
 							</li>				 
-		
+
 						<?php endwhile; ?>
-						</ul>			
-			
+						</ul>
+
 	<?php else: ?>
 
 		<p><?php _e( 'Once you friend someone it will show up here.', 'status' ) ?></p>
-			
+
 	<?php endif;
-			
+
 	endif;
 }
 
@@ -314,15 +314,15 @@ function status_get_user_options () {
 function status_save_changes () {
 	if (empty($_POST)) return false;
 	if (!isset($_POST['status_design'])) return false;
-	
+
 	$nonce = isset($_POST['_nonce']) ? $_POST['_nonce'] : false;
 	if (!$nonce) return false;
 	if (!wp_verify_nonce($nonce, 'status-design_form')) return false;
-	
+
 	global $current_user, $bp;
 	$user_id = (int)$current_user->id;
 	if (!$user_id) return false;
-	
+
 	$update = array();
 	foreach ($_POST['status_design'] as $key => $value) {
 		$update[$key] = strip_tags($value);
@@ -344,7 +344,7 @@ function status_handle_image_upload () {
 	global $current_user;
 	$user_id = (int)$current_user->id;
 	if (!$user_id) return false;
-	
+
 	$old = status_get_background_image();
 
 	// Determine if we have an upload
@@ -357,7 +357,7 @@ function status_handle_image_upload () {
 		//xprofile_delete_field_data($_present['status-background_image'], $user_id);
 		return false;
 	}
-	
+
 	if (!function_exists('wp_handle_upload')) @require_once(ABSPATH . 'wp-admin/includes/file.php');
 	$result = wp_handle_upload($_FILES['status_design-bg_image'], array('test_form'=>false));
 	if (isset($result['error'])) return false;
@@ -375,7 +375,7 @@ function status_handle_image_upload () {
 function status_apply_custom_user_settings () {
 	$_present = bp_get_option('bp-xprofile-status-field_ids');
 	if (!$_present) return false;
-	
+
 	$_positions = array(
 		'left',
 		'right', 
@@ -391,9 +391,9 @@ function status_apply_custom_user_settings () {
 		'scroll',
 		'fixed',
 	);
-	
+
 	$options = status_get_user_options();
-	
+
 	$color = $options['link-color'] ? $options['link-color'] : false;
 	$bg_image = $options['bg-image'] ? $options['bg-image'] : get_background_image();
 	$bg_color = $options['bg-color'] ? $options['bg-color'] : "#" . get_theme_mod("background_color", (defined('BACKGROUND') ? BACKGROUND : 'ffffff'));
@@ -407,13 +407,13 @@ function status_apply_custom_user_settings () {
 
 	$attachment = $options['bg-attachment'];
 	$attachment = ($attachment && in_array($attachment, $_attachments)) ? strtolower($attachment) : get_theme_mod('background_attachment', 'scroll');
-	
+
 	$image = $bg_image ? "background-image: url({$bg_image['url']});" : '';
 	$position = ($position) ? "background-position: top {$position};" : '';
 	$repeat = ($repeat) ? "background-repeat: {$repeat};" : '';
 	$attachment = ($attachment) ? "background-attachment: {$attachment};" : '';
 	$background_color = ($bg_color && '#' != $bg_color) ? "background-color: {$bg_color};" : '';
-	
+
 	echo '<style type="text/css">' .
 		($color ? "a, a:link, a:visited, a:hover { color: {$color}; } " : '') .
 		"body {	{$image} {$position} {$repeat} {$attachment} {$background_color} }" .
@@ -435,7 +435,7 @@ function status_get_design_group_name () {
 function status_design_group_url_setup () {
 	global $bp, $current_user;
 	if ($current_user->id != $bp->displayed_user->id) return false;
-	
+
 	$name = status_get_design_group_name();
 	$slug = 'design';
 	bp_core_new_subnav_item(array(
@@ -464,16 +464,16 @@ function status_show_design_title () {
 
 function status_show_design_body () {
 	$options = status_get_user_options();
-	
+
 	echo '<form action="" method="POST" enctype="multipart/form-data" >';
-	
+
 	echo '<input type="hidden" name="_nonce" value="' . esc_attr(wp_create_nonce('status-design_form')) . '" />';
-	
+
 	echo '<p>' .
 		'<label for="status-design-link_color">' . _e('Link color', 'status') . '</label>' .
 		'<input type="text" size="7" id="status-design-link_color" name="status_design[link-color]" value="' . $options['link-color'] . '" />' .
 	'</p>';
-	
+
 	echo '<p id="status-design-background_image-wrapper">' .
 		'<label for="">' . _e('Background image', 'status') . '</label>' .
 		'<input type="file" id="" name="status_design-bg_image" />' .
@@ -483,14 +483,14 @@ function status_show_design_body () {
 			: ''
 		) .
 	'</p>';
-	
+
 	echo '<p>' .
 		'<label for="status-design-position-left">' . _e('Background position', 'status') . '</label>' .
 			'<label for="status-design-position-left"><input type="radio" id="status-design-position-left" name="status_design[bg-position]" ' . (("left" == $options['bg-position']) ? 'checked="checked"' : '') . ' value="left" /> Left</label> ' .
 			'<label for="status-design-position-right"><input type="radio" id="status-design-position-right" name="status_design[bg-position]" ' . (("right" == $options['bg-position']) ? 'checked="checked"' : '') . ' value="right" /> Right</label> ' .
 			'<label for="status-design-position-center"><input type="radio" id="status-design-position-center" name="status_design[bg-position]" ' . (("center" == $options['bg-position']) ? 'checked="checked"' : '') . ' value="center" /> Center</label> ' .
 	'</p>';
-	
+
 	echo '<p>' .
 		'<label for="status-design-repeat-no">' . _e('Background repeat', 'status') . '</label>' .
 			'<label for="status-design-repeat-no"><input type="radio" id="status-design-repeat-no" name="status_design[bg-repeat]" ' . (("no-repeat" == $options['bg-repeat']) ? 'checked="checked"' : '') . ' value="no-repeat" /> None</label> ' .
@@ -498,24 +498,24 @@ function status_show_design_body () {
 			'<label for="status-design-repeat-x"><input type="radio" id="status-design-repeat-x" name="status_design[bg-repeat]" ' . (("repeat-x" == $options['bg-repeat']) ? 'checked="checked"' : '') . ' value="repeat-x" /> Tile horizontally</label> ' .
 			'<label for="status-design-repeat-y"><input type="radio" id="status-design-repeat-y" name="status_design[bg-repeat]" ' . (("repeat-y" == $options['bg-repeat']) ? 'checked="checked"' : '') . ' value="repeat-y" /> Tile vertically</label> ' .
 	'</p>';
-	
+
 	echo '<p>' .
 		'<label for="status-design-attachment-fixed">' . _e('Background attachment', 'status') . '</label>' .
 			'<label for="status-design-attachment-scroll"><input type="radio" id="status-design-attachment-scroll" name="status_design[bg-attachment]" ' . (("scroll" == $options['bg-attachment']) ? 'checked="checked"' : '') . ' value="scroll" /> Scroll</label> ' .
 			'<label for="status-design-attachment-fixed"><input type="radio" id="status-design-attachment-fixed" name="status_design[bg-attachment]" ' . (("fixed" == $options['bg-attachment']) ? 'checked="checked"' : '') . ' value="fixed" /> Fixed</label> ' .
 	'</p>';
-	
+
 	echo '<p>' .
 		'<label for="status-design-background_color">' . _e('Background color', 'status') . '</label>' .
 		'<input type="text" size="7" id="status-design-background_color" name="status_design[bg-color]" value="' . $options['bg-color'] . '" />' .
 	'</p>';
-	
+
 	echo '<p>' .
 		'<input type="submit" class="button button-primary" value="' . esc_attr('Save', 'status') . '" />' .
 	'</p>';
-	
+
 	echo '</form>';
-	
+
 	add_action('wp_footer', 'status_custom_javascript');
 }
 
@@ -542,11 +542,11 @@ function colorToHex(color) {
         return color;
     }
     var digits = /(.*?)rgb\((\d+), (\d+), (\d+)\)/.exec(color);
-    
+
     var red = parseInt(digits[2]);
     var green = parseInt(digits[3]);
     var blue = parseInt(digits[4]);
-    
+
     var rgb = blue | (green << 8) | (red << 16);
     return digits[1] + '#' + rgb.toString(16);
 };
@@ -555,11 +555,11 @@ function colorToHex(color) {
 $(function () {
 
 	/* ----- Color picker ----- */
-	
+
 	// Init values
 	if (!$("#status-design-link_color").val()) $("#status-design-link_color").val(colorToHex($("a").css("color")));
 	if (!$("#status-design-background_color").val()) $("#status-design-background_color").val(colorToHex($("body").css("background-color")));
-	
+
 	$.each(['link', 'background'], function (idx, cls) {
 		$("#status-design-" + cls + "_color")
 			.after('<div id="status-design-' + cls + '_color-colorpicker" style="display:none" />')
@@ -572,7 +572,7 @@ $(function () {
 		;
 		$("#status-design-" + cls + "_color-colorpicker").farbtastic("#status-design-" + cls + "_color");
 	});
-	
+
 	/* ----- Background image ----- */
 	$("#status-design-remove_background").click(function () {
 		$("#status-design-background_image-wrapper")
@@ -592,13 +592,13 @@ $(function () {
 function status_member_profile_stats_member_status() {
 	echo status_member_profile_stats_get_member_status();
 }
-	
-function status_member_profile_stats_get_member_status() {	
+
+function status_member_profile_stats_get_member_status() {
 		if ( !bp_is_active( 'activity' ) )
 		return;
-	 
+
 		$total_count = status_user_activity_count($action = 'activity_update' );
-		
+
 		if ( $total_count == 0 ) {
 			$content = '<li>' . __( ' No updates', 'status' ) . '</li>';
 		} else if ( $total_count == 1 ) {
@@ -606,8 +606,8 @@ function status_member_profile_stats_get_member_status() {
 		} else {
 			$content = '<li><span class="status-count">'. $total_count .'</span>' . __( ' updates', 'status' ) . '</li>';
 		}
-		
-		return apply_filters( 'status_member_profile_stats_get_member_status', $content, $total_count );	
+
+		return apply_filters( 'status_member_profile_stats_get_member_status', $content, $total_count );
 }
 
 function status_member_profile_stats_member_topics() {
@@ -615,13 +615,13 @@ function status_member_profile_stats_member_topics() {
 }
 
 function status_member_profile_stats_get_member_topics() {
-global $bp;	
+global $bp;
 		if ( !bp_is_active( 'forums' ) )
 			return;
-		
-		$user_id = ( $bp->displayed_user->id ) ? $bp->displayed_user->id : $bp->loggedin_user->id;		
+
+		$user_id = ( $bp->displayed_user->id ) ? $bp->displayed_user->id : $bp->loggedin_user->id;
 		$total_count = bp_forums_total_topic_count_for_user($user_id);
-		
+
 		if ( $total_count == 0 ) {
 			$content = '<li>' . __( ' No forum topics', 'status' ) . '</li>';
 		} else if ( $total_count == 1 ) {
@@ -629,28 +629,28 @@ global $bp;
 		} else {
 			$content = '<li><span class="topic-count">'. $total_count .'</span>' . __( ' forum topics', 'status' ) . '</li>';
 		}
-		
+
 		return apply_filters( 'status_member_profile_stats_get_member_posts', $content, $total_count );
 }
-	
+
 function status_member_profile_stats_member_replies() {
 	echo status_member_profile_stats_get_member_replies();
 }
-	
+
 function status_member_profile_stats_get_member_replies() {
-global $bp;	
+global $bp;
 		if ( !bp_is_active( 'forums' ) )
 			return;
-		
+
 		/**  
 		*this method is prefered but doesn't appear to return a valid result, returns positive value 
 		* feels as though it returns the sam value as forum topic started or vis versa
 		* falling back to using activity table
-		*$user_id = ( $bp->displayed_user->id ) ? $bp->displayed_user->id : $bp->loggedin_user->id;		
+		*$user_id = ( $bp->displayed_user->id ) ? $bp->displayed_user->id : $bp->loggedin_user->id;
 		*$total_count = bp_forums_total_replied_count_for_user($user_id);
 		*/
 		$total_count = status_user_activity_count($action = 'new_forum_post' );
-		
+
 		if ( $total_count == 0 ) {
 			$content = '<li>' . __( ' No forum replies', 'bp-member-profile-stats' ) . '</li>';
 		} else if ( $total_count == 1 ) {
@@ -658,18 +658,18 @@ global $bp;
 		} else {
 			$content = '<li><span class="topic-replies">'. $total_count .'</span>' . __( ' forum replies', 'status' ) . '</li>';
 		}
-		
+
 		return apply_filters( 'status_member_profile_stats_get_member_topics', $content, $total_count );
 }
 
 function status_member_profile_stats_new_blog_post() {
 	echo status_member_profile_stats_get_new_blog_post();
 }
-	
+
 function status_member_profile_stats_get_new_blog_post() {
-	
+
 		$total_count = status_user_activity_count($action = 'new_blog_post' );
-		
+
 		if ( $total_count == 0 ) {
 			return;
 		} else if ( $total_count == 1 ) {
@@ -677,7 +677,7 @@ function status_member_profile_stats_get_new_blog_post() {
 		} else {
 			$content = '<li><span class="blog-count">'. $total_count .'</span>' . __( ' blog posts', 'status' ) . '</li>';
 		}
-		
+
 		return apply_filters( 'status_member_profile_stats_get_new_blog_post', $content, $total_count );
 }
 
@@ -686,9 +686,9 @@ function status_member_profile_stats_member_comments() {
 }
 
 function status_member_profile_stats_get_member_comments() {
-		
+
 		$total_count = status_member_profile_stats_get_member_comment_count();
-		
+
 		if ( $total_count == 0 ) {
 			$content = '<li>' . __( ' No blog comments', 'bp-member-profile-stats' ) . '</li>';
 		} else if ( $total_count == 1 ) {
@@ -696,21 +696,21 @@ function status_member_profile_stats_get_member_comments() {
 		} else {
 			$content = '<li><span class="comment-count">'. $total_count .'</span>' . __( ' blog comments', 'status' ) . '</li>';
 		}
-		
+
 		return apply_filters( 'status_member_profile_stats_get_member_comments', $content, $total_count );
 }
 
 function status_member_profile_stats_get_member_comment_count( $user_id = false ) {
 	global $bp, $wpdb;
-	
+
 	if ( !$user_id )
 		$user_id = ( $bp->displayed_user->id ) ? $bp->displayed_user->id : $bp->loggedin_user->id;
-			
+
 		$total_count = $wpdb->get_var( $wpdb->prepare( "SELECT count( comment_ID ) FROM {$wpdb->comments} WHERE comment_approved = 1 AND user_id = {$user_id}" ) );
-		
+
 	if ( !$total_count )
 		$total_count == 0;
-	
+
 	return $total_count;
 }
 
