@@ -567,7 +567,7 @@ $(function () {
 	});
 
 	/* ----- Background image ----- */
-	$("#status-design-remove_background").click(function () {
+	$("#status-design-remove_background").on('click', function () {
 		$("#status-design-background_image-wrapper")
 			.find("img").remove().end()
 			.find("input").remove().end()
