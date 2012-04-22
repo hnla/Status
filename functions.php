@@ -588,6 +588,19 @@ $(function () {
 <?php
 }
 
+/*** User Stats function - member/single member-header.php display */
+
+// Get user activity counts
+function status_user_activity_count($action) {		
+global $bp;
+	$user_id = ( $bp->displayed_user->id ) ? $bp->displayed_user->id : $bp->loggedin_user->id;
+	$args = array('user_id'=>$user_id,'action'=>$action);
+	$user_activity = bp_activity_get (array( 'filter' => $args ));
+	
+	return $user_activity['total'];
+	// var_dump($user_activity);
+}
+
 // Create stats
 function status_member_profile_stats_member_status() {
 	echo status_member_profile_stats_get_member_status();
