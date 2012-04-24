@@ -8,6 +8,5 @@
 ?>
 
 <?php get_header(); ?>
-			
-						<?php locate_template( array( 'activity/index.php' ), true ); ?>
+			<?php locate_template( array( 'activity/index.php' ), true ); ?>
 <?php get_footer( ); ?>
