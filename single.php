@@ -6,6 +6,7 @@
  * @since 1.0
  */
 ?>
+
 <?php get_header(); ?>
 <div id="content" class="primary" role="main">
 	<?php do_action( 'bp_before_blog_single_post' ) ?>
