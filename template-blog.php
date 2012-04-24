@@ -8,9 +8,7 @@
  /*
  Template Name: blog
  */
-
 ?>
-
 
 <?php get_header(); ?>
 <div id="content" class="primary" role="main">

@@ -7,7 +7,6 @@
  */
 ?>
 
-
 <?php get_header(); ?>
 <div id="content" class="primary" role="main">
 	<?php do_action( 'bp_before_archive' ) ?>

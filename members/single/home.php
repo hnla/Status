@@ -7,7 +7,6 @@
  */
 ?>
 
-
 <?php get_header( 'status' ); ?>
 
 	<div id="content-profile-headerfull">
