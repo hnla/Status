@@ -703,12 +703,12 @@ function status_member_profile_stats_get_member_comments() {
 }
 
 function status_member_profile_stats_get_member_comment_count( $user_id = false ) {
-	global $wpdb;
 
 	if ( !$user_id )
 		$user_id = ( bp_displayed_user_id() ) ? bp_displayed_user_id() : bp_loggedin_user_id();
 
-		$total_count = $wpdb->get_var( $wpdb->prepare( "SELECT count( comment_ID ) FROM {$wpdb->comments} WHERE comment_approved = 1 AND user_id = {$user_id}" ) );
+		$args = array('status' => 'approve', 'user_id' => $user_id, 'count' => true);
+		$total_count =  get_comments( $args );
 
 	if ( !$total_count )
 		$total_count == 0;
