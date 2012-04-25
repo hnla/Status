@@ -4,6 +4,8 @@
  *
  * @package Status
  * @since 1.0
+ *
+ *  Template Name: Forcelogin
  */
 ?>
 
