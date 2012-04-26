@@ -418,7 +418,7 @@ padding: 0;
 margin: 0 auto;
 max-width: 1240px;
 overflow: hidden;
-padding: 20px 0px;
+padding: 20px 0;
 }
 #content-wrapper, #header-wrapper, #friends-wrapper,
 #widgets-wrapper, #footer-wrapper {
@@ -530,7 +530,7 @@ font-size: 0.9em;
 }
 #site-generator {
 color: #aaa;
-text-shadow: -1px -1px 0px #111;
+text-shadow: -1px -1px 0 #111;
 font-size: 0.9em;
 }
 #footer-wrapper {
@@ -619,7 +619,7 @@ text-decoration: underline;
 }
 
 p {
-margin: 0 0 10px 0;
+margin: 0 0 10px;
 }
 
 p:last-child {
@@ -702,7 +702,7 @@ font-size: 1em;
 }
 
 #item-header-content h2, .status-signup h2 {
-margin: 0 0 10px 0;
+margin: 0 0 10px;
 font-weight: 700;
 }
 #new-topic-post h4 {
@@ -761,7 +761,7 @@ div.page ul ul,
 div.page ol ol,
 div.page ol ul,
 div.page ul ol {
-margin-bottom: 0px;
+margin-bottom: 0;
 }
 
 /*--------------------------------------------------------------
@@ -920,7 +920,7 @@ margin: 15px 15px 0 0;
 }
 .commentlist ul.children div.comment-avatar-box {
 float: left;
-margin: 0 10px 0 0;
+margin: 0 10px 0;
 }
 div.comment-avatar-box img {
 border: 2px solid #eee;
@@ -976,7 +976,7 @@ width: 25px;
 }
 .commentlist ul.children div.comment-meta {
 font-size: 0.9em;
-margin: 0 0 10px 0;
+margin: 0 0 10px;
 }
 .commentlist ul.children li {
 border-top: 2px solid #fffeff;
@@ -1003,7 +1003,7 @@ float: inherit;
 }
 #respond .comment-avatar-box {
 float: left;
-margin: 0 15px 0 0;
+margin: 0 15px 0;
 }
 #respond .form-submit {
 margin-bottom: 0;
@@ -1021,8 +1021,8 @@ margin-right: 20px;
 border-style: none;
 }
 #nav-below {
-margin: 0 0;
-padding: 0 0;
+margin: 0;
+padding: 0;
 }
 #nav-above {
 margin: 0 0 15px;
@@ -1141,7 +1141,7 @@ clear: both;
 div.page,
 div.post,
 div.attachment {
-margin: 0 0 15px 0;
+margin: 0 0 15px;
 overflow: hidden;
 }
 div.page:last-child,
@@ -1250,7 +1250,7 @@ border-radius: 3px;
 -webkit-border-radius: 3px;
 }
 .post-info {
-padding: 0 0 10px 0;
+padding: 0 0 10px;
 color: #888;
 font-style: italic;
 font-size: 0.9em;
@@ -1267,7 +1267,7 @@ overflow: hidden;
 6.1 - Activity
 --------------------------------------------------------------*/
 #whats-new-declare {
-margin: 0 0 20px 0;
+margin: 0 0 20px;
 width: 100%;
 min-height: 100px;
 }
@@ -1278,7 +1278,7 @@ border-right: none;
 border-top: none;
 border-left: none;
 margin: 0;
-padding: 0 0 20px 0;
+padding: 0 0 20px;
 }
 
 #whats-new-avatar {
@@ -1472,10 +1472,10 @@ background: #fffeee;
 }
 .acomment-avatar {
 float: left;
-margin: 0 20px 0 0;
+margin: 0 20px 0;
 }
 .activity-avatar img {
-background: #ffffff;
+background: #fff;
 border-bottom: 1px solid #ddd;
 border-left: 1px solid #fff;
 border-right: 1px solid #ddd;
@@ -1494,7 +1494,6 @@ padding: 0;
 list-style: none;
 }
 .activity-inner {
-clear: right;
 padding-bottom: 0 0 10px 0;
 margin-top: 0;
 }
@@ -1509,46 +1508,49 @@ padding-top: 0;
 .activity-details {
 overflow: hidden;
 }
-
+.activity-inner,
+.activity-meta {
+margin-left: 65px;
+}
 .activity-inreplyto {
 color: #999;
 font-size: 0.9em;
 }
 
 a.delete-activity, a.delete-activity-single, a.acomment-delete {
-background: url('../images/icons.png') 0px -96px no-repeat;
+background: url('../images/icons.png') 0 -96px no-repeat;
 padding: 2px 0 0 20px;
 margin-right: 8px;
 opacity: 0.3;
 }
 
 a.acomment-reply {
-background: url('../images/icons.png') 0px -16px no-repeat;
+background: url('../images/icons.png') 0 -16px no-repeat;
 padding: 2px 0 0 20px;
 margin-right: 8px;
 opacity: 0.3;
 }
 a.fav, a.unfav {
-background: url('../images/icons.png') 0px -56px no-repeat;
+background: url('../images/icons.png') 0 -56px no-repeat;
 padding: 2px 0 0 20px;
 margin-right: 8px;
 opacity: 0.3;
 }
 
 a:hover.acomment-reply {
-background: url('../images/icons.png') 0px 3px no-repeat;
+background: url('../images/icons.png') 0 3px no-repeat;
 padding: 2px 0 0 20px;
 margin-right: 8px;
 opacity: 1;
 }
 a:hover.unfav, a:hover.fav {
-background: url('../images/icons.png') 0px -36px no-repeat;
+background: url('../images/icons.png') 0 -36px no-repeat;
 padding: 2px 0 0 20px;
 margin-right: 8px;
 opacity: 1;
 }
 a:hover.delete-activity, a:hover.delete-activity-single, a:hover.acomment-delete {
-background: url('../images/icons.png') 0px -76px no-repeat;
+background: url('../images/icons.png') 0 -76px no-repeat;
 padding: 2px 0 0 20px;
 margin-right: 8px;
 opacity: 1;
@@ -1575,7 +1577,7 @@ div.activity-comments form.ac-form {
 background: #f7f7f7;
 border-top: 1px solid #fff;
 display: none;
-margin: 10px 0 0 0;
+margin: 10px 0 0;
 padding: 10px;
 clear: both;
 }
@@ -1620,7 +1622,7 @@ div.activity-comments form div.ac-reply-avatar {
 float: left;
 }
 div.ac-reply-avatar img {
-background: #ffffff;
+background: #fff;
 border-bottom: 1px solid #ddd;
 border-left: 1px solid #fff;
 border-right: 1px solid #ddd;
@@ -1843,6 +1845,7 @@ border-radius: 4px;
 -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
 box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
 }
+
 input:focus, textarea:focus {
 border-color: rgba(0, 0, 0, 0.1);
 -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(0, 0, 0, 0.6);
@@ -1936,13 +1939,13 @@ color: #666;
 margin-top: 10px;
 }
 #item-header-content .friendship-button {
-margin-top: 0px;
+margin-top: 0;
 }
 #members-order-select{
 padding: 10px;
 }
 .group-button{
-margin-top:10px;
+margin-top: 10px;
 }
 /*--------------------------------------------------------------
 6.6 - Ajax Loading
@@ -2014,7 +2017,7 @@ ul#topic-post-list {
 margin: 0;
 }
 #topic-post-list {
-background: #ffffff;
+background: #fff;
 padding: 10px;
 }
 #topic-post-list .post-content {
@@ -2158,14 +2161,14 @@ width: 15%;
 }
 table.forum p.topic-meta {
 font-size: 0.9em;
-margin: 5px 0 0 0;
+margin: 5px 0 0;
 }
 
 /*--------------------------------------------------------------
 6.8 - Headers, Lists and Tabs - Activity, Groups, Blogs, Forums
 --------------------------------------------------------------*/
 #content-profile-headerfull #item-header {
-margin: 20px 0px 30px 0px;
+margin: 20px 0 30px ;
 overflow: hidden;
 text-decoration: none;
 background: #f9f9f9;
@@ -2437,7 +2440,7 @@ margin-top: 0;
 }
 
 #subnav ul {
-margin: 0px;
+margin: 0;
 }
 div.item-list-tabs ul li.feed a {
 background: url( ../images/rss.png ) center left no-repeat;
@@ -2598,14 +2601,14 @@ width: 45%;
 margin: 0 auto;
 max-width: 1240px;
 overflow: hidden;
-padding: 20px 0px 40px 0px;
+padding: 20px 0 40px 0;
 overflow: hidden;
 }
 .home.logged-in #content-wrapper {
 margin: 0 auto;
 max-width: 1240px;
 overflow: hidden;
-padding: 30px 0px 40px 0px;
+padding: 30px 0 40px 0;
 }
 #activity-filter-select {
 float: right;
