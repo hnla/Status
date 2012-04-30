@@ -314,7 +314,7 @@ function status_save_changes () {
 	if (!wp_verify_nonce($nonce, 'status-design_form')) return false;
 
 	global $bp;
-	$user_id = bp_current_user_id();
+	$user_id = ( current_user_can('administrator') && ! bp_is_my_profile() ) ? bp_displayed_user_id() : bp_current_user_id();
 	if (!$user_id) return false;
 
 	$update = array();
@@ -329,7 +329,7 @@ function status_save_changes () {
 	status_handle_image_upload();
 	if ($update) {
 		update_user_meta($user_id, 'status_design_options', $update);
-		wp_redirect(bp_loggedin_user_domain() . $bp->profile->slug . '/design'); die;
+		wp_redirect(bp_core_get_user_domain($user_id) . $bp->profile->slug . '/design'); die;
 	}
 }
 
@@ -427,7 +427,7 @@ function status_get_design_group_name () {
 /*** Place the design link in the navigation.*/
 function status_design_group_url_setup () {
 	global $bp;
-	if ( ! bp_is_my_profile() ) return false;
+	if ( !current_user_can('administrator') && ! bp_is_my_profile() ) return false;
 
 	$name = status_get_design_group_name();
 	$slug = 'design';
