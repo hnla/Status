@@ -109,7 +109,7 @@ endif;
  */
 add_action('admin_bar_init', 'status_adminbar_menu_init');
 function status_adminbar_menu_init() {
-	if (!is_super_admin() || !is_admin_bar_showing() )
+	if (!is_admin_bar_showing() )
 		return;
  	add_action( 'admin_bar_menu', 'status_admin_bar_menu', 1000 );
 }
