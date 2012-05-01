@@ -1752,7 +1752,7 @@ padding: 0;
 overflow: hidden;
 list-style: none;
 }
-#content-profile input[type="submit"],.generic-button a, .clear-value, .submit input[type="submit"], .submitbutton, #blogs-directory-form input[type="submit"], .submitbutton, #members-directory-form input[type="submit"], .form-submit #submit, #signup_submit, #submit, #searchsubmit, .standard-form input[type="submit"], .activity-comments input[type="submit"] {
+#group-creation-previous, #content-profile input[type="submit"],.generic-button a, .clear-value, .submit input[type="submit"], .submitbutton, #blogs-directory-form input[type="submit"], .submitbutton, #members-directory-form input[type="submit"], .form-submit #submit, #signup_submit, #submit, #searchsubmit, .standard-form input[type="submit"], .activity-comments input[type="submit"] {
 cursor: pointer;
 display: inline-block;
 background-color: #e6e6e6;
@@ -1790,7 +1790,7 @@ background: #f3f3f3;
 border: 1px solid #eee;
 padding: 10px;
 }
-.generic-button a:hover, .clear-value:hover, .submit:hover input[type="submit"], .submitbutton:hover #blogs-directory-form input[type="submit"], .submitbutton:hover, #members-directory-form input[type="submit"]:hover, .form-submit #submit:hover, #signup_submit:hover, #submit:hover, #searchsubmit:hover, .standard-form input[type="submit"]:hover, .activity-comments input[type="submit"]:hover {
+#group-creation-previous:hover, #content-profile input[type="submit"]:hover,.generic-button a:hover, .clear-value:hover, .submit:hover input[type="submit"], .submitbutton:hover #blogs-directory-form input[type="submit"], .submitbutton:hover, #members-directory-form input[type="submit"]:hover, .form-submit #submit:hover, #signup_submit:hover, #submit:hover, #searchsubmit:hover, .standard-form input[type="submit"]:hover, .activity-comments input[type="submit"]:hover {
 background-position: 0 -15px;
 color: #333;
 text-decoration: none;
@@ -1798,6 +1798,9 @@ text-decoration: none;
 .groups #item-header-content {
 margin-bottom: 20px;
 overflow: hidden;
+}
+li#groups-order-select{
+margin: 10px 0 10px 10px;
 }
 div.submit {
 margin: 10px 0 0 0;
@@ -2244,7 +2247,6 @@ text-decoration: none;
 div#item-header img.avatar {
 float: left;
 margin: 5px 15px 10px 0;
-min-width: 150px;
 }
 div#item-header h2 {
 margin-bottom: 5px;
