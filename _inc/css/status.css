@@ -1752,7 +1752,7 @@ padding: 0;
 overflow: hidden;
 list-style: none;
 }
-.generic-button a, .clear-value, .submit input[type="submit"], .submitbutton, #blogs-directory-form input[type="submit"], .submitbutton, #members-directory-form input[type="submit"], .form-submit #submit, #signup_submit, #submit, #searchsubmit, .standard-form input[type="submit"], .activity-comments input[type="submit"] {
+#content-profile input[type="submit"],.generic-button a, .clear-value, .submit input[type="submit"], .submitbutton, #blogs-directory-form input[type="submit"], .submitbutton, #members-directory-form input[type="submit"], .form-submit #submit, #signup_submit, #submit, #searchsubmit, .standard-form input[type="submit"], .activity-comments input[type="submit"] {
 cursor: pointer;
 display: inline-block;
 background-color: #e6e6e6;
