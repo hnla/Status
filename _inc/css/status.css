@@ -1703,7 +1703,7 @@ border: 1px solid #960606;
 
 #signup_form input[type="text"],#signup_form input[type="email"],#signup_form input[type="password"],
 #signup_form textarea {
-padding: 0.5em;
+padding: 0.4em 0.5em;
 background: #fff;
 border: 1px solid #ddd;
 -moz-border-radius: 5px;
