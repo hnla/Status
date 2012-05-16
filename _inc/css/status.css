@@ -2568,14 +2568,21 @@ position: fixed;
 float: right;
 font-size: 1.1em;
 color: #888;
+display: table;
 border-left: 1px solid #ccc;
 padding: 10px 0 10px 20px;
 width: 20%;
+height: 150px;
 clear: none;
 border-top: none;
 }
+#member-stats ul {
+display: table-cell;
+vertical-align: middle;
+}
 #item-header-content {
 float: left;
+width: 55%;
 }
 
 }
