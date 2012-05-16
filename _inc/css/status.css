@@ -2247,6 +2247,7 @@ text-decoration: none;
 div#item-header img.avatar {
 float: left;
 margin: 5px 15px 10px 0;
+width: 150px !important;
 }
 div#item-header h2 {
 margin-bottom: 5px;
