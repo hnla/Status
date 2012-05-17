@@ -2505,13 +2505,11 @@ float: left;
 min-height: 1px;
 width: 74%;
 }
-
 .activity #content, .home-page #content {
 float: left;
 min-height: 1px;
 width: 74%;
 }
-
 #content-home {
 position: absolute;
 top: 50%;
@@ -2554,7 +2552,6 @@ padding: 30px 0 40px 0;
 float: right;
 padding: 5px 10px 0 0;
 }
-
 #content-profile-headerfull #activity-filter-select, #forums-order-select {
 float: right;
 }
@@ -2570,21 +2567,14 @@ position: fixed;
 float: right;
 font-size: 1.1em;
 color: #888;
-display: table;
 border-left: 1px solid #ccc;
 padding: 10px 0 10px 20px;
 width: 20%;
-height: 150px;
 clear: none;
 border-top: none;
-}
-#member-stats ul {
-display: table-cell;
-vertical-align: middle;
 }
 #item-header-content {
 float: left;
 width: 55%;
 }
-
 }
