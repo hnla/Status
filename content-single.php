@@ -34,6 +34,5 @@
 	<footer class="post-meta">
 		<div class="alignleft"><?php previous_post_link( '%link', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'status' ) . '</span> %title' ); ?></div>
 		<div class="alignright"><?php next_post_link( '%link', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'status' ) . '</span>' ); ?></div>
-
 	</footer>
 </article>
