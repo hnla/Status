@@ -475,7 +475,7 @@ function status_show_design_body () {
 		'<label for="">' . _e('Background image', 'status') . '</label>' .
 		'<input type="file" id="" name="status_design-bg_image" />' .
 		(
-			$options['bg-image'] ? '<div><img src="' . $options['bg-image']['url'] . '" />' .
+			! empty( $options['bg-image']['url'] ) ? '<div><img src="' . $options['bg-image']['url'] . '" />' .
 				'<br /><a href="#remove-background" id="status-design-remove_background">' . __('Remove background image', 'status') . '</a></div>'
 			: ''
 		) .
