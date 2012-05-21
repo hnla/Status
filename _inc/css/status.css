@@ -346,20 +346,6 @@ margin: 0 auto;
 max-width: 1240px;
 overflow: hidden;
 }
-/*fix this to template.home #content-wrapper {
-max-width: 550px;
-padding: 0;
-}*/
-/*.home.logged-in #content-wrapper {
-margin: 0 auto;
-max-width: 1240px;
-overflow: hidden;
-padding: 20px 0;
-}
-#content-wrapper, #header-wrapper, #friends-wrapper,
-#widgets-wrapper, #footer-wrapper {
-overflow: hidden;
-}
 
 /*--------------------------------------------------------------
 2.1 - Content
@@ -534,6 +520,28 @@ padding: 0;
 /*--------------------------------------------------------------
 3.0 - Non-structural
 --------------------------------------------------------------*/
+table{width:100%;max-width:100%;margin-bottom:1.5em;border-collapse:collapse;border-spacing:0;}
+table th,
+table td{padding:20px;vertical-align:top;border-top:1px solid #eee;line-height:1.5em;text-align:left;}
+table th{font-weight:bold;}
+table thead th{vertical-align:bottom;}
+table colgroup + thead tr:first-child th,
+table colgroup + thead tr:first-child td,
+table thead:first-child tr:first-child th,
+table thead:first-child tr:first-child td{border-top:0;}
+table tbody + tbody{border-top:2px solid #eee;}
+table tbody tr:hover td,
+table tbody tr:hover th{background-color:#eee;}
+.table-condensed th,
+.table-condensed td{padding:5px;}
+.table-bordered{border:1px solid #eee;border-left:0;border-collapse:separate;*border-collapse:collapsed;}
+.table-bordered th,
+.table-bordered td{border-left:1px solid #eee;}
+.table-bordered thead:first-child tr:first-child th,
+.table-bordered tbody:first-child tr:first-child th,
+.table-bordered tbody:first-child tr:first-child td{border-top:0;}
+.table-striped tbody tr:nth-child(odd) td,
+.table-striped tbody tr:nth-child(odd) th{background-color:#f3f3f3;}
 
 /*--------------------------------------------------------------
 3.1 - Text
@@ -1886,6 +1894,10 @@ padding: 10px;
 .group-button{
 margin-top: 10px;
 }
+#forums-order-select{
+padding: 5px 5px 0 0;
+}
+
 /*--------------------------------------------------------------
 6.6 - Ajax Loading
 --------------------------------------------------------------*/
@@ -2072,7 +2084,7 @@ table.forum td.td-title {
 text-align: left;
 }
 table.forum tr td.td-title a.topic-title {
-font-size: 1.2em;
+font-size: 1em;
 }
 table.forum td.td-freshness {
 white-space: nowrap;
