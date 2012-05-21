@@ -1746,6 +1746,7 @@ margin: 20px 0px;
 }
 .form-allowed-tags {
 line-height: 1.7;
+font-size: 0.8em;
 }
 form .editfield {
 border-top: 1px solid #ddd;
