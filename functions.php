@@ -696,7 +696,7 @@ function status_member_profile_stats_get_member_comments() {
 		$total_count = status_member_profile_stats_get_member_comment_count();
 
 		if ( $total_count == 0 ) {
-			$content = '<li>' . __( ' No blog comments', 'bp-member-profile-stats' ) . '</li>';
+			$content = '<li>' . __( ' No blog comments', 'status' ) . '</li>';
 		} else if ( $total_count == 1 ) {
 			$content = '<li><span class="comment-count">'. $total_count .'</span>' . __( ' blog comment', 'status' ) . '</li>';
 		} else {
