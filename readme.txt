@@ -9,6 +9,7 @@
 2. Users are required to keep the Toolbar on to get full advantage of the theme.
 3. If you want to add navigation you need to go to Appearance > Menu and it will appear in the admin bar or you can 
 add to a sidebar widget area.
+4. The site title only appears in the admin bar
 --- Credits ---
 
 --- Changelog ---
