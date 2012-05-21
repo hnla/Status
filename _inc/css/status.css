@@ -863,7 +863,7 @@ margin: 15px 15px 0 0;
 }
 .commentlist ul.children div.comment-avatar-box {
 float: left;
-margin: 0 10px 0;
+margin-right: 10px;
 }
 div.comment-avatar-box img {
 border: 2px solid #eee;
