@@ -1,5 +1,5 @@
 --- Status ---
-
+An activity stream focused child theme for BuddyPress
 --- Installation ---
 
 --- Getting Started with Status ---
@@ -11,5 +11,5 @@
 add to a sidebar widget area.
 4. The site title only appears in the admin bar
 --- Credits ---
-
+DJPaul, Hnla, Karmatosed, Ve, Mercieme (theme review) and many more BuddyPress community members
 --- Changelog ---
