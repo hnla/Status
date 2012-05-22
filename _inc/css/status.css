@@ -781,6 +781,7 @@ display: block;
 border-bottom: 1px solid #eee;
 margin-bottom: 10px;
 }
+.entry-caption{text-align:center;}
 /*--------------------------------------------------------------
 5.1 - Alignments
 --------------------------------------------------------------*/
