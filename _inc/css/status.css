@@ -667,28 +667,21 @@ margin: 0;
 /*--------------------------------------------------------------
 3.3 - Lists
 --------------------------------------------------------------*/
-div.page ul,
-div.page ol,
-div.page dl,
-div.post ul,
-div.post ol,
-div.post dl {
+.post-content ul,
+.post-content ol,
+.post-content dl {
 margin: 0 0 18px 1.5em;
 }
-div.page ul,
-div.post ul {
+.post-content ul{
 list-style: square;
 }
-div.page ol,
-div.post ol {
+.post-content ol{
 list-style: decimal;
 }
-div.page ol ol,
-div.post ol ol {
+.post-content ol ol{
 list-style: lower-alpha;
 }
-div.page ol ol ol,
-div.post ol ol ol {
+.post-content ol ol ol{
 list-style: lower-roman;
 }
 dl {
