@@ -471,36 +471,38 @@ function status_show_design_body () {
 		'<input type="text" size="7" id="status-design-link_color" name="status_design[link-color]" value="' . $options['link-color'] . '" />' .
 	'</p>';
 
-	echo '<p id="status-design-background_image-wrapper">' .
-		'<label for="">' . _e('Background image', 'status') . '</label>' .
-		'<input type="file" id="" name="status_design-bg_image" />' .
-		(
-			! empty( $options['bg-image']['url'] ) ? '<div><img src="' . $options['bg-image']['url'] . '" />' .
-				'<br /><a href="#remove-background" id="status-design-remove_background">' . __('Remove background image', 'status') . '</a></div>'
-			: ''
-		) .
-	'</p>';
+	if (current_user_can('upload_files')) { // Fix for issue #85
+		echo '<p id="status-design-background_image-wrapper">' .
+			'<label for="">' . _e('Background image', 'status') . '</label>' .
+			'<input type="file" id="" name="status_design-bg_image" />' .
+			(
+				! empty( $options['bg-image']['url'] ) ? '<div><img src="' . $options['bg-image']['url'] . '" />' .
+					'<br /><a href="#remove-background" id="status-design-remove_background">' . __('Remove background image', 'status') . '</a></div>'
+				: ''
+			) .
+		'</p>';
 
-	echo '<p>' .
-		'<label for="status-design-position-left">' . _e('Background position', 'status') . '</label>' .
-			'<label for="status-design-position-left"><input type="radio" id="status-design-position-left" name="status_design[bg-position]" ' . (("left" == $options['bg-position']) ? 'checked="checked"' : '') . ' value="left" /> Left</label> ' .
-			'<label for="status-design-position-right"><input type="radio" id="status-design-position-right" name="status_design[bg-position]" ' . (("right" == $options['bg-position']) ? 'checked="checked"' : '') . ' value="right" /> Right</label> ' .
-			'<label for="status-design-position-center"><input type="radio" id="status-design-position-center" name="status_design[bg-position]" ' . (("center" == $options['bg-position']) ? 'checked="checked"' : '') . ' value="center" /> Center</label> ' .
-	'</p>';
+		echo '<p>' .
+			'<label for="status-design-position-left">' . _e('Background position', 'status') . '</label>' .
+				'<label for="status-design-position-left"><input type="radio" id="status-design-position-left" name="status_design[bg-position]" ' . (("left" == $options['bg-position']) ? 'checked="checked"' : '') . ' value="left" /> Left</label> ' .
+				'<label for="status-design-position-right"><input type="radio" id="status-design-position-right" name="status_design[bg-position]" ' . (("right" == $options['bg-position']) ? 'checked="checked"' : '') . ' value="right" /> Right</label> ' .
+				'<label for="status-design-position-center"><input type="radio" id="status-design-position-center" name="status_design[bg-position]" ' . (("center" == $options['bg-position']) ? 'checked="checked"' : '') . ' value="center" /> Center</label> ' .
+		'</p>';
 
-	echo '<p>' .
-		'<label for="status-design-repeat-no">' . _e('Background repeat', 'status') . '</label>' .
-			'<label for="status-design-repeat-no"><input type="radio" id="status-design-repeat-no" name="status_design[bg-repeat]" ' . (("no-repeat" == $options['bg-repeat']) ? 'checked="checked"' : '') . ' value="no-repeat" /> None</label> ' .
-			'<label for="status-design-repeat-repeat"><input type="radio" id="status-design-repeat-repeat" name="status_design[bg-repeat]" ' . (("repeat" == $options['bg-repeat']) ? 'checked="checked"' : '') . ' value="repeat" /> Tile</label> ' .
-			'<label for="status-design-repeat-x"><input type="radio" id="status-design-repeat-x" name="status_design[bg-repeat]" ' . (("repeat-x" == $options['bg-repeat']) ? 'checked="checked"' : '') . ' value="repeat-x" /> Tile horizontally</label> ' .
-			'<label for="status-design-repeat-y"><input type="radio" id="status-design-repeat-y" name="status_design[bg-repeat]" ' . (("repeat-y" == $options['bg-repeat']) ? 'checked="checked"' : '') . ' value="repeat-y" /> Tile vertically</label> ' .
-	'</p>';
+		echo '<p>' .
+			'<label for="status-design-repeat-no">' . _e('Background repeat', 'status') . '</label>' .
+				'<label for="status-design-repeat-no"><input type="radio" id="status-design-repeat-no" name="status_design[bg-repeat]" ' . (("no-repeat" == $options['bg-repeat']) ? 'checked="checked"' : '') . ' value="no-repeat" /> None</label> ' .
+				'<label for="status-design-repeat-repeat"><input type="radio" id="status-design-repeat-repeat" name="status_design[bg-repeat]" ' . (("repeat" == $options['bg-repeat']) ? 'checked="checked"' : '') . ' value="repeat" /> Tile</label> ' .
+				'<label for="status-design-repeat-x"><input type="radio" id="status-design-repeat-x" name="status_design[bg-repeat]" ' . (("repeat-x" == $options['bg-repeat']) ? 'checked="checked"' : '') . ' value="repeat-x" /> Tile horizontally</label> ' .
+				'<label for="status-design-repeat-y"><input type="radio" id="status-design-repeat-y" name="status_design[bg-repeat]" ' . (("repeat-y" == $options['bg-repeat']) ? 'checked="checked"' : '') . ' value="repeat-y" /> Tile vertically</label> ' .
+		'</p>';
 
-	echo '<p>' .
-		'<label for="status-design-attachment-fixed">' . _e('Background attachment', 'status') . '</label>' .
-			'<label for="status-design-attachment-scroll"><input type="radio" id="status-design-attachment-scroll" name="status_design[bg-attachment]" ' . (("scroll" == $options['bg-attachment']) ? 'checked="checked"' : '') . ' value="scroll" /> Scroll</label> ' .
-			'<label for="status-design-attachment-fixed"><input type="radio" id="status-design-attachment-fixed" name="status_design[bg-attachment]" ' . (("fixed" == $options['bg-attachment']) ? 'checked="checked"' : '') . ' value="fixed" /> Fixed</label> ' .
-	'</p>';
+		echo '<p>' .
+			'<label for="status-design-attachment-fixed">' . _e('Background attachment', 'status') . '</label>' .
+				'<label for="status-design-attachment-scroll"><input type="radio" id="status-design-attachment-scroll" name="status_design[bg-attachment]" ' . (("scroll" == $options['bg-attachment']) ? 'checked="checked"' : '') . ' value="scroll" /> Scroll</label> ' .
+				'<label for="status-design-attachment-fixed"><input type="radio" id="status-design-attachment-fixed" name="status_design[bg-attachment]" ' . (("fixed" == $options['bg-attachment']) ? 'checked="checked"' : '') . ' value="fixed" /> Fixed</label> ' .
+		'</p>';
+	}
 
 	echo '<p>' .
 		'<label for="status-design-background_color">' . _e('Background color', 'status') . '</label>' .
