@@ -323,7 +323,7 @@ function status_save_changes () {
 
 	$update = array();
 	foreach ($_POST['status_design'] as $key => $value) {
-		$update[$key] = strip_tags($value);
+		$update[$key] = sanitize_text_field($value); // Potential fix for issue #119
 	}
 	if (isset($_POST['_status_design-remove_background'])) {
 		$old = status_get_background_image();
