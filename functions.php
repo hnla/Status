@@ -392,7 +392,7 @@ function status_apply_custom_user_settings () {
 	$options = status_get_user_options();
 
 	$color = $options['link-color'] ? $options['link-color'] : false;
-	$bg_image = $options['bg-image'] ? $options['bg-image'] : get_background_image();
+	$bg_image = $options['bg-image'] && isset($options['bg-image']['url']) ? $options['bg-image'] : array("url" => get_background_image()); // Fix for issue #104
 	$bg_color = $options['bg-color'] ? $options['bg-color'] : "#" . get_theme_mod("background_color", (defined('BACKGROUND') ? BACKGROUND : 'ffffff'));
 
 
@@ -405,7 +405,7 @@ function status_apply_custom_user_settings () {
 	$attachment = $options['bg-attachment'];
 	$attachment = ($attachment && in_array($attachment, $_attachments)) ? strtolower($attachment) : get_theme_mod('background_attachment', 'scroll');
 
-	$image = $bg_image ? "background-image: url({$bg_image['url']});" : '';
+	$image = $bg_image && isset($bg_image['url']) ? "background-image: url({$bg_image['url']});" : ''; // Fix for issue #104
 	$position = ($position) ? "background-position: top {$position};" : '';
 	$repeat = ($repeat) ? "background-repeat: {$repeat};" : '';
 	$attachment = ($attachment) ? "background-attachment: {$attachment};" : '';
