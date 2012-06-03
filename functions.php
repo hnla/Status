@@ -325,6 +325,24 @@ function status_save_changes () {
 	foreach ($_POST['status_design'] as $key => $value) {
 		$update[$key] = sanitize_text_field($value); // Potential fix for issue #119
 	}
+	if (!function_exists('sanitize_hex_color_no_hash') && file_exists(ABSPATH . WPINC . '/class-wp-customize-manager.php')) {
+		require_once(ABSPATH . WPINC . '/class-wp-customize-manager.php');
+	}
+	if (function_exists('sanitize_hex_color_no_hash')) {
+		$sane_bg = sanitize_hex_color_no_hash(ltrim($update['bg-color'], '#'));
+		$update['bg-color'] = $sane_bg ? "#{$sane_bg}" : '';
+		$sane_link = sanitize_hex_color_no_hash(ltrim($update['link-color'], '#'));
+		$update['link-color'] = $sane_link ? "#{$sane_link}" : '';
+	} else {
+		$update['bg-color'] = preg_match('/^([0-9a-f]{3}){1,2}$/i', ltrim($update['bg-color'], '#')) 
+			? '#' . ltrim($update['bg-color'], '#') 
+			: ''
+		;
+		$update['link-color'] = preg_match('/^([0-9a-f]{3}){1,2}$/i', ltrim($update['link-color'], '#')) 
+			? '#' . ltrim($update['link-color'], '#') 
+			: ''
+		;
+	}
 	if (isset($_POST['_status_design-remove_background'])) {
 		$old = status_get_background_image();
 		if ($old['file'] && file_exists($old['file'])) @unlink($old['file']);
