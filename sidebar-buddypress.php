@@ -13,12 +13,16 @@
 	<?php if ( is_user_logged_in() ) : ?>
 		<?php do_action( 'bp_before_sidebar_me' ) ?>
 		<section id="sidebar-me">
+			
+			<?php if( bp_is_active( 'friends' ) ) : ?>
 			<section id="friends-loop">
 				<div class="widget">
 					<h3 class="widgettitle"><?php _e( 'Your Friends', 'status' ) ?></h3>
 					<?php status_showfriends();?>
 				</div>
 			</section>
+			<?php endif; ?>
+			
 			<?php do_action( 'bp_sidebar_me' ) ?>
 			<?php if ( bp_is_active( 'messages' ) ) : ?>
 				<?php bp_message_get_notices(); /* Site wide notices to all users */ ?>
