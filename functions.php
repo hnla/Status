@@ -456,7 +456,7 @@ function status_dispatch_page_handlers () {
 }
 
 function status_show_design_title () {
-	echo '<h3>' . status_get_design_group_name() . '</h3>';
+	echo  status_get_design_group_name() ;
 }
 
 function status_show_design_body () {
@@ -473,8 +473,8 @@ function status_show_design_body () {
 
 	if (current_user_can('upload_files')) { // Fix for issue #85
 		echo '<p id="status-design-background_image-wrapper">' .
-			'<label for="">' . _e('Background image', 'status') . '</label>' .
-			'<input type="file" id="" name="status_design-bg_image" />' .
+			'<label for="status_design-bg_image">' . _e('Background image', 'status') . '</label>' .
+			'<input type="file" id="status_design-bg_image" name="status_design-bg_image" />' .
 			(
 				! empty( $options['bg-image']['url'] ) ? '<div><img src="' . $options['bg-image']['url'] . '" />' .
 					'<br /><a href="#remove-background" id="status-design-remove_background">' . __('Remove background image', 'status') . '</a></div>'
