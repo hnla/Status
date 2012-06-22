@@ -388,9 +388,6 @@ function status_handle_image_upload () {
 
 /*** Spit out customizations.*/
 function status_apply_custom_user_settings () {
-	$_present = bp_get_option('bp-xprofile-status-field_ids');
-	if (!$_present) return false;
-
 	$_positions = array(
 		'left',
 		'right', 
@@ -437,7 +434,18 @@ function status_apply_custom_user_settings () {
 
 /*** Set up custom background handler.*/
 function status_setup_user_theme () {
-	add_custom_background('status_apply_custom_user_settings', '');
+	//add_custom_background('status_apply_custom_user_settings', '');
+	if (bp_get_major_wp_version() >= 3.4) {
+		// Not sure if "wp-head-callback" doesn't work what it says on the tin,
+		// or if there's some other thing wrong...
+		add_theme_support('custom-background', array(
+			'wp-head-callback' => 'status_apply_custom_user_settings',
+		));
+		// Either way, it's not crucial
+		add_action('wp_head', 'status_apply_custom_user_settings', 999); // Callback parameter doesn't seem to be called, for some reason...
+	} else {
+		add_custom_background('status_apply_custom_user_settings', '');
+	}
 }
 add_action('after_setup_theme', 'status_setup_user_theme', 20);
 
