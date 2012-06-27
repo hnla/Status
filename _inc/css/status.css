@@ -319,9 +319,6 @@ display: table-header-group;
 tr, img {
 page-break-inside: avoid;
 }
-img {
-max-width: 100% !important;
-}
 @page {
 margin: 0.5cm;
 }
@@ -1019,8 +1016,11 @@ color: #555;
 /*--------------------------------------------------------------
 5.4 - Images
 --------------------------------------------------------------*/
-img {
-width: auto !important;
+#item-header-avatar img,
+#activity-stream img,
+article.post img,
+article.page img {
+height: auto !important;
 max-width: 100%;
 }
 img.avatar {
