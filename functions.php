@@ -320,6 +320,15 @@ function status_save_changes () {
 	global $bp;
 	$user_id = ( current_user_can('administrator') && ! bp_is_my_profile() ) ? bp_displayed_user_id() : bp_current_user_id();
 	if (!$user_id) return false;
+	
+	// Resetting options to default
+	if (isset($_POST['status-reset_to_default'])) {
+		update_user_meta($user_id, 'status_design_options', false);
+		$old = status_get_background_image();
+		if ($old['file'] && file_exists($old['file'])) @unlink($old['file']);
+		update_user_meta($user_id, 'status_design_bg_image', array());
+		wp_redirect(bp_core_get_user_domain($user_id) . $bp->profile->slug . '/design'); die;
+	}
 
 	$update = array();
 	foreach ($_POST['status_design'] as $key => $value) {
@@ -536,7 +545,8 @@ function status_show_design_body () {
 	'</p>';
 
 	echo '<p>' .
-		'<input type="submit" class="button button-primary" value="' . esc_attr('Save', 'status') . '" />' .
+		'<input type="submit" class="button button-primary" value="' . esc_attr(__('Save', 'status')) . '" />' .
+		' <input type="submit" class="button" name="status-reset_to_default" value="' . esc_attr(__('Reset to default', 'status')) . '" />' .
 	'</p>';
 
 	echo '</form>';
