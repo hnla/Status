@@ -303,9 +303,9 @@ function status_get_user_options () {
 		'bg-position' => 'left',
 		'bg-repeat' => 'repeat',
 		'bg-attachment' => 'fixed',
-		'bg-color' => '#fff',
+		'bg-color' => false,
 		'bg-image' => $bg_image,
-		'link-color' => '#f00',
+		'link-color' => false,
 	));
 }
 
