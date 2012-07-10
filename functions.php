@@ -429,7 +429,10 @@ function status_apply_custom_user_settings () {
 	$attachment = $options['bg-attachment'];
 	$attachment = ($attachment && in_array($attachment, $_attachments)) ? strtolower($attachment) : get_theme_mod('background_attachment', 'scroll');
 
-	$image = ($bg_image && isset($bg_image['url']) && $bg_image['url']) ? "background-image: url({$bg_image['url']});" : ''; // Fix for issue #104
+	$image = ($bg_image && isset($bg_image['url']) && $bg_image['url']) 
+		? "background-image: url({$bg_image['url']});" 
+		: 'background-image: url(' . get_stylesheet_directory_uri(). '/_inc/images/texture.png' . ');'
+	;
 	$position = ($position) ? "background-position: top {$position};" : '';
 	$repeat = ($repeat) ? "background-repeat: {$repeat};" : '';
 	$attachment = ($attachment) ? "background-attachment: {$attachment};" : '';
