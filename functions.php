@@ -431,12 +431,17 @@ function status_apply_custom_user_settings () {
 
 	$image = ($bg_image && isset($bg_image['url']) && $bg_image['url']) 
 		? "background-image: url({$bg_image['url']});" 
-		: 'background-image: url(' . get_stylesheet_directory_uri(). '/_inc/images/texture.png' . ');'
+		: '' // Use whatever is in the stylesheet
 	;
-	$position = ($position) ? "background-position: top {$position};" : '';
-	$repeat = ($repeat) ? "background-repeat: {$repeat};" : '';
-	$attachment = ($attachment) ? "background-attachment: {$attachment};" : '';
 	$background_color = ($bg_color && '#' != $bg_color) ? "background-color: {$bg_color};" : '';
+	if ($image) {
+		$position = ($position) ? "background-position: top {$position};" : '';
+		$repeat = ($repeat) ? "background-repeat: {$repeat};" : '';
+		$attachment = ($attachment) ? "background-attachment: {$attachment};" : '';
+	} else {
+		if ($background_color) $image = 'background-image: none;';
+		$position = $repeat = $attachment = '';
+	}
 
 	echo '<style type="text/css">' .
 		($color ? "a, a:link, a:visited, a:hover { color: {$color}; } " : '') .
