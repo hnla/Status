@@ -704,10 +704,14 @@ font-weight: 700;
 margin: 0;
 padding: 0;
 }
-#sidebar h3,#topic-meta h3 {
+#topic-meta h3 {
 margin: 0;
 }
-
+#sidebar h3{
+margin: 0 0 10px 0;
+border-bottom: 1px solid #ccc;
+padding-bottom: 10px;
+}
 ul#members-list h5, ul#member-list h5, ul#blogs-list h5, ul#blog-list h5, ul#admins-list h5, ul#admin-list h5, 
 ul#groups-list h5, ul#group-list h5 {
 margin: 0;
