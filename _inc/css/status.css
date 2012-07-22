@@ -1970,7 +1970,9 @@ margin-top: 10px;
 #forums-order-select {
 padding: 5px 5px 0 0;
 }
-
+input[type="text"]#status-design-link_color, input[type="text"]#status-design-background_color{
+width:10%;
+}
 /*--------------------------------------------------------------
 6.6 - Ajax Loading
 --------------------------------------------------------------*/
