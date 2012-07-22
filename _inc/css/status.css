@@ -367,8 +367,8 @@ box-shadow: 0 0 2px rgba(0, 0, 0,0.1);
 -webkit-box-shadow: 0 0 2px rgba(0, 0, 0,0.1);
 margin: 0 1px 0 1px;
 }
-#content-register{
-margin:0 auto;
+#content-register {
+margin: 0 auto;
 }
 #content {
 background: #fff;
@@ -521,28 +521,62 @@ padding: 0;
 /*--------------------------------------------------------------
 3.0 - Non-structural
 --------------------------------------------------------------*/
-table{width:100%;max-width:100%;margin-bottom:1.5em;border-collapse:collapse;border-spacing:0;}
+table {
+width: 100%;
+max-width: 100%;
+margin-bottom: 1.5em;
+border-collapse: collapse;
+border-spacing: 0;
+}
 table th,
-table td{padding:20px;vertical-align:top;border-top:1px solid #eee;line-height:1.5em;text-align:left;}
-table th{font-weight:bold;}
-table thead th{vertical-align:bottom;}
+table td {
+padding: 20px;
+vertical-align: top;
+border-top: 1px solid #eee;
+line-height: 1.5em;
+text-align: left;
+}
+table th {
+font-weight: bold;
+}
+table thead th {
+vertical-align: bottom;
+}
 table colgroup + thead tr:first-child th,
 table colgroup + thead tr:first-child td,
 table thead:first-child tr:first-child th,
-table thead:first-child tr:first-child td{border-top:0;}
-table tbody + tbody{border-top:2px solid #eee;}
+table thead:first-child tr:first-child td {
+border-top: 0;
+}
+table tbody + tbody {
+border-top: 2px solid #eee;
+}
 table tbody tr:hover td,
-table tbody tr:hover th{background-color:#eee;}
+table tbody tr:hover th {
+background-color: #eee;
+}
 .table-condensed th,
-.table-condensed td{padding:5px;}
-.table-bordered{border:1px solid #eee;border-left:0;border-collapse:separate;*border-collapse:collapsed;}
+.table-condensed td {
+padding: 5px;
+}
+.table-bordered {
+border: 1px solid #eee;
+border-left: 0;
+border-collapse: separate;*border-collapse:collapsed;
+}
 .table-bordered th,
-.table-bordered td{border-left:1px solid #eee;}
+.table-bordered td {
+border-left: 1px solid #eee;
+}
 .table-bordered thead:first-child tr:first-child th,
 .table-bordered tbody:first-child tr:first-child th,
-.table-bordered tbody:first-child tr:first-child td{border-top:0;}
+.table-bordered tbody:first-child tr:first-child td {
+border-top: 0;
+}
 .table-striped tbody tr:nth-child(odd) td,
-.table-striped tbody tr:nth-child(odd) th{background-color:#f3f3f3;}
+.table-striped tbody tr:nth-child(odd) th {
+background-color: #f3f3f3;
+}
 
 /*--------------------------------------------------------------
 3.1 - Text
@@ -686,16 +720,16 @@ margin: 0;
 .post-content dl {
 margin: 0 0 18px 1.5em;
 }
-.post-content ul{
+.post-content ul {
 list-style: square;
 }
-.post-content ol{
+.post-content ol {
 list-style: decimal;
 }
-.post-content ol ol{
+.post-content ol ol {
 list-style: lower-alpha;
 }
-.post-content ol ol ol{
+.post-content ol ol ol {
 list-style: lower-roman;
 }
 dl {
@@ -737,11 +771,11 @@ padding-top: 5px;
 display: inline;
 float: left;
 }
-li#forums-all{
-	margin-right:10px;
+li#forums-all {
+margin-right: 10px;
 }
-#forums-directory-form .item-list-tabs{
-	overflow:hidden;
+#forums-directory-form .item-list-tabs {
+overflow: hidden;
 }
 
 /*--------------------------------------------------------------
@@ -802,7 +836,9 @@ display: block;
 border-bottom: 1px solid #eee;
 margin-bottom: 10px;
 }
-.entry-caption{text-align:center;}
+.entry-caption {
+text-align: center;
+}
 /*--------------------------------------------------------------
 5.1 - Alignments
 --------------------------------------------------------------*/
@@ -1840,7 +1876,7 @@ text-decoration: none;
 margin-bottom: 20px;
 overflow: hidden;
 }
-li#groups-order-select{
+li#groups-order-select {
 margin: 10px 0 10px 10px;
 }
 div.submit {
@@ -1914,20 +1950,20 @@ color: #666;
 .friendship-button {
 margin-top: 10px;
 }
-#item-body ul#friend-list{
-	margin:0;
-	padding:0;
+#item-body ul#friend-list {
+margin: 0;
+padding: 0;
 }
 #item-header-content .friendship-button {
 margin-top: 0;
 }
-#members-order-select{
+#members-order-select {
 padding: 10px;
 }
-.group-button{
+.group-button {
 margin-top: 10px;
 }
-#forums-order-select{
+#forums-order-select {
 padding: 5px 5px 0 0;
 }
 
@@ -2252,7 +2288,7 @@ border-radius: 3px;
 -moz-border-radius: 3px;
 -webkit-border-radius: 3px;
 padding: 2px;
-max-width:150px;
+max-width: 150px;
 }
 .item-list li {
 border-top: 1px solid #ddd;
@@ -2404,7 +2440,7 @@ text-align: right;
 font-size: 12px;
 font-size: 1.2rem;
 position: absolute;
-top:10px;
+top: 10px;
 right: 0;
 }
 ul.item-list li div.meta {
@@ -2636,4 +2672,5 @@ border-top: none;
 float: left;
 width: 55%;
 }
+
 }
