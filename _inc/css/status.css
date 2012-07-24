@@ -774,6 +774,7 @@ padding-top: 5px;
 .item-list-tabs li, nav ul li {
 display: inline;
 float: left;
+margin: 0 10px 0 0;
 }
 li#forums-all {
 margin-right: 10px;
@@ -843,6 +844,24 @@ margin-bottom: 10px;
 .entry-caption {
 text-align: center;
 }
+#wp-calendar {
+  margin: 0;
+  width: 100%;
+  font-size: 12px;
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: #686868;
+}
+#wp-calendar th,
+#wp-calendar td,
+#wp-calendar caption {
+  text-align: left;
+}
+#wp-calendar #next {
+  padding-right: 24px;
+  text-align: right;
+}
+
 /*--------------------------------------------------------------
 5.1 - Alignments
 --------------------------------------------------------------*/
@@ -2478,6 +2497,7 @@ border: 1px solid #ddd;
 font-size: 12px;
 font-size: 1.2rem;
 overflow: hidden;
+clear: both;
 }
 .activity #subnav {
 margin-top: 0;
@@ -2682,5 +2702,7 @@ border-top: none;
 float: left;
 width: 55%;
 }
-
+#calendar-wrap{
+padding:0 10px;
+}
 }
