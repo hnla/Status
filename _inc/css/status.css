@@ -722,7 +722,7 @@ margin: 0;
 .post-content ul,
 .post-content ol,
 .post-content dl {
-margin: 0 0 18px 1.5em;
+margin: 0 0 1em 1em;
 }
 .post-content ul {
 list-style: square;
