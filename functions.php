@@ -43,12 +43,8 @@ if ( !function_exists( 'status_setup' ) ) :
 function status_setup() {
 	// We're not using BP-Default's primary nav menu, or custom header images.
 		unregister_nav_menu( 'primary' );
-		if ( bp_get_major_wp_version() >= 3.4 ) {
-			remove_theme_support( 'custom-header');
-		} else {
-			remove_custom_image_header();
-		}
-
+		remove_theme_support( 'custom-header');
+		
 		// Enqueue javascript
 		add_action( 'wp_enqueue_scripts', 'status_enqueue_scripts' );
 

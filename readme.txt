@@ -2,6 +2,7 @@
 An activity stream focused child theme for BuddyPress
 --- Installation ---
 This theme doesn't work properly in IE 7 or 8 so if using IE please use IE 9
+This theme requires WordPress 3.4
 --- Getting Started with Status ---
 
 --- Status Notes---
