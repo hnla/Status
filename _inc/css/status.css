@@ -1447,7 +1447,10 @@ float: right;
 li.feed {
 padding: 0 0 0 20px;
 }
-
+.activity-list .activity-content .activity-header img.avatar {
+    float: none;
+    margin: 0 5px 0 0;
+}
 /*--------------------------------------------------------------
 6.1.1 - Activity Listing
 --------------------------------------------------------------*/
