@@ -1061,6 +1061,17 @@ font-size: 1.2rem;
 .commentlist ul.children div.comment-options {
 margin-bottom: 10px;
 }
+#trackbacklist h5{
+margin:10px 0 0 0;
+font-size:16px;
+font-size:1.6rem;
+font-weight:normal;
+}
+#trackbacklist li{
+font-size:16px;
+font-size:1.6rem;
+color:#999;
+}
 /*--------------------------------------------------------------
 5.3 - Gallery
 --------------------------------------------------------------*/
@@ -1856,7 +1867,7 @@ padding: 0;
 overflow: hidden;
 list-style: none;
 }
-#submit_topic_cancel,#group-creation-previous, #content-profile input[type="submit"],.generic-button a, .clear-value, .submit input[type="submit"], .submitbutton, #blogs-directory-form input[type="submit"], .submitbutton, #members-directory-form input[type="submit"], .form-submit #submit, #signup_submit, #submit, #searchsubmit, .standard-form input[type="submit"], .activity-comments input[type="submit"] {
+#forums_search_submit,#submit_topic_cancel,#group-creation-previous, #content-profile input[type="submit"],.generic-button a, .clear-value, .submit input[type="submit"], .submitbutton, #blogs-directory-form input[type="submit"], .submitbutton, #members-directory-form input[type="submit"], .form-submit #submit, #signup_submit, #submit, #searchsubmit, .standard-form input[type="submit"], .activity-comments input[type="submit"] {
 cursor: pointer;
 display: inline-block;
 background-color: #e6e6e6;
@@ -1894,7 +1905,7 @@ background: #f3f3f3;
 border: 1px solid #eee;
 padding: 10px;
 }
-#submit_topic_cancel:hover,#group-creation-previous:hover, #content-profile input[type="submit"]:hover,.generic-button a:hover, .clear-value:hover, .submit:hover input[type="submit"], .submitbutton:hover #blogs-directory-form input[type="submit"], .submitbutton:hover, #members-directory-form input[type="submit"]:hover, .form-submit #submit:hover, #signup_submit:hover, #submit:hover, #searchsubmit:hover, .standard-form input[type="submit"]:hover, .activity-comments input[type="submit"]:hover {
+#forums_search_submit:hover,#submit_topic_cancel:hover,#group-creation-previous:hover, #content-profile input[type="submit"]:hover,.generic-button a:hover, .clear-value:hover, .submit:hover input[type="submit"], .submitbutton:hover #blogs-directory-form input[type="submit"], .submitbutton:hover, #members-directory-form input[type="submit"]:hover, .form-submit #submit:hover, #signup_submit:hover, #submit:hover, #searchsubmit:hover, .standard-form input[type="submit"]:hover, .activity-comments input[type="submit"]:hover {
 background-position: 0 -15px;
 color: #333;
 text-decoration: none;
