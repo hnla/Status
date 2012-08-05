@@ -1306,7 +1306,9 @@ margin: 0 0 20px;
 width: 100%;
 min-height: 100px;
 }
-
+#whats-new-about{
+padding: 10px 0 0 0;
+}
 .groups #whats-new-declare {
 border-bottom: 1px solid #ddd;
 border-right: none;

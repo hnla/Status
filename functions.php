@@ -266,7 +266,7 @@ function status_blog_comments( $comment, $args, $depth ) {
 function status_showfriends() {
 	$user = bp_loggedin_user_id();
 	if( is_user_logged_in() ) : 
-					if( bp_has_members('user_id=' . $user . '') && $user !== 0 ) : ?>
+		if( bp_has_members('user_id=' . $user . '&search_terms=') && $user !== 0 ) : ?>
 
 						<ul id="friends-list" class="looplist">
 						<?php	while ( bp_members() ) : bp_the_member(); ?>
